@@ -70,7 +70,7 @@
                     <div class="col-md-6">
                         <div class="logo-footer">
                             <div id="logo-footer" class="logo">
-                                <a href="index.html" rel="home">
+                                <a href="<?=base_url()?>" rel="home">
                                     <img src="<?=base_url()?>probono_asset/images/logo2.png" alt="image">
                                 </a>
                             </div><!-- /.logo -->
