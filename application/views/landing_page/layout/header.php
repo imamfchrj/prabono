@@ -25,8 +25,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="<?=base_url()?>probono_asset/stylesheets/colors/color7.css" id="colors"> -->
 
     <!-- REVOLUTION LAYERS STYLES -->
-    <link rel="stylesheet" type="text/css" href="<?=base_url()?>probono_asset/revolution/css/layers.css">
-    <link rel="stylesheet" type="text/css" href="<?=base_url()?>probono_asset/revolution/css/settings.css">
+    <!-- <link rel="stylesheet" type="text/css" href="<?=base_url()?>probono_asset/revolution/css/layers.css"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="<?=base_url()?>probono_asset/revolution/css/settings.css"> -->
     
     <!-- Animation Style -->
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>probono_asset/stylesheets/animate.css">
@@ -92,23 +92,23 @@
                                             <div class="nav-wrap">        
                                                 <nav id="mainnav" class="mainnav">
                                                     <ul class="menu"> 
-                                                        <li class="active">
-                                                            <a href="#">Home</a>
+                                                        <li <?php if(!$menu) echo 'class="active"'?> >
+                                                            <a href="<?=base_url()?>">Home</a>
                                                         </li>
-                                                        <li>
-                                                            <a href="#">Jasa</a>
+                                                        <li <?php if($menu=='jasa') echo 'class="active"'?> >
+                                                            <a href="<?=base_url()?>jasa">Jasa</a>
                                                         </li>
-                                                        <li>
-                                                            <a href="#">Publikasi</a>
+                                                        <li <?php if($menu=='publikasi') echo 'class="active"'?> >
+                                                            <a href="<?=base_url()?>publikasi">Publikasi</a>
                                                         </li>
-                                                        <li>
-                                                            <a href="#">Berita</a>
+                                                        <li <?php if($menu=='berita') echo 'class="active"'?> >
+                                                            <a href="<?=base_url()?>berita">Berita</a>
                                                         </li>
-                                                        <li>
-                                                            <a href="#">Tentang Kami</a>
+                                                        <li <?php if($menu=='tentangkami') echo 'class="active"'?> >
+                                                            <a href="<?=base_url()?>tentangkami">Tentang Kami</a>
                                                         </li>
-                                                        <li>
-                                                            <a href="#">Bergabung</a>
+                                                        <li <?php if($menu=='bergabung') echo 'class="active"'?> >
+                                                            <a href="<?=base_url()?>bergabung">Bergabung</a>
                                                         </li>                       
                                                     </ul><!-- /.menu -->
                                                 </nav><!-- /.mainnav -->   

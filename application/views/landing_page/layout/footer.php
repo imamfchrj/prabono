@@ -11,13 +11,12 @@
                             <div class="widget widget-footer widget_menu">
                                 <h5 class="widget-title">Menu</h5>
                                 <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="#">Portfolio</a></li>
-                                    <li><a href="services-single.html">About Us</a></li>
-                                    <li><a href="#">Who We Are</a></li>   
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="services.html">Our Services</a></li>
-                                    <li><a href="#">Shop</a></li>  
+                                    <li><a href="<?=base_url()?>">Home</a></li>
+                                    <li><a href="<?=base_url()?>jasa">Jasa</a></li>
+                                    <li><a href="<?=base_url()?>publikasi">Publikasi</a></li>
+                                    <li><a href="<?=base_url()?>berita">Berita</a></li>   
+                                    <li><a href="<?=base_url()?>tentangkami">Tentang Kami</a></li>
+                                    <li><a href="<?=base_url()?>bergabung">Bergabung</a></li>
                                 </ul>
                             </div><!-- /.widget-menu -->
                             <div class="widget widget-footer widget_why_us">
@@ -53,8 +52,8 @@
                             <div class="widget widget-footer widget_contact">
                                 <h5 class="widget-title">Contacts</h5>
                                 <ul class="flat-information">
-                                    <li class="address"><a href="#">2901 Marmora Road, Central New, UK</a></li>
-                                    <li class="email"><a href="mailto:Themesflat@gmail.com">info@yoursite.com</a></li>
+                                    <li class="address"><a href="#">Jalan Salemba Universitas Indonesia</a></li>
+                                    <li class="email"><a href="mailto:Themesflat@gmail.com">info@probono.com</a></li>
                                     <li class="phone"><a href="+84905010025">123-456-7890</a></li>
                                 </ul>
                             </div><!-- /.widget-menu -->
@@ -77,7 +76,7 @@
                             </div><!-- /.logo -->
                         </div>
                         <div class="copy-right">
-                            <p>© 2017 Consultant Plus. All Rights Reserved. <a href="https://themeforest.net/user/themesflat">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
+                            <p>© 2018 Redcloud Project. All Rights Reserved. <a href="">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
                         </div>
                     </div>
                     <div class="col-md-6">
