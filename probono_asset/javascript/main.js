@@ -831,7 +831,7 @@
         }  
         responsiveMenu();
         detectViewport(); 
-        topSearch();   
+        // topSearch();   
         flatClientSt1(); 
         VideoPopup();
         counter();
@@ -846,7 +846,7 @@
         settime();
         flatAccordion();
         tabs();
-        googleMap();
+        // googleMap();
         toggleExtramenu(); 
         swClick();
         onepage_nav();
