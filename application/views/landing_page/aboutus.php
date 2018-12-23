@@ -154,18 +154,6 @@
                     </div>
                     <div class="col-md-3">
                         <div class="sidebar">
-                            <div class="widget widget_menu_tab">
-                                <ul class="menu">
-                                    <li><a href="#">Strategic Planning</a></li>
-                                    <li class="active"><a href="#">Trades & Stocks</a></li>
-                                    <li><a href="#">Audit & Assurance</a></li>
-                                    <li><a href="#">Turnaround Consulting</a></li>
-                                    <li><a href="#">Trades & Stocks</a></li>
-                                    <li><a href="#">Strategic Planning</a></li>
-                                    <li><a href="#">Strategic Planning</a></li>
-                                    <li><a href="#">Turnaround Consulting</a></li>
-                                </ul>
-                            </div>
                             <div class="widget widget_contact2">
                                 <h5 class="widget-title style2">Need our help?</h5>
                                 <p>Contact us at the Consultant Plus office nearest to you or submit a business inquiry online.</p>
