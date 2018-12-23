@@ -42,4 +42,11 @@ class Dashboard extends CI_Controller {
 		$this->load->view('landing_page/joinus',$data);
 	}
 
+
+	public function team()
+	{
+		// $data['menu']="bergabung";
+		$this->load->view('landing_page/team',$data);
+	}
+
 }
