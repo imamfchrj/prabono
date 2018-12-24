@@ -125,50 +125,6 @@
         }     
     };
 
-    var ajaxRequestForm = function() {  
-        $('#requestform').each(function() {
-            $(this).validate({
-                submitHandler: function( form ) {
-                    var $form = $(form),
-                        str = $form.serialize(),
-                        loading = $('<div />', { 'class': 'loading' });
-
-                    $.ajax({
-                        type: "POST",
-                        url:  $form.attr('action'),
-                        data: str,
-                        beforeSend: function () {
-                            $form.find('.form-submit').append(loading);
-                        },
-                        success: function( msg ) {
-                            var result, cls;                            
-                            if ( msg == 'Success' ) {                                
-                                result == 'Message Sent Successfully To Email Administrator. ( You can change the email management a very easy way to get the message of customers in the user manual )';
-                                cls == 'msg-success';
-                            } else {
-                                result == 'Error sending email.';
-                                cls == 'msg-error';
-                            }
-
-                            $form.prepend(
-                                $('<div />', {
-                                    'class': 'flat-alert ' + cls,
-                                    'text' : result
-                                }).append(
-                                    $('<a class="close" href="#"><i class="fa fa-close"></i></a>')
-                                )
-                            );
-
-                            $form.find(':input').not('.submit').val('');
-                        },
-                        complete: function (xhr, status, error_thrown) {
-                            $form.find('.loading').remove();
-                        }
-                    });
-                }
-            });
-        }); // each contactform
-    };
 
     var topSearch = function () {
         $(document).on('click', function(e) {   
@@ -645,55 +601,7 @@
         });
     };
 
-    var portfolioIsotope = function() {         
-        if ( $().isotope ) {           
-            var $container = $('.portfolio-wrap');
-            $container.imagesLoaded(function(){
-                $container.isotope({
-                    itemSelector: '.item',
-                    transitionDuration: '1s'
-                });
-            });
-
-            $('.portfolio-filter li').on('click',function() {                           
-                var selector = $(this).find("a").attr('data-filter');
-                $('.portfolio-filter li').removeClass('active');
-                $(this).addClass('active');
-                $container.isotope({ filter: selector });
-                return false;
-            });
-
-            $('.portfolio-wrap .load-more a').on('click', function(e) {
-                e.preventDefault();
-
-                var el = $(this),
-                    url = el.attr('href'),
-                    page = parseInt(el.attr('data-page'), 10);
-
-                el.addClass('loading').text('Loading...');
-
-                $.ajax({
-                    type: "GET",
-                    url: url,
-                    dataType: "html",
-                    async: false,   // wait result
-                    data : { page : page }
-                })
-                .done(function (data) {
-                    if ( data !== null ) {                      
-                        var newitem = $(data);
-                        $container.append(newitem).isotope('appended', newitem);
-                        el.removeClass('loading').text('Load more');
-                        page = page + 1;
-                        el.attr({'data-page': page, 'href': './ajax/p' + page + '.html'});
-                    }
-                })
-                .fail(function () {
-                    el.text('No more portfolio to load.');
-                })
-            });
-        };
-    }; 
+   
 
     var toggleExtramenu = function() {
         $('.menu.menu-extra li.off-canvas-toggle').on('click', function() {
@@ -838,10 +746,10 @@
         flatPortfolio();
         popupGallery();
         flatTestimonials();
-        ajaxRequestForm();
+        // ajaxRequestForm();
         blogCarousel();
         Portfolio_Carousel();
-        portfolioIsotope();
+        // portfolioIsotope();
         Portfolio_filter_carousel();
         settime();
         flatAccordion();
