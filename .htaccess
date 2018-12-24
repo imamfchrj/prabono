@@ -20,7 +20,7 @@ RewriteEngine On
 #RewriteCond %{HTTP_HOST} !^vip\.bitcoin\.co\.id
 #RewriteRule (.*) https://vip.bitcoin.co.id/$1 [R=301,L]
 
-RewriteCond $1 !^(index\.php|v2|img|css|js|favicon\.ico|probono_asset|homev2-assets|pgp|maintenance\.html|android\.version|ripple\.txt|downloads|robots\.txt|apple-touch-icon\.png|apple-touch-icon-precomposed\.png|charting_library|tokenomy-assets)
+RewriteCond $1 !^(index\.php|v2|img|css|js|favicon\.ico|probono_asset|assets_123|homev2-assets|pgp|maintenance\.html|android\.version|ripple\.txt|downloads|robots\.txt|apple-touch-icon\.png|apple-touch-icon-precomposed\.png|charting_library|tokenomy-assets)
 
 #RewriteRule ^(.*)$ /img/maintenance.html [L]
 
