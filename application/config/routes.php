@@ -56,3 +56,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 require('routes_landing_page.php');
 require('routes_users.php');
+require('routes_admin.php');
