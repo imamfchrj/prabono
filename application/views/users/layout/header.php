@@ -36,6 +36,37 @@
     <link href="<?=base_url()?>probono_asset/icon/favicon.png" rel="shortcut icon">
 </head>                                 
 <body class="header_sticky page-loading style-body onepage"> 
+
+
+    <!-- Javascript -->
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.min.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/bootstrap.min.js"></script> 
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.easing.js"></script>   
+
+    <script src="<?=base_url()?>probono_asset/javascript/jquery-waypoints.js"></script> 
+    <script src="<?=base_url()?>probono_asset/javascript/jquery-countTo.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/imagesloaded.min.js"></script>
+
+    <script src="<?=base_url()?>probono_asset/javascript/owl.carousel.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/jquery-validate.js"></script>
+
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.cookie.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/html5shiv.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/respond.min.js"></script>
+     
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.magnific-popup.min.js"></script>   
+      
+    
+     
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.fancybox.js"></script>
+    
+    <script src="<?=base_url()?>probono_asset/javascript/main.js"></script>
+
+    <!-- Revolution Slider -->
+    <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="<?=base_url()?>probono_asset/revolution/js/slider.js"></script>
+
     <!-- Preloader -->
     <div class="loading-overlay">
     </div>  

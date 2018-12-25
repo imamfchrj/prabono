@@ -5,27 +5,32 @@ class Dashboard extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('landing_page/main');
+		$data['menu']="home";
+		$this->load->view('landing_page/main',$home);
 	}
 
 	public function aboutus()
 	{
-		$this->load->view('landing_page/aboutus');
+		$data['menu']="tentangkita";
+		$this->load->view('landing_page/aboutus2',$data);
 	}
 
 	public function services()
 	{
-		$this->load->view('landing_page/services');
+		$data['menu']="jasa";
+		$this->load->view('landing_page/services',$data);
 	}
 
 	public function publication()
 	{
-		$this->load->view('landing_page/publication');
+		$data['menu']="publikasi";
+		$this->load->view('landing_page/publication',$data);
 	}
 
 	public function news()
 	{
-		$this->load->view('landing_page/blog');
+		$data['menu']="berita";
+		$this->load->view('landing_page/blog',$data);
 	}
 
 	public function news_singgle($slug=false)
@@ -33,7 +38,8 @@ class Dashboard extends CI_Controller {
 		if(!$slug){
 			echo "404";
 		}
-		$this->load->view('landing_page/blog-single');
+		$data['menu']="berita";
+		$this->load->view('landing_page/blog-single',$data);
 	}
 
 	public function joinus()

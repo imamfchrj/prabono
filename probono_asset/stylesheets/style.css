@@ -75,6 +75,7 @@
 		background: transparent;
 	}
 
+	
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
 		display: block;
 	}
@@ -3081,3 +3082,135 @@ footer .logo-footer .logo {
 	}
 }
 
+.daftar-steps,
+.daftar-steps ul,
+.daftar-steps ul li,
+.daftar-steps ul li a,
+.daftar-steps ul:after,
+.daftar-steps span,
+.daftar-steps .circle,
+.daftar-steps .ips-step,
+.daftar-steps .ips-step:before{ 
+    display: block; 
+}
+.daftar-steps{
+    margin-bottom: 32px;
+}
+.daftar-steps ul,
+.daftar-steps ul li{ 
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.daftar-steps ul:after{
+    content: ' '; 
+    clear: both;
+}
+.daftar-steps ul li{
+    float: left;
+    width: 20%;
+}
+.daftar-steps ul li a{
+    color: #252b45;
+    text-decoration: none;
+    outline: none;
+}
+.daftar-steps span{  
+    text-align: center;
+    font-family: "Helvetica Neue", sans-serif;
+    letter-spacing: 0.5px;
+}
+.daftar-steps .circle,
+.daftar-steps .ips-step{
+    position: relative;
+}
+.daftar-steps .circle{
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%; 
+    background: white;
+    text-align: center;
+    line-height: 30px; 
+    font-size: 13px;
+    border: 1px solid #8a9095;
+    color: #8a9095;
+    margin: auto;
+    z-index: 1; 
+}
+.daftar-steps .ips-step{ 
+ 
+}
+.daftar-steps .ips-step:before,
+.daftar-steps .ips-step:after{
+    content: ' ';
+    height: 2px;
+    width: 50%;
+    background: #e9ecef;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.daftar-steps .ips-step:before{
+    left: 0;
+}
+.daftar-steps .ips-step:after{
+    right: 0;
+}
+.daftar-steps .label{ 
+    font-size: 16px;
+    letter-spacing: 0.5px;
+	color: #8a9095;
+	margin-top:8px;
+}
+
+.daftar-steps .completed .circle{
+    border: 1px solid #6c77a6;
+    background: #6c77a6;
+    color: #fff;
+    margin-bottom: 4px;
+}
+.daftar-steps .active .circle{
+    border: 1px solid #6c77a6;
+    color: #6c77a6;
+}
+.daftar-steps .completed .label,
+.daftar-steps .active .label{
+    color: #6c77a6;
+}
+.daftar-steps .completed .ips-step:before,
+.daftar-steps .completed .ips-step:after,
+.daftar-steps .active .ips-step:before{
+    background: #6c77a6;
+} 
+.daftar-steps ul li a{
+    pointer-events: none;
+}
+.daftar-steps ul li.completed a{
+    pointer-events: inherit;
+}
+
+
+
+
+.form-group small{
+	margin-top:-20px;
+}
+
+
+.flat-button-back::before {
+	/* position: absolute; */
+    left: 21px;
+    top: 15px;
+    content: "\f104";
+    font-family: "FontAwesome";
+    z-index: 1;
+}
+
+.field-btn{
+	height: 100px;
+	padding-top:32px;
+}

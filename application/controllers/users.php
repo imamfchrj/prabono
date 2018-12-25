@@ -12,4 +12,10 @@ class Users extends CI_Controller {
 		$this->load->view('users/caradaftar');
 	}
 
+
+	public function daftar()
+	{
+		$this->load->view('users/form');
+	}
+
 }
