@@ -67,6 +67,9 @@
     <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
     <script src="<?=base_url()?>probono_asset/revolution/js/slider.js"></script>
 
+    <script>
+        var ROOT = "<?=base_url()?>";
+    </script>
     <!-- Preloader -->
     <div class="loading-overlay">
     </div>  
@@ -89,7 +92,7 @@
                     <div class="col-sm-6">
                         <p>Firda Safridi</p>
                         <hr>
-                        <a href="#">Ubah Profile</a>
+                        <a class="blue" href="#">Ubah Profile</a>
                     </div>
                 </div>
 

@@ -1,5 +1,10 @@
 
-                            <?php $this->load->view('users/layout/header')?>
+<?php $this->load->view('users/layout/header')?>
+
+            <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+            <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
             <main class="main-content" id="main-content">
 
                 <section id="services" class="flat-row v12 wrap-iconbox">
@@ -60,7 +65,7 @@
                                                         <div class="ips-step">
                                                             <span class="circle">5</span>
                                                         </div>
-                                                        <span class="label">Bidang</span>
+                                                        <span class="label">Bidang Keahlian</span>
                                                     </a>
                                                 </li>
 
@@ -111,7 +116,7 @@
                                         <div class="form-group row form-identitas" style="display:none ;">
                                             
 
-                                        <label class="col-md-12" for="exampleInputEmail1">Kartu Identitas <span class="text-danger email-error"></span></label>
+                                            <label class="col-md-12" for="exampleInputEmail1">Kartu Identitas <span class="text-danger email-error"></span></label>
                                             
                                             <div class="col-md-12">
                                                 <input type="number" class="form-control" placeholder="Nomer Identitas">
@@ -132,6 +137,31 @@
                                             
                                             <div class="col-md-12">
                                                 <input type="text" class="form-control" placeholder="Provinsi">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row form-biografi" style="display:none;">
+                                            
+                                            <label class="col-md-12" for="exampleInputEmail1">Biografi <span class="text-danger email-error"></span></label>
+                                            <div class="col-md-12">
+                                                <div id="editorBiografi">
+                                            
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row form-edukasi" style="display:none ;">
+                                            
+                                            <label class="col-md-12" for="exampleInputEmail1">Edukasi <span class="text-danger email-error"></span></label>
+                                            <div class="col-md-12">
+                                                <div id="editorEdukasi">
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row form-bidang" style="display:none  ;">
+                                            <label class="col-md-12" for="exampleInputEmail1">Bidang Keahlian <span class="text-danger email-error"></span></label>
+                                            
+                                            <div class="col-md-12">
+                                                <input id="tags" class="form-control" placeholder="Perceraian, Perdagangan Internasional, Pemerintahan, Akte Tanah dan lain lain">
                                             </div>
                                         </div>
                                         
@@ -160,6 +190,9 @@
             $(function(){
                 var forms = ["form-biodata", "form-identitas", "form-biografi", "form-edukasi", "form-bidang"];
                 var tmp_i =0;
+                $(".submit").click(function(){
+                    submit();
+                });
                 $(".lanjut").click(function(){
                     // $(".form-daftar").html("<b>Hello world!</b>");
                     $("."+forms[tmp_i]).hide();
@@ -213,8 +246,60 @@
                     }
                 }
             });
+            </script>
 
-            
+            <script>
+            tmp=true;
+            var submit = function (){  
+                $.ajax({
+                    url: ROOT+'users/ajax_daftar',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        uid: "<?=$uid?>",
+                        // csrf_token: ""
+                    }
+                })
+                .done(function(data) {
+                    if(data.is_error==1){ 
+                        alert_error(data.error);
+                        return; 
+                    }
+                    window.location = "<?php echo base_url('users/status_verifikasi')."/"; ?>";
+                })
+                .fail(function() {
+                    if(tmp){
+                        alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                        tmp = false;
+                    }
+                })
+                .always(function() {
+                    
+                }) ;
+            }
+            </script>
+
+            <script>
+            $(document).ready(function() {
+                $('#editorBiografi').summernote({
+                    minHeight: 200,
+                    toolbar: [
+                        // [groupName, [list of button]]
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['fontsize', ['fontsize']],
+                        ['para', ['ul', 'ol', 'paragraph']]
+                    ]
+                });
+                $('#editorEdukasi').summernote({
+                    minHeight: 200,
+                    toolbar: [
+                        // [groupName, [list of button]]
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['fontsize', ['fontsize']],
+                        ['para', ['ul', 'ol', 'paragraph']]
+                    ]
+                });
+            });
             </script>
 
 <?php $this->load->view('landing_page/layout/footer')?>

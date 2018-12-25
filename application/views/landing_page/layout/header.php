@@ -67,7 +67,9 @@
     <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
     <script src="<?=base_url()?>probono_asset/revolution/js/slider.js"></script>
-
+    <script>
+        var ROOT = "<?=base_url()?>";
+    </script>
     <!-- Preloader -->
     <div class="loading-overlay">
     </div>  
