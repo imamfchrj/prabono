@@ -18,6 +18,16 @@ class Users extends CI_Controller {
 		$this->load->view('users/daftar');
 	}
 
+	public function daftar_kasus()
+	{
+		$this->load->view('users/daftar_kasus');
+	}
+
+	public function daftar_kasus_singgle($slug)
+	{
+		$this->load->view('users/daftar_kasus_singgle');
+	}
+
 	public function status_verifikasi()
 	{
 		$this->load->view('users/status_verifikasi');

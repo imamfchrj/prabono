@@ -1,7 +1,5 @@
 <?php $this->load->view('users/layout/header')?>
             
-            <link href="<?=base_url()?>asset_123/lib/SpinKit/spinkit.css" rel="stylesheet">
-
 
             <main class="main-content" id="main-content">
 

@@ -100,14 +100,10 @@
                 <div id="nav_menu-2" class="">
                     <nav id="mainnav2" class="mainnav2">
                         <ul class="menu"> 
-                            <li class=""><a href="#">Home</a></li>
-                            <li class="home"><a href="<?=base_url()?>users/caradaftar">Cara mendaftar</a></li>
-                            <li><a href="<?=base_url()?>users/caradaftar">FAQ</a></li>
+                            <li><a href="<?=base_url()?>users/daftar_kasus">Home</a></li>
+                            <li><a href="<?=base_url()?>users/caradaftar">Cara mendaftar</a></li>
+                            <li><a href="<?=base_url()?>users/faq">FAQ</a></li>
                             <li><a href="<?=base_url()?>users/logout">Logout</a></li>
-                            <!-- <li><a href="#">Our Work</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Pages</a></li>
-                            <li><a href="#">Contact us</a></li>   -->
                         </ul><!-- /.menu -->
                     </nav><!-- /.mainnav --> 
                 </div>

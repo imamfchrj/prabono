@@ -3322,3 +3322,49 @@ footer .logo-footer .logo {
   a.blue:hover {
     color: rgb(0, 195, 255);
 }
+
+.flat-wrap-header-left{
+	background:#f6f6f6;
+	padding-left:16px;
+	height:64px;
+
+}
+
+.widget_search_left{
+	float:right;
+	display: inline-block;
+}
+
+.blue_deep{
+	color:#0770cd;
+}
+
+.flat-wrap-header-left{
+	background:#f6f6f6;
+	padding-left:16px;
+	height:64px;
+
+}
+
+
+.float-right{
+	float:right;
+}
+.float-left{
+	float:left;
+}
+
+.box-kasus{
+	padding:40px 40px 40px 40px;
+	border-bottom: 0.5px solid rgb(148, 148, 148);
+	/* border-top: 0.5px solid rgb(148, 148, 148); */
+	margin-top:16px;
+	background-color:rgba(247, 247, 247, 0.5);
+}
+
+
+@media screen and (max-width: 764px) {
+	.box-kasus{
+		margin-top:32px;
+	}
+}
