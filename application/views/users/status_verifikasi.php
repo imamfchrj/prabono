@@ -52,6 +52,10 @@
                             <div class="divider h70">
                             </div>
                     </div>  
+                    <div class="row">
+                            <div class="divider h70">
+                            </div>
+                    </div>
                 </section> 
             </main>
 <?php $this->load->view('landing_page/layout/footer')?>
