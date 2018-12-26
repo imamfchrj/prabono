@@ -77,12 +77,16 @@
     <div id="site-off-canvas">
         <div class="content mCustomScrollbar ">
             <div class="wrapper">
-                <div id="logo" class="logo">
+                <!-- <div id="logo" class="logo">
                     <a href="index.html" rel="home">
                         <img src="<?=base_url()?>probono_asset/images/logo.png" alt="image">
                     </a>
-                </div><!-- /.logo -->
+                </div> -->
                 <div class="row">
+
+                    <div class="col-sm-12" style="margin-bottom:24px;">
+                        <h6>Pengacara</h6>
+                    </div>
                     <div class="col-sm-6">
                         <nav id="mainnav2" class="row">
                             <img src="https://images.pexels.com/photos/555790/pexels-photo-555790.png?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" class="img-responsive img-circle" alt="Cinque Terre" width="100" height="100"> 

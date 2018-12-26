@@ -3,7 +3,7 @@
 
             <main class="main-content" id="main-content">
 
-                <section id="services" class="flat-row v12 wrap-iconbox">
+                <section id="services" class="flat-row vc wrap-iconbox">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2">
