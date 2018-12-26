@@ -38,7 +38,6 @@
 </head>                                 
 <body class="header_sticky page-loading"> 
 
-
     <!-- Javascript -->
     <script src="<?=base_url()?>probono_asset/javascript/jquery.min.js"></script>
     <script src="<?=base_url()?>probono_asset/javascript/bootstrap.min.js"></script> 
@@ -67,6 +66,9 @@
     <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.tools.min.js"></script>
     <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
     <script src="<?=base_url()?>probono_asset/revolution/js/slider.js"></script>
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script>
         var ROOT = "<?=base_url()?>";
     </script>
@@ -97,13 +99,12 @@
                             </ul>
                             <ul class="box-text text-right">
                                 <li class="question"><p>Mari bergabung bersama kami?</p></li>
-                                <li class="box"><a href="#">Login</a></li>
+                                <li class="box"><a href="#" data-toggle="modal" data-target="#modal-login">Login</a></li>
                             </ul>
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
                 </div><!-- /.container -->
         </div><!-- /.top -->
-            
             <div class="flat-header-wrap">
                     <!-- Header -->            
                     <header id="header" class="header header-v1 style3 widget-header clearfix">

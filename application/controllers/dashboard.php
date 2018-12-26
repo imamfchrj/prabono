@@ -12,7 +12,7 @@ class Dashboard extends CI_Controller {
 	public function aboutus()
 	{
 		$data['menu']="tentangkita";
-		$this->load->view('landing_page/aboutus2',$data);
+		$this->load->view('landing_page/aboutus',$data);
 	}
 
 	public function services()

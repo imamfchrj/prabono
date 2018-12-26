@@ -92,7 +92,7 @@
                     <div class="col-sm-6">
                         <p>Firda Safridi</p>
                         <hr>
-                        <a class="blue" href="#">Ubah Profile</a>
+                        <a class="blue" href="<?=base_url()?>">Ubah Profile</a>
                     </div>
                 </div>
 
@@ -100,10 +100,12 @@
                 <div id="nav_menu-2" class="">
                     <nav id="mainnav2" class="mainnav2">
                         <ul class="menu"> 
-                            <li><a href="<?=base_url()?>users/daftar_kasus">Home</a></li>
-                            <li><a href="<?=base_url()?>users/caradaftar">Cara mendaftar</a></li>
-                            <li><a href="<?=base_url()?>users/faq">FAQ</a></li>
-                            <li><a href="<?=base_url()?>users/logout">Logout</a></li>
+                        <a href="<?=base_url()?>users/daftar_kasus"><li>Home</li>
+                            <a href="<?=base_url()?>users/caradaftar"><li>Cara mendaftar</li></a>
+                            <a href="<?=base_url()?>users/aktif"><li>Kasus Aktif</li></a>
+                            <a href="<?=base_url()?>users/selesai"><li>Kasus Selesai</li></a>
+                            <a href="<?=base_url()?>users/faq"><li>FAQ</li></a>
+                            <a href="<?=base_url()?>users/logout"><li>Logout</li></a>
                         </ul><!-- /.menu -->
                     </nav><!-- /.mainnav --> 
                 </div>

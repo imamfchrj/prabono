@@ -23,6 +23,18 @@ class Users extends CI_Controller {
 		$this->load->view('users/daftar_kasus');
 	}
 
+
+	public function aktif()
+	{
+		$this->load->view('users/daftar_aktif');
+	}
+
+
+	public function selesai()
+	{
+		$this->load->view('users/daftar_selesai');
+	}
+
 	public function daftar_kasus_singgle($slug)
 	{
 		$this->load->view('users/daftar_kasus_singgle');

@@ -22,7 +22,7 @@
                                 <div class="flat-team team-list style2 clearfix">                  
                                     <div class="content">
                                         <span class="position">Firda Safridi</span>
-                                         <span class="badge badge-success float-right">Open</span>
+                                         <span class="badge badge-finish float-right">Selesai</span>
                                         <h5 class="blue_deep name">Penipuan Perdagangan</h5>
                                         <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem santium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
@@ -45,7 +45,7 @@
                                 <div class="flat-team team-list style2 clearfix">                  
                                     <div class="content">
                                         <span class="position">Firda Safridi</span>
-                                         <span class="badge badge-success float-right">Open</span>
+                                         <span class="badge badge-finish float-right">Selesai</span>
                                         <h5 class="blue_deep name">Penipuan Perdagangan</h5>
                                         <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem santium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
@@ -68,7 +68,7 @@
                                 <div class="flat-team team-list style2 clearfix">                  
                                     <div class="content">
                                         <span class="position">Firda Safridi</span>
-                                         <span class="badge badge-success float-right">Open</span>
+                                         <span class="badge badge-finish float-right">Selesai</span>
                                         <h5 class="blue_deep name">Penipuan Perdagangan</h5>
                                         <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem santium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>

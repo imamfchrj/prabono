@@ -29,19 +29,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-4">
-                                <div class="iconbox">
-                                    <div class="box-header">
-                                        <div class="box-icon">
-                                            <i class="ion-arrow-graph-up-right"></i>
-                                        </div>
-                                    </div>
-                                    <div class="box-content">
-                                        <div class="box-title">Business Services<br>Consulting</div>    
-                                        <p>Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque lau dantium</p> 
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="col-md-4">
                                 <div class="iconbox">
                                     <div class="box-header">

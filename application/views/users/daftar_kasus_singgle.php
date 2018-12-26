@@ -7,7 +7,7 @@
                     <div class="container">
                         <div class="row">
                             
-                            <div class="col-md-12">'
+                            <div class="col-md-12 header-daftar">
                                 <div class=" style3">
                                 <div class="widget widget_search widget_search_left" >
                                     <form role="search" method="get" class="search-form" action="#">
@@ -20,8 +20,10 @@
                             <div class="col-md-12 box-kasus">
                                 <div class="flat-team team-list style2 clearfix">                  
                                     <div class="content">
-                                        <span class="position">Firda Safridi</span>
-                                        <h6 class="name blue_deep">Penipuan Perdagangan</h6>
+                                       
+                                        <span class="position">Firda Safridi</span> <span class="badge badge-success float-right">Open</span>
+                                        <h5 class="name blue_deep">Penipuan Perdagangan</h5>
+                                        <hr>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem santium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem santium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
                                         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem santium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>

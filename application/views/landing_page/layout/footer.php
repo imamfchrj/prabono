@@ -67,7 +67,7 @@
         <div class="footer-contact">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-8 col-md-offset-2">
                         <div class="logo-footer">
                             <div id="logo-footer" class="logo">
                                 <a href="<?=base_url()?>" rel="home">
@@ -79,7 +79,7 @@
                             <p>© 2018 Redcloud Project. All Rights Reserved. <a href="">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-8 col-md-offset-2">
                         <ul class="social-links style2">
                             <li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
                             <li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>
@@ -97,6 +97,68 @@
             <i class="fa fa-angle-up"></i>
         </a>       
     </div>
+    <!-- Modal -->
+<div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+        
+      </div>
+      <div class="modal-body">
+        
+            <div id="login_form" class="" method="post">
+                <div class="field clearfix "> 
+                    <div class="form-group row form-biodata">
+                        <div class="col-md-4 col-md-offset-4">
+                            <input type="checkbox" checked data-width="100%" data-height="40" data-on="User" data-off="Pengacara" data-toggle="toggle" data-onstyle="info" data-offstyle="danger">
+                        </div>
+                        <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Username <span class="text-danger email-error"></span></label>
+                          
+                        <div class="col-md-8 col-md-offset-2">
+                            <input type="text" class="form-control">
+                        </div>
+                        <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Password <span class="text-danger email-error"></span></label>
+                          
+                        <div class="col-md-8 col-md-offset-2">
+                            <input type="password" class="form-control">
+                        </div>
+
+
+                        <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1"><input type="checkbox" name="aggree" value="1" class="aggree"> &nbsp;&nbsp;<a href="#" class="blue">Baca syarat dan ketentuan berlaku!</a></label>
+                        
+                        
+                        <div class="col-md-8 col-md-offset-2">
+                            <hr>
+                        </div>
+                        <div class="col-md-8 col-md-offset-2">
+                            <button type="button" class="btn btn-secondary btn-block" onclick="location.href='<?=base_url()?>users/caradaftar'">Masuk</button>
+                        </div>
+                          
+                    </div>
+                          
+                </div>
+
+            </div>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-default"  data-dismiss="modal">Tutup</button>
+        <button type="button" class="btn btn-secondary" onclick="location.href='<?=base_url()?>users/caradaftar'">Masuk</button>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+<script>
+    $(document).ready(function() {
+        
+        $('.toggle-on').removeAttr("style");
+        $('.toggle-off').removeAttr("style");
+    });
+</script>
     
 </body>
 </html>
