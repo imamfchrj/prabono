@@ -32,8 +32,8 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>probono_asset/stylesheets/animate.css">
 
     <!-- Favicon and touch icons  -->
-    <link href="<?=base_url()?>probono_asset/icon/apple-touch-icon-48-precomposed.png" rel="icon" sizes="48x48">
-    <link href="<?=base_url()?>probono_asset/icon/apple-touch-icon-32-precomposed.png" rel="icon">
+    <!-- <link href="<?=base_url()?>probono_asset/icon/apple-touch-icon-48-precomposed.png" rel="icon" sizes="48x48">
+    <link href="<?=base_url()?>probono_asset/icon/apple-touch-icon-32-precomposed.png" rel="icon"> -->
     <link href="<?=base_url()?>probono_asset/icon/favicon.png" rel="shortcut icon">
 </head>                                 
 <body class="header_sticky page-loading"> 
