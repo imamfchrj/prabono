@@ -9,21 +9,17 @@
                     <div class="video">
                             <div class="container">
                                 <div class="row">
-                                        <div class="col-md-12">
-                                            <div class="title-section center  section-main-menu-opacity">
-                                                <div class="box-main">
-                                                    <h1 class="title color-white">Pro Bono Wadah dunia<br> untuk keadilan</h1>
-                                                    <div class="sub-title font-playfair">
-                                                        <p>Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.</p>
-                                                    </div>
-
-                                                    <div class="sub-title">
-                                                        <button type="button" class="flat-button border" onclick="location.href='#'">Mulai Konsultasi</button>
-                                                    </div>
+                                        <div class="col-md-6 wrap-video">
+                                            <div class="title-section left  section-main-menu-opacity">
+                                                    <h1 class="title color-white">Connect <br>
+                                                            one-on-one <br>
+                                                            with a Indonesian Lawyer</h1>
+                                                <div class="sub-title font-playfair">
+                                                        Get your answer in minutes, 24/7. Guaranteed.
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <div class="col-md-6">
+                                        <div class="col-md-6">
                                             <div class="box-primary">
                                                 <div class="box-primary-header left">
                                                     <div class="box-title"><div>Reduced Risk</div></div>
@@ -49,7 +45,7 @@
                                                     </form>
                                                 </div>
                                             </div>
-                                        </div> -->
+                                        </div>
                                     
                                 </div>
                             </div>
