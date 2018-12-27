@@ -41,7 +41,7 @@
     <!-- Javascript -->
     <script src="<?=base_url()?>probono_asset/javascript/jquery.min.js"></script>
     <script src="<?=base_url()?>probono_asset/javascript/bootstrap.min.js"></script> 
-    <script src="<?=base_url()?>probono_asset/javascript/jquery.easing.js"></script>   
+    <!-- <script src="<?=base_url()?>probono_asset/javascript/jquery.easing.js"></script>    -->
 
     <!-- <script src="<?=base_url()?>probono_asset/javascript/jquery-waypoints.js"></script>  -->
     <!-- <script src="<?=base_url()?>probono_asset/javascript/jquery-countTo.js"></script> -->
