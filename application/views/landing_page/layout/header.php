@@ -7,7 +7,7 @@
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>Probono</title>
 
-    <meta name="author" content="themesflat.com">
+    <meta name="author" content="Firda Safridi">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
