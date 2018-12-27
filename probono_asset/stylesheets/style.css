@@ -2423,7 +2423,8 @@ footer .logo-footer .logo {
     top: 0;
     width: 100%;
 	height: 100%;
-	background: url(../images/slides/s1.jpg)  center center fixed;
+	/* background: url(../images/slides/s9.jpg)  center center fixed; */
+	background: url(../images/slides/s9.jpg);
 }
 
 .overlay-parallax.style2 {
@@ -3003,7 +3004,7 @@ footer .logo-footer .logo {
 }
 
 .section-main-menu-opacity {
-	background-color: rgba( 0, 0, 0, 0.30);
+	/* background-color: rgba( 0, 0, 0, 0.30); */
 	padding:20px 30px 40px 50px;
 }
 
@@ -3369,9 +3370,26 @@ footer .logo-footer .logo {
 }
 
 
+.box-main{
+	max-width:540px;
+	padding:56px 56px 56px 56px;
+	/* margin:auto; */
+	background-color: rgba( 0, 0, 0, 0.30);
+	line-height: 100px;
+	text-align:left;
+}
+.box-main button{
+	margin-top:54px;
+	background-color:#ec2c22;
+}
+
 @media screen and (max-width: 764px) {
 	.box-kasus{
 		margin-top:32px;
+	}
+	
+	.box-main{
+		padding:0;
 	}
 }
 
