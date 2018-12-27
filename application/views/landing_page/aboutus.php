@@ -1,6 +1,8 @@
 <?php $this->load->view('landing_page/layout/header')?>
     <main class="main-content" id="main-content">
-        
+
+    <div class="loading-overlay">
+    </div>  
         
         <!-- Services -->
         <section class="flat-row section-services pd-bottom">
