@@ -738,7 +738,8 @@
             headerFixed();
         }  
         responsiveMenu();
-        detectViewport(); 
+        //waypoint
+        // detectViewport(); 
         // topSearch();   
         flatClientSt1(); 
         VideoPopup();
