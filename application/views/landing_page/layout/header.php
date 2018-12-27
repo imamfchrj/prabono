@@ -32,11 +32,46 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>probono_asset/stylesheets/animate.css">
 
     <!-- Favicon and touch icons  -->
-    <link href="<?=base_url()?>probono_asset/icon/apple-touch-icon-48-precomposed.png" rel="icon" sizes="48x48">
-    <link href="<?=base_url()?>probono_asset/icon/apple-touch-icon-32-precomposed.png" rel="icon">
+    <!-- <link href="<?=base_url()?>probono_asset/icon/apple-touch-icon-48-precomposed.png" rel="icon" sizes="48x48">
+    <link href="<?=base_url()?>probono_asset/icon/apple-touch-icon-32-precomposed.png" rel="icon"> -->
     <link href="<?=base_url()?>probono_asset/icon/favicon.png" rel="shortcut icon">
 </head>                                 
 <body class="header_sticky page-loading"> 
+
+    <!-- Javascript -->
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.min.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/bootstrap.min.js"></script> 
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.easing.js"></script>   
+
+    <script src="<?=base_url()?>probono_asset/javascript/jquery-waypoints.js"></script> 
+    <script src="<?=base_url()?>probono_asset/javascript/jquery-countTo.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/imagesloaded.min.js"></script>
+
+    <script src="<?=base_url()?>probono_asset/javascript/owl.carousel.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/jquery-validate.js"></script>
+
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.cookie.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/html5shiv.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/respond.min.js"></script>
+     
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.magnific-popup.min.js"></script>   
+      
+    
+     
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.fancybox.js"></script>
+    
+    <script src="<?=base_url()?>probono_asset/javascript/main.js"></script>
+
+    <!-- Revolution Slider -->
+    <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="<?=base_url()?>probono_asset/revolution/js/slider.js"></script>
+
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+    <script>
+        var ROOT = "<?=base_url()?>";
+    </script>
     <!-- Preloader -->
     <div class="loading-overlay">
     </div>  
@@ -64,13 +99,12 @@
                             </ul>
                             <ul class="box-text text-right">
                                 <li class="question"><p>Mari bergabung bersama kami?</p></li>
-                                <li class="box"><a href="#">Login</a></li>
+                                <li class="box"><a href="#" data-toggle="modal" data-target="#modal-login">Login</a></li>
                             </ul>
                         </div><!-- /.col-md-6 -->
                     </div><!-- /.row -->
                 </div><!-- /.container -->
         </div><!-- /.top -->
-            
             <div class="flat-header-wrap">
                     <!-- Header -->            
                     <header id="header" class="header header-v1 style3 widget-header clearfix">

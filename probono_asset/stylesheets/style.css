@@ -75,6 +75,7 @@
 		background: transparent;
 	}
 
+	
 	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
 		display: block;
 	}
@@ -3081,3 +3082,314 @@ footer .logo-footer .logo {
 	}
 }
 
+.daftar-steps,
+.daftar-steps ul,
+.daftar-steps ul li,
+.daftar-steps ul li a,
+.daftar-steps ul:after,
+.daftar-steps span,
+.daftar-steps .circle,
+.daftar-steps .ips-step,
+.daftar-steps .ips-step:before{ 
+    display: block; 
+}
+.daftar-steps{
+    margin-bottom: 32px;
+}
+.daftar-steps ul,
+.daftar-steps ul li{ 
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+.daftar-steps ul:after{
+    content: ' '; 
+    clear: both;
+}
+.daftar-steps ul li{
+    float: left;
+    width: 20%;
+}
+.daftar-steps ul li a{
+    color: #252b45;
+    text-decoration: none;
+    outline: none;
+}
+.daftar-steps span{  
+    text-align: center;
+    font-family: "Helvetica Neue", sans-serif;
+    letter-spacing: 0.5px;
+}
+.daftar-steps .circle,
+.daftar-steps .ips-step{
+    position: relative;
+}
+.daftar-steps .circle{
+    width: 30px;
+    height: 30px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%; 
+    background: white;
+    text-align: center;
+    line-height: 30px; 
+    font-size: 13px;
+    border: 1px solid #8a9095;
+    color: #8a9095;
+    margin: auto;
+    z-index: 1; 
+}
+.daftar-steps .ips-step{ 
+ 
+}
+.daftar-steps .ips-step:before,
+.daftar-steps .ips-step:after{
+    content: ' ';
+    height: 2px;
+    width: 50%;
+    background: #e9ecef;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.daftar-steps .ips-step:before{
+    left: 0;
+}
+.daftar-steps .ips-step:after{
+    right: 0;
+}
+.daftar-steps .label{ 
+    font-size: 16px;
+    letter-spacing: 0.5px;
+	color: #8a9095;
+	margin-top:8px;
+}
+
+.daftar-steps .completed .circle{
+    border: 1px solid #6c77a6;
+    background: #6c77a6;
+    color: #fff;
+    margin-bottom: 4px;
+}
+.daftar-steps .active .circle{
+    border: 1px solid #6c77a6;
+    color: #6c77a6;
+}
+.daftar-steps .completed .label,
+.daftar-steps .active .label{
+    color: #6c77a6;
+}
+.daftar-steps .completed .ips-step:before,
+.daftar-steps .completed .ips-step:after,
+.daftar-steps .active .ips-step:before{
+    background: #6c77a6;
+} 
+.daftar-steps ul li a{
+    pointer-events: none;
+}
+.daftar-steps ul li.completed a{
+    pointer-events: inherit;
+}
+
+
+
+
+.form-group small{
+	margin-top:-20px;
+}
+
+
+.flat-button-back::before {
+	/* position: absolute; */
+    left: 21px;
+    top: 15px;
+    content: "\f104";
+    font-family: "FontAwesome";
+    z-index: 1;
+}
+
+.field-btn{
+	height: 100px;
+	padding-top:32px;
+}
+
+
+
+.loading-verify, .loading-verify::before, .loading-verify::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  
+  .loading-verify {
+    width: 60px;
+    height: 60px;
+    margin: auto;
+    background: url("https://www.brandcrowd.com/gallery/brands/thumbs/thumb15101314036352.jpg") no-repeat 50%/50%;
+    color: #3c74ba;
+    box-shadow: inset 0 0 0 1px rgba(60, 116, 186, 0.5);
+  }
+  .loading-verify::before, .loading-verify::after {
+    content: '';
+    margin: -5%;
+    box-shadow: inset 0 0 0 2px;
+    -webkit-animation: clipMe 4s linear infinite;
+    -moz-animation: clipMe 4s linear infinite;
+    -o-animation: clipMe 4s linear infinite;
+    animation: clipMe 4s linear infinite;
+  }
+  .loading-verify::before {
+    animation-delay: -2s;
+  }
+
+  @keyframes clipMe {
+    0%, 100% {
+      clip: rect(0px, 66px, 2px, 0px);
+    }
+    25% {
+      clip: rect(0px, 2px, 66px, 0px);
+    }
+    50% {
+      clip: rect(64px, 66px, 66px, 0px);
+    }
+    75% {
+      clip: rect(0px, 66px, 66px, 64px);
+    }
+  }
+  @-webkit-keyframes clipMe {
+    0%, 100% {
+      clip: rect(0px, 66px, 2px, 0px);
+    }
+    25% {
+      clip: rect(0px, 2px, 66px, 0px);
+    }
+    50% {
+      clip: rect(64px, 66px, 66px, 0px);
+    }
+    75% {
+      clip: rect(0px, 66px, 66px, 64px);
+    }
+  }
+  
+  @keyframes dots {
+    0%, 20% {
+      color: rgba(0,0,0,0);
+      text-shadow:
+        .25em 0 0 rgba(0,0,0,0),
+        .5em 0 0 rgba(0,0,0,0);}
+    40% {
+      color: #000;
+      text-shadow:
+        .25em 0 0 rgba(0,0,0,0),
+        .5em 0 0 rgba(0,0,0,0);}
+    60% {
+      text-shadow:
+        .25em 0 0 #000,
+        .5em 0 0 rgba(0,0,0,0);}
+    80%, 100% {
+      text-shadow:
+        .25em 0 0 #000,
+        .5em 0 0 #000;
+    }
+  }
+  
+  .verifying::after{
+    content: ' .';
+    animation: dots 1s steps(5, end) infinite;
+  }
+  .box-verify .backto a{
+    color: #000;
+    opacity: 0.4;
+    text-decoration: underline;
+  }
+  .box-loading{
+    height: 80px;
+    position: relative;
+  }
+
+  a.blue{
+	  color:#3874a5;
+	  -webkit-transition: all 0.3s ease-in-out;
+	  -moz-transition: all 0.3s ease-in-out;
+	  -ms-transition: all 0.3s ease-in-out;
+	  -o-transition: all 0.3s ease-in-out;
+	  transition: all 0.3s ease-in-out;
+  }
+  a.blue:hover {
+    color: rgb(0, 195, 255);
+}
+
+.flat-wrap-header-left{
+	background:#f6f6f6;
+	padding-left:16px;
+	height:64px;
+
+}
+
+.widget_search_left{
+	float:right;
+	display: inline-block;
+}
+
+.blue_deep{
+	color:#0770cd;
+}
+
+.flat-wrap-header-left{
+	background:#f6f6f6;
+	padding-left:16px;
+	height:64px;
+
+}
+
+
+.float-right{
+	float:right;
+}
+.float-left{
+	float:left;
+}
+
+.box-kasus{
+	padding:40px 40px 40px 40px;
+	border-bottom: 1px solid rgb(148, 148, 148);
+	border-top: 1px solid rgb(148, 148, 148,0.2);
+	border-left: 1px solid rgb(148, 148, 148,0.2);
+	border-right: 1px solid rgb(148, 148, 148,0.2);
+	/* border-top: 0.5px solid rgb(148, 148, 148); */
+	margin-top:16px;
+	background-color:rgba(247, 247, 247, 0.5);
+}
+.header-daftar{
+	height:48px;
+}
+
+
+@media screen and (max-width: 764px) {
+	.box-kasus{
+		margin-top:32px;
+	}
+}
+
+.badge{
+	height:24px;
+	width:56px;
+	line-height:1.5;
+}
+
+.badge-success{
+	background-color: #28a745;
+}
+.badge-danger{
+	background-color: #dc3545;
+}
+.badge-info{
+	background-color: #17a2b8;
+}
+.badge-finish{
+	background-color: #343a40;
+}

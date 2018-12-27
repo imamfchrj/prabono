@@ -36,6 +36,40 @@
     <link href="<?=base_url()?>probono_asset/icon/favicon.png" rel="shortcut icon">
 </head>                                 
 <body class="header_sticky page-loading style-body onepage"> 
+
+
+    <!-- Javascript -->
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.min.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/bootstrap.min.js"></script> 
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.easing.js"></script>   
+
+    <script src="<?=base_url()?>probono_asset/javascript/jquery-waypoints.js"></script> 
+    <script src="<?=base_url()?>probono_asset/javascript/jquery-countTo.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/imagesloaded.min.js"></script>
+
+    <script src="<?=base_url()?>probono_asset/javascript/owl.carousel.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/jquery-validate.js"></script>
+
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.cookie.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/html5shiv.js"></script>
+    <script src="<?=base_url()?>probono_asset/javascript/respond.min.js"></script>
+     
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.magnific-popup.min.js"></script>   
+      
+    
+     
+    <script src="<?=base_url()?>probono_asset/javascript/jquery.fancybox.js"></script>
+    
+    <script src="<?=base_url()?>probono_asset/javascript/main.js"></script>
+
+    <!-- Revolution Slider -->
+    <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
+    <script src="<?=base_url()?>probono_asset/revolution/js/slider.js"></script>
+
+    <script>
+        var ROOT = "<?=base_url()?>";
+    </script>
     <!-- Preloader -->
     <div class="loading-overlay">
     </div>  
@@ -43,12 +77,16 @@
     <div id="site-off-canvas">
         <div class="content mCustomScrollbar ">
             <div class="wrapper">
-                <div id="logo" class="logo">
+                <!-- <div id="logo" class="logo">
                     <a href="index.html" rel="home">
                         <img src="<?=base_url()?>probono_asset/images/logo.png" alt="image">
                     </a>
-                </div><!-- /.logo -->
+                </div> -->
                 <div class="row">
+
+                    <div class="col-sm-12" style="margin-bottom:24px;">
+                        <h6>Pengacara</h6>
+                    </div>
                     <div class="col-sm-6">
                         <nav id="mainnav2" class="row">
                             <img src="https://images.pexels.com/photos/555790/pexels-photo-555790.png?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" class="img-responsive img-circle" alt="Cinque Terre" width="100" height="100"> 
@@ -58,7 +96,7 @@
                     <div class="col-sm-6">
                         <p>Firda Safridi</p>
                         <hr>
-                        <a href="#">Ubah Profile</a>
+                        <a class="blue" href="<?=base_url()?>">Ubah Profile</a>
                     </div>
                 </div>
 
@@ -66,14 +104,12 @@
                 <div id="nav_menu-2" class="">
                     <nav id="mainnav2" class="mainnav2">
                         <ul class="menu"> 
-                            <li class=""><a href="#">Home</a></li>
-                            <li class="home"><a href="<?=base_url()?>users/caradaftar">Cara mendaftar</a></li>
-                            <li><a href="<?=base_url()?>users/caradaftar">FAQ</a></li>
-                            <li><a href="<?=base_url()?>users/logout">Logout</a></li>
-                            <!-- <li><a href="#">Our Work</a></li>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Pages</a></li>
-                            <li><a href="#">Contact us</a></li>   -->
+                        <a href="<?=base_url()?>users/daftar_kasus"><li>Home</li>
+                            <a href="<?=base_url()?>users/caradaftar"><li>Cara mendaftar</li></a>
+                            <a href="<?=base_url()?>users/aktif"><li>Kasus Aktif</li></a>
+                            <a href="<?=base_url()?>users/selesai"><li>Kasus Selesai</li></a>
+                            <a href="<?=base_url()?>users/faq"><li>FAQ</li></a>
+                            <a href="<?=base_url()?>users/logout"><li>Logout</li></a>
                         </ul><!-- /.menu -->
                     </nav><!-- /.mainnav --> 
                 </div>
