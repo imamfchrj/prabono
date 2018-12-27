@@ -73,6 +73,8 @@
         var ROOT = "<?=base_url()?>";
     </script>
     <!-- Preloader -->
+    <div class="loading-overlay">
+    </div>  
 
     <!-- Boxed -->
     <div class="boxed">
