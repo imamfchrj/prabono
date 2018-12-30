@@ -26,23 +26,21 @@
                                                     </div>
                                                 </div>
                                                 <div class="box-primary-body left ">
-                                                    <form  class="div" method="post" action="" novalidate="novalidate">
                                                         <div class="field clearfix">      
                                                             <div class="wrap-type-input clearfix">                    
                                                                 <div class="input-wrap " >
                                                                     <input class="input-responsive" type="text" value="" tabindex="1" placeholder="Uraian singkat" name="title" id="email" required="">
                                                                 </div>
                                                                 <div class="input-wrap" >
-                                                                    <input class="input-responsive" type="password" value="" tabindex="2" placeholder="Email" name="email" required="">
+                                                                    <input class="input-responsive" type="text" value="" tabindex="2" placeholder="Email" name="email" required="">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="box-primary-footer submit-wrap">
                                                             <div class="box-text-footer-right">
-                                                                <button name="submit" type="submit" class="flat-button" id="submit" title="Submit now">SUBMIT</button>
+                                                                <button name="submit" class="flat-button" id="submit" title="Submit now"  onclick="location.href='<?=base_url()?>laporkan-masalah-hukum'">SUBMIT</button>
                                                             </div>
                                                         </div>
-                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
