@@ -164,7 +164,7 @@
          </div>
       </div>
    </section>
-   <section class="flat-row flat-row v7">
+   <section class="flat-row v1">
       <div class="container">
          <div class="row">
             <div class="col-md-12">
@@ -237,11 +237,11 @@
          <div class="row">
             <div class="col-md-12">
                <div class="title-section style2">
-                  <h1 class="title">Come Visit Our Office</h1>
+                  <h1 class="title">Ayo Kunjungi Kantor Kami</h1>
                   <div class="sub-title">
-                     As an Orlando Web Design Company, we provide concierge boutique web design and SEO <br> services to Winter Park, Winter Garden, Winter Springs, Altamonte Springs, Baldwin Park (our<br>home), Sanford, Kissimmee, Casselberry, Oviedo & Clermont.
+                     Sebagai lembaga bantuan hukum, kami sangat menghormati kalau anda ingin berkonsultasi dengan kami <br> Jl. Universitas Indonesia Salemba <br>RW.5, Kenari, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430
                   </div>
-                  <div class="sub-title">Not within the Orlando metro area? No problem. Many of <span>our clients</span> are hundreds of miles away.</div>
+                  <div class="sub-title">Tidak berada di daerah Jabodetabek? jangan khawatir. Banyak dari <span>client kami</span> berada diluar Jabodetabek</div>
                </div>
             </div>
          </div>
