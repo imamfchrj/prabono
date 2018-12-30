@@ -198,6 +198,7 @@ $(function(){
         }
         steps();
     });
+    
     $(".kembali").click(function(){
         // $(".form-daftar").html("<b>Hello world!</b>");
         $("."+forms[tmp_i]).hide();
