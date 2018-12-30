@@ -888,7 +888,7 @@
 /* style4 */
 .imgbox.style2.flat-boxlist {
     overflow: hidden;
-    padding: 80px 100px;
+    padding: 64px 64px;
     border-bottom: 1px solid #ebebeb;
 }
 
@@ -997,7 +997,7 @@
 
 .imgbox.style2.imgbox-list-left .box-header {
     float: left;
-    margin-right: 90px;
+    margin-right: 32px;
 }
 
 .imgbox.style2.imgbox-list-left .box-content,
@@ -1014,7 +1014,7 @@
 
 .imgbox.style2.imgbox-list-right .box-header {
     float: right;
-    margin-left: 90px;
+    margin-left: 32px;
 }
 
 .imgbox.style2.flat-boxlist .box-content.text2 p:last-of-type {
@@ -2322,6 +2322,14 @@ ul.portfolio-filter > li a:hover,
     -ms-transform: translateX(0%);
     -webkit-transform: translateX(0%);
 }
+
+.imgbox .box-content p {
+    color:#272727;
+}
+.box-content .badge{
+    margin-right:16px;
+}
+
 
 
 
