@@ -1,7 +1,7 @@
 <?php $this->load->view('users/layout/header')?>
             <main class="main-content" id="main-content">
 
-                <section id="services" class="flat-row v12 wrap-iconbox">
+                <section id="services" class="flat-row vc wrap-iconbox">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12">
@@ -29,19 +29,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-4">
-                                <div class="iconbox">
-                                    <div class="box-header">
-                                        <div class="box-icon">
-                                            <i class="ion-arrow-graph-up-right"></i>
-                                        </div>
-                                    </div>
-                                    <div class="box-content">
-                                        <div class="box-title">Business Services<br>Consulting</div>    
-                                        <p>Sed ut perspiciatis unde omnis iste error sit voluptatem accusantium doloremque lau dantium</p> 
-                                    </div>
-                                </div>
-                            </div> -->
                             <div class="col-md-4">
                                 <div class="iconbox">
                                     <div class="box-header">
@@ -80,7 +67,7 @@
                     <div class="col-md-12">
                         <div class="iconbox text-center">
                             <div class="box-content text-center">
-                                <button class="flat-button">Bergabung Sekarang</button>
+                                <button class="flat-button"  onclick="location.href='<?=base_url()?>users/daftar'">Bergabung Sekarang</button>
                             </div>
                         </div>
                     </div>   

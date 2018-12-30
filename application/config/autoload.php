@@ -90,7 +90,7 @@ $autoload['drivers'] = array();
 |	$autoload['helper'] = array('url', 'file');
 */
 $autoload['helper'] = array(
-    'url', 'form' //, 'common', 'date', 'market', 'currency', 'common_ico'
+    'url', 'form','cookie' //, 'common', 'date', 'market', 'currency', 'common_ico'
 );
 
 /*

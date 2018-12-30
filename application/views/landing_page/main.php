@@ -9,40 +9,38 @@
                     <div class="video">
                             <div class="container">
                                 <div class="row">
-                                        <div class="col-md-6 wrap-video">
+                                        <div class="col-md-6">
                                             <div class="title-section left  section-main-menu-opacity">
-                                                    <h1 class="title color-white">Connect <br>
-                                                            one-on-one <br>
-                                                            with a Indonesian Lawyer</h1>
+                                                    <h1 class="title color-white">Pro Bono Wadah dunia untuk keadilan</h1>
                                                 <div class="sub-title font-playfair">
-                                                        Get your answer in minutes, 24/7. Guaranteed.
+                                                        Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-md-6">
                                             <div class="box-primary">
                                                 <div class="box-primary-header left">
-                                                    <div class="box-title"><div>Reduced Risk</div></div>
+                                                    <div class="box-title">
+                                                        <div>Mulai konsultasi dengan kami</div>
+                                                        <p>Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.</p>
+                                                    </div>
                                                 </div>
                                                 <div class="box-primary-body left ">
-                                                    <form  class="div" method="post" action="" novalidate="novalidate">
                                                         <div class="field clearfix">      
                                                             <div class="wrap-type-input clearfix">                    
                                                                 <div class="input-wrap " >
-                                                                    <input class="input-responsive" type="email" value="" tabindex="1" placeholder="Name" name="email" id="email" required="">
+                                                                    <input class="input-responsive" type="text" value="" tabindex="1" placeholder="Uraian singkat" name="title" id="email" required="">
                                                                 </div>
-                                                                <div class="input-wrap " ></div>
-                                                                    <input class="input-responsive" type="password" value="" tabindex="2" placeholder="Email" name="password" id="password" required="">
+                                                                <div class="input-wrap" >
+                                                                    <input class="input-responsive" type="text" value="" tabindex="2" placeholder="Email" name="email" required="">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div class="box-primary-footer submit-wrap">
-                                                            <div class="box-text-footer-left"><p>Coba saja apa yang terjadi?</p></div>
                                                             <div class="box-text-footer-right">
-                                                                <button name="submit" type="submit" class="flat-button" id="submit" title="Submit now">SUBMIT</button>
+                                                                <button name="submit" class="flat-button" id="submit" title="Submit now"  onclick="location.href='<?=base_url()?>laporkan-masalah-hukum'">SUBMIT</button>
                                                             </div>
                                                         </div>
-                                                    </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -96,7 +94,66 @@
 
 
         <section class="flat-row v7">
-                <div class="container">
+
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                           <div class="title-section">
+                                <h1 class="title">Punya masalah hukum?</h1>
+                                <div class="sub-title">
+                                    Ceritakan masalah hukum dengan langkah 3 sederhana
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="imgbox">
+                            <div class="box-header">
+                                <div class="box-img">
+                                    <img src="<?=base_url()?>probono_asset/images/imgbox/1.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="box-content">
+                                <div class="box-title"><a href="#">Ceritakan</a></div>    
+                                <p>Ceritakan masalah anda dengan mengisi form yang tersedia!</p> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="imgbox">
+                            <div class="box-header">
+                                <div class="box-img">
+                                    <img src="<?=base_url()?>probono_asset/images/imgbox/2.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="box-content">
+                                <div class="box-title"><a href="#">Registrasi</a></div>    
+                                <p>Isi form biodata diri anda. Agar kami dapat mengenal anda lebih dekat.</p> 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="imgbox last">
+                            <div class="box-header">
+                                <div class="box-img">
+                                    <img src="<?=base_url()?>probono_asset/images/imgbox/3.jpg" alt="image">
+                                </div>
+                            </div>
+                            <div class="box-content">
+                                <div class="box-title"><a href="#">Terkoneksi</a></div>    
+                                <p>Temukan pengacara terbaik untuk mendapingi anda!</p> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="flat-row pd-bottom2">
+                <!-- <div class="container">
                     <div class="row">
                         <div class="col-md-12">
                            <div class="title-section">
@@ -107,9 +164,17 @@
                             </div> 
                         </div>
                     </div>
-                </div>
+                </div> -->
                 <div class="container">
                     <div class="row">
+                        <div class="col-md-12">
+                           <div class="title-section">
+                                <h1 class="title">Bring Back the Justice!!</h1>
+                                <div class="sub-title">
+                                    Kasus terakhir yang kita tangani
+                                </div>
+                            </div> 
+                        </div>
                         <div class="col-md-12">
                             <div class="wrap-imgbox-shortcode">
                                 <div class="imgbox style2 flat-boxlist imgbox-list-left">
@@ -127,19 +192,19 @@
                                         </div> 
                                     </div>
                                 </div>
-                                <div class="imgbox style2 flat-boxlist imgbox-list-right">
-                                    <div class="box-content text2">
-                                        <div class="box-title"><a href="services-single.html">SEO & Content Marketing</a></div>    
-                                        <p><a href="#">Search Engine Optimization (SEO)</a> and <a href="#">Content Marketing</a> are like PB&J — our favorite digital<br>sandwich!</p>
-                                        <p>We’ll spread valuable content, organic rankings and traffic, and user engagement all over your website.</p>
-                                        <div class="viewmore">
-                                            <button type="button" class="flat-button border" onclick="location.href='http://corpthemes.com/html/consultantplus/services-single.html'">View All Project</button>
-                                        </div> 
-                                    </div>
+                                <div class="imgbox style2 flat-boxlist imgbox-list-left">
                                     <div class="box-header">
                                         <div class="box-img">
-                                            <a href="services-single.html"><img class="imgs-services" src="<?=base_url()?>probono_asset/images/services/2.jpg" alt="image"></a>
+                                            <a href="services-single.html"><img class="imgs-services" src="<?=base_url()?>probono_asset/images/slides/3.jpg" alt="image"></a>
                                         </div>
+                                    </div>
+                                    <div class="box-content text2">
+                                        <div class="box-title"><a href="services-single.html">Website Consulting</a></div>    
+                                        <p>Need help with your existing website? Planning a new one? Not sure where to begin?</p>
+                                        <p>Our Website Consulting solves small, chronic, and sometimes unknown problems and offers plenty of options to hire us.</p>
+                                        <div class="explore">
+                                            <button type="button" class="flat-button border" onclick="location.href='http://corpthemes.com/html/consultantplus/services-single.html'">View All Project</button>
+                                        </div> 
                                     </div>
                                 </div>
                                 <div class="imgbox style2 flat-boxlist imgbox-list-left">
@@ -163,51 +228,6 @@
                 </div>
             </section>
             
-        <section class="flat-row pd-bottom2">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="imgbox">
-                            <div class="box-header">
-                                <div class="box-img">
-                                    <img src="<?=base_url()?>probono_asset/images/imgbox/1.jpg" alt="image">
-                                </div>
-                            </div>
-                            <div class="box-content">
-                                <div class="box-title"><a href="#">Time and Cost Savings</a></div>    
-                                <p>Our consultants require minimal ramp up and hit the ground running</p> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="imgbox">
-                            <div class="box-header">
-                                <div class="box-img">
-                                    <img src="<?=base_url()?>probono_asset/images/imgbox/2.jpg" alt="image">
-                                </div>
-                            </div>
-                            <div class="box-content">
-                                <div class="box-title"><a href="#">Reduced Risk</a></div>    
-                                <p>Our long standing relationships with global organizations and consultants reduce your risk</p> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="imgbox last">
-                            <div class="box-header">
-                                <div class="box-img">
-                                    <img src="<?=base_url()?>probono_asset/images/imgbox/3.jpg" alt="image">
-                                </div>
-                            </div>
-                            <div class="box-content">
-                                <div class="box-title"><a href="#">Project Success</a></div>    
-                                <p>Our 98% project success rate is dramatically higher than the industry average of 54%</p> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
         <section class="section-video parallax parallax4">
             <div class="overlay-parallax style3"></div>
