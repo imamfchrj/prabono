@@ -147,11 +147,11 @@
       <div class="video">
          <div class="container">
             <div class="row">
-               <div class="col-md-12 wrap-video">
+               <div class="col-md-12 wrap-video section-main-menu-opacity">
                   <div class="title-section left style4">
                      <h1 class="title color-white">We are Always Ahead</h1>
                      <div class="sub-title font-playfair">
-                        With more than 10 years of knowledge and expertise we design and code websites<br>and apps, we build brands and help them succeed.
+                        With more than 10 years of knowledge and expertise we help<br>and sacrifice, we build brands and help them succeed.
                      </div>
                   </div>
                   <div class="flat-control">
