@@ -114,7 +114,7 @@
                 <div class="field clearfix "> 
                     <div class="form-group row form-biodata">
                         <div class="col-md-4 col-md-offset-4">
-                            <input type="checkbox" checked data-width="100%" data-height="40" data-on="User" data-off="Pengacara" data-toggle="toggle" data-onstyle="info" data-offstyle="danger">
+                            <input class="user_set" type="checkbox" checked data-width="100%" data-height="40" data-on="User" data-off="Pengacara" data-toggle="toggle" data-onstyle="info" data-offstyle="danger">
                         </div>
                         <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Username <span class="text-danger email-error"></span></label>
                           
@@ -135,7 +135,7 @@
                             <hr>
                         </div>
                         <div class="col-md-8 col-md-offset-2">
-                            <button type="button" class="btn btn-secondary btn-block" onclick="location.href='<?=base_url()?>users/caradaftar'">Masuk</button>
+                            <button type="button" class="btn btn-secondary btn-block login-btn" >Masuk</button>
                         </div>
                           
                     </div>
@@ -157,6 +157,17 @@
         
         $('.toggle-on').removeAttr("style");
         $('.toggle-off').removeAttr("style");
+    });
+</script>
+
+<script>
+
+    $(".login-btn").click(function(){
+        if($(".user_set").prop("checked") == true){
+            window.location = "<?php echo base_url('laporkan-masalah-hukum'); ?>";
+            return true;
+        }
+        window.location = "<?php echo base_url('users/caradaftar'); ?>";
     });
 </script>
     

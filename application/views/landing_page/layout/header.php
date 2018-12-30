@@ -7,7 +7,7 @@
     <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]-->
     <title>Probono</title>
 
-    <meta name="author" content="themesflat.com">
+    <meta name="author" content="Firda Safridi">
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -41,17 +41,17 @@
     <!-- Javascript -->
     <script src="<?=base_url()?>probono_asset/javascript/jquery.min.js"></script>
     <script src="<?=base_url()?>probono_asset/javascript/bootstrap.min.js"></script> 
-    <script src="<?=base_url()?>probono_asset/javascript/jquery.easing.js"></script>   
+    <!-- <script src="<?=base_url()?>probono_asset/javascript/jquery.easing.js"></script>    -->
 
-    <script src="<?=base_url()?>probono_asset/javascript/jquery-waypoints.js"></script> 
-    <script src="<?=base_url()?>probono_asset/javascript/jquery-countTo.js"></script>
-    <script src="<?=base_url()?>probono_asset/javascript/imagesloaded.min.js"></script>
+    <!-- <script src="<?=base_url()?>probono_asset/javascript/jquery-waypoints.js"></script>  -->
+    <!-- <script src="<?=base_url()?>probono_asset/javascript/jquery-countTo.js"></script> -->
+    <!-- <script src="<?=base_url()?>probono_asset/javascript/imagesloaded.min.js"></script> -->
 
     <script src="<?=base_url()?>probono_asset/javascript/owl.carousel.js"></script>
-    <script src="<?=base_url()?>probono_asset/javascript/jquery-validate.js"></script>
+    <!-- <script src="<?=base_url()?>probono_asset/javascript/jquery-validate.js"></script> -->
 
-    <script src="<?=base_url()?>probono_asset/javascript/jquery.cookie.js"></script>
-    <script src="<?=base_url()?>probono_asset/javascript/html5shiv.js"></script>
+    <!-- <script src="<?=base_url()?>probono_asset/javascript/jquery.cookie.js"></script> -->
+    <!-- <script src="<?=base_url()?>probono_asset/javascript/html5shiv.js"></script> -->
     <script src="<?=base_url()?>probono_asset/javascript/respond.min.js"></script>
      
     <script src="<?=base_url()?>probono_asset/javascript/jquery.magnific-popup.min.js"></script>   
@@ -63,9 +63,9 @@
     <script src="<?=base_url()?>probono_asset/javascript/main.js"></script>
 
     <!-- Revolution Slider -->
-    <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.tools.min.js"></script>
-    <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
-    <script src="<?=base_url()?>probono_asset/revolution/js/slider.js"></script>
+    <!-- <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.tools.min.js"></script>
+    <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.revolution.min.js"></script> -->
+    <!-- <script src="<?=base_url()?>probono_asset/revolution/js/slider.js"></script> -->
 
     <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
@@ -73,8 +73,6 @@
         var ROOT = "<?=base_url()?>";
     </script>
     <!-- Preloader -->
-    <div class="loading-overlay">
-    </div>  
 
     <!-- Boxed -->
     <div class="boxed">
