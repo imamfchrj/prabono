@@ -9361,6 +9361,7 @@ textarea.parsley-error:active {
   padding: 12px 20px;
 }
 
+
 /***** FORM LAYOUT 1 *****/
 .form-layout-1 {
   border: 1px solid #ced4da;
@@ -14186,13 +14187,33 @@ textarea.parsley-success:focus {
   transition: all 0.2s ease-in-out;
 }
 
+.br-approve-lawyers-body {
+  margin-top: 0px;
+  margin-left: 0px;
+  transition: all 0.2s ease-in-out;
+}
+
 .br-msg-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 20px 30px;
 }
+
+.br-lawyers-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding :10px 0px;
+  margin-bottom : 10px;
+}
+
 .br-msg-header .nav-link {
+  font-size: 24px;
+  color: #868e96;
+}
+
+.br-lawyers-header .nav-link {
   font-size: 24px;
   color: #868e96;
 }
@@ -14208,6 +14229,16 @@ textarea.parsley-success:focus {
 }
 .br-msg-body p:last-child {
   margin-bottom: 0;
+}
+
+.br-lawyers-body {
+  background-color: #fff;
+  padding: 40px;
+  margin-left: 50px;
+  margin-right: 50px;
+  margin-bottom: 30px;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.21);
+  border-radius: 3px;
 }
 
 /** WITH SUB LEFT MENU **/
