@@ -3070,10 +3070,10 @@ footer .logo-footer .logo {
 	color:white;
 }
 
-.active {
+.active2 {
 	border-bottom: 1px solid #c3b5b5;
 }
-.active:hover{
+.active2:hover{
 	border-bottom: 1px solid white;
 }
 

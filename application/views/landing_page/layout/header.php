@@ -126,22 +126,22 @@
                                             <div class="nav-wrap">        
                                                 <nav id="mainnav" class="mainnav">
                                                     <ul class="menu"> 
-                                                        <li <?php if(!$menu) echo 'class="active"'?> >
+                                                        <li <?php if(!$menu) echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>">Home</a>
                                                         </li>
-                                                        <li <?php if($menu=='jasa') echo 'class="active"'?> >
+                                                        <li <?php if($menu=='jasa') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>jasa">Jasa</a>
                                                         </li>
-                                                        <li <?php if($menu=='publikasi') echo 'class="active"'?> >
+                                                        <li <?php if($menu=='publikasi') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>publikasi">Publikasi</a>
                                                         </li>
-                                                        <li <?php if($menu=='berita') echo 'class="active"'?> >
+                                                        <li <?php if($menu=='berita') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>berita">Berita</a>
                                                         </li>
-                                                        <li <?php if($menu=='tentangkami') echo 'class="active"'?> >
+                                                        <li <?php if($menu=='tentangkami') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>tentangkami">Tentang Kami</a>
                                                         </li>
-                                                        <li <?php if($menu=='team') echo 'class="active"'?> >
+                                                        <li <?php if($menu=='team') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>team">Team</a>
                                                         </li>                       
                                                     </ul><!-- /.menu -->
