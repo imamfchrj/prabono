@@ -10,112 +10,112 @@
                             <div class="imgbox style2 left">
                                 <div class="box-header">
                                     <div class="box-img">
-                                        <a href="services-single.html"><img src="<?=base_url()?>probono_asset/images/services/v1.jpg" alt="image"></a>
+                                        <a href="#"><img src="<?=base_url()?>probono_asset/images/services/v1.jpg" alt="image"></a>
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="services-single.html">Strategic Planning</a></div> 
+                                    <div class="box-title"><a href="#">Strategic Planning</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="services-single.html" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Read More</a>
                                     </div> 
                                 </div>
                             </div>
                             <div class="imgbox style2 left">
                                 <div class="box-header">
                                     <div class="box-img">
-                                        <a href="services-single.html"><img src="<?=base_url()?>probono_asset/images/services/v2.jpg" alt="image"></a>
+                                        <a href="#"><img src="<?=base_url()?>probono_asset/images/services/v2.jpg" alt="image"></a>
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="services-single.html">Trades & Stocks</a></div> 
+                                    <div class="box-title"><a href="#">Trades & Stocks</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="services-single.html" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Read More</a>
                                     </div> 
                                 </div>
                             </div>
                             <div class="imgbox style2 left">
                                 <div class="box-header">
                                     <div class="box-img">
-                                        <a href="services-single.html"><img src="<?=base_url()?>probono_asset/images/services/v3.jpg" alt="image"></a>
+                                        <a href="#"><img src="<?=base_url()?>probono_asset/images/services/v3.jpg" alt="image"></a>
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                <div class="box-title"><a href="services-single.html">Audit & Assurance</a></div> 
+                                <div class="box-title"><a href="#">Audit & Assurance</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="services-single.html" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Read More</a>
                                     </div> 
                                 </div>
                             </div>
                             <div class="imgbox style2 left">
                                 <div class="box-header">
                                     <div class="box-img">
-                                        <a href="services-single.html"><img src="<?=base_url()?>probono_asset/images/services/v4.jpg" alt="image"></a>
+                                        <a href="#"><img src="<?=base_url()?>probono_asset/images/services/v4.jpg" alt="image"></a>
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="services-single.html">Turnaround Consulting</a></div> 
+                                    <div class="box-title"><a href="#">Turnaround Consulting</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="services-single.html" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Read More</a>
                                     </div> 
                                 </div>
                             </div>
                             <div class="imgbox style2 left">
                                 <div class="box-header">
                                     <div class="box-img">
-                                        <a href="services-single.html"><img src="<?=base_url()?>probono_asset/images/services/v5.jpg" alt="image"></a>
+                                        <a href="#"><img src="<?=base_url()?>probono_asset/images/services/v5.jpg" alt="image"></a>
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="services-single.html">Trades & Stocks</a></div> 
+                                    <div class="box-title"><a href="#">Trades & Stocks</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="services-single.html" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Read More</a>
                                     </div> 
                                 </div>
                             </div>
                             <div class="imgbox style2 left">
                                 <div class="box-header">
                                     <div class="box-img">
-                                        <a href="services-single.html"><img src="<?=base_url()?>probono_asset/images/services/v6.jpg" alt="image"></a>
+                                        <a href="#"><img src="<?=base_url()?>probono_asset/images/services/v6.jpg" alt="image"></a>
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="services-single.html">Strategic Planning</a></div> 
+                                    <div class="box-title"><a href="#">Strategic Planning</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="services-single.html" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Read More</a>
                                     </div> 
                                 </div>
                             </div>
                             <div class="imgbox style2 left">
                                 <div class="box-header">
                                     <div class="box-img">
-                                        <a href="services-single.html"><img src="<?=base_url()?>probono_asset/images/services/v7.jpg" alt="image"></a>
+                                        <a href="#"><img src="<?=base_url()?>probono_asset/images/services/v7.jpg" alt="image"></a>
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="services-single.html">Financial Projections</a></div> 
+                                    <div class="box-title"><a href="#">Financial Projections</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="services-single.html" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Read More</a>
                                     </div> 
                                 </div>
                             </div>
                             <div class="imgbox style2 left">
                                 <div class="box-header">
                                     <div class="box-img">
-                                        <a href="services-single.html"><img src="<?=base_url()?>probono_asset/images/services/v8.jpg" alt="image"></a>
+                                        <a href="#"><img src="<?=base_url()?>probono_asset/images/services/v8.jpg" alt="image"></a>
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="services-single.html">urnaround Consulting</a></div> 
+                                    <div class="box-title"><a href="#">urnaround Consulting</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="services-single.html" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Read More</a>
                                     </div> 
                                 </div>
                             </div>

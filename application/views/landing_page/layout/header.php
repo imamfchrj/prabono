@@ -11,7 +11,7 @@
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    
     <!-- Bootstrap  -->
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>probono_asset/stylesheets/bootstrap.css" >
 
@@ -37,6 +37,8 @@
     <link href="<?=base_url()?>probono_asset/icon/favicon.png" rel="shortcut icon">
 </head>                                 
 <body class="header_sticky page-loading"> 
+    <!-- vue js-->
+    <!-- <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.js"></script> -->
 
     <!-- Javascript -->
     <script src="<?=base_url()?>probono_asset/javascript/jquery.min.js"></script>
