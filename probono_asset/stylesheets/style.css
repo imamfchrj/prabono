@@ -3009,7 +3009,7 @@ footer .logo-footer .logo {
 }
 
 .section-main-menu-opacity {
-	background-color: rgba( 0, 0, 0, 0.30);
+	background-color: rgba( 0, 0, 0, 0.5);
 	padding:20px 30px 40px 50px;
 }
 
@@ -3422,5 +3422,19 @@ footer .logo-footer .logo {
 	border-top: 1px solid rgb(148, 148, 148,0.1);
 	border-left: 1px solid rgb(148, 148, 148,0.1);
 	border-right: 1px solid rgb(148, 148, 148,0.1);
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px){
+	.wrap-box{
+		background-color: #f7f7f7;
+		padding:16px 16px 16px 16px;
+	}
+	
+}
+
+.img-middle{
+	margin:auto;
+	max-width: 120px;	
 }
 

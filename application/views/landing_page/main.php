@@ -103,8 +103,8 @@
             <div class="col-md-4">
                <div class="imgbox">
                   <div class="box-header">
-                     <div class="box-img">
-                        <img src="<?=base_url()?>probono_asset/images/imgbox/1.jpg" alt="image">
+                     <div class="box-img img-middle">
+                        <img src="<?=base_url()?>probono_asset/probono/tellus.svg" alt="image">
                      </div>
                   </div>
                   <div class="box-content">
@@ -116,8 +116,8 @@
             <div class="col-md-4">
                <div class="imgbox">
                   <div class="box-header">
-                     <div class="box-img">
-                        <img src="<?=base_url()?>probono_asset/images/imgbox/2.jpg" alt="image">
+                     <div class="box-img img-middle">
+                        <img src="<?=base_url()?>probono_asset/probono/register.svg" alt="image">
                      </div>
                   </div>
                   <div class="box-content">
@@ -129,8 +129,8 @@
             <div class="col-md-4">
                <div class="imgbox last">
                   <div class="box-header">
-                     <div class="box-img">
-                        <img src="<?=base_url()?>probono_asset/images/imgbox/3.jpg" alt="image">
+                     <div class="box-img img-middle">
+                        <img src="<?=base_url()?>probono_asset/probono/connection.svg" alt="image">
                      </div>
                   </div>
                   <div class="box-content">
@@ -149,15 +149,15 @@
             <div class="row">
                <div class="col-md-12 wrap-video section-main-menu-opacity">
                   <div class="title-section left style4">
-                     <h1 class="title color-white">We are Always Ahead</h1>
+                     <h2 class="title color-white">Lawan Kriminalisasi</h2>
                      <div class="sub-title font-playfair">
-                        With more than 10 years of knowledge and expertise we help<br>and sacrifice, we build brands and help them succeed.
+                        Pembukam gerakan rakyat<br>Kebebasan bersuara di negri yang merdeka. <br>
                      </div>
                   </div>
                   <div class="flat-control">
                      <a class="fancybox fa fa-play" data-type="iframe" href="https://www.youtube.com/embed/ZldeXyTP3RU?autoplay=1"> 
                      </a>
-                     <span>Watch Intro Video<br>About Us</span>
+                     <span>Tonton Vidio <br>Tentang Kami</span>
                   </div>
                </div>
             </div>
