@@ -14,10 +14,10 @@
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="#">Strategic Planning</a></div> 
+                                    <div class="box-title"><a href="#">Pernikahan & Perceraian</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="#" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Baca Selengkapnya</a>
                                     </div> 
                                 </div>
                             </div>
@@ -28,10 +28,10 @@
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="#">Trades & Stocks</a></div> 
+                                    <div class="box-title"><a href="#">Pajak</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="#" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Baca Selengkapnya</a>
                                     </div> 
                                 </div>
                             </div>
@@ -42,10 +42,10 @@
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                <div class="box-title"><a href="#">Audit & Assurance</a></div> 
+                                <div class="box-title"><a href="#">Audit & Asuransi</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="#" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Baca Selengkapnya</a>
                                     </div> 
                                 </div>
                             </div>
@@ -56,10 +56,10 @@
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="#">Turnaround Consulting</a></div> 
+                                    <div class="box-title"><a href="#">Penjahat Cyber</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="#" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Baca Selengkapnya</a>
                                     </div> 
                                 </div>
                             </div>
@@ -70,10 +70,10 @@
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="#">Trades & Stocks</a></div> 
+                                    <div class="box-title"><a href="#">Instusi Keuangan</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="#" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Baca Selengkapnya</a>
                                     </div> 
                                 </div>
                             </div>
@@ -84,10 +84,10 @@
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="#">Strategic Planning</a></div> 
+                                    <div class="box-title"><a href="#">UU ITE</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="#" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Baca Selengkapnya</a>
                                     </div> 
                                 </div>
                             </div>
@@ -98,10 +98,10 @@
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="#">Financial Projections</a></div> 
+                                    <div class="box-title"><a href="#">Perdagangan Internasional</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="#" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Baca Selengkapnya</a>
                                     </div> 
                                 </div>
                             </div>
@@ -112,10 +112,10 @@
                                     </div>
                                 </div>
                                 <div class="box-content">
-                                    <div class="box-title"><a href="#">urnaround Consulting</a></div> 
+                                    <div class="box-title"><a href="#">Digital Produk</a></div> 
                                     <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
                                     <div class="explore">
-                                        <a class="read-more" href="#" title="">Read More</a>
+                                        <a class="read-more" href="#" title="">Baca Selengkapnya</a>
                                     </div> 
                                 </div>
                             </div>
