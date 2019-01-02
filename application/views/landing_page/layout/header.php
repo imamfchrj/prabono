@@ -79,21 +79,18 @@
     <!-- Boxed -->
     <div class="boxed">
 
-    <!-- Preloader -->
-    <div class="loading-overlay">
-    </div>  
 
             
         <div class="flat-top style2">
                 <div class="container">
                     <div class="row">  
-                        <div class="col-md-6">
+                        <div class="col-md-7">
                             <ul class="flat-information">
                                 <li class="phone"><a href="">Telpon: +62 123 4567</a></li>
                                 <li class="email"><a href="">Email: help@probono.com</a></li>
                             </ul>
-                        </div><!-- /.col-md-6 -->
-                        <div class="col-md-6">
+                        </div><!-- /.col-md-7 -->
+                        <div class="col-md-5">
                             <ul class="social-links style4">
                                 <li><a href ="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href ="#"><i class="fa fa-twitter"></i></a></li>
@@ -104,7 +101,7 @@
                                 <li class="question"><p>Mari bergabung bersama kami?</p></li>
                                 <li class="box"><a href="#" data-toggle="modal" data-target="#modal-login">Login</a></li>
                             </ul>
-                        </div><!-- /.col-md-6 -->
+                        </div><!-- /.col-md-5 -->
                     </div><!-- /.row -->
                 </div><!-- /.container -->
         </div><!-- /.top -->

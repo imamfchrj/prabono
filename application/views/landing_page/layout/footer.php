@@ -127,15 +127,26 @@
                             <input type="password" class="form-control">
                         </div>
 
-
-                        <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1"><input type="checkbox" name="aggree" value="1" class="aggree"> &nbsp;&nbsp;<a href="#" class="blue">Baca syarat dan ketentuan berlaku!</a></label>
+                        <div class="col-md-8 col-md-offset-2">
+                        <!-- <label  for="setuju_syarat"><input id="setuju_syarat" type="checkbox" name="aggree" value="1" class="aggree"> &nbsp;&nbsp;<a href="#" class="blue">Syarat dan ketentuan berlaku!</a>
+                            </label> -->
+                            <a href="#" class="blue float-right">Lupa Password!</a>
+                        </div>
                         
+                            <div class="col-md-8 col-md-offset-2">
+                            <hr>
+                        </div>
                         
+                        <div class="col-md-8 col-md-offset-2">
+                            <button type="button" class="btn btn-secondary btn-block login-btn" >Masuk</button>
+                        </div>
                         <div class="col-md-8 col-md-offset-2">
                             <hr>
                         </div>
                         <div class="col-md-8 col-md-offset-2">
-                            <button type="button" class="btn btn-secondary btn-block login-btn" >Masuk</button>
+                            <button type="button" class="btn btn-secondary btn-block login-btn" >Daftar</button>
+                        </div>
+                        <div class="col-md-8 col-md-offset-2">
                         </div>
                           
                     </div>

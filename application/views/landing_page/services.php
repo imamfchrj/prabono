@@ -121,57 +121,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="sidebar">
-                            <div class="widget widget_contact2">
-                                <h5 class="widget-title style2">Need our help?</h5>
-                                <p>Contact us at the Consultant Plus office nearest to you or submit a business inquiry online.</p>
-                                <button type="button" class="flat-button">Contact Us</button>
-                            </div><!-- /.widget-contact -->
-                            <div class="widget widget_download">
-                                <a href="#"><i class="fa fa-file-word-o"></i>Brochures.doc</a>
-                                <a href="#"><i class="fa fa-file-pdf-o"></i>Brochures.pdf</a>
-                            </div><!-- /.widget-download -->
-                            <div class="widget widget_testimonials">
-                                <div class="flat-testimonials" data-item="1" data-nav="false" data-dots="false" data-auto="true">
-                                    <div class="testimonials style3"> 
-                                        <div class="testimonial-content">
-                                            <div class="message">                                
-                                                <blockquote class="whisper">
-                                                   Consultant Plus really helped us achieve our financial goals. The slick presentation along with fan tastic readability ensures that our financial standing.
-                                                 </blockquote>
-                                            </div>
-                                         </div> 
-                                        <div class="avatar"> 
-                                            <div class="testimonial-author-thumbnail">    
-                                                <img src="<?=base_url()?>probono_asset/images/testimonial/4.png" alt="image">
-                                            </div>
-                                            <div class="name">Kevin Johnston</div>
-                                            <div class="position">Ceo & Founder</div>
-                                            
-                                        </div>                  
-                                    </div>
-                                    <div class="testimonials style3"> 
-                                        <div class="testimonial-content">
-                                            <div class="message">                                
-                                                <blockquote class="whisper">
-                                                   Consultant Plus really helped us achieve our financial goals. The slick presentation along with fan tastic readability ensures that our financial standing.
-                                                 </blockquote>
-                                            </div>
-                                         </div> 
-                                        <div class="avatar"> 
-                                            <div class="testimonial-author-thumbnail">    
-                                                <img src="<?=base_url()?>probono_asset/images/testimonial/4.png" alt="image">
-                                            </div>
-                                            <div class="name">Kevin Johnston</div>
-                                            <div class="position">Ceo & Founder</div>
-                                            
-                                        </div>                  
-                                    </div>
-                                </div>
-                            </div><!-- /.widget-testimonials -->
-                        </div>
-                    </div>
+                    <?php $this->load->view('landing_page/widget/widget-3');?>
                 </div>
             </div>
         </section>  
