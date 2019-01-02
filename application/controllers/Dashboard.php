@@ -51,7 +51,7 @@ class Dashboard extends CI_Controller {
 
 	public function team()
 	{
-		// $data['menu']="bergabung";
+		$data['menu']="team";
 		$this->load->view('landing_page/team',$data);
 	}
 

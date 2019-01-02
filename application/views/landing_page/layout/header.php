@@ -141,8 +141,8 @@
                                                         <li <?php if($menu=='tentangkami') echo 'class="active"'?> >
                                                             <a href="<?=base_url()?>tentangkami">Tentang Kami</a>
                                                         </li>
-                                                        <li <?php if($menu=='bergabung') echo 'class="active"'?> >
-                                                            <a href="<?=base_url()?>bergabung">Bergabung</a>
+                                                        <li <?php if($menu=='team') echo 'class="active"'?> >
+                                                            <a href="<?=base_url()?>team">Team</a>
                                                         </li>                       
                                                     </ul><!-- /.menu -->
                                                 </nav><!-- /.mainnav -->   

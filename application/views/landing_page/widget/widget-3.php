@@ -7,8 +7,8 @@
       </div>
       <!-- /.widget-contact -->
       <div class="widget widget_download">
-         <a href="#"><i class="fa fa-file-word-o"></i>Brochures.doc</a>
-         <a href="#"><i class="fa fa-file-pdf-o"></i>Brochures.pdf</a>
+         <a href="#"><i class="fa fa-file-word-o"></i>Brosur.doc</a>
+         <a href="#"><i class="fa fa-file-pdf-o"></i>Brosur.pdf</a>
       </div>
       <!-- /.widget-download -->
       <div class="widget widget_testimonials">
