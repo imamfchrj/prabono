@@ -24,7 +24,7 @@
                                             <a href="#">In Probono</a>
                                         </li>
                                     </ul><!-- /.meta-post -->
-                                    <h2 class="title-post">Responsive layout</h2>
+                                    <h2 class="title-post">Bantuan Hukum Online</h2>
                                     <div class="entry-post excerpt">                              
                                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into.
                                         </p>
@@ -34,10 +34,9 @@
                                     <div class="footer-post">
                                         <div class="tags-links">
                                             <strong>Tags: </strong>
-                                            <a href="#" rel="tag">wordpress,</a>
-                                            <a href="#" rel="tag"> joomla,</a>
-                                            <a href="#" rel="tag"> prestashop,</a>
-                                            <a href="#" rel="tag">drupal</a>
+                                            <a href="#" rel="tag">hukum,</a>
+                                            <a href="#" rel="tag"> Kedamaian,</a>
+                                            <a href="#" rel="tag"> antikorupsi,</a>
                                         </div>
                                         <div class="social-share-article">
                                             <ul class="social-links style3">
@@ -63,7 +62,7 @@
                                                 </div><!-- .comment-author -->
                                                 <div class="comment-text">
                                                     <div class="comment-metadata">
-                                                        <h5><a href="#">Daniel Shaw</a></h5>
+                                                        <h5><a href="#">Firda Safridi</a></h5>
                                                         <span class="date">20 July, 2017</span>
                                                         <span class="comment-reply"><a href="#">Reply</a></span>
                                                     </div><!-- .comment-metadata -->
@@ -109,11 +108,11 @@
                                                 <input id="email" name="email" type="email" required="required">
                                             </p>   
                                             <p class="comment-form-url comment-label">
-                                                <label>Website</label>
-                                                <input id="url" name="url" type="text">
+                                                <label>Telpon</label>
+                                                <input id="telpon" name="telpon" type="text">
                                             </p>                     
                                             <p class="form-submit">
-                                                <button class="flat-button comment-submit">Post comment</button>
+                                                <button class="flat-button comment-submit">Post Komentar</button>
                                             </p>
                                         </form>
                                     </div><!-- /.comment-respond -->
