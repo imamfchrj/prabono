@@ -79,6 +79,9 @@
     <!-- Boxed -->
     <div class="boxed">
 
+    <!-- Preloader -->
+    <div class="loading-overlay">
+    </div>  
 
             
         <div class="flat-top style2">
