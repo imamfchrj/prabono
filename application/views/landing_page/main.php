@@ -9,7 +9,7 @@
             <div class="row">
                <div class="col-md-6">
                   <div class="title-section left  section-main-menu-opacity">
-                     <h1 class="title color-white">Pro Bono Wadah dunia untuk keadilan</h1>
+                     <h1 class="title color-white">Pro Bono Wadah dunia untuk keadila</h1>
                      <div class="sub-title font-playfair">
                         Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.
                      </div>

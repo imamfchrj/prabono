@@ -22,24 +22,24 @@
           <thead>
             <tr>
               <th class="wd-5p">No</th>
-              <th class="wd-20p">Nama</th>
-              <th class="wd-15p">Username</th>
-              <th class="wd-20p">Email</th>
-              <th class="wd-15p">Number Phone</th>
-              <th class="wd-10p">Role</th>
+              <th class="wd-20p">Username</th>
+              <th class="wd-15p">First Name</th>
+              <th class="wd-5p">Alias</th>
+              <th class="wd-25p">NIK</th>
+              <th class="wd-15p">No HP</th>
               <th class="wd-15p">Action</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td>1</td>
-              <td>Tiger</td>
-              <td>Nixon</td>
-              <td>System Architect</td>
-              <td>2011/04/25</td>
-              <td>$320,800</td>
+              <td>imam.fchrj@gmail.com</td>
+              <td>Imam</td>
+              <td>IF</td>
+              <td>1234567890123456</td>
+              <td>087812345678</td>
               <td>
-                <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
+                <a class="btn btn-sm btn-primary" href="<?=base_url()?>admin/form_user" title="Edit" ><i class="glyphicon glyphicon-pencil"></i> Edit</a>
                 <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
               </td>
             </tr>
@@ -205,25 +205,91 @@
     </div><!-- br-section-wrapper -->
   </div><!-- br-pagebody -->
 <script>
-$(function(){
-    'use strict';
+    function edit_user()
+    {
+        // alert('test');exit;
+        $('#form')[0].reset(); // reset form on modals
+        $('.form-group').removeClass('has-error'); // clear error class
+        $('.help-block').empty(); // clear error string
+        $('#modal_form').modal('show'); // show bootstrap modal
+        $('.modal-title').text('Add Person'); // Set Title to Bootstrap modal title
+    }
+    $(function(){
+        'use strict';
 
-    $('#tableClient').DataTable({
-        responsive: true,
-        language: {
-        searchPlaceholder: 'Search...',
-        sSearch: '',
-        lengthMenu: '_MENU_ items/page',
-        }
+        $('#tableClient').DataTable({
+            responsive: true,
+            language: {
+            searchPlaceholder: 'Search...',
+            sSearch: '',
+            lengthMenu: '_MENU_ items/page',
+            }
+        });
+
+        // Select2
+        $('.dataTables_length select').select2({
+            minimumResultsForSearch: Infinity
+        });
+
     });
-
-    // Select2
-    $('.dataTables_length select').select2({
-        minimumResultsForSearch: Infinity 
-    });
-
-});
 </script>
+<!-- Bootstrap modal -->
+<div class="modal fade" id="modal_form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Person Form</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form" class="form-horizontal">
+                    <input type="hidden" value="" name="id"/>
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Username</label>
+                            <div class="col-md-9">
+                                <input name="username" placeholder="Username" class="form-control" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Attribute</label>
+                            <div class="col-md-9">
+                                <input name="attribute" placeholder="Attribute" class="form-control" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Value</label>
+                            <div class="col-md-9">
+                                <input name="value" placeholder="Value" class="form-control" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">NIK</label>
+                            <div class="col-md-9">
+                                <textarea name="NIK" placeholder="NIK" class="form-control"></textarea>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Nama Perangkat</label>
+                            <div class="col-md-9">
+                                <textarea name="nama_perangkat" placeholder="Nama Perangkat" class="form-control"></textarea>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
 <?php
     $this->load->view('admin/layout/footer');
 ?>

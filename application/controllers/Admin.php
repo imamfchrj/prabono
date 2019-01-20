@@ -7,6 +7,7 @@ class Admin extends CI_Controller {
 	// {
 	// 	$this->load->view('users/main');
 	// }
+
 	public function index()
 	{
 		$data['menu']="dashboard";
@@ -18,6 +19,11 @@ class Admin extends CI_Controller {
 		$data['menu']="client";
 		$this->load->view('admin/client',$data);
 	}
+
+    public function form_user()
+    {
+        $this->load->view('admin/form_user');
+    }
 
 	public function act_lawyers()
 	{
@@ -65,6 +71,23 @@ class Admin extends CI_Controller {
 		$data['sub_menu']="mst_news";
 		$this->load->view('admin/mst_news',$data);
 	}
+
+    public function mst_news_form()
+    {
+        $this->load->view('admin/mst_news_form');
+    }
+
+    public function mst_news_kategori()
+    {
+        $data['menu']="master";
+        $data['sub_menu']="mst_news_kategori.php";
+        $this->load->view('admin/mst_news_kategori.php',$data);
+    }
+
+    public function mst_news_kategori_form()
+    {
+        $this->load->view('admin/mst_news_kategori_form');
+    }
 
 	public function report_a()
 	{

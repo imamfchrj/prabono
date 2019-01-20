@@ -16,6 +16,10 @@
         </div><!-- d-flex -->
         <div class="br-pagebody">
         <div class="br-section-wrapper">
+            <div>
+                <a class="btn btn-sm btn-success" href="#"><i class="glyphicon glyphicon-pencil"></i> + Add </a>
+            </div>
+            <br>
             <div class="table-wrapper">
                 <table id="tableKategori" class="table display responsive table-bordered table-colored table-dark">
                 <thead>
