@@ -15,20 +15,35 @@
             <h4 class="tx-gray-800 mg-b-5">Master - Berita</h4>
         </div><!-- d-flex -->
         <div class="br-pagebody">
+
         <div class="br-section-wrapper">
+            <div>
+                <a class="btn btn-sm btn-success" href="mst_news_form"><i class="glyphicon glyphicon-pencil"></i> + Add </a>
+            </div>
+            <br>
             <div class="table-wrapper">
                 <table id="tableBerita" class="table display responsive table-bordered table-colored table-dark">
                 <thead>
                     <tr>
                     <th class="wd-5p">ID</th>
-                    <th class="wd-65p ">Berita</th>
-                    <th class="wd-30p">Action</th>
+                    <th class="wd-15p ">Judul</th>
+                    <th class="wd-10p">Date</th>
+                    <th class="wd-15p">Penulis</th>
+                    <th class="wd-25p">Deskripsi</th>
+                    <th class="wd-10p">Tags</th>
+                    <th class="wd-5p">ID Kategori</th>
+                    <th class="wd-15p">Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td>1</td>
                         <td>Berita Update 1</td>
+                        <td>29 Januari 2019</td>
+                        <td>Imam</td>
+                        <td>TES BERITA</td>
+                        <td>Pidana</td>
+                        <td>1</td>
                         <td>
                             <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
                             <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
@@ -37,6 +52,11 @@
                     <tr>
                         <td>2</td>
                         <td>Berita Update 2</td>
+                        <td>29 Januari 2019</td>
+                        <td>Imam</td>
+                        <td>TES BERITA</td>
+                        <td>Pidana</td>
+                        <td>2</td>
                         <td>
                             <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
                             <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
@@ -45,6 +65,11 @@
                     <tr>
                         <td>3</td>
                         <td>Berita Update 3</td>
+                        <td>29 Januari 2019</td>
+                        <td>Imam</td>
+                        <td>TES BERITA</td>
+                        <td>Pidana</td>
+                        <td>3</td>
                         <td>
                             <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
                             <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
@@ -53,6 +78,11 @@
                     <tr>
                         <td>4</td>
                         <td>Berita Update 4</td>
+                        <td>29 Januari 2019</td>
+                        <td>Imam</td>
+                        <td>TES BERITA</td>
+                        <td>Pidana</td>
+                        <td>4</td>
                         <td>
                             <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
                             <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>

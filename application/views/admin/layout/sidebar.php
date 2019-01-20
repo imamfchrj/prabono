@@ -72,6 +72,7 @@
         <ul class="br-menu-sub nav flex-column">
           <li class="nav-item"><a href="<?=base_url()?>admin/mst_category" class="nav-link <?php if($sub_menu == 'mst_category') echo 'active'?>">Kategori Probono</a></li>
           <li class="nav-item"><a href="<?=base_url()?>admin/mst_news" class="nav-link <?php if($sub_menu == 'mst_news') echo 'active'?>">Berita</a></li>
+          <li class="nav-item"><a href="<?=base_url()?>admin/mst_news_kategori" class="nav-link <?php if($sub_menu == 'mst_news_kategori') echo 'active'?>">Kategori Berita</a></li>
         </ul>
         <a href="#" class="br-menu-link <?php if($menu == 'report') echo 'active show-sub'?>">
           <div class="br-menu-item">
