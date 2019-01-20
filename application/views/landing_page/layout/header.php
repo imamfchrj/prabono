@@ -11,7 +11,7 @@
 
     <!-- Mobile Specific Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    
     <!-- Bootstrap  -->
     <link rel="stylesheet" type="text/css" href="<?=base_url()?>probono_asset/stylesheets/bootstrap.css" >
 
@@ -37,6 +37,8 @@
     <link href="<?=base_url()?>probono_asset/icon/favicon.png" rel="shortcut icon">
 </head>                                 
 <body class="header_sticky page-loading"> 
+    <!-- vue js-->
+    <!-- <script type = "text/javascript" src = "https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.0/vue.js"></script> -->
 
     <!-- Javascript -->
     <script src="<?=base_url()?>probono_asset/javascript/jquery.min.js"></script>
@@ -82,13 +84,13 @@
         <div class="flat-top style2">
                 <div class="container">
                     <div class="row">  
-                        <div class="col-md-6">
+                        <div class="col-md-7">
                             <ul class="flat-information">
                                 <li class="phone"><a href="">Telpon: +62 123 4567</a></li>
                                 <li class="email"><a href="">Email: help@probono.com</a></li>
                             </ul>
-                        </div><!-- /.col-md-6 -->
-                        <div class="col-md-6">
+                        </div><!-- /.col-md-7 -->
+                        <div class="col-md-5">
                             <ul class="social-links style4">
                                 <li><a href ="#"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href ="#"><i class="fa fa-twitter"></i></a></li>
@@ -99,7 +101,7 @@
                                 <li class="question"><p>Mari bergabung bersama kami?</p></li>
                                 <li class="box"><a href="#" data-toggle="modal" data-target="#modal-login">Login</a></li>
                             </ul>
-                        </div><!-- /.col-md-6 -->
+                        </div><!-- /.col-md-5 -->
                     </div><!-- /.row -->
                 </div><!-- /.container -->
         </div><!-- /.top -->
@@ -124,23 +126,23 @@
                                             <div class="nav-wrap">        
                                                 <nav id="mainnav" class="mainnav">
                                                     <ul class="menu"> 
-                                                        <li <?php if(!$menu) echo 'class="active"'?> >
+                                                        <li <?php if(!$menu) echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>">Home</a>
                                                         </li>
-                                                        <li <?php if($menu=='jasa') echo 'class="active"'?> >
+                                                        <li <?php if($menu=='jasa') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>jasa">Jasa</a>
                                                         </li>
-                                                        <li <?php if($menu=='publikasi') echo 'class="active"'?> >
+                                                        <li <?php if($menu=='publikasi') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>publikasi">Publikasi</a>
                                                         </li>
-                                                        <li <?php if($menu=='berita') echo 'class="active"'?> >
+                                                        <li <?php if($menu=='berita') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>berita">Berita</a>
                                                         </li>
-                                                        <li <?php if($menu=='tentangkami') echo 'class="active"'?> >
+                                                        <li <?php if($menu=='tentangkami') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>tentangkami">Tentang Kami</a>
                                                         </li>
-                                                        <li <?php if($menu=='bergabung') echo 'class="active"'?> >
-                                                            <a href="<?=base_url()?>bergabung">Bergabung</a>
+                                                        <li <?php if($menu=='team') echo 'class="active active2"'?> >
+                                                            <a href="<?=base_url()?>team">Team</a>
                                                         </li>                       
                                                     </ul><!-- /.menu -->
                                                 </nav><!-- /.mainnav -->   

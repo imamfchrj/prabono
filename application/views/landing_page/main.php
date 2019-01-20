@@ -46,41 +46,41 @@
          </div>
       </div>
    </section>
-   <section class="flat-row vc section-client" style="background-color:rgba( 0, 0, 0, 0.80);background:black;">
+   <section class="flat-row vc section-client" style="background-color:rgba( 0, 0, 0, 0.80);background:#f7f7f7;">
       <div class="container-fluid">
          <div class="clients-image" data-item="9" data-nav="true" data-dots="false" data-auto="false">
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/advisian-logo.jpg" alt="image">
             </div>
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/ariad-logo.jpg" alt="image">
             </div>
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/bc-high-logo.jpg" alt="image">
             </div>
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://www.thecastlegrp.com/wp-content/uploads/2018/04/biogen-logo-232x130.jpg" alt="image">
             </div>
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/cell-signaling-logo.jpg" alt="image">
             </div>
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://www.thecastlegrp.com/wp-content/uploads/2018/04/boston-business-journal-logo-232x130.jpg" alt="image">
             </div>
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/burns-and-levinson-logo.jpg" alt="image">
             </div>
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/dell-logo.jpg" alt="image">
             </div>
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://thecastlegrp.wpengine.com/wp-content/uploads/2013/09/ocean-spray-logo.jpg" alt="image">
             </div>
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://www.thecastlegrp.com/wp-content/uploads/2018/04/redstar-logo-232x130.jpg" alt="image">
             </div>
             <div class="client-item">
-               <img src="<?=base_url()?>probono_asset/images/clients/1.jpg" alt="image">
+               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/pepperdine.jpg" alt="image">
             </div>
          </div>
       </div>
@@ -103,8 +103,8 @@
             <div class="col-md-4">
                <div class="imgbox">
                   <div class="box-header">
-                     <div class="box-img">
-                        <img src="<?=base_url()?>probono_asset/images/imgbox/1.jpg" alt="image">
+                     <div class="box-img img-middle">
+                        <img src="<?=base_url()?>probono_asset/probono/tellus.svg" alt="image">
                      </div>
                   </div>
                   <div class="box-content">
@@ -116,8 +116,8 @@
             <div class="col-md-4">
                <div class="imgbox">
                   <div class="box-header">
-                     <div class="box-img">
-                        <img src="<?=base_url()?>probono_asset/images/imgbox/2.jpg" alt="image">
+                     <div class="box-img img-middle">
+                        <img src="<?=base_url()?>probono_asset/probono/register.svg" alt="image">
                      </div>
                   </div>
                   <div class="box-content">
@@ -129,8 +129,8 @@
             <div class="col-md-4">
                <div class="imgbox last">
                   <div class="box-header">
-                     <div class="box-img">
-                        <img src="<?=base_url()?>probono_asset/images/imgbox/3.jpg" alt="image">
+                     <div class="box-img img-middle">
+                        <img src="<?=base_url()?>probono_asset/probono/connection.svg" alt="image">
                      </div>
                   </div>
                   <div class="box-content">
@@ -149,22 +149,22 @@
             <div class="row">
                <div class="col-md-12 wrap-video section-main-menu-opacity">
                   <div class="title-section left style4">
-                     <h1 class="title color-white">We are Always Ahead</h1>
+                     <h2 class="title color-white">Lawan Kriminalisasi</h2>
                      <div class="sub-title font-playfair">
-                        With more than 10 years of knowledge and expertise we help<br>and sacrifice, we build brands and help them succeed.
+                        Pembukam gerakan rakyat<br>Kebebasan bersuara di negri yang merdeka. <br>
                      </div>
                   </div>
                   <div class="flat-control">
                      <a class="fancybox fa fa-play" data-type="iframe" href="https://www.youtube.com/embed/ZldeXyTP3RU?autoplay=1"> 
                      </a>
-                     <span>Watch Intro Video<br>About Us</span>
+                     <span>Tonton Vidio <br>Tentang Kami</span>
                   </div>
                </div>
             </div>
          </div>
       </div>
    </section>
-   <section class="flat-row flat-row v7">
+   <section class="flat-row v1">
       <div class="container">
          <div class="row">
             <div class="col-md-12">
@@ -181,13 +181,13 @@
                      <div class="imgbox style2 flat-boxlist imgbox-list-left">
                         <div class="box-header">
                            <div class="box-img">
-                              <a href="<?=base_url()?>berita/terbaru"><img class="imgs-services" src="<?=base_url()?>probono_asset/images/slides/1.jpg" alt="image"></a>
+                              <a href="<?=base_url()?>berita/terbaru"><img class="imgs-services" src="<?=base_url()?>probono_asset/images/slides/s11.jpg" alt="image"></a>
                            </div>
                         </div>
                         <div class="box-content">
                            <div class="box-title">
-                              <a href="<?=base_url()?>berita/terbaru">Pelanggaran UU ITE</a>
-                              <div><span class="badge badge-info float-right">Sukses</span></div>
+                              <a href="<?=base_url()?>berita/terbaru">Narkoba tingkat 1</a>
+                              <div><hr><span class="badge badge-info float-right">Sukses</span></div>
                            </div>
                            <div>
                               <a href="<?=base_url()?>berita/terbaru">21 January 2019</a>
@@ -208,13 +208,13 @@
                      <div class="imgbox style2 flat-boxlist imgbox-list-left">
                         <div class="box-header">
                            <div class="box-img">
-                              <a href="<?=base_url()?>berita/terbaru"><img class="imgs-services" src="<?=base_url()?>probono_asset/images/slides/1.jpg" alt="image"></a>
+                              <a href="<?=base_url()?>berita/terbaru"><img class="imgs-services" src="<?=base_url()?>probono_asset/images/slides/s9.jpg" alt="image"></a>
                            </div>
                         </div>
                         <div class="box-content">
                            <div class="box-title">
                               <a href="<?=base_url()?>berita/terbaru">Pelanggaran UU ITE</a>
-                              <div><span class="badge badge-info float-right">Sukses</span></div>
+                              <div><hr><span class="badge badge-info float-right">Sukses</span></div>
                            </div>
                            <div>
                               <a href="<?=base_url()?>berita/terbaru">21 January 2019</a>
@@ -237,11 +237,11 @@
          <div class="row">
             <div class="col-md-12">
                <div class="title-section style2">
-                  <h1 class="title">Come Visit Our Office</h1>
+                  <h1 class="title">Ayo Kunjungi Kantor Kami</h1>
                   <div class="sub-title">
-                     As an Orlando Web Design Company, we provide concierge boutique web design and SEO <br> services to Winter Park, Winter Garden, Winter Springs, Altamonte Springs, Baldwin Park (our<br>home), Sanford, Kissimmee, Casselberry, Oviedo & Clermont.
+                     Sebagai lembaga bantuan hukum, kami sangat menghormati kalau anda ingin berkonsultasi dengan kami <br> Jl. Universitas Indonesia Salemba <br>RW.5, Kenari, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430
                   </div>
-                  <div class="sub-title">Not within the Orlando metro area? No problem. Many of <span>our clients</span> are hundreds of miles away.</div>
+                  <div class="sub-title">Tidak berada di daerah Jabodetabek? jangan khawatir. Banyak dari <span>client kami</span> berada diluar Jabodetabek</div>
                </div>
             </div>
          </div>

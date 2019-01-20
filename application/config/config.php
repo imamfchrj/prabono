@@ -504,6 +504,12 @@ $config['time_reference'] = 'local';
 */
 $config['rewrite_short_tags'] = FALSE;
 
+
+
+$config['recatpcha_site_key'] = '';
+$config['recatpcha_secret_key'] = '';
+
+
 /*
 |--------------------------------------------------------------------------
 | Reverse Proxy IPs
