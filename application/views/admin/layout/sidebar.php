@@ -18,7 +18,9 @@
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="<?=base_url()?>assets_123/css/bracket.css">
   </head>
-
+  <script>
+    var ROOT="<?=base_url()?>";
+  </script>
   <body>
 
     <!-- ########## START: LEFT PANEL ########## -->

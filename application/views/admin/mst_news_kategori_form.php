@@ -20,12 +20,43 @@ $this->load->view('admin/layout/header');
                         </div><!-- col-4 -->
                     </div>
                     <div class="form-layout-footer">
-                        <button class="btn btn-info">Submit Form</button>
+                        <button class="btn btn-info btn-submit-form">Submit Form</button>
                         <button class="btn btn-secondary">Cancel</button>
                     </div><!-- form-layout-footer -->
                 </div><!-- form-layout -->
 
                 <!-- ########## END: MAIN PANEL ########## -->
+
+                <script>
+                    $(".btn-submit-form").click(function(){
+                        // alert("The paragraph was clicked.");
+                        insert();
+                    });
+                    function insert(){
+                        $.ajax({
+                            url: ROOT+'/admin_api/kategori_insert',
+                            dataType: 'json',
+                            type: 'post',
+                            data: {
+                                judul_kategori: $('#katberita').val()
+                            }
+                        })
+                        .done(function(data) {
+                            if(data.is_error){ 
+                                alert(data.error_message);
+                                return;
+                            }
+                            window.location = ROOT+'admin/mst_news_kategori';
+                        })
+                        .always(function(){
+                            // $('#buy_button_loading').addClass('d-none');
+                            // $('#buy_button').removeClass('d-none');
+                        })
+                        .error(function(data){
+                        }
+                        );
+                    }
+                </script>
 <?php
 $this->load->view('admin/layout/footer');
 ?>
