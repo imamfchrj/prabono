@@ -31,7 +31,7 @@ $this->load->view('admin/layout/header');
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
+                        <!-- <tr>
                             <td>1</td>
                             <td>Kategori 1</td>
                             <td>
@@ -62,7 +62,7 @@ $this->load->view('admin/layout/header');
                                 <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
                                 <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
                             </td>
-                        </tr>
+                        </tr> -->
                         </tbody>
                     </table>
                 </div><!-- table-wrapper -->
@@ -78,10 +78,28 @@ $this->load->view('admin/layout/header');
                         searchPlaceholder: 'Search...',
                         sSearch: '',
                         lengthMenu: '_MENU_ items/page',
+                    },
+                    ajax:{
+                        "url": ROOT+"/admin_api/kategori_get",
+                        "dataSrc": function ( json ) {
+                            var data=[];
+                            for ( var i=0, ien=json.data.length ; i<ien ; i++ ) {
+                                var value=[];
+                                value[0] = json.data[i]['id'];
+                                value[1] = json.data[i]['judul_kategori'];
+                                value[2] = '<a class="btn btn-sm btn-primary" href="mst_news_kategori_form/'+json.data[i]['id']+'" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>';
+                                value[2] += '<a class="btn btn-sm btn-danger" title="Hapus" onclick="delete()"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
+
+                                value[2] = json.data[i]['judul_kategori'];
+                                // value[3] = json.data[i]['judul_kategori'];
+                                data[i]=value;
+                            }
+                            console.log(data);
+                            return data;
+                        }
                     }
                 });
 
-                // Select2
                 $('.dataTables_length select').select2({
                     minimumResultsForSearch: Infinity
                 });
