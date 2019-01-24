@@ -84,9 +84,23 @@ class Admin extends CI_Controller {
         $this->load->view('admin/mst_news_kategori.php',$data);
     }
 
-    public function mst_news_kategori_form()
+    public function mst_news_kategori_form($id=0)
     {
-        $this->load->view('admin/mst_news_kategori_form');
+        $data['menu']="master";
+		$data['sub_menu']="mst_news_kategori_form";
+		if($id){
+			$this->load->model('admin/master_kategori_m');
+			$this->form_validation->set_data(array(
+                'id'    =>  $id
+            ));
+			$this->form_validation->set_rules('id', 'id kategori', 'trim|required|xss_clean|numeric|htmlentities');
+
+			if ($this->form_validation->run()) {
+				$id=$this->form_validation->set_value('id');
+				$data['values']=$this->master_kategori_m->get_by_id($id);
+			}
+		}
+        $this->load->view('admin/mst_news_kategori_form',$data);
     }
 
 	public function report_a()

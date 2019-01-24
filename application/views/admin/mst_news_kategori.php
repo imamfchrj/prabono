@@ -28,6 +28,7 @@ $this->load->view('admin/layout/header');
                             <th class="wd-5p">ID</th>
                             <th class="wd-65p ">Kategori Berita</th>
                             <th class="wd-30p">Action</th>
+                            <th class="wd-30p">Action</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -79,6 +80,7 @@ $this->load->view('admin/layout/header');
                         sSearch: '',
                         lengthMenu: '_MENU_ items/page',
                     },
+                    
                     ajax:{
                         "url": ROOT+"/admin_api/kategori_get",
                         "dataSrc": function ( json ) {
@@ -88,10 +90,8 @@ $this->load->view('admin/layout/header');
                                 value[0] = json.data[i]['id'];
                                 value[1] = json.data[i]['judul_kategori'];
                                 value[2] = '<a class="btn btn-sm btn-primary" href="mst_news_kategori_form/'+json.data[i]['id']+'" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>';
-                                value[2] += '<a class="btn btn-sm btn-danger" title="Hapus" onclick="delete()"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
-
-                                value[2] = json.data[i]['judul_kategori'];
-                                // value[3] = json.data[i]['judul_kategori'];
+                                value[2] += '&nbsp;<a class="btn btn-sm btn-danger" title="Hapus" onclick="delete()"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
+                                value[3] = json.data[i]['judul_kategori'];
                                 data[i]=value;
                             }
                             console.log(data);

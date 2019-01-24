@@ -15,7 +15,7 @@ $this->load->view('admin/layout/header');
                         <div class="col-lg-8">
                             <div class="form-group">
                                 <label class="form-control-label">Kategori Berita: <span class="tx-danger">*</span></label>
-                                <input class="form-control" type="text" id="katberita" name="katberita" value=""  placeholder="Enter Kategori Berita">
+                                <input class="form-control" type="text" id="katberita" name="katberita" value="<?php if($values){echo $values->judul_kategori;}?>"  placeholder="Enter Kategori Berita">
                             </div>
                         </div><!-- col-4 -->
                     </div>
@@ -28,9 +28,15 @@ $this->load->view('admin/layout/header');
                 <!-- ########## END: MAIN PANEL ########## -->
 
                 <script>
+                    var id="<?php if($values){echo $values->id;}else{echo '0';}?>";
+
                     $(".btn-submit-form").click(function(){
                         // alert("The paragraph was clicked.");
-                        insert();
+                        if(id !=0){
+                            update();
+                        }else{
+                            insert();
+                        }
                     });
                     function insert(){
                         $.ajax({
@@ -39,6 +45,39 @@ $this->load->view('admin/layout/header');
                             type: 'post',
                             data: {
                                 judul_kategori: $('#katberita').val()
+                            }
+                        })
+                        .done(function(data) {
+                            if(data.is_error){ 
+                                alert(data.error_message);
+                                return;
+                            }
+                            window.location = ROOT+'admin/mst_news_kategori';
+                        })
+                        .always(function(){
+                            // $('#buy_button_loading').addClass('d-none');
+                            // $('#buy_button').removeClass('d-none');
+                        })
+                        .error(function(data){
+                        }
+                        );
+                    }
+                    function update(){
+                        if($('#katberita').val()==""){
+                            console.log("Tidak boleh kosong");
+                            return;
+                        }
+                        if(id==0){
+                            console.log("Tidak boleh 0");
+                            return;
+                        }
+                        $.ajax({
+                            url: ROOT+'/admin_api/kategori_update',
+                            dataType: 'json',
+                            type: 'post',
+                            data: {
+                                judul_kategori: $('#katberita').val(),
+                                id: id
                             }
                         })
                         .done(function(data) {
