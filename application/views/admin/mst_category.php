@@ -17,7 +17,7 @@
         <div class="br-pagebody">
         <div class="br-section-wrapper">
             <div>
-                <a class="btn btn-sm btn-success" href="#"><i class="glyphicon glyphicon-pencil"></i> + Add </a>
+                <a class="btn btn-sm btn-success" href="mst_category_form"><i class="glyphicon glyphicon-pencil"></i> + Add </a>
             </div>
             <br>
             <div class="table-wrapper">
@@ -30,62 +30,66 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Agraria</td>
-                        <td>
-                            <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                            <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Notaris</td>
-                        <td>
-                            <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                            <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Kurator</td>
-                        <td>
-                            <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                            <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Perceraian & Gono Gini</td>
-                        <td>
-                            <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                            <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-                        </td>
-                    </tr>
+
                 </tbody>
                 </table>
             </div><!-- table-wrapper -->
         </div><!-- br-section-wrapper -->
     </div><!-- br-pagebody -->
 <script>
-$(function(){
-    'use strict';
+    $(function(){
+        'use strict';
 
-    $('#tableKategori').DataTable({
-        responsive: true,
-        language: {
-        searchPlaceholder: 'Search...',
-        sSearch: '',
-        lengthMenu: '_MENU_ items/page',
+        $('#tableKategori').DataTable({
+            responsive: true,
+            language: {
+            searchPlaceholder: 'Search...',
+            sSearch: '',
+            lengthMenu: '_MENU_ items/page',
+            },
+
+            ajax:{
+                "url": ROOT+"/admin_api/probono_get",
+                "dataSrc": function ( json ) {
+                    var data=[];
+                    var no=1;
+                    for ( var i=0, ien=json.data.length ; i<ien ; i++ ) {
+                        var value=[];
+                        value[0] = no++;
+                        value[1] = json.data[i]['bidang_keahlian'];
+                        value[2] = '<a class="btn btn-sm btn-primary" href="mst_category_form/'+json.data[i]['id']+'" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>';
+                        value[2] += '&nbsp;<a class="btn btn-sm btn-danger" href="" title="Hapus" onclick="delete_probono('+json.data[i]['id']+')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
+                        data[i]=value;
+                    }
+                    console.log(data);
+                    return data;
+                }
+            }
+        });
+
+        // Select2
+        $('.dataTables_length select').select2({
+            minimumResultsForSearch: Infinity
+        });
+
+    });
+
+    function delete_probono(id) {
+        if (confirm('Are you sure to delete..?')) {
+            //alert(id);
+            $.ajax({
+                url: ROOT+'admin_api/probono_delete/',
+                dataType: 'json',
+                type: 'post',
+                data: {
+                    id: id
+                },
+                success: function(response) {
+                    window.location = ROOT+'admin/mst_category';
+                }
+            })
         }
-    });
-
-    // Select2
-    $('.dataTables_length select').select2({
-        minimumResultsForSearch: Infinity 
-    });
-
-});
+    }
 </script>
 <?php
     $this->load->view('admin/layout/footer');

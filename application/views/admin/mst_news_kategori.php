@@ -28,42 +28,9 @@ $this->load->view('admin/layout/header');
                             <th class="wd-5p">ID</th>
                             <th class="wd-65p ">Kategori Berita</th>
                             <th class="wd-30p">Action</th>
-                            <th class="wd-30p">Action</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <!-- <tr>
-                            <td>1</td>
-                            <td>Kategori 1</td>
-                            <td>
-                                <a class="btn btn-sm btn-primary" href="mst_news_kategori_form" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                                <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Kategori 2</td>
-                            <td>
-                                <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                                <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Kategori 3</td>
-                            <td>
-                                <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                                <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Kategori 4</td>
-                            <td>
-                                <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-                                <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-                            </td>
-                        </tr> -->
                         </tbody>
                     </table>
                 </div><!-- table-wrapper -->
@@ -85,13 +52,13 @@ $this->load->view('admin/layout/header');
                         "url": ROOT+"/admin_api/kategori_get",
                         "dataSrc": function ( json ) {
                             var data=[];
+                            var no=1;
                             for ( var i=0, ien=json.data.length ; i<ien ; i++ ) {
                                 var value=[];
-                                value[0] = json.data[i]['id'];
+                                value[0] = no++;
                                 value[1] = json.data[i]['judul_kategori'];
                                 value[2] = '<a class="btn btn-sm btn-primary" href="mst_news_kategori_form/'+json.data[i]['id']+'" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>';
-                                value[2] += '&nbsp;<a class="btn btn-sm btn-danger" title="Hapus" onclick="delete()"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
-                                value[3] = json.data[i]['judul_kategori'];
+                                value[2] += '&nbsp;<a class="btn btn-sm btn-danger" href="" title="Hapus" onclick="delete_kat_berita('+json.data[i]['id']+')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';
                                 data[i]=value;
                             }
                             console.log(data);
@@ -103,8 +70,25 @@ $this->load->view('admin/layout/header');
                 $('.dataTables_length select').select2({
                     minimumResultsForSearch: Infinity
                 });
-
             });
+
+            function delete_kat_berita(id) {
+                if (confirm('Are you sure to delete..?')) {
+                    //alert(id);
+                    $.ajax({
+                        url: ROOT+'admin_api/kategori_delete/',
+                        dataType: 'json',
+                        type: 'post',
+                        data: {
+                            id: id
+                        },
+                        success: function(response) {
+                            window.location = ROOT+'admin/mst_news_kategori';
+                        }
+                    })
+                }
+            }
+
         </script>
 <?php
 $this->load->view('admin/layout/footer');

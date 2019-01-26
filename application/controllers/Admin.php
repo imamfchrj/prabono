@@ -62,8 +62,28 @@ class Admin extends CI_Controller {
 	{
 		$data['menu']="master";
 		$data['sub_menu']="mst_category";
+
 		$this->load->view('admin/mst_category',$data);
 	}
+
+    public function mst_category_form($id=0)
+    {
+        $data['menu']="master";
+        $data['sub_menu']="mst_category_form";
+        if($id){
+            $this->load->model('admin/master_probono_m.php');
+            $this->form_validation->set_data(array(
+                'id'    =>  $id
+            ));
+            $this->form_validation->set_rules('id', 'id probono', 'trim|required|xss_clean|numeric|htmlentities');
+
+            if ($this->form_validation->run()) {
+                $id=$this->form_validation->set_value('id');
+                $data['values']=$this->master_probono_m->get_by_id($id);
+            }
+        }
+        $this->load->view('admin/mst_category_form',$data);
+    }
 
 	public function mst_news()
 	{
@@ -72,15 +92,30 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/mst_news',$data);
 	}
 
-    public function mst_news_form()
+    public function mst_news_form($id=0)
     {
-        $this->load->view('admin/mst_news_form');
+        $this->load->model(array('admin/master_kategori_m', 'admin/master_berita_m'));
+        $data['kategori'] =$this->master_kategori_m->get_all();
+        if($id){
+            //$this->load->model('admin/master_berita_m');
+            $this->form_validation->set_data(array(
+                'id'    =>  $id
+            ));
+            $this->form_validation->set_rules('id', 'id kategori', 'trim|required|xss_clean|numeric|htmlentities');
+
+            if ($this->form_validation->run()) {
+                $id=$this->form_validation->set_value('id');
+                $data['values']=$this->master_berita_m->get_by_id($id);
+            }
+        }
+
+        $this->load->view('admin/mst_news_form',$data);
     }
 
     public function mst_news_kategori()
     {
         $data['menu']="master";
-        $data['sub_menu']="mst_news_kategori.php";
+        $data['sub_menu']="mst_news_kategori";
         $this->load->view('admin/mst_news_kategori.php',$data);
     }
 
