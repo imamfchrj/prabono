@@ -1,0 +1,14 @@
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (3, 'Pidana');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (4, 'Perdata');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (5, 'Perceraian');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (6, 'Ketenagakerjaan / Hubungan Industrial');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (7, 'Tata Usaha Negara');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (8, 'Kepailitan');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (9, 'Pertanahan');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (10, 'Waris');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (11, 'Perizinian');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (12, 'Konstitusional');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (13, 'Lingkungan');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (14, 'Hak Kekayaan Intelektual');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (15, 'Perempuan, Anak dan Difabel');
+INSERT INTO `master_bidang_keahlian` (`id`, `bidang_keahlian`) VALUES (16, 'Others');
