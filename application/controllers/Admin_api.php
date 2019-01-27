@@ -323,27 +323,27 @@ class Admin_api extends Api_Controller {
     public function probono_update()
     {
 
-        $this->load->model('admin/master_kategori_m');
+        $this->load->model('admin/master_probono_m');
         $this->load->library('form_validation');
-        $this->form_validation->set_rules('id', 'id kategori', 'trim|required|xss_clean|numeric|htmlentities');
-        $this->form_validation->set_rules('judul_kategori', 'Judul Kategori', 'trim|required|xss_clean|htmlentities|required');
+        $this->form_validation->set_rules('id', 'id probono', 'trim|required|xss_clean|numeric|htmlentities');
+        $this->form_validation->set_rules('bidang_keahlian', 'Bidang Keahlian', 'trim|required|xss_clean|htmlentities|required');
 
         if ($this->form_validation->run()) {
 
             $id=$this->form_validation->set_value('id');
-            $judul_kategori=$this->form_validation->set_value('judul_kategori');
+            $bidang_keahlian=$this->form_validation->set_value('bidang_keahlian');
 
-            $data=array('judul_kategori' => $judul_kategori);
+            $data=array('bidang_keahlian' => $bidang_keahlian);
 
-            $data=$this->master_kategori_m->update_value_by_id($id,$data);
+            $data=$this->master_probono_m->update_value_by_id($id,$data);
             echo json_encode(array(
                 'is_error'=>false,
                 'id'=>$data
             ));
             return;
         }else{
-            $this->load->model('admin/master_kategori_m');
-            $data=$this->master_kategori_m->get_all();
+            $this->load->model('admin/master_probono_m');
+            $data=$this->master_probono_m->get_all();
             echo json_encode(array(
                 'is_error'=>true,
                 'error_message'=>  validation_errors()

@@ -15,7 +15,9 @@ class Users extends CI_Controller {
 
 	public function daftar()
 	{
-		$this->load->view('users/daftar');
+        $this->load->model(array('admin/master_probono_m'));
+        $data['probono'] =$this->master_probono_m->get_all();
+		$this->load->view('users/daftar',$data);
 	}
 
 	public function daftar_kasus()

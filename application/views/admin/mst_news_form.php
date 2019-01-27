@@ -16,7 +16,7 @@ $this->load->view('admin/layout/header');
                             <div class="form-group mg-b-10-force">
                                 <label class="form-control-label">Kategori: <span class="tx-danger">*</span></label>
                                 <select id="id_kategori" class="form-control select2" data-placeholder="Pilih Kategori">
-                                    <option label="Pilih Kategori"></option>
+                                    <option value="0">Pilih Kategori</option>
                                     <?php
                                     foreach($kategori as $row)
                                     {

@@ -85,7 +85,7 @@
                 <div class="row">
 
                     <div class="col-sm-12" style="margin-bottom:24px;">
-                        <h6>Pengacara</h6>
+                        <h6>Advokat</h6>
                     </div>
                     <div class="col-sm-6">
                         <nav id="mainnav2" class="row">

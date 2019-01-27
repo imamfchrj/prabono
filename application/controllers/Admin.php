@@ -71,7 +71,7 @@ class Admin extends CI_Controller {
         $data['menu']="master";
         $data['sub_menu']="mst_category_form";
         if($id){
-            $this->load->model('admin/master_probono_m.php');
+            $this->load->model('admin/master_probono_m');
             $this->form_validation->set_data(array(
                 'id'    =>  $id
             ));

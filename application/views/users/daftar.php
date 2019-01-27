@@ -94,6 +94,16 @@
                                                 <input type="text" class="form-control" placeholder="Nama Belakang">
                                             </div>
 
+                                            <label class="col-md-12" for="exampleInputEmail1">Jenis Kelamin <span class="text-danger email-error"></span></label>
+
+                                            <div class="col-md-12" for="exampleInputEmail1">
+                                                <select class="form-control">
+                                                    <option value="0">Pilih Jenis Kelamin</option>
+                                                    <option value="1">Laki-laki</option>
+                                                    <option value="2">Perempuan</option>
+                                                    <option value="3">Tidak ingin disebutkan</option>
+                                                </select>
+                                            </div>
 
                                             <label class="col-md-12" for="exampleInputEmail1">Titel Lengkap <span class="text-danger email-error"></span></label>
                                             
@@ -107,45 +117,87 @@
 
 
                                             <label class="col-md-12" for="exampleInputEmail1">No Handphone <span class="text-danger email-error"></span></label>
-                                            
+
                                             <div class="col-md-12">
                                                 <input type="text" class="form-control" placeholder="Masukkan No Handphone">
+                                            </div>
+
+                                            <label class="col-md-12" for="exampleInputEmail1">Email <span class="text-danger email-error"></span></label>
+
+                                            <div class="col-md-12">
+                                                <input type="email" class="form-control" placeholder="Masukkan Email">
                                             </div>
                                         </div>
                                         <!-- ["form-biodata", "form-identitas", "form-biografi", "form-edukasi", "form-bidang"]; -->
                                         <div class="form-group row form-identitas" style="display:none ;">
-                                            
 
                                             <label class="col-md-12" for="exampleInputEmail1">Kartu Identitas <span class="text-danger email-error"></span></label>
-                                            
-                                            <div class="col-md-12">
+
+                                            <div class="col-md-6">
                                                 <input type="number" class="form-control" placeholder="Nomer Identitas">
                                             </div>
 
+                                            <div class="col-md-6">
+                                                Browse for file ... <input class="file-upload" type="file" />
+                                            </div>
 
-                                            
-                                            <label class="col-md-12" for="exampleInputEmail1">Alamat <span class="text-danger email-error"></span></label>
-                                            
+                                            <label class="col-md-12" for="exampleInputEmail1">Kartu Anggota <span class="text-danger email-error"></span></label>
+
+                                            <div class="col-md-6">
+                                                <input type="number" class="form-control" placeholder="Nomer Keanggotaan">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                Browse for file ... <input class="file-upload" type="file" />
+                                            </div>
+
+                                            <label class="col-md-12" for="exampleInputEmail1">Alamat Domisili <span class="text-danger email-error"></span></label>
+
                                             <div class="col-md-12">
                                                 <!-- <input type="number" class="form-control" placeholder="Alamat"> -->
 
-                                                <textarea class="form-control" rows="5" i></textarea>
+                                                <textarea class="form-control" rows="3" i></textarea>
                                             </div>
 
+                                            <label class="col-md-12" for="exampleInputEmail1">Alamat <span class="text-danger email-error"></span></label>
 
-                                            <label class="col-md-12" for="exampleInputEmail1">Lokasi <span class="text-danger email-error"></span></label>
+                                            <div class="col-md-12">
+                                                <!-- <input type="number" class="form-control" placeholder="Alamat"> -->
+
+                                                <textarea class="form-control" rows="3" i></textarea>
+                                            </div>
+
+                                            <label class="col-md-12" for="exampleInputEmail1">Area Praktik <span class="text-danger email-error"></span></label>
                                             
                                             <div class="col-md-12">
                                                 <input type="text" class="form-control" placeholder="Provinsi">
                                             </div>
+
+                                            <div class="col-md-12">
+                                                <input type="checkbox" name="is_lawfirm" id="is_lawfirm" onclick="lawfirm()" value="">    By Law Firm .. ?
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <input type="text" style="display:none" class="form-control" name="nama_kantor" id="nama_kantor"  placeholder="Nama Kantor">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <input type="text" style="display:none" class="form-control" name="jabatan" id="jabatan" placeholder="Jabatan">
+                                            </div>
+
                                         </div>
                                         <div class="form-group row form-biografi" style="display:none;">
                                             
-                                            <label class="col-md-12" for="exampleInputEmail1">Biografi <span class="text-danger email-error"></span></label>
+                                            <label class="col-md-12" for="exampleInputEmail1">Biografi ( Max 150 Characters )</label>
                                             <div class="col-md-12">
-                                                <div id="editorBiografi">
+                                                <div id="editorBiografi" maxlength="150">
                                             
                                                 </div>
+                                                <span id="chars">150</span> characters remaining
+                                            </div>
+
+                                            <div class="col-md-12">
+                                                Browse for file ... <input class="file-upload" type="file" />
                                             </div>
                                         </div>
                                         <div class="form-group row form-edukasi" style="display:none ;">
@@ -156,12 +208,22 @@
                                                     
                                                 </div>
                                             </div>
+
+                                            <div class="col-md-6">
+                                                Browse for file ... <input class="file-upload" type="file" />
+                                            </div>
+
                                         </div>
                                         <div class="form-group row form-bidang" style="display:none  ;">
-                                            <label class="col-md-12" for="exampleInputEmail1">Bidang Keahlian <span class="text-danger email-error"></span></label>
+                                            <label class="col-md-12" for="exampleInputEmail1">Pilih Bidang Keahlian Anda : <span class="text-danger email-error"></span></label>
                                             
                                             <div class="col-md-12">
-                                                <input id="tags" class="form-control" placeholder="Perceraian, Perdagangan Internasional, Pemerintahan, Akte Tanah dan lain lain">
+                                                <?php
+                                                foreach($probono as $row)
+                                                {
+                                                    echo '<input type="checkbox" value="'.$row->id.'"'."$c".'>     '.$row->bidang_keahlian.'<br>';
+                                                }
+                                                ?>
                                             </div>
                                         </div>
                                         
@@ -170,7 +232,9 @@
     
                                         <button class="flat-button-back btn-link kembali" style="float:left;display:none;">&nbsp;Kembali</button>
                                         <button class="flat-button lanjut" style="float:right;">Lanjut</button>
-                                        <button class="flat-button btn-success submit" style="float:right;display:none;">Submit</button>
+                                        <!--<button class="flat-button btn-success submit" style="float:right;display:none;">Submit</button>-->
+                                        <button id="submitBtn" data-toggle="modal" data-target="#modal-term-condition" class="flat-button btn-success submit" style="float:right;display:none;">Submit</button>
+                                        <!--<input type="button" name="btn" value="Submit" id="submitBtn" data-toggle="modal" data-target="#confirm-submit" class="btn btn-default" />-->
                                     </div>
 
                                 </div>
@@ -191,7 +255,15 @@
                 var forms = ["form-biodata", "form-identitas", "form-biografi", "form-edukasi", "form-bidang"];
                 var tmp_i =0;
                 $(".submit").click(function(){
-                    submit();
+                   //submit();
+                });
+                $("#submitend").click(function(){
+                    // submit();
+                    $('#biodataform').submit();
+                    $("#submitend").hide();
+
+                    window.location = ROOT+'users/status_verifikasi';
+
                 });
                 $(".lanjut").click(function(){
                     // $(".form-daftar").html("<b>Hello world!</b>");
@@ -246,6 +318,23 @@
                     }
                 }
             });
+
+            function lawfirm() {
+                var checkBox = document.getElementById("is_lawfirm");
+                var jab = document.getElementById("jabatan");
+                var n_kantor = document.getElementById("nama_kantor");
+                if (checkBox.checked == true){
+                    jab.style.display = "block";
+                    n_kantor.style.display = "block";
+                } else {
+                    jab.style.display = "none";
+                    n_kantor.style.display = "none";
+                }
+            }
+
+            $(document).ready(function() {
+
+            });
             </script>
 
             <script>
@@ -288,7 +377,35 @@
                         ['style', ['bold', 'italic', 'underline', 'clear']],
                         ['fontsize', ['fontsize']],
                         ['para', ['ul', 'ol', 'paragraph']]
-                    ]
+                    ],
+                    placeholder: 'Leave a comment ...',
+                    callbacks: {
+                        onKeydown: function (e) {
+                            var t = e.currentTarget.innerText;
+                            if (t.trim().length >= 150) {
+                                //delete keys, arrow keys, copy, cut
+                                if (e.keyCode != 8 && !(e.keyCode >=37 && e.keyCode <=40) && e.keyCode != 46 && !(e.keyCode == 88 && e.ctrlKey) && !(e.keyCode == 67 && e.ctrlKey))
+                                    e.preventDefault();
+                            }
+                        },
+                        onKeyup: function (e) {
+                            var t = e.currentTarget.innerText;
+                            $('#chars').text(150 - t.trim().length);
+                        },
+                        onPaste: function (e) {
+                            var t = e.currentTarget.innerText;
+                            var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                            e.preventDefault();
+                            var maxPaste = bufferText.length;
+                            if(t.length + bufferText.length > 400){
+                                maxPaste = 400 - t.length;
+                            }
+                            if(maxPaste > 0){
+                                document.execCommand('insertText', false, bufferText.substring(0, maxPaste));
+                            }
+                            $('#maxContentPost').text(400 - t.length);
+                        }
+                    }
                 });
                 $('#editorEdukasi').summernote({
                     minHeight: 200,
