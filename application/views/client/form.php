@@ -1,4 +1,3 @@
-
 <?php $this->load->view('client/layout/header')?>
 
 <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">

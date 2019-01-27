@@ -53,7 +53,8 @@
     <script src="<?=base_url()?>probono_asset/javascript/jquery.cookie.js"></script>
     <script src="<?=base_url()?>probono_asset/javascript/html5shiv.js"></script>
     <script src="<?=base_url()?>probono_asset/javascript/respond.min.js"></script>
-     
+    <script src="<?=base_url()?>probono_asset/javascript/costum.js"></script>
+    
     <script src="<?=base_url()?>probono_asset/javascript/jquery.magnific-popup.min.js"></script>   
       
     
@@ -94,7 +95,7 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <p>Nadin</p>
+                        <p><?=get_from_sess('username')?></p>
                         <hr>
                         <a class="blue" href="<?=base_url()?>">Ubah Profile</a>
                     </div>

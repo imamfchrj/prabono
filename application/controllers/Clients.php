@@ -1,7 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Clients_not_login extends CI_Controller {
+class Clients extends Users_Controller {
+	
+
+	function __construct()
+	{
+		parent::__construct();
+	}
 	
 	public function form()
 	{
@@ -17,6 +23,11 @@ class Clients_not_login extends CI_Controller {
 	{
 		$data['menu']="home";
 		$this->load->view('client/kasus_client_singgle',$data);
+	}
+
+	public function logout(){
+		$this->logout_sess();
+		redirect();
 	}
 
 

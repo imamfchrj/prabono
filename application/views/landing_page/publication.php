@@ -26,107 +26,39 @@
                 </div>
             </div>
             <div class="container">
-                <div class="row">
+                <?php $i=0;
+                foreach($results as $list){ ?>
+                    <?php if($i%3==0){ ?>
+                    <div class="row">
+                    <?php } ?>
+
+
                     <div class="col-md-4">
                         <div class="imgbox style2 position-title">
                             <div class="box-header">
                                 <div class="box-img">
-                                    <a href="#"><img src="<?=base_url()?>probono_asset/images/services/p1.jpg" alt="image"></a>
+                                    <a href="#"><img src="<?=base_url()?>probono_asset/images/src/<?=$list->thumbnail?>" alt="image"></a>
                                 </div>
-                                <div class="box-title"><a href="#">Perencanaan Strategis</a></div> 
+                                <div class="box-title"><a href="#"><?=$list->title?></a></div> 
                             </div>
                             <div class="box-content">
-                                <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
+                                <p><?=$list->text?></p>
                                 <div class="explore">
-                                    <a class="read-more" href="#" title="">Baca Selengkapnya</a>
+                                    <a class="read-more" href="#<?=$list->file_pendukung?>" target="_blank" title="">Baca Selengkapnya</a>
                                 </div> 
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="imgbox style2 position-title">
-                            <div class="box-header">
-                                <div class="box-img">
-                                    <a href="#"><img src="<?=base_url()?>probono_asset/images/services/p2.jpg" alt="image"></a>
-                                </div>
-                                <div class="box-title"><a href="#">Perdagangan & Saham</a></div> 
-                            </div>
-                            <div class="box-content">
-                                <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
-                                <div class="explore">
-                                    <a class="read-more" href="#" title="">Baca Selengkapnya</a>
-                                </div> 
-                            </div>
-                        </div>
+
+                    <?php $i++;
+                    if($i%3==0){ ?>
+                        
                     </div>
-                    <div class="col-md-4">
-                        <div class="imgbox style2 position-title">
-                            <div class="box-header">
-                                <div class="box-img">
-                                    <a href="#"><img src="<?=base_url()?>probono_asset/images/services/p3.jpg" alt="image"></a>
-                                </div>
-                                <div class="box-title"><a href="#">Audit & Asuransi</a></div> 
-                            </div>
-                            <div class="box-content">
-                                <p>Nemo enim ipsam volup tatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
-                                <div class="explore">
-                                    <a class="read-more" href="#" title="">Baca Selengkapnya</a>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="divider h65"></div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="imgbox style2 position-title">
-                            <div class="box-header">
-                                <div class="box-img">
-                                    <a href="#"><img src="<?=base_url()?>probono_asset/images/services/p4.jpg" alt="image"></a>
-                                </div>
-                                <div class="box-title"><a href="#">Konsultasi Perputaran</a></div> 
-                            </div>
-                            <div class="box-content">
-                                <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
-                                <div class="explore">
-                                    <a class="read-more" href="#" title="">Baca Selengkapnya</a>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="imgbox style2 position-title">
-                            <div class="box-header">
-                                <div class="box-img">
-                                    <a href="#"><img src="<?=base_url()?>probono_asset/images/services/p5.jpg" alt="image"></a>
-                                </div>
-                                <div class="box-title"><a href="#">Proyeksi Keuangan</a></div> 
-                            </div>
-                            <div class="box-content">
-                                <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
-                                <div class="explore">
-                                    <a class="read-more" href="#" title="">Baca Selengkapnya</a>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="imgbox style2 position-title">
-                            <div class="box-header">
-                                <div class="box-img">
-                                    <a href="#"><img src="<?=base_url()?>probono_asset/images/services/p6.jpg" alt="image"></a>
-                                </div>
-                                <div class="box-title"><a href="#">Anlisis Finansial</a></div> 
-                            </div>
-                            <div class="box-content">
-                                <p>Nemo enim ipsam voluptatem, quia voluptas sit, aspernatur aut odit aut fugit sed quia consequuntur.</p>
-                                <div class="explore">
-                                    <a class="read-more" href="#" title="">Baca Selengkapnya</a>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                    <?php } ?>
+
+
+                <?php } ?>
             </div>
         </section>  
     </main>
