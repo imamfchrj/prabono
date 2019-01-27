@@ -16,7 +16,7 @@
 @import url("shortcodes.css");
 @import url("jquery.fancybox.css");
 @import url("magnific-popup.css");
-@import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Playfair+Display:400,400i,700,700i,900,900i");
+/* @import url("https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Playfair+Display:400,400i,700,700i,900,900i"); */
 
 /**
   *	Reset
@@ -369,7 +369,7 @@ input[type="color"],
 	   -moz-box-shadow: none;
 	     -o-box-shadow: none;
 	        box-shadow: none;
-	color: #999;
+	color: #555;
 }
 
 h1, h2, h3, h4, h5, h6 { font-family: "Poppins", sans-serif; font-weight: 600; margin-bottom: 10px; color: #222222 }

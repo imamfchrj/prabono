@@ -314,3 +314,8 @@ switch (ENVIRONMENT)
  * And away we go...
  */
 require_once BASEPATH.'core/CodeIgniter.php';
+
+
+
+// require_once(FCPATH.'vendor/autoload.php');
+require_once __DIR__ . '/vendor/autoload.php';

@@ -1,12 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin extends CI_Controller {
+class Admin extends Auth_Controller {
 	
-	// public function index()
-	// {
-	// 	$this->load->view('users/main');
-	// }
+
+	function __construct()
+	{
+		parent::__construct();
+		
+	}
 
 	public function index()
 	{

@@ -529,3 +529,20 @@ $config['recatpcha_secret_key'] = '';
 $config['proxy_ips'] = '';
 
 require('./application/env.php');
+
+
+
+
+if(!function_exists('__autoload')){
+	
+	function __autoload($class)
+	{
+	 if(strpos($class, 'CI_') !== 0)
+	 {
+		if(file_exists(APPPATH . 'core/'. $class . EXT))
+			@include_once( APPPATH . 'core/'. $class . EXT );
+	 }
+	}
+
+}
+
