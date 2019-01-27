@@ -6,7 +6,7 @@ $this->load->view('admin/layout/header');
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="br-mainpanel">
         <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-            <h4 class="tx-gray-800 mg-b-5">Form</h4>
+            <h4 class="tx-gray-800 mg-b-5">Form Input Kategori Berita</h4>
         </div><!-- d-flex -->
         <div class="br-pagebody">
             <div class="br-section-wrapper">
@@ -21,7 +21,7 @@ $this->load->view('admin/layout/header');
                     </div>
                     <div class="form-layout-footer">
                         <button class="btn btn-info btn-submit-form">Submit Form</button>
-                        <button class="btn btn-secondary">Cancel</button>
+                        <button class="btn btn-secondary" id="maintabel">Cancel</button>
                     </div><!-- form-layout-footer -->
                 </div><!-- form-layout -->
 
@@ -95,6 +95,9 @@ $this->load->view('admin/layout/header');
                         }
                         );
                     }
+                    $( "#maintabel" ).click(function() {
+                        window.location = ROOT+'admin/mst_news_kategori';
+                    });
                 </script>
 <?php
 $this->load->view('admin/layout/footer');

@@ -1,27 +1,27 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Master_kategori_m extends CI_Model
+class Master_berita_m extends CI_Model
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    private $table = 'master_kategori';
-    
+    private $table = 'berita';
 
-	function set($array){
+
+    function set($array){
         $this->db->set($array);
         $this->db->insert($this->table);
-		return $this->db->insert_id();
+        return $this->db->insert_id();
     }
-    
-	function update_value_by_id($id,$value){
-		$data = $value;
+
+    function update_value_by_id($id,$value){
+        $data = $value;
         $this->db->where('id', $id);
-        $data = $this->db->update($this->table, $data); 
-		return $data;
+        $data = $this->db->update($this->table, $data);
+        return $data;
     }
 
     function get_by_id($id){
@@ -32,7 +32,7 @@ class Master_kategori_m extends CI_Model
         }
         return false;
     }
-    
+
     function get_all(){
         $query=$this->db->get($this->table);
         if($query){
