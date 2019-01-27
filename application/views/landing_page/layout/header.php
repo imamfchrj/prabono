@@ -197,35 +197,34 @@
                                 <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Username <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-8 col-md-offset-2">
-                                    <input type="text" class="form-control">
+                                    <input id="username" type="text" class="form-control">
                                 </div>
                                 <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Password <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-8 col-md-offset-2">
-                                    <input type="password" class="form-control">
+                                    <input id="password" type="password" class="form-control">
+                                </div>
+                                <div class="col-md-7 col-md-offset-2">
+                                    <div id="html_element"></div>
                                 </div>
 
                                 <div class="col-md-8 col-md-offset-2">
                                     <!-- <label  for="setuju_syarat"><input id="setuju_syarat" type="checkbox" name="aggree" value="1" class="aggree"> &nbsp;&nbsp;<a href="#" class="blue">Syarat dan ketentuan berlaku!</a>
                                     </label> -->
-                                    <a href="#" class="blue float-right">Lupa Password!</a>
+                                    <!-- <a href="#" class="blue float-right">Lupa Password!</a> -->
                                 </div>
 
                                 <div class="col-md-8 col-md-offset-2">
-                                    <hr>
-                                </div>
-
-                                <div class="col-md-8 col-md-offset-2">
-                                    <button type="button" class="btn btn-secondary btn-block login-btn" >Masuk</button>
+                                    <button  class="btn btn-secondary btn-block login-btn submit" >Masuk</button>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
                                     <hr>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <a href="<?=base_url('login')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi User</a>
+                                    <a href="<?=base_url('daftar')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi User</a>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <a href="<?=base_url('login')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi Advokat</a>
+                                    <a href="<?=base_url('users/caradaftar')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi Advokat</a>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
                                 </div>
@@ -240,5 +239,82 @@
             </div>
         </div>
     </div>
+
+<script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '<?=config_item('recatpcha_site_key');?>'
+        });
+      };
+    </script>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer></script>
+
+      
+        <script type="text/javascript">
+
+
+$(function(){
+    $(".submit").click(function(){
+        if($("#email").val().length < 5){
+            $("#email-text").html("Format email salah");
+            return;
+        }
+        if(!validateEmail($("#email").val())){
+            $("#email-text").html("Format email salah");
+            return;
+        }
+            $("#email-text").html("");
+        if($("#password").val().length < 8){
+            $("#password-text").html("Panjang password kurang dari 8 karakter");
+            return;
+        }
+        $("#password-text").html("");
+        var response = grecaptcha.getResponse();
+        if(response.length == 0){
+            $("#setuju-text").html("Please accept gcaptcha");
+        }
+        console.log(response);
+        $("#setuju-text").html("");
+        submit(response);
+    });
+   
+});
+</script>
+<script>
+tmp=true;
+var submit = function (response){  
+    $.ajax({
+        url: ROOT+'clients_nl/ajax_login',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            "email":$("#email").val(),
+            "password":$("#password").val(),
+            "setuju":$("#setuju").is(":checked"),
+            "g-recaptcha-response":response
+        }
+    })
+    .done(function(data) {
+        if(data.is_error==1){ 
+            console.log(data);
+            // alert_error(data.error_message);
+            return; 
+        }
+        console.log(data);
+        window.location = "<?php echo base_url(DEFAULT_PAGE_USER); ?>";
+    })
+    .fail(function() {
+        if(tmp){
+            alert_error( "Server tidak merespon. Mohon cek koneksi internet anda. (Lakukan refresh jika dibutuhkan)\n" );
+            tmp = false;
+        }
+    })
+    .always(function() {
+        
+    }) ;
+}
+</script>
         
       
