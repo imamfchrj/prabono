@@ -99,9 +99,8 @@ $(function(){
 <script>
 tmp=true;
 var submit = function (response){  
-    console.log(response);
     $.ajax({
-        url: ROOT+'clients_nl/ajax_register',
+        url: ROOT+'clients_nl/ajax_login',
         type: 'post',
         dataType: 'json',
         data: {
@@ -114,10 +113,11 @@ var submit = function (response){
     .done(function(data) {
         if(data.is_error==1){ 
             console.log(data);
-            alert_error(data.error_message);
+            // alert_error(data.error_message);
             return; 
         }
-        window.location = "<?php echo base_url('login'); ?>";
+        console.log(data);
+        window.location = "<?php echo base_url(DEFAULT_PAGE_USER); ?>";
     })
     .fail(function() {
         if(tmp){

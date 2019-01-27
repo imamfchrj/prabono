@@ -95,7 +95,7 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <p>Nadin</p>
+                        <p><?=get_from_sess('username')?></p>
                         <hr>
                         <a class="blue" href="<?=base_url()?>">Ubah Profile</a>
                     </div>

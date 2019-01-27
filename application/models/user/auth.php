@@ -20,6 +20,19 @@ class Auth extends CI_Model
         return $this->db->insert_id();
     }
 
+    function get_data_user_by_email($email){
+
+        $this->db->select("password,id,email,activated,banned,ban_reason,username");
+        $this->db->where('email', $email);
+        $this->db->where('activated', 1);
+        $this->db->where('banned', 0);
+        $query=$this->db->get($this->table);
+        if($query){
+            return $query->row();
+        }
+        return false;
+    }
+
     function get_by_email($email){
         $this->db->select("email");
         $this->db->where('email', $email);

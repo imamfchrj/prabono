@@ -85,4 +85,5 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 	// this global constant is deprecated.
-	define('EXT', '.php');
+    define('EXT', '.php');
+    define('DEFAULT_PAGE_USER','laporkan-masalah-hukum');

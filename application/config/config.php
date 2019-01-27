@@ -378,8 +378,8 @@ $config['encryption_key'] = 'asdflkajf092u389reuy78dvh87asdgvhoiahe983uer98aduy8
 |
 */
 $config['sess_driver'] = 'files';
-$config['sess_cookie_name'] = 'probono_ganteng';
-$config['sess_expiration'] = 7200*24;
+$config['sess_cookie_name'] = 'ci_session';
+$config['sess_expiration'] = 7200;
 $config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
@@ -400,12 +400,11 @@ $config['sess_regenerate_destroy'] = FALSE;
 |       'cookie_httponly') will also affect sessions.
 |
 */
-$config['cookie_prefix']	= '_probono';
-$config['cookie_domain']	= '_pro';
+$config['cookie_prefix']	= '';
+$config['cookie_domain']	= '';
 $config['cookie_path']		= '/';
 $config['cookie_secure']	= FALSE;
 $config['cookie_httponly'] 	= FALSE;
-
 /*
 |--------------------------------------------------------------------------
 | Standardize newlines
@@ -504,7 +503,8 @@ $config['time_reference'] = 'local';
 */
 $config['rewrite_short_tags'] = FALSE;
 
-
+$config['salt'] = '';
+$config['with_love'] = '';
 
 $config['recatpcha_site_key'] = '';
 $config['recatpcha_secret_key'] = '';

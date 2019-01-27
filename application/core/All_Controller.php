@@ -6,6 +6,7 @@ class All_Controller extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+        $this->load->library('session');
 		
     }
     
@@ -45,7 +46,14 @@ class All_Controller extends CI_Controller
 			return FALSE;
 		}
 		return TRUE;
-	}
+    }
+    
+    function is_user_logged_in(){
+        if(hashuser($this->session->userdata('email'))==$this->session->userdata('login_config')){
+            return true;
+        }
+        return false;
+    }
 
 
 }
