@@ -57,6 +57,19 @@
 
 
 <script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '<?=config_item('recatpcha_site_key');?>'
+        });
+      };
+    </script>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer></script>
+
+
+        
+<script type="text/javascript">
 
 
 $(function(){
@@ -86,16 +99,6 @@ $(function(){
    
 });
 </script>
-<script type="text/javascript">
-      var onloadCallback = function() {
-        grecaptcha.render('html_element', {
-          'sitekey' : '<?=config_item('recatpcha_site_key');?>'
-        });
-      };
-    </script>
-
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer></script>
 <script>
 tmp=true;
 var submit = function (response){  
