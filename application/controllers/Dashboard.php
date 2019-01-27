@@ -34,6 +34,10 @@ class Dashboard extends CI_Controller {
 	public function news()
 	{
 		$data['menu']="berita";
+		$this->load->model('admin/master_berita_m');
+		$this->load->model('admin/master_kategori_m');
+		$data['results']=$this->master_berita_m->get_all();
+		$data['results_kategori']=$this->master_kategori_m->get_all();
 		$this->load->view('landing_page/blog',$data);
 	}
 
