@@ -71,29 +71,29 @@
 
 $(function(){
     $(".submit").click(function(){
-        // if($("#email").val().length < 5){
-        //     $("#email-text").html("Format email salah");
-        //     return;
-        // }
-        // if(!validateEmail($("#email").val())){
-        //     $("#email-text").html("Format email salah");
-        //     return;
-        // }
-        //     $("#email-text").html("");
-        // if($("#password").val().length < 8){
-        //     $("#password-text").html("Panjang password kurang dari 8 karakter");
-        //     return;
-        // }
-        // $("#password-text").html("");
-        // if($("#password").val()!=$("#c-password").val()){
-        //     $("#c-password-text").html("Password yang di ulang tidak sama");
-        //     return;
-        // }
-        // $("#c-password-text").html("");
+        if($("#email").val().length < 5){
+            $("#email-text").html("Format email salah");
+            return;
+        }
+        if(!validateEmail($("#email").val())){
+            $("#email-text").html("Format email salah");
+            return;
+        }
+            $("#email-text").html("");
+        if($("#password").val().length < 8){
+            $("#password-text").html("Panjang password kurang dari 8 karakter");
+            return;
+        }
+        $("#password-text").html("");
+        if($("#password").val()!=$("#c-password").val()){
+            $("#c-password-text").html("Password yang di ulang tidak sama");
+            return;
+        }
+        $("#c-password-text").html("");
 
-        // if($("#setuju").is(":checked")==false){
-        //     return;
-        // }
+        if($("#setuju").is(":checked")==false){
+            return;
+        }
         var response = grecaptcha.getResponse();
         if(response.length == 0){
             $("#setuju-text").html("Please accept gcaptcha");
@@ -124,20 +124,23 @@ var submit = function (response){
         type: 'post',
         dataType: 'json',
         data: {
+            "email":$("#email").val(),
+            "password":$("#password").val(),
+            "setuju":$("#setuju").is(":checked"),
             "g-recaptcha-response":response
         }
     })
     .done(function(data) {
         if(data.is_error==1){ 
-            alert_error(data.error);
+            console.log(data);
+            alert_error(data.error_message);
             return; 
         }
-        console.log(data);
-        // window.location = "<?php echo base_url('client/kasus_aktif'); ?>";
+        window.location = "<?php echo base_url('login'); ?>";
     })
     .fail(function() {
         if(tmp){
-            alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+            alert_error( "Server tidak merespon. Mohon cek koneksi internet anda. (Lakukan refresh jika dibutuhkan)\n" );
             tmp = false;
         }
     })

@@ -9,6 +9,10 @@ class Admin extends Auth_Controller {
 		parent::__construct();
 		
 	}
+	
+	public function tes(){
+		echo hashpass('halooo');
+	}
 
 	public function index()
 	{

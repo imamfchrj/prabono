@@ -1,7 +1,6 @@
 
 <?php $this->load->view('client/layout/header_not_login')?>
 
-
 <main class="main-content" id="main-content">
 
     <section id="services" class="flat-row vc wrap-iconbox">
@@ -11,7 +10,7 @@
                    <div class="title-section">
                         <div>
                         <div class="daftar-steps">
-                            <h3>Login</h3>
+                            <h3>Login User</h3>
                         </div>
                     </div> 
                 </div>
@@ -20,7 +19,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-md-offset-3">
-                    <div id="loginform" class="flat-request-form style3" method="post">
+                    <div id="biodataform" class="flat-request-form style3" method="post">
                         <div class="field clearfix "> 
                             <div class="form-group row form-biodata">
                                 
@@ -34,18 +33,14 @@
                                     <p class="text-danger float-right" id="password-text"></p>
                                     <input type="password" id="password" class="form-control" placeholder="Password">
                                 </div>
-                                <!-- <div class="col-md-12">
-                                    
-                                    <div class="float-right">
-                                    <label><a href="#" class="text-primary">Lupa password!</a> </label>
-                                    </div>
-                                </div> -->
-                                
+                                <div class="col-md-12">
+                                    <div id="html_element"></div>
+                                </div>
                             </div>
                             
                         </div>
                         <div class="field clearfix field-btn">
-                            <button class="flat-button submit" style="float:right;">Login</button>
+                            <button class="flat-button submit" style="float:right;">Daftar</button>
                         </div>
 
                     </div>
@@ -62,9 +57,10 @@
 
 
 <script type="text/javascript">
+
+
 $(function(){
     $(".submit").click(function(){
-        console.log($("#setuju").is(":checked"));
         if($("#email").val().length < 5){
             $("#email-text").html("Format email salah");
             return;
@@ -78,33 +74,54 @@ $(function(){
             $("#password-text").html("Panjang password kurang dari 8 karakter");
             return;
         }
-        submit();
+        $("#password-text").html("");
+        var response = grecaptcha.getResponse();
+        if(response.length == 0){
+            $("#setuju-text").html("Please accept gcaptcha");
+        }
+        console.log(response);
+        $("#setuju-text").html("");
+        submit(response);
     });
    
 });
 </script>
+<script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '<?=config_item('recatpcha_site_key');?>'
+        });
+      };
+    </script>
 
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
+        async defer></script>
 <script>
 tmp=true;
-var submit = function (){  
+var submit = function (response){  
+    console.log(response);
     $.ajax({
-        url: ROOT+'client/ajax_daftar',
+        url: ROOT+'clients_nl/ajax_register',
         type: 'post',
         dataType: 'json',
         data: {
-            // csrf_token: ""
+            "email":$("#email").val(),
+            "password":$("#password").val(),
+            "setuju":$("#setuju").is(":checked"),
+            "g-recaptcha-response":response
         }
     })
     .done(function(data) {
         if(data.is_error==1){ 
-            alert_error(data.error);
+            console.log(data);
+            alert_error(data.error_message);
             return; 
         }
-        window.location = "<?php echo base_url('client/kasus_aktif'); ?>";
+        window.location = "<?php echo base_url('login'); ?>";
     })
     .fail(function() {
         if(tmp){
-            alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+            alert_error( "Server tidak merespon. Mohon cek koneksi internet anda. (Lakukan refresh jika dibutuhkan)\n" );
             tmp = false;
         }
     })
