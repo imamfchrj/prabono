@@ -18,12 +18,16 @@ class Dashboard extends CI_Controller {
 	public function services()
 	{
 		$data['menu']="jasa";
+		$this->load->model('admin/master_jasa_m');
+		$data['results']=$this->master_jasa_m->get_all();
 		$this->load->view('landing_page/services',$data);
 	}
 
 	public function publication()
 	{
 		$data['menu']="publikasi";
+		$this->load->model('admin/master_publikasi_m');
+		$data['results']=$this->master_publikasi_m->get_all();
 		$this->load->view('landing_page/publication',$data);
 	}
 

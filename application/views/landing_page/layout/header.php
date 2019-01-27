@@ -155,5 +155,90 @@
                     </header><!-- /.header -->
             </div>
 
+
+<script>
+    $(document).ready(function() {
+        
+        $('.toggle-on').removeAttr("style");
+        $('.toggle-off').removeAttr("style");
+    });
+</script>
+
+<script>
+
+    $(".login-btn").click(function(){
+        if($(".user_set").prop("checked") == true){
+            window.location = "<?php echo base_url('laporkan-masalah-hukum'); ?>";
+            return true;
+        }
+        window.location = "<?php echo base_url('users/caradaftar'); ?>";
+    });
+</script>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                </div>
+                <div class="modal-body">
+
+                    <div id="login_form" class="" method="post">
+                        <div class="field clearfix ">
+                            <div class="form-group row form-biodata">
+                                <div class="col-md-4 col-md-offset-4">
+                                    <input class="user_set" type="checkbox" checked data-width="100%" data-height="40" data-on="User" data-off="Advokat" data-toggle="toggle" data-onstyle="info" data-offstyle="danger">
+                                </div>
+                                <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Username <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-8 col-md-offset-2">
+                                    <input type="text" class="form-control">
+                                </div>
+                                <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Password <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-8 col-md-offset-2">
+                                    <input type="password" class="form-control">
+                                </div>
+
+                                <div class="col-md-8 col-md-offset-2">
+                                    <!-- <label  for="setuju_syarat"><input id="setuju_syarat" type="checkbox" name="aggree" value="1" class="aggree"> &nbsp;&nbsp;<a href="#" class="blue">Syarat dan ketentuan berlaku!</a>
+                                    </label> -->
+                                    <a href="#" class="blue float-right">Lupa Password!</a>
+                                </div>
+
+                                <div class="col-md-8 col-md-offset-2">
+                                    <hr>
+                                </div>
+
+                                <div class="col-md-8 col-md-offset-2">
+                                    <button type="button" class="btn btn-secondary btn-block login-btn" >Masuk</button>
+                                </div>
+                                <div class="col-md-8 col-md-offset-2">
+                                    <hr>
+                                </div>
+                                <div class="col-md-8 col-md-offset-2">
+                                    <a href="<?=base_url('login')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi User</a>
+                                </div>
+                                <div class="col-md-8 col-md-offset-2">
+                                    <a href="<?=base_url('login')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi Advokat</a>
+                                </div>
+                                <div class="col-md-8 col-md-offset-2">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="modal-footer">
+                <button type="button" class="btn btn-default"  data-dismiss="modal">Tutup</button>
+                <button type="button" class="btn btn-secondary" onclick="location.href='<?=base_url()?>users/caradaftar'">Masuk</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
         
       
