@@ -88,7 +88,7 @@ class Clients_nl extends All_Controller {
 			
         }
         if(validation_errors()){
-            $eror[]=validation_errors;
+            $eror[]=validation_errors();
         }
 		echo json_encode(array(
             'is_error'=>true,
