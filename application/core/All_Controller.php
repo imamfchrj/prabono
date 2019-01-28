@@ -42,7 +42,7 @@ class All_Controller extends CI_Controller
 		// }
 		$email_used = $this->db->where('email', $val)->get('users')->num_rows();
 		if($email_used){
-			$this->form_validation->set_message('_allowed_email', __('Email is already used, please enter other email account'));
+			$this->form_validation->set_message('_allowed_email', 'Email is already used, please enter other email account');
 			return FALSE;
 		}
 		return TRUE;
