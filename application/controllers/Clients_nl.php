@@ -28,7 +28,7 @@ class Clients_nl extends All_Controller {
 
     public function ajax_register(){
         $this->form_validation->set_rules('g-recaptcha-response', "incorect captcha", 'required|trim|xss_clean|callback__check_recaptcha');
-        $this->form_validation->set_rules('email', "Incorrect Email", 'trim|required|xss_clean|callback__check_email');
+        $this->form_validation->set_rules('email', "Incorrect Email", 'trim|required|xss_clean|callback__check_email2');
         $this->form_validation->set_rules('password', "Incorrect Password", 'trim|required|xss_clean|min_length[8]|max_length[200]');
         $this->form_validation->set_rules('setuju',"Incorrect accept Term & Service", 'callback__setuju');
         if ($this->form_validation->run()) {	
