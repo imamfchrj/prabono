@@ -221,7 +221,7 @@
                                     <hr>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <a href="<?=base_url('daftar')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi User</a>
+                                    <a href="<?=base_url('register')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi User</a>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
                                     <a href="<?=base_url('users/caradaftar')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi Advokat</a>
