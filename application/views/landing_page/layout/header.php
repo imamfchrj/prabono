@@ -285,6 +285,7 @@ var submit = function (response){
         type: 'post',
         dataType: 'json',
         data: {
+            "user_set":$('.user_set').is(":checked"),
             "email":$("#email").val(),
             "password":$("#password").val(),
             "setuju":$("#setuju").is(":checked"),

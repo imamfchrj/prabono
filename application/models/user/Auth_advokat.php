@@ -1,29 +1,31 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Auth extends CI_Model
+class Auth_advokat extends CI_Model
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    private $table = 'users';
-    private $table_users_profile = 'users_profile';
+    private $table = 'users_advokat';
+    private $table_advokat_profiles = 'advokat_profiles';
 
-    function create_user($email,$password){
+    function create_user($email,$hp,$password){
         $array =array(
             'email'=>$email,
             'password'=>hashpass($password)
         );
         $this->db->set($array);
+        $this->db->insert($this->table);
         $id=$this->db->insert_id();
         $data_hp =array(
-            'user_id'=>$id,
+            'hp'=>$hp,
+            'user_id'=>$id
         );
         $this->db->set($data_hp);
-        $this->db->insert($this->table_users_profile);
-        return $this->db->insert_id();
+        $this->db->insert($this->table_advokat_profiles);
+        return $id;
     }
 
     function get_data_user_by_email($email){
