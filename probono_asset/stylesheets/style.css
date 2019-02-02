@@ -3442,3 +3442,18 @@ footer .logo-footer .logo {
 	max-width: 120px;	
 }
 
+/*
+	google capctha
+*/
+.g-cap {
+	text-align: center;
+}
+
+#html_element{
+	display: inline-block;
+}
+
+.top-min{
+	margin: -20px 10px 10px 10px;
+}
+

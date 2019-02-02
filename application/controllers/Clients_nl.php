@@ -81,9 +81,9 @@ class Clients_nl extends All_Controller {
                     ));
                     return;
                 }
-                $error[]="Password salah";
+                $error[]="Email atau Password salah";
             }else{
-                $error[]="Email tidak dapat ditemukan";
+                $error[]="Email atau Password salah";
             }
 			
         }

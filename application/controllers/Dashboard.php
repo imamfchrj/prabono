@@ -63,4 +63,13 @@ class Dashboard extends CI_Controller {
 		$this->load->view('landing_page/team',$data);
 	}
 
+
+	public function syarat()
+	{
+		$data['menu']="team";
+		echo "still on process";
+		exit;
+		$this->load->view('landing_page/team',$data);
+	}
+
 }

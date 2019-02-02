@@ -8,3 +8,5 @@ $route['bergabung'] = 'dashboard/joinus';
 $route['team'] = 'dashboard/team';
 $route['berita'] = 'dashboard/news';
 $route['berita/([a-z0-9]+)'] = 'dashboard/news_singgle/$1';
+
+$route['syarat-dan-ketentuan'] = 'dashboard/syarat';

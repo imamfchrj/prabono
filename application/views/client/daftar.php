@@ -25,25 +25,25 @@
                                 
                                 
                                 <div class="col-md-12">
-                                    <p class="text-danger float-right" id="email-text"></p>
                                     <input type="text" id="email" class="form-control" placeholder="Email">
+                                    <p class="text-danger float-left top-min" id="email-text"></p>
                                     
                                 </div>
                                 <div class="col-md-12">
-                                    <p class="text-danger float-right" id="password-text"></p>
                                     <input type="password" id="password" class="form-control" placeholder="Password">
+                                    <p class="text-danger float-left top-min" id="password-text"></p>
                                 </div>
                                 <div class="col-md-12">
-                                    <p class="text-danger float-right" id="c-password-text"></p>
                                     <input type="password" id="c-password" class="form-control" placeholder="Ulangi Password">
+                                    <p class="text-danger float-left top-min" id="c-password-text"></p>
                                 </div>
                                 <div class="col-md-12">
                                     
-                                    <div class="">
-                                    <label><input type="checkbox" id="setuju" value=""> <a href="#">Setuju dengan persyaratan</a> <span id="setuju-text" class="text-danger"><span></label>
+                                    <div style="margin-bottom:20px;">
+                                    <label><input type="checkbox" id="setuju" value=""> Setuju dengan <a class="blue" href="<?=base_url()."syarat-dan-ketentuan"?>" target="_blank">Syarat & Ketentuan</a> yang berlaku. <span id="setuju-text" class="text-danger"><span></label>
                                     </div>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12 g-cap">
                                     <div id="html_element"></div>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@ var submit = function (response){
     })
     .done(function(data) {
         if(data.is_error==1){ 
-            console.log(data);
+            grecaptcha.reset();
             alert_error(data.error_message);
             return; 
         }
@@ -140,6 +140,7 @@ var submit = function (response){
     })
     .fail(function() {
         if(tmp){
+            grecaptcha.reset();
             alert_error( "Server tidak merespon. Mohon cek koneksi internet anda. (Lakukan refresh jika dibutuhkan)\n" );
             tmp = false;
         }

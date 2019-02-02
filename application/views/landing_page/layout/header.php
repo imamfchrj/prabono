@@ -191,29 +191,24 @@
                     <div id="login_form" class="" method="post">
                         <div class="field clearfix ">
                             <div class="form-group row form-biodata">
-                                <div class="col-md-4 col-md-offset-4">
+                                <div class="col-md-3 col-md-offset-5">
                                     <input class="user_set" type="checkbox" checked data-width="100%" data-height="40" data-on="User" data-off="Advokat" data-toggle="toggle" data-onstyle="info" data-offstyle="danger">
                                 </div>
-                                <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Username <span class="text-danger email-error"></span></label>
+                                <label class="col-md-8 col-md-offset-2" >Username</label>
 
-                                <div class="col-md-8 col-md-offset-2">
-                                    <input id="username" type="text" class="form-control">
+                                <div class="col-md-8 col-md-offset-2" style="margin-bottom:15px;">
+                                    <input id="email" type="text" class="form-control">
+                                    <p class="text-danger top-min" id="email-text"></p>
                                 </div>
-                                <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Password <span class="text-danger email-error"></span></label>
+                                <label class="col-md-8 col-md-offset-2">Password</label>
 
-                                <div class="col-md-8 col-md-offset-2">
+                                <div class="col-md-8 col-md-offset-2" style="margin-bottom:15px;">
                                     <input id="password" type="password" class="form-control">
+                                    <p class="text-danger top-min" id="password-text"></p>
                                 </div>
-                                <div class="col-md-7 col-md-offset-2">
-                                    <div id="html_element"></div>
+                                <div class="col-md-12 g-cap"  style="margin-bottom:15px;">
+                                        <div id="html_element"></div>
                                 </div>
-
-                                <div class="col-md-8 col-md-offset-2">
-                                    <!-- <label  for="setuju_syarat"><input id="setuju_syarat" type="checkbox" name="aggree" value="1" class="aggree"> &nbsp;&nbsp;<a href="#" class="blue">Syarat dan ketentuan berlaku!</a>
-                                    </label> -->
-                                    <!-- <a href="#" class="blue float-right">Lupa Password!</a> -->
-                                </div>
-
                                 <div class="col-md-8 col-md-offset-2">
                                     <button  class="btn btn-secondary btn-block login-btn submit" >Masuk</button>
                                 </div>
@@ -298,8 +293,8 @@ var submit = function (response){
     })
     .done(function(data) {
         if(data.is_error==1){ 
-            console.log(data);
-            // alert_error(data.error_message);
+            grecaptcha.reset();
+            alert_error(data.error_message);
             return; 
         }
         console.log(data);
@@ -308,6 +303,7 @@ var submit = function (response){
     .fail(function() {
         if(tmp){
             alert_error( "Server tidak merespon. Mohon cek koneksi internet anda. (Lakukan refresh jika dibutuhkan)\n" );
+            grecaptcha.reset();
             tmp = false;
         }
     })
