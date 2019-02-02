@@ -6,6 +6,9 @@ class Advokat_Controller extends CI_Controller
 	function __construct()
 	{
 		parent::__construct();
+		if(!$this->session->userdata('advokat_email')){
+
+		}
         if(hashadvokat($this->session->userdata('advokat_email'))!=$this->session->userdata('advokat_login_config')){
             redirect();
         }
