@@ -92,7 +92,36 @@
                 </div>
             </div>
         </div>
+
+        <!-- Modal Term & Condition-->
+        <div class="modal fade" id="modal-term-condition" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5 class="modal-title" id="exampleModalLabel">Term & Condition</h5>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to submit the following details?<br>
+
+                        a.<br>
+                        b.<br>
+                        c.<br>
+
+                        <input type="checkbox" value="">   I accept the Term & Condition<br>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#" id="submitend" class="btn btn-success success">Confirm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
+
 
         <!-- Go Top -->
         <a class="go-top">

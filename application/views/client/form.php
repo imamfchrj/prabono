@@ -26,7 +26,7 @@
                                             <div class="ips-step">
                                                 <span class="circle">1</span>
                                             </div>
-                                            <span class="label">Judul</span>
+                                            <span class="label">Biodata</span>
                                         </a>
                                     </li>
 
@@ -36,7 +36,7 @@
                                             <div class="ips-step">
                                                 <span class="circle">2</span>
                                             </div>
-                                            <span class="label">Keterangan</span>
+                                            <span class="label">Judul</span>
                                         </a>
                                     </li>
                                     
@@ -46,7 +46,7 @@
                                             <div class="ips-step">
                                                 <span class="circle">3</span>
                                             </div>
-                                            <span class="label">Kelengkapan</span>
+                                            <span class="label">Kronologi Masalah</span>
                                         </a>
                                     </li>
 
@@ -56,7 +56,7 @@
                                             <div class="ips-step">
                                                 <span class="circle">4</span>
                                             </div>
-                                            <span class="label">Lokasi</span>
+                                            <span class="label">Expectation <br>Future Case</span>
                                         </a>
                                     </li>
                                     <li class="form-bidang-step">
@@ -64,7 +64,7 @@
                                             <div class="ips-step">
                                                 <span class="circle">5</span>
                                             </div>
-                                            <span class="label">Bidang Keahlian</span>
+                                            <span class="label">Lokasi Kejadian</span>
                                         </a>
                                     </li>
 
@@ -83,71 +83,134 @@
                         <div class="field clearfix "> 
                             <div class="form-group row form-biodata">
 
-                                <label class="col-md-12" for="exampleInputEmail1">Tulis Judul Masalah Hukum Anda <span class="text-danger email-error"></span></label>
-                                
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="">
+                                <label class="col-md-12" for="exampleInputEmail1">Nama Lengkap <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Nama Depan">
                                 </div>
-                                
-                                <div class="col-md-12">
-                                    <b>Jaga agar tetap singkat dan tidak berbelit-belit</b>
-                                    <p>Contoh: "Penipuan Pekerjaan oleh Pt. Abc"</p>
+
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Nama Belakang">
                                 </div>
+
+                                <label class="col-md-12" for="exampleInputEmail1">Jenis Kelamin <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-12" for="exampleInputEmail1">
+                                    <select class="form-control">
+                                        <option value="0">Pilih Jenis Kelamin</option>
+                                        <option value="1">Laki-laki</option>
+                                        <option value="2">Perempuan</option>
+                                        <option value="3">Tidak ingin disebutkan</option>
+                                    </select>
+                                </div>
+
+                                <label class="col-md-12" for="exampleInputEmail1">Alamat Domisili <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-12">
+                                    <!-- <input type="number" class="form-control" placeholder="Alamat"> -->
+
+                                    <textarea class="form-control" rows="3" i></textarea>
+                                </div>
+
+                                <label class="col-md-12" for="exampleInputEmail1">Pekerjaan & Penghasilan <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Pekerjaan">
+                                </div>
+
+                                <div class="col-md-6">
+                                        <input type="text" class="form-control" id="penghasilan" placeholder="Penghasilan">
+                                </div>
+
+                                <label class="col-md-12" for="exampleInputEmail1">No Handphone <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="Masukkan No Handphone">
+                                </div>
+
+                                <label class="col-md-12" for="exampleInputEmail1">Email <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-12">
+                                    <input type="email" class="form-control" placeholder="Masukkan Email">
+                                </div>
+
+                                <label class="col-md-12" for="exampleInputEmail1">Surat Keterangan Tidak Mampu ( Tidak Wajib ) <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-6">
+                                    Browse for file ... <input class="file-upload" type="file" />
+                                    <br>
+                                </div>
+
                             </div>
                             <div class="form-group row form-identitas" style="display:none;">
-                                
-                                <label class="col-md-12" for="exampleInputEmail1">Penjelasan <span class="text-danger email-error"></span></label>
+
+                                <label class="col-md-12" for="exampleInputEmail1">Tulis Judul Masalah Hukum Anda <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-12">
+                                    <input type="text" class="form-control" placeholder="" maxlength="50">
+                                </div>
+
+                                <label class="col-md-12" for="exampleInputEmail1">Pilih Jenis Kasus <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-12" for="exampleInputEmail1">
+                                    <select class="form-control" id="kasus">
+                                        <option value="0">Pilih Jenis Kasus</option>
+                                        <option value="1">Kasus Umum</option>
+                                        <option value="2">Kasus Khusus</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-12 inisial-name">
+                                    <b>Notes:</b><br>
+                                    <p>	Terkait masalah kerahasian kasus yang sensitif seperti kasus kekerasan anak,perceraian,pelecehan seksual ,keamanan negara dan saksi kunci akan diberikan kerahasian tentang biodata pencari keadilan.</p><br>
+                                </div>
+
+                                <label class="col-md-12 inisial-name" for="exampleInputEmail1">Masukkan Nama Inisial<span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control inisial-name" placeholder="Nama Inisial">
+                                </div>
+                            </div>
+                            <div class="form-group row form-biografi" style="display:none ;">
+
+                                <label class="col-md-12" for="exampleInputEmail1">Ringkasan Penjelasan <span class="text-danger email-error"></span></label>
                                 <div class="col-md-12">
                                     <div id="jelasMasalahHukum">
-                                
+
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <b>Jelaskan selengkapnya permasalahan hukum anda</b>
                                 </div>
-                            </div>
-                            <div class="form-group row form-biografi" style="display:none ;">
-                                
 
-                                <label class="col-md-12" for="exampleInputEmail1">Tanggal Sidang (*optional) <span class="text-danger email-error"></span></label>
-                                
-                                <div class="col-md-12">
-                                    <input type="number" class="form-control" placeholder="Tanggal Sidang">
-                                </div>
+                                <hr>
 
-
-                                
                                 <label class="col-md-12" for="exampleInputEmail1">Dokumen <span class="text-danger email-error"></span></label>
-                                
-                                <div class="col-md-12"> 
+
+                                <div class="col-md-6">
                                     Browse for file ... <input class="file-upload" type="file" />
+                                    <br>
                                 </div>
 
-                                <div class="col-md-12">
-                                    <b>Tambahkan tanggal sidang jika sudah memiliki</b>
-                                    <b>Tambahkan dokumen pendukung jika memiliki</b>
-                                    <p>Contoh: Dokumen Sidang dan lain-lain</p>
-                                </div>
+
                             </div>
                             <div class="form-group row form-edukasi" style="display:none ;">
+                                <label class="col-md-12" for="exampleInputEmail1">Ekspektasi Masalah Kedepan nya <span class="text-danger email-error"></span></label>
+                                <div class="col-md-12">
+                                    <div id="editorexpectation">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="form-group row form-bidang" style="display:none  ;">
                                 <label class="col-md-12" for="exampleInputEmail1">Lokasi <span class="text-danger email-error"></span></label>
-                                
+
                                 <div class="col-md-12">
                                     <input type="text" class="form-control" placeholder="Provinsi">
                                 </div>
                                 <div class="col-md-12">
-                                    <b>Tambahkan lokasi sidang/permasalahan hukum</b>
-                                    <p>Untuk memudahkan kami menemukan pengacara anda</p>
-                                </div>
-                            </div>
-                            <div class="form-group row form-bidang" style="display:none  ;">
-                                <label class="col-md-12" for="exampleInputEmail1">Bidang Keahlian <span class="text-danger email-error"></span></label>
-                                
-                                <div class="col-md-12">
-                                    <input id="tags" class="form-control" placeholder="Perceraian, Perdagangan Internasional, Pemerintahan, Akte Tanah dan lain lain">
-                                </div>
-                                <div class="col-md-12">
-                                    <b>Tambahkan keahlian yang dibutuhkan</b>
+                                    <b>Tambahkan lokasi kejadian</b>
                                     <p>Untuk memudahkan kami menemukan pengacara anda</p>
                                 </div>
                             </div>
@@ -277,6 +340,15 @@ $(document).ready(function() {
             ['para', ['ul', 'ol', 'paragraph']]
         ]
     });
+    $('#editorexpectation').summernote({
+        minHeight: 200,
+        toolbar: [
+            // [groupName, [list of button]]
+            ['style', ['bold', 'italic', 'underline', 'clear']],
+            ['fontsize', ['fontsize']],
+            ['para', ['ul', 'ol', 'paragraph']]
+        ]
+    });
     $('#editorEdukasi').summernote({
         minHeight: 200,
         toolbar: [
@@ -286,7 +358,29 @@ $(document).ready(function() {
             ['para', ['ul', 'ol', 'paragraph']]
         ]
     });
+
+    $("select").change(function(){
+
+        $(this).find("option:selected").each(function(){
+
+            var optionValue = $(this).attr("value");
+
+            if(optionValue==2){
+
+                $(".inisial-name").show();
+
+            } else{
+
+                $(".inisial-name").hide();
+
+            }
+
+        });
+
+    }).change();
+
 });
+
 </script>
 
 <?php $this->load->view('landing_page/layout/footer')?>
