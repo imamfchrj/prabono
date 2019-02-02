@@ -9,7 +9,7 @@ class Auth extends CI_Model
     }
 
     private $table = 'users';
-    private $table_users_profile = 'users_profile';
+    private $table_users_profile = 'user_profiles';
 
     function create_user($email,$password){
         $array =array(
@@ -17,9 +17,10 @@ class Auth extends CI_Model
             'password'=>hashpass($password)
         );
         $this->db->set($array);
+        $this->db->insert($this->table);
         $id=$this->db->insert_id();
         $data_hp =array(
-            'user_id'=>$id,
+            'user_id'=>$id
         );
         $this->db->set($data_hp);
         $this->db->insert($this->table_users_profile);

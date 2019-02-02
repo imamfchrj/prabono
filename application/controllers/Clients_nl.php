@@ -78,7 +78,6 @@ class Clients_nl extends All_Controller {
                 ));
                 return;
             }
-			
         }
 
 		echo json_encode(array(
@@ -95,7 +94,7 @@ class Clients_nl extends All_Controller {
         if user set true=client else false it will be advokat
         */
         $user_set=$this->input->post('user_set');
-        if($user_set){
+        if($user_set=="true"){
             $this->user_login();
         }else{
             $this->advokat_login();
@@ -126,8 +125,7 @@ class Clients_nl extends All_Controller {
                     );
 					$this->session->set_userdata($set_session);
                     echo json_encode(array(
-                        'is_error'=>false,
-                        'data'=>$set_session
+                        'is_error'=>false
                     ));
                     return;
                 }
@@ -169,11 +167,11 @@ class Clients_nl extends All_Controller {
                         'advokat_status'	=> $user->activated,
                         'advokat_login_config' => hashadvokat($user->email)
                     );
-					$this->session->set_userdata($set_session);
                     echo json_encode(array(
-                        'is_error'=>false,
-                        'data'=>$set_session
+                        'is_error'=>true,
+                        'error_message'=>  $set_session
                     ));
+					$this->session->set_userdata($set_session);
                     return;
                 }
                 $error[]="Email atau Password salah";

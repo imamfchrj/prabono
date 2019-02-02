@@ -166,13 +166,6 @@
 
 <script>
 
-    $(".login-btn").click(function(){
-        if($(".user_set").prop("checked") == true){
-            window.location = "<?php echo base_url('laporkan-masalah-hukum'); ?>";
-            return true;
-        }
-        window.location = "<?php echo base_url('users/caradaftar'); ?>";
-    });
 </script>
 
 
@@ -216,10 +209,10 @@
                                     <hr>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <a href="<?=base_url('register')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi User</a>
+                                    <a href="<?=base_url('daftar-user')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi User</a>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <a href="<?=base_url('users/caradaftar')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi Advokat</a>
+                                    <a href="<?=base_url('daftar-advokat')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi Advokat</a>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
                                 </div>
@@ -298,10 +291,14 @@ var submit = function (response){
             alert_error(data.error_message);
             return; 
         }
-        console.log(data);
-        window.location = "<?php echo base_url(DEFAULT_PAGE_USER); ?>";
+        if($('.user_set').is(":checked") === true){
+            window.location = "<?php echo base_url(DEFAULT_PAGE_USER); ?>";
+        }else{
+            window.location = "<?php echo base_url(DEFAULT_PAGE_ADVOKAT); ?>";
+        }
     })
-    .fail(function() {
+    .fail(function(data) {
+        console.log(data);
         if(tmp){
             alert_error( "Server tidak merespon. Mohon cek koneksi internet anda. (Lakukan refresh jika dibutuhkan)\n" );
             grecaptcha.reset();
