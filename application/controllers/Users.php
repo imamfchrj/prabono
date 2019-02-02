@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Users extends CI_Controller {
+class Users extends Advokat_Controller {
 	
 	// public function index()
 	// {
@@ -57,5 +57,10 @@ class Users extends CI_Controller {
 				'success'=>1
 			)));
 	}
+
+	public function logout(){
+		$this->logout_sess();
+		redirect();
+	}	
 
 }

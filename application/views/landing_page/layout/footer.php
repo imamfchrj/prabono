@@ -1,5 +1,7 @@
                           
 
+        <script src="<?=base_url()?>probono_asset/javascript/alert.js"></script>
+        <script src="<?=base_url()?>probono_asset/javascript/costum.js"></script>
         <!-- Footer -->
         <!-- Footer -->
         <footer id="footer" class="footer main-footer" data-fixed="true" itemscope="itemscope">

@@ -25,22 +25,22 @@
                                 
                                 
                                 <div class="col-md-12">
-                                    <p class="text-danger float-right" id="email-text"></p>
                                     <input type="text" id="email" class="form-control" placeholder="Email">
-                                    
+                                    <p class="text-danger float-left top-min" id="email-text"></p>
                                 </div>
                                 <div class="col-md-12">
-                                    <p class="text-danger float-right" id="password-text"></p>
                                     <input type="password" id="password" class="form-control" placeholder="Password">
+                                    <p class="text-danger float-left top-min" id="password-text"></p>
                                 </div>
-                                <div class="col-md-12">
+                                <div class="col-md-12 g-cap">
                                     <div id="html_element"></div>
                                 </div>
                             </div>
                             
                         </div>
                         <div class="field clearfix field-btn">
-                            <button class="flat-button submit" style="float:right;">Daftar</button>
+                            <button class="flat-button submit" style="float:right;">Login</button>
+                            <button class="flat-button btn-success" style="float:left;">Daftar</button>
                         </div>
 
                     </div>
@@ -64,13 +64,9 @@
       };
     </script>
 
-<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit"
-        async defer></script>
-
-
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer></script>
         
 <script type="text/javascript">
-
 
 $(function(){
     $(".submit").click(function(){
@@ -116,7 +112,8 @@ var submit = function (response){
     .done(function(data) {
         if(data.is_error==1){ 
             console.log(data);
-            // alert_error(data.error_message);
+            alert_error(data.error_message);
+            grecaptcha.reset();
             return; 
         }
         console.log(data);
@@ -125,6 +122,7 @@ var submit = function (response){
     .fail(function() {
         if(tmp){
             alert_error( "Server tidak merespon. Mohon cek koneksi internet anda. (Lakukan refresh jika dibutuhkan)\n" );
+            grecaptcha.reset();
             tmp = false;
         }
     })

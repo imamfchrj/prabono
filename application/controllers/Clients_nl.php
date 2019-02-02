@@ -18,6 +18,12 @@ class Clients_nl extends All_Controller {
 	{
 		$data['menu']="home";
 		$this->load->view('client/daftar',$data);
+    }
+    
+	public function register_advokat()
+	{
+		$data['menu']="home";
+		$this->load->view('client/daftar_advokat',$data);
 	}
 
 	public function login()
@@ -27,10 +33,10 @@ class Clients_nl extends All_Controller {
     }
 
     public function ajax_register(){
-        $this->form_validation->set_rules('g-recaptcha-response', "incorect captcha", 'required|trim|xss_clean|callback__check_recaptcha');
-        $this->form_validation->set_rules('email', "Incorrect Email", 'trim|required|xss_clean|callback__check_email');
-        $this->form_validation->set_rules('password', "Incorrect Password", 'trim|required|xss_clean|min_length[8]|max_length[200]');
-        $this->form_validation->set_rules('setuju',"Incorrect accept Term & Service", 'callback__setuju');
+        $this->form_validation->set_rules('g-recaptcha-response', "Captcha", 'required|trim|xss_clean|callback__check_recaptcha');
+        $this->form_validation->set_rules('email', "Email", 'trim|required|xss_clean|callback__check_email');
+        $this->form_validation->set_rules('password', "Password", 'trim|required|xss_clean|min_length[8]|max_length[200]');
+        $this->form_validation->set_rules('setuju',"accept Term & Service", 'callback__setuju');
         if ($this->form_validation->run()) {	
             $this->load->model('user/auth');
             if($this->auth->create_user(
@@ -54,10 +60,53 @@ class Clients_nl extends All_Controller {
 
 
 
+    public function ajax_register_advokat(){
+        $this->form_validation->set_rules('g-recaptcha-response', "Captcha", 'required|trim|xss_clean|callback__check_recaptcha');
+        $this->form_validation->set_rules('email', "Email", 'trim|required|xss_clean|callback__check_email_advokat');
+        $this->form_validation->set_rules('hp', "hp", 'trim|required|xss_clean|callback__check_hp');
+        $this->form_validation->set_rules('password', "Password", 'trim|required|xss_clean|min_length[8]|max_length[200]');
+        $this->form_validation->set_rules('setuju',"accept Term & Service", 'callback__setuju');
+        if ($this->form_validation->run()) {	
+            $this->load->model('user/auth_advokat');
+            if($this->auth_advokat->create_user(
+                $this->form_validation->set_value('email'),
+                $this->form_validation->set_value('hp'),
+                $this->form_validation->set_value('password')
+            )){
+                echo json_encode(array(
+                    'is_error'=>false
+                ));
+                return;
+            }
+        }
+
+		echo json_encode(array(
+            'is_error'=>true,
+			'error_message'=>  validation_errors()
+        ));
+        return;
+    }
+
+
+
     public function ajax_login(){
-        $this->form_validation->set_rules('g-recaptcha-response', "incorect captcha", 'required|trim|xss_clean|callback__check_recaptcha');
-        $this->form_validation->set_rules('email', "Incorrect Email", 'trim|required|xss_clean');
-        $this->form_validation->set_rules('password', "Incorrect Password", 'trim|required|xss_clean|min_length[8]|max_length[200]');
+        /*
+        if user set true=client else false it will be advokat
+        */
+        $user_set=$this->input->post('user_set');
+        if($user_set=="true"){
+            $this->user_login();
+        }else{
+            $this->advokat_login();
+        }
+    }
+        
+
+    private function user_login(){
+        $this->form_validation->set_rules('user_set', "user value", 'required|trim|xss_clean|callback__check_bool');
+        $this->form_validation->set_rules('g-recaptcha-response', "Captcha", 'required|trim|xss_clean|callback__check_recaptcha');
+        $this->form_validation->set_rules('email', "Email", 'trim|required|xss_clean');
+        $this->form_validation->set_rules('password', "Password", 'trim|required|xss_clean|min_length[8]|max_length[200]');
         $error=array();
         if ($this->form_validation->run()) {	
             $this->load->model('user/auth');
@@ -76,14 +125,58 @@ class Clients_nl extends All_Controller {
                     );
 					$this->session->set_userdata($set_session);
                     echo json_encode(array(
-                        'is_error'=>false,
-                        'data'=>$set_session
+                        'is_error'=>false
                     ));
                     return;
                 }
-                $error[]="Password salah";
+                $error[]="Email atau Password salah";
             }else{
-                $error[]="Email tidak dapat ditemukan";
+                $error[]="Email atau Password salah";
+            }
+			
+        }
+        if(validation_errors()){
+            $eror[]=validation_errors();
+        }
+		echo json_encode(array(
+            'is_error'=>true,
+			'error_message'=>  $error
+        ));
+        return;
+    }
+
+
+    private function advokat_login(){
+        $this->form_validation->set_rules('user_set', "user value", 'required|trim|xss_clean|callback__check_bool');
+        $this->form_validation->set_rules('g-recaptcha-response', "Captcha", 'required|trim|xss_clean|callback__check_recaptcha');
+        $this->form_validation->set_rules('email', "Email", 'trim|required|xss_clean');
+        $this->form_validation->set_rules('password', "Password", 'trim|required|xss_clean|min_length[8]|max_length[200]');
+        $error=array();
+        if ($this->form_validation->run()) {	
+            $this->load->model('user/auth_advokat');
+            $user=$this->auth_advokat->get_data_user_by_email($this->form_validation->set_value('email'));
+            if($user){
+                if($user->password==hashpass($this->form_validation->set_value('password'))){
+                    if(!$user->username){
+                        $user->username=$user->email;
+                    }
+                    $set_session=array(
+                        'advokat_user_id'	=> $user->id,
+                        'advokat_username'	=> $user->username,
+                        'advokat_email'		=> $user->email,
+                        'advokat_status'	=> $user->activated,
+                        'advokat_login_config' => hashadvokat($user->email)
+                    );
+                    echo json_encode(array(
+                        'is_error'=>true,
+                        'error_message'=>  $set_session
+                    ));
+					$this->session->set_userdata($set_session);
+                    return;
+                }
+                $error[]="Email atau Password salah";
+            }else{
+                $error[]="Email atau Password salah";
             }
 			
         }

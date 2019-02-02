@@ -27,10 +27,10 @@
                         <div class="field clearfix">
                            <div class="wrap-type-input clearfix">
                               <div class="input-wrap " >
-                                 <input class="input-responsive" type="text" value="" tabindex="1" placeholder="Uraian singkat" name="title" id="email" required="">
+                                 <input class="input-responsive" type="text" value="" tabindex="1" placeholder="Uraian singkat" name="title" id="title" required="">
                               </div>
                               <div class="input-wrap" >
-                                 <input class="input-responsive" type="text" value="" tabindex="2" placeholder="Email" name="email" required="">
+                                 <input class="input-responsive" type="text" value="" tabindex="2" placeholder="Email" id="uraian" name="email" required="">
                               </div>
                            </div>
                         </div>

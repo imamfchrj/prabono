@@ -53,7 +53,6 @@
     <script src="<?=base_url()?>probono_asset/javascript/jquery.cookie.js"></script>
     <script src="<?=base_url()?>probono_asset/javascript/html5shiv.js"></script>
     <script src="<?=base_url()?>probono_asset/javascript/respond.min.js"></script>
-    <script src="<?=base_url()?>probono_asset/javascript/costum.js"></script>
      
     <script src="<?=base_url()?>probono_asset/javascript/jquery.magnific-popup.min.js"></script>   
       

@@ -166,13 +166,6 @@
 
 <script>
 
-    $(".login-btn").click(function(){
-        if($(".user_set").prop("checked") == true){
-            window.location = "<?php echo base_url('laporkan-masalah-hukum'); ?>";
-            return true;
-        }
-        window.location = "<?php echo base_url('users/caradaftar'); ?>";
-    });
 </script>
 
 
@@ -191,29 +184,24 @@
                     <div id="login_form" class="" method="post">
                         <div class="field clearfix ">
                             <div class="form-group row form-biodata">
-                                <div class="col-md-4 col-md-offset-4">
+                                <div class="col-md-3 col-md-offset-5">
                                     <input class="user_set" type="checkbox" checked data-width="100%" data-height="40" data-on="User" data-off="Advokat" data-toggle="toggle" data-onstyle="info" data-offstyle="danger">
                                 </div>
-                                <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Username <span class="text-danger email-error"></span></label>
+                                <label class="col-md-8 col-md-offset-2" >Username</label>
 
-                                <div class="col-md-8 col-md-offset-2">
-                                    <input id="username" type="text" class="form-control">
+                                <div class="col-md-8 col-md-offset-2" style="margin-bottom:15px;">
+                                    <input id="email" type="text" class="form-control">
+                                    <p class="text-danger top-min" id="email-text"></p>
                                 </div>
-                                <label class="col-md-8 col-md-offset-2" for="exampleInputEmail1">Password <span class="text-danger email-error"></span></label>
+                                <label class="col-md-8 col-md-offset-2">Password</label>
 
-                                <div class="col-md-8 col-md-offset-2">
+                                <div class="col-md-8 col-md-offset-2" style="margin-bottom:15px;">
                                     <input id="password" type="password" class="form-control">
+                                    <p class="text-danger top-min" id="password-text"></p>
                                 </div>
-                                <div class="col-md-7 col-md-offset-2">
-                                    <div id="html_element"></div>
+                                <div class="col-md-12 g-cap"  style="margin-bottom:15px;">
+                                        <div id="html_element"></div>
                                 </div>
-
-                                <div class="col-md-8 col-md-offset-2">
-                                    <!-- <label  for="setuju_syarat"><input id="setuju_syarat" type="checkbox" name="aggree" value="1" class="aggree"> &nbsp;&nbsp;<a href="#" class="blue">Syarat dan ketentuan berlaku!</a>
-                                    </label> -->
-                                    <!-- <a href="#" class="blue float-right">Lupa Password!</a> -->
-                                </div>
-
                                 <div class="col-md-8 col-md-offset-2">
                                     <button  class="btn btn-secondary btn-block login-btn submit" >Masuk</button>
                                 </div>
@@ -221,10 +209,10 @@
                                     <hr>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <a href="<?=base_url('register')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi User</a>
+                                    <a href="<?=base_url('daftar-user')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi User</a>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <a href="<?=base_url('users/caradaftar')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi Advokat</a>
+                                    <a href="<?=base_url('daftar-advokat')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi Advokat</a>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
                                 </div>
@@ -290,6 +278,7 @@ var submit = function (response){
         type: 'post',
         dataType: 'json',
         data: {
+            "user_set":$('.user_set').is(":checked"),
             "email":$("#email").val(),
             "password":$("#password").val(),
             "setuju":$("#setuju").is(":checked"),
@@ -298,16 +287,21 @@ var submit = function (response){
     })
     .done(function(data) {
         if(data.is_error==1){ 
-            console.log(data);
-            // alert_error(data.error_message);
+            grecaptcha.reset();
+            alert_error(data.error_message);
             return; 
         }
-        console.log(data);
-        window.location = "<?php echo base_url(DEFAULT_PAGE_USER); ?>";
+        if($('.user_set').is(":checked") === true){
+            window.location = "<?php echo base_url(DEFAULT_PAGE_USER); ?>";
+        }else{
+            window.location = "<?php echo base_url(DEFAULT_PAGE_ADVOKAT); ?>";
+        }
     })
-    .fail(function() {
+    .fail(function(data) {
+        console.log(data);
         if(tmp){
             alert_error( "Server tidak merespon. Mohon cek koneksi internet anda. (Lakukan refresh jika dibutuhkan)\n" );
+            grecaptcha.reset();
             tmp = false;
         }
     })

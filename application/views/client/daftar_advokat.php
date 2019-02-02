@@ -27,8 +27,13 @@
                                 <div class="col-md-12">
                                     <input type="text" id="email" class="form-control" placeholder="Email">
                                     <p class="text-danger float-left top-min" id="email-text"></p>
-                                    
                                 </div>
+
+                                <div class="col-md-12">
+                                    <input type="text" id="hp" class="form-control" placeholder="No Handphone">
+                                    <p class="text-danger float-left top-min" id="hp-text"></p>
+                                </div>
+
                                 <div class="col-md-12">
                                     <input type="password" id="password" class="form-control" placeholder="Password">
                                     <p class="text-danger float-left top-min" id="password-text"></p>
@@ -73,6 +78,10 @@ $(function(){
     $(".submit").click(function(){
         if($("#email").val().length < 5){
             $("#email-text").html("Format email salah");
+            return;
+        }
+        if($("#hp").val().length < 11){
+            $("#hp-text").html("Format No Handphone salah");
             return;
         }
         if(!validateEmail($("#email").val())){
@@ -120,11 +129,12 @@ tmp=true;
 var submit = function (response){  
     console.log(response);
     $.ajax({
-        url: ROOT+'clients_nl/ajax_register',
+        url: ROOT+'clients_nl/ajax_register_advokat',
         type: 'post',
         dataType: 'json',
         data: {
             "email":$("#email").val(),
+            "hp":$("#hp").val(),
             "password":$("#password").val(),
             "setuju":$("#setuju").is(":checked"),
             "g-recaptcha-response":response
@@ -136,7 +146,7 @@ var submit = function (response){
             alert_error(data.error_message);
             return; 
         }
-        window.location = "<?php echo base_url('login'); ?>";
+        window.location = "<?php echo base_url('users/caradaftar'); ?>";
     })
     .fail(function() {
         if(tmp){
