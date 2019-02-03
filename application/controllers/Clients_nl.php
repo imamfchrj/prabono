@@ -168,8 +168,7 @@ class Clients_nl extends All_Controller {
                         'advokat_login_config' => hashadvokat($user->email)
                     );
                     echo json_encode(array(
-                        'is_error'=>true,
-                        'error_message'=>  $set_session
+                        'is_error'=>false
                     ));
 					$this->session->set_userdata($set_session);
                     return;
