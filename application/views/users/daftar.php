@@ -375,44 +375,44 @@
                     toolbar: [
                         // [groupName, [list of button]]
                         ['style', ['bold', 'italic', 'underline', 'clear']],
-                        ['fontsize', ['fontsize']],
+                        // ['fontsize', ['fontsize']],
                         ['para', ['ul', 'ol', 'paragraph']]
                     ],
-                    placeholder: 'Leave a comment ...',
-                    callbacks: {
-                        onKeydown: function (e) {
-                            var t = e.currentTarget.innerText;
-                            if (t.trim().length >= 150) {
-                                //delete keys, arrow keys, copy, cut
-                                if (e.keyCode != 8 && !(e.keyCode >=37 && e.keyCode <=40) && e.keyCode != 46 && !(e.keyCode == 88 && e.ctrlKey) && !(e.keyCode == 67 && e.ctrlKey))
-                                    e.preventDefault();
-                            }
-                        },
-                        onKeyup: function (e) {
-                            var t = e.currentTarget.innerText;
-                            $('#chars').text(150 - t.trim().length);
-                        },
-                        onPaste: function (e) {
-                            var t = e.currentTarget.innerText;
-                            var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
-                            e.preventDefault();
-                            var maxPaste = bufferText.length;
-                            if(t.length + bufferText.length > 400){
-                                maxPaste = 400 - t.length;
-                            }
-                            if(maxPaste > 0){
-                                document.execCommand('insertText', false, bufferText.substring(0, maxPaste));
-                            }
-                            $('#maxContentPost').text(400 - t.length);
-                        }
-                    }
+                    // placeholder: 'Leave a comment ...',
+                    // callbacks: {
+                    //     // onKeydown: function (e) {
+                    //     //     var t = e.currentTarget.innerText;
+                    //     //     if (t.trim().length >= 150) {
+                    //     //         //delete keys, arrow keys, copy, cut
+                    //     //         if (e.keyCode != 8 && !(e.keyCode >=37 && e.keyCode <=40) && e.keyCode != 46 && !(e.keyCode == 88 && e.ctrlKey) && !(e.keyCode == 67 && e.ctrlKey))
+                    //     //             e.preventDefault();
+                    //     //     }
+                    //     // },
+                    //     onKeyup: function (e) {
+                    //         var t = e.currentTarget.innerText;
+                    //         $('#chars').text(150 - t.trim().length);
+                    //     },
+                    //     onPaste: function (e) {
+                    //         var t = e.currentTarget.innerText;
+                    //         var bufferText = ((e.originalEvent || e).clipboardData || window.clipboardData).getData('Text');
+                    //         e.preventDefault();
+                    //         var maxPaste = bufferText.length;
+                    //         if(t.length + bufferText.length > 400){
+                    //             maxPaste = 400 - t.length;
+                    //         }
+                    //         if(maxPaste > 0){
+                    //             document.execCommand('insertText', false, bufferText.substring(0, maxPaste));
+                    //         }
+                    //         $('#maxContentPost').text(400 - t.length);
+                    //     }
+                    // }
                 });
                 $('#editorEdukasi').summernote({
                     minHeight: 200,
                     toolbar: [
                         // [groupName, [list of button]]
                         ['style', ['bold', 'italic', 'underline', 'clear']],
-                        ['fontsize', ['fontsize']],
+                        // ['fontsize', ['fontsize']],
                         ['para', ['ul', 'ol', 'paragraph']]
                     ]
                 });
