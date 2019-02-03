@@ -88,3 +88,5 @@ defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest auto
 define('EXT', '.php');
 define('DEFAULT_PAGE_USER','laporkan-masalah-hukum');
 define('DEFAULT_PAGE_ADVOKAT','users/caradaftar');
+
+define('UPLOAD_PATH','/probono_asset/probono/asset/');
