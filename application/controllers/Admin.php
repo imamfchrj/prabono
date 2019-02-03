@@ -129,7 +129,6 @@ class Admin extends Auth_Controller {
     {
         $this->load->model(array('admin/master_jasa_m'));
         if($id){
-            //$this->load->model('admin/master_berita_m');
             $this->form_validation->set_data(array(
                 'id'    =>  $id
             ));
@@ -142,6 +141,31 @@ class Admin extends Auth_Controller {
         }
 
         $this->load->view('admin/mst_jasa_form',$data);
+    }
+
+    public function mst_publikasi()
+    {
+        $data['menu']="master";
+        $data['sub_menu']="mst_publikasi";
+        $this->load->view('admin/mst_publikasi',$data);
+    }
+
+    public function mst_publikasi_form($id=0)
+    {
+        $this->load->model(array('admin/master_publikasi_m'));
+        if($id){
+            $this->form_validation->set_data(array(
+                'id'    =>  $id
+            ));
+            $this->form_validation->set_rules('id', 'id publikasi', 'trim|required|xss_clean|numeric|htmlentities');
+
+            if ($this->form_validation->run()) {
+                $id=$this->form_validation->set_value('id');
+                $data['values']=$this->master_publikasi_m->get_by_id($id);
+            }
+        }
+
+        $this->load->view('admin/mst_publikasi_form',$data);
     }
 
     public function mst_news_kategori()

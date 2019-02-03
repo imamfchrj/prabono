@@ -476,4 +476,128 @@ class Admin_api extends Api_Controller {
         $id=$this->input->post('id');
         $this->master_jasa_m->delete_by_id($id);
     }
+
+    public function publikasi_get($id="")
+    {
+
+        $this->load->model('admin/master_publikasi_m');
+        if($id==""){
+            //get all
+            $data=$this->master_publikasi_m->get_all();
+            echo json_encode(array(
+                'is_error'=>false,
+                'data'=> $data
+            ));
+            return;
+        }
+
+        $this->form_validation->set_data(array(
+            'id'    =>  $id
+        ));
+        $this->form_validation->set_rules('id', 'id publikasi', 'trim|required|xss_clean|numeric|htmlentities');
+
+        if ($this->form_validation->run()) {
+            $id=$this->form_validation->set_value('id');
+            $data=$this->master_publikasi_m->get_by_id($id);
+            echo json_encode(array(
+                'is_error'=>false,
+                'data'=> $data
+            ));
+            return;
+        }else{
+            $data=$this->master_publikasi_m->get_all();
+            echo json_encode(array(
+                'is_error'=>true,
+                'error_message'=>  validation_errors()
+            ));
+            return;
+        }
+    }
+
+    public function publikasi_insert()
+    {
+
+        $this->load->model('admin/master_publikasi_m');
+        $this->form_validation->set_rules('title', 'Judul', 'trim|required|xss_clean|htmlentities|required');
+        $this->form_validation->set_rules('thumbnail', 'Gambar', 'trim|required|xss_clean|htmlentities|required');
+        $this->form_validation->set_rules('text', 'Text', 'trim|required|xss_clean|htmlentities|required');
+        $this->form_validation->set_rules('file_pendukung', 'Dokumen', 'trim|required|xss_clean|htmlentities|required');
+
+        if ($this->form_validation->run()) {
+            $title=$this->form_validation->set_value('title');
+            $thumbnail=$this->form_validation->set_value('thumbnail');
+            $text=$this->form_validation->set_value('text');
+            $file_pendukung=$this->form_validation->set_value('file_pendukung');
+
+            $data=array('title' => $title,
+                'thumbnail' => $thumbnail,
+                'text' => $text,
+                'file_pendukung' => $file_pendukung,
+            );
+
+            $data=$this->master_publikasi_m->set($data);
+            echo json_encode(array(
+                'is_error'=>false,
+                'id'=>$data
+            ));
+            return;
+        }else{
+            $this->load->model('admin/master_publikasi_m');
+            $data=$this->master_publikasi_m->get_all();
+            echo json_encode(array(
+                'is_error'=>true,
+                'error_message'=>  validation_errors()
+            ));
+            return;
+        }
+    }
+
+    public function publikasi_update()
+    {
+
+        $this->load->model('admin/master_publikasi_m');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('id', 'id jasa', 'trim|required|xss_clean|numeric|htmlentities');
+        $this->form_validation->set_rules('title', 'Judul', 'trim|required|xss_clean|htmlentities|required');
+        $this->form_validation->set_rules('thumbnail', 'Gambar', 'trim|required|xss_clean|htmlentities|required');
+        $this->form_validation->set_rules('text', 'Text', 'trim|required|xss_clean|htmlentities|required');
+        $this->form_validation->set_rules('file_pendukung', 'Dokumen', 'trim|required|xss_clean|htmlentities|required');
+
+        if ($this->form_validation->run()) {
+
+            $id=$this->form_validation->set_value('id');
+            $title=$this->form_validation->set_value('title');
+            $thumbnail=$this->form_validation->set_value('thumbnail');
+            $text=$this->form_validation->set_value('text');
+            $file_pendukung=$this->form_validation->set_value('file_pendukung');
+
+            $data=array('title' => $title,
+                'thumbnail' => $thumbnail,
+                'text' => $text,
+                'file_pendukung' => $file_pendukung,
+            );
+
+            $data=$this->master_publikasi_m->update_value_by_id($id,$data);
+            echo json_encode(array(
+                'is_error'=>false,
+                'id'=>$data
+            ));
+            return;
+        }else{
+            $this->load->model('admin/master_publikasi_m');
+            $data=$this->master_publikasi_m->get_all();
+            echo json_encode(array(
+                'is_error'=>true,
+                'error_message'=>  validation_errors()
+            ));
+            return;
+        }
+    }
+
+    public function publikasi_delete()
+    {
+        $this->load->model('admin/master_publikasi_m');
+        $id=$this->input->post('id');
+        $this->master_publikasi_m->delete_by_id($id);
+    }
 }

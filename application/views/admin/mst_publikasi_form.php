@@ -6,7 +6,7 @@ $this->load->view('admin/layout/header');
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="br-mainpanel">
     <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-        <h4 class="tx-gray-800 mg-b-5">Form Input Jasa</h4>
+        <h4 class="tx-gray-800 mg-b-5">Form Input Publikasi</h4>
     </div><!-- d-flex -->
     <div class="br-pagebody">
     <div class="br-section-wrapper">
@@ -17,19 +17,25 @@ $this->load->view('admin/layout/header');
                     <label class="form-control-label">Judul : <span class="tx-danger">*</span></label>
                     <input class="form-control" type="text" id="judul" name="judul" value="<?php if($values){echo $values->title;}?>"  placeholder="Enter Judul">
                 </div>
-            </div><!-- col-4 -->
+            </div><!-- col-8 -->
             <div class="col-lg-4">
                 <div class="form-group">
                     <label class="form-control-label">Gambar :</label>
                     <input class="form-control" type="text" id="gambar" name="gambar" value="<?php if($values){echo $values->thumbnail;}?>" placeholder="Enter Gambar">
                 </div>
             </div><!-- col-4 -->
-            <div class="col-lg-4">
+            <div class="col-lg-8">
                 <div class="form-group mg-b-10-force">
                     <label class="form-control-label">Text : <span class="tx-danger">*</span></label>
                     <textarea id="text" rows="5" class="form-control" placeholder="Textarea"><?php if($values){echo $values->text;}?></textarea>
                 </div>
             </div><!-- col-8 -->
+            <div class="col-lg-4">
+                <div class="form-group mg-b-10-force">
+                    <label class="form-control-label">File Pendukung : <span class="tx-danger">*</span></label>
+                    <input class="form-control" type="text" id="file_pendukung" name="file_pendukung" value="<?php if($values){echo $values->file_pendukung;}?>" placeholder="Enter Gambar">
+                </div>
+            </div><!-- col-4 -->
         </div><!-- row -->
 
         <div class="form-layout-footer">
@@ -54,13 +60,14 @@ $this->load->view('admin/layout/header');
 
         function insert(){
             $.ajax({
-                url: ROOT+'/admin_api/jasa_insert',
+                url: ROOT+'/admin_api/publikasi_insert',
                 dataType: 'json',
                 type: 'post',
                 data: {
                     title: $('#judul').val(),
                     thumbnail: $('#gambar').val(),
                     text: $('#text').val(),
+                    file_pendukung: $('#file_pendukung').val(),
                 }
             })
                 .done(function(data) {
@@ -68,7 +75,7 @@ $this->load->view('admin/layout/header');
                         alert(data.error_message);
                         return;
                     }
-                    window.location = ROOT+'admin/mst_jasa';
+                    window.location = ROOT+'admin/mst_publikasi';
                 })
                 .always(function(){
                     // $('#buy_button_loading').addClass('d-none');
@@ -93,18 +100,23 @@ $this->load->view('admin/layout/header');
                 console.log("Tidak boleh kosong");
                 return;
             }
+            if($('#file_pendukung').val()==""){
+                console.log("Tidak boleh kosong");
+                return;
+            }
             if(id==0){
                 console.log("Tidak boleh 0");
                 return;
             }
             $.ajax({
-                url: ROOT+'/admin_api/jasa_update',
+                url: ROOT+'/admin_api/publikasi_update',
                 dataType: 'json',
                 type: 'post',
                 data: {
                     title: $('#judul').val(),
                     thumbnail: $('#gambar').val(),
                     text: $('#text').val(),
+                    file_pendukung: $('#file_pendukung').val(),
                     id: id
                 }
             })
@@ -114,7 +126,7 @@ $this->load->view('admin/layout/header');
                         alert(data.error_message);
                         return;
                     }
-                    window.location = ROOT+'admin/mst_jasa';
+                    window.location = ROOT+'admin/mst_publikasi';
                 })
                 .always(function(){
                     // $('#buy_button_loading').addClass('d-none');
@@ -126,7 +138,7 @@ $this->load->view('admin/layout/header');
         }
 
         $( "#maintabel" ).click(function() {
-            window.location = ROOT+'admin/mst_jasa';
+            window.location = ROOT+'admin/mst_publikasi';
         });
     </script>
 
