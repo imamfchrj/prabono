@@ -3119,6 +3119,13 @@ footer .logo-footer .logo {
     margin: 0px;
     padding: 0px;
 }
+@media screen and (max-width: 512px) {
+	.daftar-steps ul,
+	.daftar-steps ul li:nth-child(even) .label {
+		/* color: blue; */
+		margin-top:30px;
+	}
+}
 .daftar-steps ul:after{
     content: ' '; 
     clear: both;

@@ -87,11 +87,11 @@
                                             <label class="col-md-12" for="exampleInputEmail1">Nama Lengkap <span class="text-danger email-error"></span></label>
                                             
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" placeholder="Nama Depan">
+                                                <input type="text" class="form-control" id="firstname" placeholder="Nama Depan">
                                             </div>
                                             
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" placeholder="Nama Belakang">
+                                                <input type="text" class="form-control" id="lastname" placeholder="Nama Belakang">
                                             </div>
 
                                             <label class="col-md-12" for="exampleInputEmail1">Jenis Kelamin <span class="text-danger email-error"></span></label>
