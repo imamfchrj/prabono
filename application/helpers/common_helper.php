@@ -30,3 +30,23 @@ function get_from_sess($val){
     }
     return "";
 }
+
+function get_text_gender($id=0){
+    $data=array(
+        0 => 'Pilih Jenis Kelamin',
+        1 => 'Laki-Laki',
+        2 => 'Perempuan',
+        3 => 'Tidak ingin disebutkan',
+    );
+    if($id<0 || $id>3){
+        $id=0;
+    }
+    return $data[$id];
+}
+
+function cek_checked($val=0){
+    if($val){
+        return "checked";
+    }
+    return "";
+}

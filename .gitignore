@@ -18,3 +18,5 @@ application/logs/*
 .DS_Store
 application/views/welcome_message.php
 application/env.php
+
+probono_asset/probono/asset/*

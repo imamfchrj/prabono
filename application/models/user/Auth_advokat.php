@@ -78,4 +78,17 @@ class Auth_advokat extends CI_Model
         $this->db->delete($this->table);
     }
 
+
+
+    function is_verified($id){
+
+        $this->db->select("is_verified");
+        $this->db->where($this->table_advokat_profiles.".user_id", $id);
+        $query=$this->db->get($this->table_advokat_profiles);
+        if($query){
+            return $query->row()->is_verified;
+        }
+        return false;
+    }
+
 }
