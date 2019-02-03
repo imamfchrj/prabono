@@ -2395,7 +2395,7 @@ footer .logo-footer .logo {
     opacity: 0;
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
         filter: alpha(opacity=0);
-    webkit-transition: all 0.2s ease-in-out 0s;
+    -webkit-transition: all 0.2s ease-in-out 0s;
       -moz-transition: all 0.2s ease-in-out 0s;
        -ms-transition: all 0.2s ease-in-out 0s;
     	-o-transition: all 0.2s ease-in-out 0s;
@@ -3163,9 +3163,6 @@ footer .logo-footer .logo {
     color: #8a9095;
     margin: auto;
     z-index: 1; 
-}
-.daftar-steps .ips-step{ 
- 
 }
 .daftar-steps .ips-step:before,
 .daftar-steps .ips-step:after{
