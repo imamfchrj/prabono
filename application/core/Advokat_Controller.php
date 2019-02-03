@@ -7,7 +7,7 @@ class Advokat_Controller extends CI_Controller
 	{
 		parent::__construct();
 		if(!$this->session->userdata('advokat_email')){
-
+            redirect();
 		}
         if(hashadvokat($this->session->userdata('advokat_email'))!=$this->session->userdata('advokat_login_config')){
             redirect();
@@ -65,7 +65,13 @@ class Advokat_Controller extends CI_Controller
             'email'		=> "",
             'status'	=> "",
             'login_config' => ""));
-    }
+	}
+	
+	function is_verified(){
+		$this->load->model('user/auth_advokat');
+		$status=$this->auth_advokat->is_verified($this->get_user_id());
+		if(!$status) redirect('users/status_verifikasi');
+	}
 
 
 

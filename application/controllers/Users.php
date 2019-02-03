@@ -28,17 +28,20 @@ class Users extends Advokat_Controller {
 
 	public function aktif()
 	{
+		$this->is_verified();
 		$this->load->view('users/daftar_aktif');
 	}
 
 
 	public function selesai()
 	{
+		$this->is_verified();
 		$this->load->view('users/daftar_selesai');
 	}
 
 	public function daftar_kasus_singgle($slug)
 	{
+		$this->is_verified();
 		$this->load->view('users/daftar_kasus_singgle');
 	}
 
