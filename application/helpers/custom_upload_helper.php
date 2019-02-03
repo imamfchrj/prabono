@@ -16,11 +16,11 @@ function upload_image($name="userfile"){
     if ( ! $CI->upload->do_upload($name))
     {
             $error = array('error' => $CI->upload->display_errors());
-            return array("success"=>"0","error"=>$error);
+            return array("is_error"=>"1","error"=>$error);
     }
     else
     {
             $data = $CI->upload->data();
-            return array("success"=>"1","filename"=>$data["file_name"]);
+            return array("is_error"=>"0","filename"=>$data["file_name"]);
     }
 }

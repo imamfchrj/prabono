@@ -138,7 +138,7 @@
                                             </div>
 
                                             <div class="col-md-6">
-                                                Browse for file ... <input class="file-upload" type="file" />
+                                                Browse for file ... <input class="file-upload" type="file" id="file_photo_ktp" />
 
                                                 <input type="hidden" id="photo_ktp"  value="<?=$profile->photo_ktp?>">
                                             </div>
@@ -150,7 +150,7 @@
                                             </div>
 
                                             <div class="col-md-6">
-                                                Browse for file ... <input class="file-upload" type="file" />
+                                                Browse for file ... <input class="file-upload" id="file_kta_advokat" type="file" />
 
                                                 <input type="hidden" id="kta_advokat" value="<?=$profile->kta_advokat?>">
                                             </div>
@@ -252,6 +252,19 @@
                     </div>  
                 </section> 
             </main>
+
+
+            <script>
+                $("#file_photo_ktp").change(function(){
+                    upload_data(ROOT+'upload/do_upload',"#file_photo_ktp","#photo_ktp");
+                });
+
+
+                $("#file_kta_advokat").change(function(){
+                    upload_data(ROOT+'upload/do_upload',"#file_kta_advokat","#kta_advokat");
+                });
+
+            </script>
 
             
             <script type="text/javascript">
