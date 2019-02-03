@@ -90,3 +90,5 @@ define('DEFAULT_PAGE_USER','laporkan-masalah-hukum');
 define('DEFAULT_PAGE_ADVOKAT','users/caradaftar');
 
 define('UPLOAD_PATH','/probono_asset/probono/asset/');
+define('TICKER_AUTO_SAVE',10000);
+
