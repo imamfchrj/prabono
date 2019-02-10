@@ -600,4 +600,41 @@ class Admin_api extends Api_Controller {
         $id=$this->input->post('id');
         $this->master_publikasi_m->delete_by_id($id);
     }
+
+    public function advokat_profile_get($id="")
+    {
+
+        $this->load->model('admin/list_advokat_m');
+        if($id==""){
+            //get all
+            $data=$this->list_advokat_m->get_all_aktif();
+            echo json_encode(array(
+                'is_error'=>false,
+                'data'=> $data
+            ));
+            return;
+        }
+
+        $this->form_validation->set_data(array(
+            'id'    =>  $id
+        ));
+        $this->form_validation->set_rules('id', 'id advokat profile', 'trim|required|xss_clean|numeric|htmlentities');
+
+        if ($this->form_validation->run()) {
+            $id=$this->form_validation->set_value('id');
+            $data=$this->list_advokat_m->get_by_id($id);
+            echo json_encode(array(
+                'is_error'=>false,
+                'data'=> $data
+            ));
+            return;
+        }else{
+            $data=$this->list_advokat_m->get_all();
+            echo json_encode(array(
+                'is_error'=>true,
+                'error_message'=>  validation_errors()
+            ));
+            return;
+        }
+    }
 }
