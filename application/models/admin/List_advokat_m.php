@@ -13,29 +13,6 @@ class List_advokat_m extends CI_Model
     private $table_education = 'advokat_profiles_file_education';
     private $table_users = 'users_advokat';
 
-
-    function set($array){
-        $this->db->set($array);
-        $this->db->insert($this->table);
-        return $this->db->insert_id();
-    }
-
-    function update_value_by_id($id,$value){
-        $data = $value;
-        $this->db->where('id', $id);
-        $data = $this->db->update($this->table, $data);
-        return $data;
-    }
-
-    function get_by_id($id){
-        $this->db->where('id', $id);
-        $query=$this->db->get($this->table);
-        if($query){
-            return $query->row();
-        }
-        return false;
-    }
-
     private function _select_table()
     {
         $this->db->select(array(
@@ -61,6 +38,29 @@ class List_advokat_m extends CI_Model
         $query=$this->db->get();
         if($query){
             return $query->result();
+        }
+        return false;
+    }
+
+    function set($array){
+        $this->db->set($array);
+        $this->db->insert($this->table);
+        return $this->db->insert_id();
+    }
+
+    function update_value_by_id($id,$value){
+        $data = $value;
+        $this->db->where('id', $id);
+        $data = $this->db->update($this->table, $data);
+        return $data;
+    }
+
+    function get_by_id($id){
+        $this->_select_table();
+        $this->db->where('a.id', $id);
+        $query=$this->db->get($this->table);
+        if($query){
+            return $query->row();
         }
         return false;
     }

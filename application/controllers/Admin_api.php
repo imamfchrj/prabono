@@ -629,7 +629,7 @@ class Admin_api extends Api_Controller {
             ));
             return;
         }else{
-            $data=$this->list_advokat_m->get_all();
+            $data=$this->list_advokat_m->get_all_aktif();
             echo json_encode(array(
                 'is_error'=>true,
                 'error_message'=>  validation_errors()

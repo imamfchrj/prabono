@@ -60,7 +60,7 @@ $(function(){
                     value[3] = json.data[i]['email'];
                     value[4] = json.data[i]['hp'];
                     value[5] = json.data[i]['lokasi_praktek'];
-                    value[6] = '<a class="btn btn-sm btn-primary" href="profile_advokat/'+json.data[i]['id']+'" title="Profile" onclick=""><i class="glyphicon glyphicon-pencil"></i> Profile</a>';
+                    value[6] = '<a class="btn btn-sm btn-primary" href="act_lawyers_profil/'+json.data[i]['id']+'" title="Profile" onclick=""><i class="glyphicon glyphicon-pencil"></i> Profile</a>';
                     data[i]=value;
                 }
                 console.log(data);
