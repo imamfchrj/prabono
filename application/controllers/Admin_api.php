@@ -637,4 +637,19 @@ class Admin_api extends Api_Controller {
             return;
         }
     }
+
+    public function advokat_approve()
+    {
+
+        $this->load->model('admin/list_advokat_m');
+        $id=1;
+        $data=array('is_verified' => 1,
+        );
+        $data=$this->list_advokat_m->update_value_by_id($id,$data);
+        echo json_encode(array(
+            'is_error'=>false,
+            'id'=>$data
+        ));
+        return;
+    }
 }
