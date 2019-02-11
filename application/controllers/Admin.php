@@ -38,6 +38,25 @@ class Admin extends Auth_Controller {
 		$this->load->view('admin/act_lawyers',$data);
 	}
 
+    public function act_lawyers_profil($id=0)
+    {
+        $this->load->model(array('admin/list_advokat_m'));
+        $data['profile'] =$this->list_advokat_m->get_all_aktif();
+        if($id){
+            $this->form_validation->set_data(array(
+                'id'    =>  $id
+            ));
+            $this->form_validation->set_rules('id', 'id profile advokat', 'trim|required|xss_clean|numeric|htmlentities');
+
+            if ($this->form_validation->run()) {
+                $id=$this->form_validation->set_value('id');
+                $data['values']=$this->list_advokat_m->get_by_id($id);
+            }
+        }
+
+        $this->load->view('admin/act_lawyers_profil',$data);
+    }
+
 	public function kpi_lawyers()
 	{
 		$data['menu']="lawyers";

@@ -21,183 +21,16 @@
         <thead>
           <tr>
             <th class="wd-5p">No</th>
-            <th class="wd-15p">Nama</th>
+            <th class="wd-20p">Nama</th>
             <th class="wd-15p">Username</th>
             <th class="wd-20p">Email</th>
             <th class="wd-15p">Number Phone</th>
-            <th class="wd-15p">Date Reg</th>
-            <th class="wd-15p">Action</th>
+            <th class="wd-15p">Lokasi Praktek</th>
+            <th class="wd-10p">Actions</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Tiger</td>
-            <td>Nixon</td>
-            <td>System Architect</td>
-            <td>2011/04/25</td>
-            <td>$320,800</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Garrett</td>
-            <td>Winters</td>
-            <td>Accountant</td>
-            <td>2011/07/25</td>
-            <td>$170,750</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Ashton</td>
-            <td>Cox</td>
-            <td>Junior Technical Author</td>
-            <td>2009/01/12</td>
-            <td>$86,000</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>Cedric</td>
-            <td>Kelly</td>
-            <td>Senior Javascript Developer</td>
-            <td>2012/03/29</td>
-            <td>$433,060</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Airi</td>
-            <td>Satou</td>
-            <td>Accountant</td>
-            <td>2008/11/28</td>
-            <td>$162,700</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>Brielle</td>
-            <td>Williamson</td>
-            <td>Integration Specialist</td>
-            <td>2012/12/02</td>
-            <td>$372,000</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Herrod</td>
-            <td>Chandler</td>
-            <td>Sales Assistant</td>
-            <td>2012/08/06</td>
-            <td>$137,500</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Rhona</td>
-            <td>Davidson</td>
-            <td>Integration Specialist</td>
-            <td>2010/10/14</td>
-            <td>$327,900</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>9</td>
-            <td>Colleen</td>
-            <td>Hurst</td>
-            <td>Javascript Developer</td>
-            <td>2009/09/15</td>
-            <td>$205,500</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>10</td>
-            <td>Sonya</td>
-            <td>Frost</td>
-            <td>Software Engineer</td>
-            <td>2008/12/13</td>
-            <td>$103,600</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>11</td>
-            <td>Jena</td>
-            <td>Gaines</td>
-            <td>Office Manager</td>
-            <td>2008/12/19</td>
-            <td>$90,560</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>12</td>
-            <td>Quinn</td>
-            <td>Flynn</td>
-            <td>Support Lead</td>
-            <td>2013/03/03</td>
-            <td>$342,000</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>13</td>
-            <td>Charde</td>
-            <td>Marshall</td>
-            <td>Regional Director</td>
-            <td>2008/10/16</td>
-            <td>$470,600</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
-          <tr>
-            <td>14</td>
-            <td>Haley</td>
-            <td>Kennedy</td>
-            <td>Senior Marketing Designer</td>
-            <td>2012/12/18</td>
-            <td>$313,500</td>
-            <td>
-              <a class="btn btn-sm btn-primary" href="" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>
-              <a class="btn btn-sm btn-danger" href="" title="Hapus" onclick=""><i class="glyphicon glyphicon-trash"></i> Delete</a>
-            </td>
-          </tr>
+
         </tbody>
         </table>
       </div><!-- table-wrapper -->
@@ -213,6 +46,26 @@ $(function(){
         searchPlaceholder: 'Search...',
         sSearch: '',
         lengthMenu: '_MENU_ items/page',
+        },
+        ajax:{
+            "url": ROOT+"/admin_api/advokat_profile_get",
+            "dataSrc": function ( json ) {
+                var data=[];
+                var no=1;
+                for ( var i=0, ien=json.data.length ; i<ien ; i++ ) {
+                    var value=[];
+                    value[0] = no++;
+                    value[1] = json.data[i]['firstname']+' '+json.data[i]['lastname'];
+                    value[2] = json.data[i]['username'];
+                    value[3] = json.data[i]['email'];
+                    value[4] = json.data[i]['hp'];
+                    value[5] = json.data[i]['lokasi_praktek'];
+                    value[6] = '<a class="btn btn-sm btn-primary" href="act_lawyers_profil/'+json.data[i]['id']+'" title="Profile" onclick=""><i class="glyphicon glyphicon-pencil"></i> Profile</a>';
+                    data[i]=value;
+                }
+                console.log(data);
+                return data;
+            }
         }
     });
 
