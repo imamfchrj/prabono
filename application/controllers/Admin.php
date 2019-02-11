@@ -68,6 +68,10 @@ class Admin extends Auth_Controller {
 	{
 		$data['menu']="lawyers";
 		$data['sub_menu']="approval_lawyers";
+        $this->load->model(array('admin/list_advokat_m'));
+        $data['values'] =$this->list_advokat_m->get_all_pending();
+        //var_dump($data);exit;
+        // echo '<br>'.'<br>'.'<br>'.'<br>'.$this->db->last_query();exit;
 		$this->load->view('admin/approval_lawyers',$data);
 	}
 
