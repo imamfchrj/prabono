@@ -17,14 +17,13 @@ class Users extends Advokat_Controller {
 	{
 		$this->load->model(
 			array(
-				'admin/master_probono_m',
+				'admin/master_bidang_keahlian_m',
 				'user/advokat_file',
 				'user/advokat_profiler'
 			)
 		);
 		$id=$this->get_user_id();
-		$data['probono'] =$this->master_probono_m->get_all();
-		
+		$data['probono'] =$this->master_bidang_keahlian_m->get_all_by_id($id);
 		$data['profile']=$this->advokat_profiler->get_by_id($id);
 		$data['users']=$this->advokat_profiler->get_user_by_id($id);
 		$data['users']=$this->advokat_profiler->get_user_by_id($id);
@@ -88,20 +87,7 @@ class Users extends Advokat_Controller {
 		$this->form_validation->set_rules('position_at_company', "Provinsi", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('biography', "Provinsi", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('education', "Provinsi", 'trim|xss_clean|max_length[250]');
-		
 
-
-		// id_ktp: $("#id_ktp").val(),
-		// photo_ktp: $("#photo_ktp").val(),
-		// id_kta_advokat: $("#id_kta_advokat").val(),
-		// kta_advokat: $("#kta_advokat").val(),
-		// alamat_domisili: $("#alamat_domisili").val(),
-		// alamat_ktp: $("#alamat_ktp").val(),
-		// province: $("#province").val(),
-		// company_firm_name: $("#company_firm_name").val(),
-		// position_at_company: $("#position_at_company").val(),
-		// biography: $('#biography').summernote('code'),
-		// education: $('#education').summernote('code')
 		if($this->form_validation->run()){
 			
 			$this->load->model('user/advokat_profiler');
@@ -129,8 +115,7 @@ class Users extends Advokat_Controller {
 			$this->advokat_profiler->update_profile($id,$data);
 	
 			return print(json_encode(array(
-				'is_error'=>false,
-				'data'=>$data['is_law_firm']
+				'is_error'=>false
 			)));
 
 		}
@@ -145,6 +130,41 @@ class Users extends Advokat_Controller {
 		
 		
 		
+	}
+
+	public function ajax_set_bidang_keahlian(){
+		header('Content-Type: application/json');
+
+		$this->form_validation->set_rules('bidang_keahlian', "Bidang Keahlian", 'trim|xss_clean|integer');
+		$this->form_validation->set_rules('value', "value", 'trim|required|xss_clean|integer|max_length[1]');
+
+
+		if($this->form_validation->run()){
+			
+			$this->load->model('admin/master_bidang_keahlian_m');
+
+			$id=$this->get_user_id();
+			$data=array(
+				"bidang_keahlian"=>$this->form_validation->set_value('bidang_keahlian'),
+				"value"=>$this->form_validation->set_value('value')
+			);
+			$lalala=$this->master_bidang_keahlian_m->set_bidang_keahlian($data,$id);
+	
+			return print(json_encode(array(
+				'is_error'=>false,
+				'data'=>$data,
+				'lalala'=>$lalala
+			)));
+
+		}
+
+		$this->form_validation->set_message('max_length', '%s: Maksimal karakter yang digunakan adalah %s');
+		$this->form_validation->set_message('gender', '%s: Format jenis kelamin salah');
+
+		return print(json_encode(array(
+			'is_error'=>true,
+			'error_message'=>  validation_errors()
+		)));
 	}
 
 	public function logout(){

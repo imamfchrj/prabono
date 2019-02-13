@@ -253,7 +253,9 @@
                                                 <?php
                                                 foreach($probono as $row)
                                                 {
-                                                    echo '<input type="checkbox" value="'.$row->id.'"'."&nbsp;&nbsp;".'>     '.$row->bidang_keahlian.'<br>';
+                                                    $check="";
+                                                    if($row->user_id)$check="checked";
+                                                    echo '<input type="checkbox" '.$check.' id="bidang'.$row->id.'" onclick="set_bidang(\''.$row->id.'\')" value="'.$row->id.'"'."&nbsp;&nbsp;".'>     '.$row->bidang_keahlian.'<br>';
                                                 }
                                                 ?>
                                             </div>
@@ -605,5 +607,46 @@
                 });
             }
             </script>
+
+
+
+<script>
+    
+    var set_bidang = function (id){  
+        $val=$('#bidang'+id).is(":checked");
+        console.log($val);
+        var value=0;
+        if($val){
+            value=1;
+        }
+        $.ajax({
+            url: ROOT+'users/ajax_set_bidang_keahlian',
+            type: 'post',
+            dataType: 'json',
+            data: {
+                "value":value,
+                "bidang_keahlian":id
+            }
+        })
+        .done(function(data) {
+            if(data.is_error==1){ 
+                grecaptcha.reset();
+                alert_error(data.error_message);
+                return; 
+            }
+            console.log(data);
+        })
+        .fail(function() {
+            if(tmp){
+                grecaptcha.reset();
+                alert_error( "Server tidak merespon. Mohon cek koneksi internet anda. (Lakukan refresh jika dibutuhkan)\n" );
+                tmp = false;
+            }
+        })
+        .always(function() {
+            
+        }) ;
+    }
+    </script>
 
 <?php $this->load->view('landing_page/layout/footer')?>
