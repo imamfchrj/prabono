@@ -96,7 +96,7 @@
                                 <label class="col-md-12" for="exampleInputEmail1">Jenis Kelamin <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12" for="exampleInputEmail1">
-                                    <select class="form-control">
+                                    <select class="form-control select-imp">
                                         <option value="0">Pilih Jenis Kelamin</option>
                                         <option value="1">Laki-laki</option>
                                         <option value="2">Perempuan</option>
@@ -153,7 +153,7 @@
                                 <label class="col-md-12" for="exampleInputEmail1">Pilih Jenis Kasus <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12" for="exampleInputEmail1">
-                                    <select class="form-control" id="kasus">
+                                    <select class="form-control select-imp" id="kasus">
                                         <option value="0">Pilih Jenis Kasus</option>
                                         <option value="1">Kasus Umum</option>
                                         <option value="2">Kasus Khusus</option>
@@ -207,7 +207,13 @@
                                 <label class="col-md-12" for="exampleInputEmail1">Lokasi <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Provinsi">
+                                    
+
+                                    <select class="form-control select-imp" id="province">
+                                        <?php foreach($provinces as $list){ ?>
+                                        <option value="<?=$list->id?>"><?=$list->name?></option>
+                                        <?php }?>
+                                    </select>
                                 </div>
                                 <div class="col-md-12">
                                     <b>Tambahkan lokasi kejadian</b>

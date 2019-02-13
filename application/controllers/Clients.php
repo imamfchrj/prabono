@@ -12,6 +12,10 @@ class Clients extends Users_Controller {
 	public function form()
 	{
 		$data['menu']="home";
+		
+		$this->load->model('admin/Master_province_m');
+		$data['provinces']=$this->Master_province_m->get_all();
+
 		$this->load->view('client/form',$data);
 	}
 	public function kasus_aktif()
