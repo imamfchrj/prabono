@@ -4,7 +4,10 @@
             <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
             <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
             <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+            <script>
+                var id= <?=$profile->user_id?>;
+                
+            </script>
             <main class="main-content" id="main-content">
 
                 <section id="services" class="flat-row vc wrap-iconbox">
@@ -177,7 +180,7 @@
                                                 <input type="text" class="form-control" id="province" placeholder="Provinsi" value="<?=$profile->province?>">
                                             </div>
 
-                                            <div class="col-md-12">
+                                            <div class="col-md-12 form-group">
                                                 <input type="checkbox" name="is_law_firm" id="is_law_firm" onclick="lawfirm()" <?=cek_checked($profile->is_law_firm)?>>    By Law Firm .. ?
                                             </div>
 
@@ -192,7 +195,7 @@
                                         </div>
                                         <div class="form-group row form-biografi" style="display:none;">
                                             
-                                            <label class="col-md-12" >Biografi ( Max 150 Characters )</label>
+                                            <label class="col-md-12 form-group" >Biografi ( Max 150 Characters )</label>
                                             <div class="col-md-12">
                                                 <div id="biography" maxlength="150">
                                                 <?=$profile->biography?>
@@ -200,9 +203,22 @@
                                                 <span id="chars">150</span> characters remaining
                                             </div>
 
-                                            <div class="col-md-12">
-                                                Browse for file ... <input class="file-upload" type="file" />
+                                            <div class="col-md-12 form-group">
+                                                Browse for file ... <input class="file-upload" type="file" id="file_biography"/>
                                             </div>
+                                            <div id="div_advokat_biography">
+
+                                                <?php foreach($biography_list as $list){ ?>
+                                                <div class="col-md-12 form-group"  id="file_<?=$list->file?>">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="File" value="file_<?=$list->name?>" disabled>
+                                                        <span class="input-group-addon"><a class="glyphicon glyphicon-remove" href="#" onclick="javascript:deletedata('<?=$list->file?>');return false;"></a></span>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+
+                                            </div>
+
                                         </div>
                                         <div class="form-group row form-edukasi" style="display:none ;">
                                             
@@ -213,8 +229,20 @@
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6">
-                                                Browse for file ... <input class="file-upload" type="file" />
+                                            <div class="col-md-12 form-group">
+                                                Browse for file ... <input class="file-upload" type="file" id="file_education"/>
+                                            </div>
+                                            <div id="div_advokat_education">
+
+                                                <?php foreach($education_list as $list){ ?>
+                                                <div class="col-md-12 form-group"  id="file_<?=$list->file?>">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="File" value="file_<?=$list->name?>" disabled>
+                                                        <span class="input-group-addon"><a class="glyphicon glyphicon-remove" href="#" onclick="javascript:deletedata('<?=$list->file?>');return false;"></a></span>
+                                                    </div>
+                                                </div>
+                                                <?php } ?>
+
                                             </div>
 
                                         </div>
@@ -361,11 +389,14 @@
             });
             function autoSave()
             {
-                console.log("jalan");
                 setTimeout("autoSave()", <?=TICKER_AUTO_SAVE?>); // Autosaves every minute.
                 save();
             }
             function save(){
+                var law_firm=0;
+                if($('#is_law_firm').is(":checked")){
+                    law_firm=1;
+                }
                 $.ajax({
                     url: ROOT+'users/ajax_daftar',
                     type: 'post',
@@ -380,6 +411,7 @@
                         id_ktp: $("#id_ktp").val(),
                         photo_ktp: $("#photo_ktp").val(),
                         id_kta_advokat: $("#id_kta_advokat").val(),
+                        is_law_firm:law_firm,
                         kta_advokat: $("#kta_advokat").val(),
                         alamat_domisili: $("#alamat_domisili").val(),
                         alamat_ktp: $("#alamat_ktp").val(),
@@ -459,6 +491,119 @@
                     ]
                 });
             });
+            </script>
+
+            <script>
+            function do_upload_file($img_address){
+
+                $.ajax({
+                    url: ROOT+'users/ajax_daftar',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        img_address: $img_address,
+                        user_id:user_id
+                    }
+                })
+                .done(function(data) {
+                    // console.log(data);
+                    // if(data.is_error==1){ 
+                    //     alert_error(data.error);
+                    //     return; 
+                    // }
+                    // window.location = "<?php echo base_url('users/status_verifikasi')."/"; ?>";
+                })
+                .fail(function() {
+                    if(tmp){
+                        alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                        tmp = false;
+                    }
+                })
+                .always(function() {
+                    
+                }) ;
+            }
+
+            $("#file_biography").change(function(){
+                do_upload_file("#file_biography","advokat_biography");
+            });
+
+            $("#file_education").change(function(){
+                do_upload_file("#file_education","advokat_education");
+            });
+
+            function result_upload(data){
+                var html="";
+                html=html+'<div class="col-md-12 form-group" id="file_'+data.filename+'">';
+                html=html+'    <div class="input-group">';
+                html=html+'        <input type="text" class="form-control" placeholder="File" value="'+data.raw_name+'" disabled>';
+                html=html+'        <span class="input-group-addon"><a class="glyphicon glyphicon-remove" href="javascript:deletedata(\''+data.filename+'\')"></a></span>';
+                html=html+'    </div>';
+                html=html+'</div>';
+                return html;
+            }
+
+            function do_upload_file($name_input,$img_address){
+                var myFormData = new FormData();
+                myFormData.append('user_id',id);
+                myFormData.append('img_address',$img_address);
+                myFormData.append('userfile',$($name_input).prop('files')[0]);
+
+                $.ajax({
+                    url: ROOT+'upload/do_upload_file',
+                    type: 'POST',
+                    processData: false, // important
+                    contentType: false, // important
+                    dataType : 'json',
+                    data: myFormData
+                }).done(function(data) {
+                    if(data.is_error==1){ 
+                        alert_error(data.error);
+                        return; 
+                    }
+                    $('#div_'+$img_address).append(result_upload(data));
+                })
+                .fail(function() {
+                    if(tmp){
+                        alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                        tmp = false;
+                    }
+                })
+                .always(function() {
+                    
+                }) ;
+            }
+            </script>
+
+
+        <script>
+            function deletedata($filename){
+                $.ajax({
+                        url: ROOT+'upload/delete_file',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        filename: $filename
+                    }
+                })
+                .done(function(data) {
+                    // console.log(data);
+                    if(data.is_error==1){ 
+                        alert_error(data.error);
+                        return; 
+                    }
+                    $(("#file_"+$filename).replace(".", '\\.')).hide();
+                })
+                .fail(function() {
+                    if(tmp){
+                        alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                        tmp = false;
+                    }
+                })
+                .always(function() {
+                    
+                });
+            }
             </script>
 
 <?php $this->load->view('landing_page/layout/footer')?>

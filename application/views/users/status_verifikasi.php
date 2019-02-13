@@ -37,7 +37,7 @@
                                             <p>Kami akan mengirimkan email pemberitahuan setelah validasi selesai.</p>
                                         </div>
                                         <div class="col-md-12">
-                                            <a class="blue" href="<?=base_url()?>">Kembali ke halaman utama.</a>
+                                            <a class="blue" href="<?=base_url()?>/sers/daftar">Kembali ke halaman profile.</a>
                                         </div>
                                        
                                         

@@ -18,6 +18,7 @@ class Users extends Advokat_Controller {
 		$this->load->model(
 			array(
 				'admin/master_probono_m',
+				'user/advokat_file',
 				'user/advokat_profiler'
 			)
 		);
@@ -26,6 +27,9 @@ class Users extends Advokat_Controller {
 		
 		$data['profile']=$this->advokat_profiler->get_by_id($id);
 		$data['users']=$this->advokat_profiler->get_user_by_id($id);
+		$data['users']=$this->advokat_profiler->get_user_by_id($id);
+		$data['biography_list']=$this->advokat_file->get_file_by_id_group($id,"advokat_biography");
+		$data['education_list']=$this->advokat_file->get_file_by_id_group($id,"advokat_education");
 		
 		$this->load->view('users/daftar',$data);
 	}
@@ -79,6 +83,7 @@ class Users extends Advokat_Controller {
 		$this->form_validation->set_rules('alamat_ktp', "Alamat KTP", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('kta_advokat', "Photo KTA Advokat", 'trim|xss_clean');
 		$this->form_validation->set_rules('province', "Provinsi", 'trim|xss_clean|max_length[250]');
+		$this->form_validation->set_rules('is_law_firm', "Mewakili Kantor Hukum", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('company_firm_name', "Provinsi", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('position_at_company', "Provinsi", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('biography', "Provinsi", 'trim|xss_clean|max_length[250]');
@@ -112,6 +117,7 @@ class Users extends Advokat_Controller {
 				"photo_ktp"=>$this->form_validation->set_value('photo_ktp'),
 				"id_kta_advokat"=>$this->form_validation->set_value('id_kta_advokat'),
 				"kta_advokat"=>$this->form_validation->set_value('kta_advokat'),
+				"is_law_firm"=>$this->form_validation->set_value('is_law_firm'),
 				"alamat_domisili"=>$this->form_validation->set_value('alamat_domisili'),
 				"alamat_ktp"=>$this->form_validation->set_value('alamat_ktp'),
 				"province"=>$this->form_validation->set_value('province'),
@@ -124,7 +130,7 @@ class Users extends Advokat_Controller {
 	
 			return print(json_encode(array(
 				'is_error'=>false,
-				'data'=>$data['alamat_ktp']
+				'data'=>$data['is_law_firm']
 			)));
 
 		}
