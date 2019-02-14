@@ -86,18 +86,18 @@
                                 <label class="col-md-12" for="exampleInputEmail1">Nama Lengkap <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Nama Depan">
+                                    <input type="text" class="form-control" placeholder="Nama Depan" id="firstname" value="<?=$profile->firstname?>">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Nama Belakang">
+                                    <input type="text" class="form-control" placeholder="Nama Belakang" id="lastname" value="<?=$profile->lastname?>">
                                 </div>
 
                                 <label class="col-md-12" for="exampleInputEmail1">Jenis Kelamin <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12" for="exampleInputEmail1">
-                                    <select class="form-control select-imp">
-                                        <option value="0">Pilih Jenis Kelamin</option>
+                                    <select class="form-control select-imp" id="gender" >
+                                        <option value="<?=$profile->gender?>">Pilih Jenis Kelamin</option>
                                         <option value="1">Laki-laki</option>
                                         <option value="2">Perempuan</option>
                                         <option value="3">Tidak ingin disebutkan</option>
@@ -109,29 +109,29 @@
                                 <div class="col-md-12">
                                     <!-- <input type="number" class="form-control" placeholder="Alamat"> -->
 
-                                    <textarea class="form-control" rows="3" i></textarea>
+                                    <textarea class="form-control" rows="3" id="alamat_domisili"><?=$profile->alamat_domisili?></textarea>
                                 </div>
 
                                 <label class="col-md-12" for="exampleInputEmail1">Pekerjaan & Penghasilan <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control" placeholder="Pekerjaan">
+                                    <input type="text" class="form-control" placeholder="Pekerjaan" id="pekerjaan" value="<?=$profile->pekerjaan?>">
                                 </div>
 
                                 <div class="col-md-6">
-                                        <input type="text" class="form-control" id="penghasilan" placeholder="Penghasilan">
+                                        <input type="text" class="form-control" id="penghasilan" placeholder="Penghasilan" id="penghasilan" value="<?=$profile->penghasilan?>">
                                 </div>
 
                                 <label class="col-md-12" for="exampleInputEmail1">No Handphone <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan No Handphone">
+                                    <input type="text" class="form-control" placeholder="Masukkan No Handphone"  id="hp" value="<?=$profile->hp?>">
                                 </div>
 
                                 <label class="col-md-12" for="exampleInputEmail1">Email <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12">
-                                    <input type="email" class="form-control" placeholder="Masukkan Email">
+                                    <input type="email" class="form-control" placeholder="Masukkan Email"  disabled value="<?=get_from_sess("email")?>">
                                 </div>
 
                                 <label class="col-md-12" for="exampleInputEmail1">Surat Keterangan Tidak Mampu ( Tidak Wajib ) <span class="text-danger email-error"></span></label>
@@ -139,6 +139,7 @@
                                 <div class="col-md-6">
                                     Browse for file ... <input class="file-upload" type="file" />
                                     <br>
+                                    <input type="hidden" id="surat_tidak_mampu" value="<?=$profile->surat_tidak_mampu?>">
                                 </div>
 
                             </div>
