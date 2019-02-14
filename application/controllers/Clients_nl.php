@@ -113,9 +113,6 @@ class Clients_nl extends All_Controller {
             $user=$this->auth->get_data_user_by_email($this->form_validation->set_value('email'));
             if($user){
                 if($user->password==hashpass($this->form_validation->set_value('password'))){
-                    if(!$user->username){
-                        $user->username=$user->email;
-                    }
                     $set_session=array(
                         'user_id'	=> $user->id,
                         'username'	=> $user->username,
@@ -157,9 +154,6 @@ class Clients_nl extends All_Controller {
             $user=$this->auth_advokat->get_data_user_by_email($this->form_validation->set_value('email'));
             if($user){
                 if($user->password==hashpass($this->form_validation->set_value('password'))){
-                    if(!$user->username){
-                        $user->username=$user->email;
-                    }
                     $set_session=array(
                         'advokat_user_id'	=> $user->id,
                         'advokat_username'	=> $user->username,
