@@ -6,7 +6,7 @@ class Users_Controller extends CI_Controller
 	function __construct()
 	{
         parent::__construct();
-		if(!$this->session->userdata('email')){
+		if(!$this->get_email()){
             redirect();
 		}
         if(hashuser($this->session->userdata('email'))!=$this->session->userdata('login_config')){

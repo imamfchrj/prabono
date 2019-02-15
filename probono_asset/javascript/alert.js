@@ -10,12 +10,11 @@ var alert_error = function(text){
                 <div class="field clearfix ">'+text+' </div>\
                 </div>\
                 <div class="modal-footer">\
-							<button class="btn btn-danger float-right" onclick="$(\'#modal_alert\').remove();$(\'.modal-backdrop\').hide();"><i class="fa fa-times"></i> Close</button>\
+							<button class="btn btn-danger float-right" data-backdrop="false" data-dismiss="modal" ><i class="fa fa-times"></i> Close</button>\
 						</div>\
 					  </div>\
 					</div>\
               </div>\
-            </div>\
         </div>';
 	$(alert_html).modal('show');
 }
