@@ -104,13 +104,10 @@
                         <h5 class="modal-title" id="exampleModalLabel">Term & Condition</h5>
                     </div>
                     <div class="modal-body">
-                        Are you sure you want to submit the following details?<br>
+                        <textarea cols="50" rows="5" style="overflow:scroll;">Diisi sama term & Conditions
+                        </textarea>
 
-                        a.<br>
-                        b.<br>
-                        c.<br>
-
-                        <input type="checkbox" value="">   I accept the Term & Condition<br>
+                        <input type="checkbox" id="is_accepted" value="" onclick="is_accept()">   I accept the Term & Condition<br>
 
                     </div>
 
@@ -129,7 +126,18 @@
         </a>       
     </div>
 
+        <script type="text/javascript">
+            function is_accept() {
+                var checkBox = document.getElementById("is_accepted");
+                var n_button = document.getElementById("submitend");
+                if (checkBox.checked == true){
+                    n_button.style.display = "block";
+                } else {
+                    n_button.style.display = "none";
+                }
+            }
 
+        </script>
     
 </body>
 </html>

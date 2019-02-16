@@ -68,7 +68,7 @@ var id= <?=$profile->user_id?>;
                                             <div class="ips-step">
                                                 <span class="circle">5</span>
                                             </div>
-                                            <span class="label">Lokasi Kejadian</span>
+                                            <span class="label">Lokasi Kasus</span>
                                         </a>
                                     </li>
 
@@ -234,17 +234,23 @@ var id= <?=$profile->user_id?>;
 
                             </div>
                             <div class="form-group row form-bidang" style="display:none  ;">
-                                <label class="col-md-12" for="exampleInputEmail1">Lokasi <span class="text-danger email-error"></span></label>
+                                <label class="col-md-12" for="exampleInputEmail1">Provinsi <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12">
-                                    
-
                                     <select class="form-control select-imp" id="province">
                                         <?php foreach($provinces as $list){ ?>
                                         <option value="<?=$list->id?>"><?=$list->name?></option>
                                         <?php }?>
                                     </select>
                                 </div>
+                                <label class="col-md-12" for="exampleInputEmail1">Provinsi <span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-12">
+                                    <select class="form-control select-imp" id="regencies">
+                                        <option value="0">Pilih Kota</option>
+                                    </select>
+                                </div>
+
                                 <div class="col-md-12">
                                     <b>Tambahkan lokasi kejadian</b>
                                     <p>Untuk memudahkan kami menemukan pengacara anda</p>
@@ -256,7 +262,8 @@ var id= <?=$profile->user_id?>;
 
                             <button class="flat-button-back btn-link kembali" style="float:left;display:none;">&nbsp;Kembali</button>
                             <button class="flat-button lanjut" style="float:right;">Lanjut</button>
-                            <button class="flat-button btn-success submit" style="float:right;display:none;">Submit</button>
+                            <!--<button class="flat-button btn-success submit" style="float:right;display:none;">Submit</button>-->
+                            <button id="submitBtn" data-toggle="modal" data-target="#modal-term-condition" class="flat-button btn-success submit" style="float:right;display:none;">Submit</button>
                         </div>
 
                     </div>
@@ -277,7 +284,18 @@ $(function(){
     var forms = ["form-biodata", "form-identitas", "form-biografi", "form-edukasi", "form-bidang"];
     var tmp_i =0;
     $(".submit").click(function(){
-        submit();
+        //submit();
+    });
+    $("#submitBtn").click(function(){
+        $("#submitend").hide();
+    });
+    $("#submitend").click(function(){
+        // submit();
+        $('#biodataform').submit();
+        $("#submitend").hide();
+
+        window.location = ROOT+'client/kasus_aktif';
+
     });
     $(".lanjut").click(function(){
         // $(".form-daftar").html("<b>Hello world!</b>");
@@ -439,6 +457,18 @@ $(document).ready(function() {
         });
 
     }).change();
+
+    $("#province").on("change", function() {
+        $.ajax({
+            url :  ROOT+'clients/get_by_provinces',
+            type : 'POST',
+            data : {province:$(this).val()},
+            success : function(result) {
+                $("#regencies").html(result);
+            }
+        });
+        return false;
+    });
 
 });
 

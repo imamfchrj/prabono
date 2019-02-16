@@ -38,5 +38,16 @@ class Clients extends Users_Controller {
 		redirect();
 	}
 
+    public function get_by_provinces()
+    {
+        $this->load->model('admin/Master_regencies_m');
+        $provinces = $this->input->post('province');
+        $result = $this->Master_regencies_m->get_by_provinces($provinces);
+        //echo $this->db->last_query();exit;
+        echo "<option value='0'> Pilih Kota </option>";
+        foreach($result as $row)
+            echo "<option value='".$row->id."'>".strtoupper($row->name)."</option>";
+    }
+
 
 }
