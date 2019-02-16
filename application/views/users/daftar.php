@@ -304,6 +304,9 @@
                 $(".submit").click(function(){
                    //submit();
                 });
+                $("#submitBtn").click(function(){
+                    $("#submitend").hide();
+                });
                 $("#submitend").click(function(){
                     // submit();
                     $('#biodataform').submit();
