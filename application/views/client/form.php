@@ -64,7 +64,7 @@
                                             <div class="ips-step">
                                                 <span class="circle">5</span>
                                             </div>
-                                            <span class="label">Lokasi Kejadian</span>
+                                            <span class="label">Lokasi Kasus</span>
                                         </a>
                                     </li>
 
@@ -236,7 +236,8 @@
 
                             <button class="flat-button-back btn-link kembali" style="float:left;display:none;">&nbsp;Kembali</button>
                             <button class="flat-button lanjut" style="float:right;">Lanjut</button>
-                            <button class="flat-button btn-success submit" style="float:right;display:none;">Submit</button>
+                            <!--<button class="flat-button btn-success submit" style="float:right;display:none;">Submit</button>-->
+                            <button id="submitBtn" data-toggle="modal" data-target="#modal-term-condition" class="flat-button btn-success submit" style="float:right;display:none;">Submit</button>
                         </div>
 
                     </div>
@@ -257,7 +258,18 @@ $(function(){
     var forms = ["form-biodata", "form-identitas", "form-biografi", "form-edukasi", "form-bidang"];
     var tmp_i =0;
     $(".submit").click(function(){
-        submit();
+        //submit();
+    });
+    $("#submitBtn").click(function(){
+        $("#submitend").hide();
+    });
+    $("#submitend").click(function(){
+        // submit();
+        $('#biodataform').submit();
+        $("#submitend").hide();
+
+        window.location = ROOT+'client/kasus_aktif';
+
     });
     $(".lanjut").click(function(){
         // $(".form-daftar").html("<b>Hello world!</b>");
