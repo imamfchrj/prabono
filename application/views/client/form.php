@@ -169,7 +169,7 @@ var id= <?=$profile->user_id?>;
 
                                 <div class="col-md-12">
                                     <b>Notes:</b><br>
-                                    <p>	Kasus khusus adalah kasus yang terkait masalah sensitif seperti kasus kekerasan anak,perceraian,pelecehan seksual ,keamanan negara dan saksi kunci akan diberikan kerahasian tentang biodata pencari keadilan.</p><br>
+                                    <p>Kasus khusus adalah kasus yang terkait masalah sensitif seperti kasus kekerasan anak,perceraian,pelecehan seksual ,keamanan negara dan saksi kunci akan diberikan kerahasian tentang biodata pencari keadilan.</p><br>
                                 </div>
 
                                 <label class="col-md-12" for="exampleInputEmail1">Pilih Jenis Kasus <span class="text-danger email-error"></span></label>
@@ -183,7 +183,7 @@ var id= <?=$profile->user_id?>;
                                 </div>
                                 <div class="col-md-12 inisial-name">
                                     <b>Notes:</b><br>
-                                    <p>	Terkait masalah kerahasian kasus yang sensitif seperti kasus kekerasan anak,perceraian,pelecehan seksual ,keamanan negara dan saksi kunci akan diberikan kerahasian tentang biodata pencari keadilan.</p><br>
+                                    <p>Terkait masalah kerahasian kasus yang sensitif seperti kasus kekerasan anak,perceraian,pelecehan seksual ,keamanan negara dan saksi kunci akan diberikan kerahasian tentang biodata pencari keadilan.</p><br>
                                 </div>
 
                                 <label class="col-md-12 inisial-name" for="inital_name">Masukkan Nama Inisial<span class="text-danger email-error"></span></label>
@@ -375,6 +375,9 @@ var    update_profile  = function (){
             lastname : $("#lastname").val(),
             gender : $("#gender").val(),
             hp : $("#hp").val(),
+            id_ktp : $("#id_ktp").val(),
+            photo_ktp : $("#photo_ktp").val(),
+            
             alamat_domisili : $("#alamat_domisili").val(),
             pekerjaan : $("#pekerjaan").val(),
             penghasilan : $("#penghasilan").val(),
@@ -404,9 +407,14 @@ var    update_profile  = function (){
 <script>
 
 $("#file_surat_tidak_mampu").change(function(){
-    console.log("coba");
     upload_data(ROOT+'upload/do_upload',"#file_surat_tidak_mampu","#surat_tidak_mampu");
-});</script>
+});
+
+
+$("#file_photo_ktp").change(function(){
+    upload_data(ROOT+'upload/do_upload',"#file_photo_ktp","#photo_ktp");
+});
+</script>
 
 <script>
 $(document).ready(function() {
@@ -438,13 +446,13 @@ $(document).ready(function() {
         ]
     });
 
-    $("select").change(function(){
+    $("#is_kusus").change(function(){
 
         $(this).find("option:selected").each(function(){
 
             var optionValue = $(this).attr("value");
 
-            if(optionValue==2){
+            if(optionValue==1){
 
                 $(".inisial-name").show();
 
@@ -478,7 +486,6 @@ $(document).ready(function() {
 <script>
 
             $("#kronologi_masalah_file").change(function(){
-                console.log("kambing");
                 do_upload_file_client("#kronologi_masalah_file","kronologi_masalah_file");
             });
 
@@ -496,7 +503,6 @@ $(document).ready(function() {
                     dataType : 'json',
                     data: myFormData
                 }).done(function(data) {
-                    console.log(data);
                     if(data.is_error==1){ 
                         alert_error(data.error);
                         return; 
@@ -536,7 +542,6 @@ $(document).ready(function() {
                     }
                 })
                 .done(function(data) {
-                    // console.log(data);
                     if(data.is_error==1){ 
                         alert_error(data.error);
                         return; 
