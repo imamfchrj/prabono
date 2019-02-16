@@ -1,14 +1,14 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 
-class Client_file extends CI_Model
+class Kasus extends CI_Model
 {
     public function __construct()
     {
         parent::__construct();
     }
 
-    private $table = 'kasus_file';
+    private $table = 'kasus';
 
 
 
@@ -33,13 +33,12 @@ class Client_file extends CI_Model
         return false;
     }
 
-    function get_file_by_id_group($id,$kasus_id,$group){
-        $this->db->where('user_id', $id);
-        $this->db->where('kasus_id', $kasus_id);
-        $this->db->where('group', $group);
+    function get_kasus_not_submit($user_id){
+        $this->db->where('user_id', $user_id);
+        $this->db->where('is_submit', 0);
         $query=$this->db->get($this->table);
         if($query){
-            return $query->result();
+            return $query->row();
         }
         return array();
     }

@@ -42,19 +42,20 @@ class Upload extends CI_Controller {
         public function client_upload_file()
         {
                 $this->form_validation->set_rules('img_address', "IMG Address", 'trim|required|xss_clean|callback__check_group_user');
-                $this->form_validation->set_rules('user_id', "Failed", 'trim|required|xss_clean|callback__check_user');
+                $this->form_validation->set_rules('kasus_id', "Failed", 'trim|required|xss_clean|callback__check_user');
                 if (!$this->form_validation->run()) {
                         echo json_encode(array("is_error"=>"1","error"=>"Terjadi kesalahan pada file yang di upload segera hubungi Admin.","img_address"));
                         return;
                 }
 
                 $img_address=$this->form_validation->set_value('img_address');
-                $user_id=$this->form_validation->set_value('user_id');
+                $kasus_id=$this->form_validation->set_value('kasus_id');
                 $this->load->helper('custom_upload');
                 $this->load->model('client/client_file');
                 $data=upload_file();
                 $array['group']=$img_address;
-                $array['user_id']=$user_id;
+                $array['kasus_id']=$kasus_id;
+                $array['user_id']=intval($this->session->userdata('user_id'));
                 $array['name']=$data['raw_name'];
                 $array['file']=$data['filename'];
                 $this->client_file->set($array);

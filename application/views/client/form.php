@@ -6,7 +6,8 @@
 
 <script>
 
-var id= <?=$profile->user_id?>;
+var id=<?=$profile->user_id?>;
+var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
 </script>
 <main class="main-content" id="main-content">
 
@@ -164,7 +165,7 @@ var id= <?=$profile->user_id?>;
                                 <label class="col-md-12" for="judul">Tulis Judul Masalah Hukum Anda <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" id="judul" placeholder="" maxlength="50">
+                                    <input type="text" class="form-control" id="judul" placeholder="" maxlength="50" value="<?=$kasus->judul?>">
                                 </div>
 
                                 <div class="col-md-12">
@@ -176,7 +177,7 @@ var id= <?=$profile->user_id?>;
 
                                 <div class="col-md-12" for="exampleInputEmail1">
                                     <select class="form-control select-imp" id="is_kusus">
-                                        <option value="0">Pilih Jenis Kasus</option>
+                                        <option value="<?=$kasus->is_kusus?>">Pilih Jenis Kasus</option>
                                         <option value="0">Kasus Umum</option>
                                         <option value="1">Kasus Khusus</option>
                                     </select>
@@ -186,17 +187,17 @@ var id= <?=$profile->user_id?>;
                                     <p>Terkait masalah kerahasian kasus yang sensitif seperti kasus kekerasan anak,perceraian,pelecehan seksual ,keamanan negara dan saksi kunci akan diberikan kerahasian tentang biodata pencari keadilan.</p><br>
                                 </div>
 
-                                <label class="col-md-12 inisial-name" for="inital_name">Masukkan Nama Inisial<span class="text-danger email-error"></span></label>
+                                <label class="col-md-12 inisial-name" for="initial_name">Masukkan Nama Inisial<span class="text-danger email-error"></span></label>
                                 <div class="col-md-6">
-                                    <input type="text" class="form-control inisial-name" placeholder="Nama Inisial">
+                                    <input type="text" class="form-control inisial-name" id="initial_name" value="<?=$kasus->initial_name?>" placeholder="Nama Inisial">
                                 </div>
                             </div>
                             <div class="form-group row form-biografi" style="display:none ;">
 
                                 <label class="col-md-12" for="exampleInputEmail1">Ringkasan Penjelasan <span class="text-danger email-error"></span></label>
                                 <div class="col-md-12">
-                                    <div id="jelasMasalahHukum">
-
+                                    <div id="kronologi_masalah">
+                                        <?=$kasus->kronologi_masalah?>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -227,8 +228,8 @@ var id= <?=$profile->user_id?>;
                             <div class="form-group row form-edukasi" style="display:none ;">
                                 <label class="col-md-12" for="exampleInputEmail1">Harapan Akan Kasus Kedepannya <span class="text-danger email-error"></span></label>
                                 <div class="col-md-12">
-                                    <div id="editorexpectation">
-
+                                    <div id="ekspektasi_kasus">
+                                        <?=$kasus->ekspektasi_kasus?>
                                     </div>
                                 </div>
 
@@ -246,8 +247,8 @@ var id= <?=$profile->user_id?>;
                                 <label class="col-md-12" for="exampleInputEmail1">Provinsi <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12">
-                                    <select class="form-control select-imp" id="regencies">
-                                        <option value="0">Pilih Kota</option>
+                                    <select class="form-control select-imp" id="lokasi_kejadian">
+                                        <option value="<?=$kasus->lokasi_kejadian?>">Pilih Kota</option>
                                     </select>
                                 </div>
 
@@ -293,16 +294,18 @@ $(function(){
         // submit();
         $('#biodataform').submit();
         $("#submitend").hide();
-
-        window.location = ROOT+'client/kasus_aktif';
+        
+        kasus(1);
+        // window.location = ROOT+'client/kasus_aktif';
 
     });
     function simpan_update(){
         console.log("simpan/update");
+        kasus();
     }
     $(".lanjut").click(function(){
         // $(".form-daftar").html("<b>Hello world!</b>");
-        if(forms[tmp_i]=="form-identitas"){
+        if(tmp_i>0){
             simpan_update();
         }
         $("."+forms[tmp_i]).hide();
@@ -412,6 +415,48 @@ var    update_profile  = function (){
 }
 </script>
 
+
+<script>
+
+function kasus($is_submit=0){  
+    console.log($is_submit);
+    $.ajax({
+        url: ROOT+'clients_ajax/kasus',
+        type: 'post',
+        dataType: 'json',
+        data: {
+            id_kasus:kasus_id,
+            judul : $("#judul").val(),
+            is_kusus : $("#is_kusus").val(),
+            initial_name : $("#initial_name").val(),
+            lokasi_kejadian : $("#lokasi_kejadian").val(),
+            kronologi_masalah :$('#kronologi_masalah').summernote('code'),
+            ekspektasi_kasus : $('#ekspektasi_kasus').summernote('code'),
+            is_submit : $is_submit,
+            //province dan kota
+        }
+    })
+    .done(function(data) {
+        if(data.is_error==1){ 
+            alert_error(data.error);
+            return; 
+        }
+        kasus_id=data.id_kasus;
+        if($is_submit==1){
+
+        }
+    })
+    .fail(function() {
+        if(tmp){
+            alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+            tmp = false;
+        }
+    })
+    .always(function() {
+        
+    }) ;
+}
+</script>
 <script>
 
 $("#file_surat_tidak_mampu").change(function(){
@@ -426,7 +471,7 @@ $("#file_photo_ktp").change(function(){
 
 <script>
 $(document).ready(function() {
-    $('#jelasMasalahHukum').summernote({
+    $('#kronologi_masalah').summernote({
         minHeight: 200,
         toolbar: [
             // [groupName, [list of button]]
@@ -435,7 +480,7 @@ $(document).ready(function() {
             ['para', ['ul', 'ol', 'paragraph']]
         ]
     });
-    $('#editorexpectation').summernote({
+    $('#ekspektasi_kasus').summernote({
         minHeight: 200,
         toolbar: [
             // [groupName, [list of button]]
@@ -480,7 +525,8 @@ $(document).ready(function() {
             type : 'POST',
             data : {province:$(this).val()},
             success : function(result) {
-                $("#regencies").html(result);
+                console.log(result);
+                $("#lokasi_kejadian").html(result);
             }
         });
         return false;
@@ -501,6 +547,7 @@ $(document).ready(function() {
                 var myFormData = new FormData();
                 myFormData.append('user_id',id);
                 myFormData.append('img_address',$img_address);
+                myFormData.append('kasus_id',kasus_id);
                 myFormData.append('userfile',$($name_input).prop('files')[0]);
                 
                 $.ajax({
@@ -569,4 +616,41 @@ $(document).ready(function() {
             
 </script>
 
+
+        <!-- Modal Term & Condition-->
+        <div class="modal fade" id="modal-term-condition" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        <h5 class="modal-title" id="exampleModalLabel">Term & Condition</h5>
+                    </div>
+                    <div class="modal-body">
+                        <textarea cols="50" rows="5" style="overflow:scroll;">Diisi sama term & Conditions
+                        </textarea>
+
+                        <input type="checkbox" id="is_accepted" value="" onclick="is_accept()">   I accept the Term & Condition<br>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <a href="#" id="submitend" class="btn btn-success success">Confirm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            function is_accept() {
+                var checkBox = document.getElementById("is_accepted");
+                var n_button = document.getElementById("submitend");
+                if (checkBox.checked == true){
+                    n_button.style.display = "block";
+                } else {
+                    n_button.style.display = "none";
+                }
+            }
+
+        </script>
 <?php $this->load->view('landing_page/layout/footer')?>

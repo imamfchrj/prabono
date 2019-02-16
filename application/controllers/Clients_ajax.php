@@ -50,16 +50,68 @@ class Clients_ajax extends Users_Controller {
 
 		}
 
-		$this->form_validation->set_message('max_length', '%s: Maksimal karakter yang digunakan adalah %s');
-		$this->form_validation->set_message('gender', '%s: Format jenis kelamin salah');
+		return print(json_encode(array(
+			'is_error'=>true,
+			'error_message'=>  validation_errors()
+		)));
+	}
+	
+	public function kasus()
+	{
+		header('Content-Type: application/json');
+        $this->form_validation->set_rules('id_kasus', "id_kasus", 'trim|xss_clean|is_natural');
+		$this->form_validation->set_rules('judul', "Nama Depan", 'trim|required|xss_clean|callback__length_judul');
+		$this->form_validation->set_rules('is_kusus', "kusus", 'trim|xss_clean|is_natural|max_length[1]');
+		$this->form_validation->set_rules('initial_name', "Nama Inisial", 'trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('kronologi_masalah', "Kronologi Masalah", 'trim|xss_clean');
+		$this->form_validation->set_rules('ekspektasi_kasus', "Ekspektasi Kasus", 'trim|xss_clean');
+		$this->form_validation->set_rules('lokasi_kejadian', "Lokasi", 'trim|xss_clean');
+        $this->form_validation->set_rules('is_submit', "is_submit", 'trim|xss_clean|is_natural|max_length[1]');
+        
+
+		if($this->form_validation->run()){
+			
+			$this->load->model('client/kasus');
+
+			$id=$this->get_user_id();
+			$id_kasus=$this->form_validation->set_value('id_kasus');
+			
+			$data=array(
+				"judul"=>$this->form_validation->set_value('judul'),
+				"user_id"=>$id,
+				"is_kusus"=>$this->form_validation->set_value('is_kusus'),
+				"initial_name"=>$this->form_validation->set_value('initial_name'),
+				"kronologi_masalah"=>$this->form_validation->set_value('kronologi_masalah'),
+				"ekspektasi_kasus"=>$this->form_validation->set_value('ekspektasi_kasus'),
+				"lokasi_kejadian"=>$this->form_validation->set_value('lokasi_kejadian'),
+				"is_submit"=>$this->form_validation->set_value('is_submit')
+			);
+			if($id_kasus){
+				$this->kasus->update_value_by_id($id_kasus,$data);
+			}else{
+				$id_kasus=$this->kasus->set($data);
+			}
+	
+			return print(json_encode(array(
+				'is_error'=>false,
+				'id_kasus'=>$id_kasus
+			)));
+
+		}
 
 		return print(json_encode(array(
 			'is_error'=>true,
 			'error_message'=>  validation_errors()
 		)));
-		
-		
-		
+	}
+
+	function _length_judul($val){
+		$data=count(explode(" ",$val));
+		if($data>10){
+			$this->form_validation->set_message('_length_judul', "Judul terlalu panjang. Maksimal 10 kata.");
+			return FALSE;
+		}
+		return TRUE;
 	}
 
 }
