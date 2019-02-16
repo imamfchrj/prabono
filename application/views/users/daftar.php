@@ -13,7 +13,7 @@
                 <section id="services" class="flat-row vc wrap-iconbox">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-8 col-md-offset-2">
+                            <div class="col-md-10 col-md-offset-2">
                                <div class="title-section">
                                     <!-- <h1 class="title">Ingin Bergabung?</h1>
                                     <div class="sub-title">
@@ -55,18 +55,18 @@
                                                 </li>
 
                                                 <!-- Third Step -->
-                                                <li class="form-edukasi-step">
+                                                <!--<li class="form-edukasi-step">
                                                     <a href="#">
                                                         <div class="ips-step">
                                                             <span class="circle">4</span>
                                                         </div>
                                                         <span class="label">Edukasi</span>
                                                     </a>
-                                                </li>
+                                                </li>-->
                                                 <li class="form-bidang-step">
                                                     <a href="#">
                                                         <div class="ips-step">
-                                                            <span class="circle">5</span>
+                                                            <span class="circle">4</span>
                                                         </div>
                                                         <span class="label">Bidang Keahlian</span>
                                                     </a>
@@ -100,7 +100,7 @@
                                             <label class="col-md-12" >Jenis Kelamin <span class="text-danger email-error"></span></label>
 
                                             <div class="col-md-12" >
-                                                <select class="form-control" id="gender">
+                                                <select class="form-control select-imp" id="gender">
                                                     <option value="<?=$profile->gender?>"><?=get_text_gender($profile->gender)?></option>
                                                     <option value="1">Laki-laki</option>
                                                     <option value="2">Perempuan</option>
@@ -108,14 +108,30 @@
                                                 </select>
                                             </div>
 
-                                            <label class="col-md-12" >Titel Lengkap <span class="text-danger email-error"></span></label>
+                                            <label class="col-md-12" >Riwayat Pendidikan <span class="text-danger email-error"></span></label>
                                             
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="first_title" placeholder="Titel Depan" value="<?=$profile->first_title?>">
+                                                <input type="text" class="form-control" id="univ_s1" placeholder="Universitas - S1" value="">
                                             </div>
                                             
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="last_title" placeholder="Titel Belakang" value="<?=$profile->last_title?>">
+                                                <input type="text" class="form-control" id="jur_s1" placeholder="Jurusan" value="">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" id="univ_s2" placeholder="Universitas - S2" value="">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" id="jur_s2" placeholder="Jurusan" value="">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" id="univ_s3" placeholder="Universitas - S3" value="">
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <input type="text" class="form-control" id="jur_s3" placeholder="Jurusan" value="">
                                             </div>
 
 
@@ -146,7 +162,7 @@
                                                 <input type="hidden" id="photo_ktp"  value="<?=$profile->photo_ktp?>">
                                             </div>
 
-                                            <label class="col-md-12" >Kartu Anggota <span class="text-danger email-error"></span></label>
+                                            <label class="col-md-12" >Kartu Tanda Anggota <span class="text-danger email-error"></span></label>
 
                                             <div class="col-md-6">
                                                 <input type="text" id="id_kta_advokat" class="form-control" placeholder="Nomer Keanggotaan" value="<?=$profile->id_kta_advokat?>">
@@ -181,7 +197,7 @@
                                             </div>
 
                                             <div class="col-md-12 form-group">
-                                                <input type="checkbox" name="is_law_firm" id="is_law_firm" onclick="lawfirm()" <?=cek_checked($profile->is_law_firm)?>>    By Law Firm .. ?
+                                                <input type="checkbox" name="is_law_firm" id="is_law_firm" onclick="lawfirm()" <?=cek_checked($profile->is_law_firm)?>>    Mewakili kantor hukum .. ?
                                             </div>
 
                                             <div class="col-md-6">
@@ -200,8 +216,10 @@
                                                 <div id="biography" maxlength="150">
                                                 <?=$profile->biography?>
                                                 </div>
-                                                <span id="chars">150</span> characters remaining
+                                                <span id="chars">150</span> characters remaining<hr>
                                             </div>
+
+                                            <label class="col-md-12 form-group" >Upload CV</label>
 
                                             <div class="col-md-12 form-group">
                                                 Browse for file ... <input class="file-upload" type="file" id="file_biography"/>
@@ -220,41 +238,18 @@
                                             </div>
 
                                         </div>
-                                        <div class="form-group row form-edukasi" style="display:none ;">
-                                            
-                                            <label class="col-md-12" >Edukasi <span class="text-danger email-error"></span></label>
-                                            <div class="col-md-12">
-                                                <div id="education">
-                                                    <?=$profile->education?>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-md-12 form-group">
-                                                Browse for file ... <input class="file-upload" type="file" id="file_education"/>
-                                            </div>
-                                            <div id="div_advokat_education">
-
-                                                <?php foreach($education_list as $list){ ?>
-                                                <div class="col-md-12 form-group"  id="file_<?=$list->file?>">
-                                                    <div class="input-group">
-                                                        <input type="text" class="form-control" placeholder="File" value="file_<?=$list->name?>" disabled>
-                                                        <span class="input-group-addon"><a class="glyphicon glyphicon-remove" href="#" onclick="javascript:deletedata('<?=$list->file?>');return false;"></a></span>
-                                                    </div>
-                                                </div>
-                                                <?php } ?>
-
-                                            </div>
-
-                                        </div>
                                         <div class="form-group row form-bidang" style="display:none  ;">
                                             <label class="col-md-12" >Pilih Bidang Keahlian Anda : <span class="text-danger email-error"></span></label>
                                             
                                             <div class="col-md-12">
                                                 <?php
+                                                //echo var_dump($probono);exit;
                                                 foreach($probono as $row)
                                                 {
                                                     $check="";
-                                                    if($row->user_id)$check="checked";
+                                                    if($row->user_id){
+                                                        $check="checked";
+                                                    }
                                                     echo '<input type="checkbox" '.$check.' id="bidang'.$row->id.'" onclick="set_bidang(\''.$row->id.'\')" value="'.$row->id.'"'."&nbsp;&nbsp;".'>     '.$row->bidang_keahlian.'<br>';
                                                 }
                                                 ?>
@@ -299,7 +294,7 @@
             
             <script type="text/javascript">
             $(function(){
-                var forms = ["form-biodata", "form-identitas", "form-biografi", "form-edukasi", "form-bidang"];
+                var forms = ["form-biodata", "form-identitas", "form-biografi", "form-bidang"];
                 var tmp_i =0;
                 $(".submit").click(function(){
                    //submit();

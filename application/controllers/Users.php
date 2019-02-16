@@ -23,6 +23,7 @@ class Users extends Advokat_Controller {
 			)
 		);
 		$id=$this->get_user_id();
+		//$data['probono'] =$this->master_bidang_keahlian_m->get_by_id($id);
 		$data['probono'] =$this->master_bidang_keahlian_m->get_all_by_id($id);
 		$data['profile']=$this->advokat_profiler->get_by_id($id);
 		$data['users']=$this->advokat_profiler->get_user_by_id($id);
