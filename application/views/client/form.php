@@ -56,7 +56,7 @@
                                             <div class="ips-step">
                                                 <span class="circle">4</span>
                                             </div>
-                                            <span class="label">Expectation <br>Future Case</span>
+                                            <span class="label">Harapan</span>
                                         </a>
                                     </li>
                                     <li class="form-bidang-step">
@@ -104,6 +104,18 @@
                                     </select>
                                 </div>
 
+                                <label class="col-md-12" >Kartu Identitas (KTP/SIM/Paspor)<span class="text-danger email-error"></span></label>
+
+                                <div class="col-md-6">
+                                    <input type="text" id="id_ktp" class="form-control" placeholder="Nomer Identitas" value="<?=$profile->id_ktp?>">
+                                </div>
+
+                                <div class="col-md-6">
+                                    Browse for file ... <input class="file-upload" type="file" id="file_photo_ktp" />
+
+                                    <input type="hidden" id="photo_ktp"  value="<?=$profile->photo_ktp?>">
+                                </div>
+
                                 <label class="col-md-12" for="exampleInputEmail1">Alamat Domisili <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12">
@@ -134,7 +146,7 @@
                                     <input type="email" class="form-control" placeholder="Masukkan Email"  disabled value="<?=get_from_sess("email")?>">
                                 </div>
 
-                                <label class="col-md-12" for="exampleInputEmail1">Surat Keterangan Tidak Mampu ( Tidak Wajib ) <span class="text-danger email-error"></span></label>
+                                <label class="col-md-12" for="exampleInputEmail1">Surat Keterangan Tidak Mampu ( Optional ) <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-6">
                                     Browse for file ... <input class="file-upload" type="file" />
@@ -151,6 +163,11 @@
                                     <input type="text" class="form-control" placeholder="" maxlength="50">
                                 </div>
 
+                                <div class="col-md-12">
+                                    <b>Notes:</b><br>
+                                    <p>	Kasus khusus adalah kasus yang terkait masalah sensitif seperti kasus kekerasan anak,perceraian,pelecehan seksual ,keamanan negara dan saksi kunci akan diberikan kerahasian tentang biodata pencari keadilan.</p><br>
+                                </div>
+
                                 <label class="col-md-12" for="exampleInputEmail1">Pilih Jenis Kasus <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12" for="exampleInputEmail1">
@@ -160,12 +177,6 @@
                                         <option value="2">Kasus Khusus</option>
                                     </select>
                                 </div>
-
-                                <div class="col-md-12 inisial-name">
-                                    <b>Notes:</b><br>
-                                    <p>	Terkait masalah kerahasian kasus yang sensitif seperti kasus kekerasan anak,perceraian,pelecehan seksual ,keamanan negara dan saksi kunci akan diberikan kerahasian tentang biodata pencari keadilan.</p><br>
-                                </div>
-
                                 <label class="col-md-12 inisial-name" for="exampleInputEmail1">Masukkan Nama Inisial<span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-6">
@@ -186,17 +197,9 @@
 
                                 <hr>
 
-                                <label class="col-md-12" for="exampleInputEmail1">Dokumen <span class="text-danger email-error"></span></label>
-
-                                <div class="col-md-6">
-                                    Browse for file ... <input class="file-upload" type="file" />
-                                    <br>
-                                </div>
-
-
                             </div>
                             <div class="form-group row form-edukasi" style="display:none ;">
-                                <label class="col-md-12" for="exampleInputEmail1">Ekspektasi Masalah Kedepan nya <span class="text-danger email-error"></span></label>
+                                <label class="col-md-12" for="exampleInputEmail1">Harapan Akan Kasus Kedepannya <span class="text-danger email-error"></span></label>
                                 <div class="col-md-12">
                                     <div id="editorexpectation">
 
