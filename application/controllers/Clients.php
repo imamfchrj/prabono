@@ -18,6 +18,8 @@ class Clients extends Users_Controller {
 		$this->load->model('client/client_profiler');
 		$id=$this->get_user_id();
 		$data['profile']=$this->client_profiler->get_by_id($id);
+		$this->load->model('client/client_file');
+		$data['kronologi_masalah_list']=$this->client_file->get_file_by_id_group($id,"kronologi_masalah_file");
 		$this->load->view('client/form',$data);
 	}
 	public function kasus_aktif()

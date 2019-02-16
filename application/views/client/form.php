@@ -4,6 +4,10 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
+<script>
+
+var id= <?=$profile->user_id?>;
+</script>
 <main class="main-content" id="main-content">
 
     <section id="services" class="flat-row vc wrap-iconbox">
@@ -137,7 +141,7 @@
                                 <label class="col-md-12" for="exampleInputEmail1">Surat Keterangan Tidak Mampu ( Tidak Wajib ) <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-6">
-                                    Browse for file ... <input class="file-upload" type="file" />
+                                    Browse for file ... <input class="file-upload" id="file_surat_tidak_mampu" type="file" />
                                     <br>
                                     <input type="hidden" id="surat_tidak_mampu" value="<?=$profile->surat_tidak_mampu?>">
                                 </div>
@@ -145,19 +149,19 @@
                             </div>
                             <div class="form-group row form-identitas" style="display:none;">
 
-                                <label class="col-md-12" for="exampleInputEmail1">Tulis Judul Masalah Hukum Anda <span class="text-danger email-error"></span></label>
+                                <label class="col-md-12" for="judul">Tulis Judul Masalah Hukum Anda <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="" maxlength="50">
+                                    <input type="text" class="form-control" id="judul" placeholder="" maxlength="50">
                                 </div>
 
                                 <label class="col-md-12" for="exampleInputEmail1">Pilih Jenis Kasus <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12" for="exampleInputEmail1">
-                                    <select class="form-control select-imp" id="kasus">
+                                    <select class="form-control select-imp" id="is_kusus">
                                         <option value="0">Pilih Jenis Kasus</option>
-                                        <option value="1">Kasus Umum</option>
-                                        <option value="2">Kasus Khusus</option>
+                                        <option value="0">Kasus Umum</option>
+                                        <option value="1">Kasus Khusus</option>
                                     </select>
                                 </div>
 
@@ -166,7 +170,7 @@
                                     <p>	Terkait masalah kerahasian kasus yang sensitif seperti kasus kekerasan anak,perceraian,pelecehan seksual ,keamanan negara dan saksi kunci akan diberikan kerahasian tentang biodata pencari keadilan.</p><br>
                                 </div>
 
-                                <label class="col-md-12 inisial-name" for="exampleInputEmail1">Masukkan Nama Inisial<span class="text-danger email-error"></span></label>
+                                <label class="col-md-12 inisial-name" for="inital_name">Masukkan Nama Inisial<span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-6">
                                     <input type="text" class="form-control inisial-name" placeholder="Nama Inisial">
@@ -188,9 +192,21 @@
 
                                 <label class="col-md-12" for="exampleInputEmail1">Dokumen <span class="text-danger email-error"></span></label>
 
-                                <div class="col-md-6">
-                                    Browse for file ... <input class="file-upload" type="file" />
+                                <div class="col-md-6 form-group">
+                                    Browse for file ... <input class="file-upload" type="file" id="kronologi_masalah_file"/>
                                     <br>
+                                </div>
+
+                                <div id="div_kronologi_masalah_file">
+
+                                <?php foreach($kronologi_masalah_list as $list){ ?>
+                                                <div class="col-md-12 form-group"  id="file_<?=$list->file?>">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="File" value="file_<?=$list->name?>" disabled>
+                                                        <span class="input-group-addon"><a class="glyphicon glyphicon-remove" href="#" onclick="javascript:deletedata('<?=$list->file?>');return false;"></a></span>
+                                                    </div>
+                                                </div>
+                                <?php } ?>
                                 </div>
 
 
@@ -308,13 +324,30 @@ $(function(){
 
 <script>
 tmp=true;
-var submit = function (){  
+
+$(document).ready(function() {
+                autoSave();
+            });
+            function autoSave()
+            {
+                setTimeout("autoSave()", <?=TICKER_AUTO_SAVE?>); // Autosaves every minute.
+                update_profile();
+            }
+var    update_profile  = function (){  
     $.ajax({
-        url: ROOT+'users/ajax_daftar',
+        url: ROOT+'clients_ajax/clients_profile',
         type: 'post',
         dataType: 'json',
         data: {
             // csrf_token: ""
+            firstname : $("#firstname").val(),
+            lastname : $("#lastname").val(),
+            gender : $("#gender").val(),
+            hp : $("#hp").val(),
+            alamat_domisili : $("#alamat_domisili").val(),
+            pekerjaan : $("#pekerjaan").val(),
+            penghasilan : $("#penghasilan").val(),
+            surat_tidak_mampu : $("#surat_tidak_mampu").val()
         }
     })
     .done(function(data) {
@@ -322,7 +355,8 @@ var submit = function (){
             alert_error(data.error);
             return; 
         }
-        window.location = "<?php echo base_url('client/kasus_aktif'); ?>";
+        console.log(data);
+        // window.location = "<?php echo base_url('client/kasus_aktif'); ?>";
     })
     .fail(function() {
         if(tmp){
@@ -335,6 +369,13 @@ var submit = function (){
     }) ;
 }
 </script>
+
+<script>
+
+$("#file_surat_tidak_mampu").change(function(){
+    console.log("coba");
+    upload_data(ROOT+'upload/do_upload',"#file_surat_tidak_mampu","#surat_tidak_mampu");
+});</script>
 
 <script>
 $(document).ready(function() {
@@ -388,6 +429,88 @@ $(document).ready(function() {
 
 });
 
+</script>
+
+
+<script>
+
+            $("#kronologi_masalah_file").change(function(){
+                console.log("kambing");
+                do_upload_file_client("#kronologi_masalah_file","kronologi_masalah_file");
+            });
+
+            function do_upload_file_client($name_input,$img_address){
+                var myFormData = new FormData();
+                myFormData.append('user_id',id);
+                myFormData.append('img_address',$img_address);
+                myFormData.append('userfile',$($name_input).prop('files')[0]);
+                
+                $.ajax({
+                    url: ROOT+'upload/client_upload_file',
+                    type: 'POST',
+                    processData: false, // important
+                    contentType: false, // important
+                    dataType : 'json',
+                    data: myFormData
+                }).done(function(data) {
+                    console.log(data);
+                    if(data.is_error==1){ 
+                        alert_error(data.error);
+                        return; 
+                    }
+                    $('#div_'+$img_address).append(result_upload(data));
+                })
+                .fail(function() {
+                    if(tmp){
+                        alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                        tmp = false;
+                    }
+                })
+                .always(function() {
+                    
+                }) ;
+            }
+
+            function result_upload(data){
+                var html="";
+                html=html+'<div class="col-md-12 form-group" id="file_'+data.filename+'">';
+                html=html+'    <div class="input-group">';
+                html=html+'        <input type="text" class="form-control" placeholder="File" value="'+data.raw_name+'" disabled>';
+                html=html+'        <span class="input-group-addon"><a class="glyphicon glyphicon-remove" href="javascript:deletedata(\''+data.filename+'\')"></a></span>';
+                html=html+'    </div>';
+                html=html+'</div>';
+                return html;
+            }
+
+
+            function deletedata($filename){
+                $.ajax({
+                        url: ROOT+'upload/delete_file_client',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        filename: $filename
+                    }
+                })
+                .done(function(data) {
+                    // console.log(data);
+                    if(data.is_error==1){ 
+                        alert_error(data.error);
+                        return; 
+                    }
+                    $(("#file_"+$filename).replace(".", '\\.')).hide();
+                })
+                .fail(function() {
+                    if(tmp){
+                        alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                        tmp = false;
+                    }
+                })
+                .always(function() {
+                    
+                });
+            }
+            
 </script>
 
 <?php $this->load->view('landing_page/layout/footer')?>
