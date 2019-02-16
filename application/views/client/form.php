@@ -297,8 +297,14 @@ $(function(){
         window.location = ROOT+'client/kasus_aktif';
 
     });
+    function simpan_update(){
+        console.log("simpan/update");
+    }
     $(".lanjut").click(function(){
         // $(".form-daftar").html("<b>Hello world!</b>");
+        if(forms[tmp_i]=="form-identitas"){
+            simpan_update();
+        }
         $("."+forms[tmp_i]).hide();
         tmp_i++;
         $("."+forms[tmp_i]).show();
@@ -318,6 +324,9 @@ $(function(){
     $(".kembali").click(function(){
         // $(".form-daftar").html("<b>Hello world!</b>");
         $("."+forms[tmp_i]).hide();
+        if(forms[tmp_i]=="form-identitas"){
+            simpan_update();
+        }
         tmp_i--;
         $("."+forms[tmp_i]).show();
         if(forms[tmp_i]=="form-bidang"){
@@ -389,7 +398,6 @@ var    update_profile  = function (){
             alert_error(data.error);
             return; 
         }
-        console.log(data);
         // window.location = "<?php echo base_url('client/kasus_aktif'); ?>";
     })
     .fail(function() {
