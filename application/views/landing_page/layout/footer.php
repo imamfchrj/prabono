@@ -93,30 +93,6 @@
             </div>
         </div>
 
-        <!-- Modal Term & Condition-->
-        <div class="modal fade" id="modal-term-condition" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h5 class="modal-title" id="exampleModalLabel">Term & Condition</h5>
-                    </div>
-                    <div class="modal-body">
-                        <textarea cols="50" rows="5" style="overflow:scroll;">Diisi sama term & Conditions
-                        </textarea>
-
-                        <input type="checkbox" id="is_accepted" value="" onclick="is_accept()">   I accept the Term & Condition<br>
-
-                    </div>
-
-                    <div class="modal-footer">
-                        <a href="#" id="submitend" class="btn btn-success success">Confirm</a>
-                    </div>
-                </div>
-            </div>
-        </div>
     </footer>
 
 
@@ -125,19 +101,6 @@
             <i class="fa fa-angle-up"></i>
         </a>       
     </div>
-
-        <script type="text/javascript">
-            function is_accept() {
-                var checkBox = document.getElementById("is_accepted");
-                var n_button = document.getElementById("submitend");
-                if (checkBox.checked == true){
-                    n_button.style.display = "block";
-                } else {
-                    n_button.style.display = "none";
-                }
-            }
-
-        </script>
     
 </body>
 </html>
