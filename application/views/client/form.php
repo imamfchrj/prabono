@@ -326,7 +326,7 @@ $(function(){
     $(".kembali").click(function(){
         // $(".form-daftar").html("<b>Hello world!</b>");
         $("."+forms[tmp_i]).hide();
-        if(forms[tmp_i]=="form-identitas"){
+        if(tmp_i>0){
             simpan_update();
         }
         tmp_i--;

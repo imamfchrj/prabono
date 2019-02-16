@@ -33,6 +33,25 @@ class Kasus extends CI_Model
         return false;
     }
 
+    function get_kasus_by_user_id($user_id){
+        $this->db->where('user_id', $user_id);
+        $query=$this->db->get($this->table);
+        if($query){
+            return $query->result();
+        }
+        return array();
+    }
+
+    function get_kasus_by_user_id_kasus($user_id,$kasus_id){
+        $this->db->where('user_id', $user_id);
+        $this->db->where('id', $kasus_id);
+        $query=$this->db->get($this->table);
+        if($query){
+            return $query->row();
+        }
+        return array();
+    }
+
     function get_kasus_not_submit($user_id){
         $this->db->where('user_id', $user_id);
         $this->db->where('is_submit', 0);
@@ -47,6 +66,7 @@ class Kasus extends CI_Model
         $this->db->where('id', $id);
         $this->db->delete($this->table);
     }
+
     function delete_by_file($file){
         $this->db->where('file', $file);
         $this->db->delete($this->table);

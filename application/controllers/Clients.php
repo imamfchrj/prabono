@@ -27,12 +27,19 @@ class Clients extends Users_Controller {
 	}
 	public function kasus_aktif()
 	{
-		$data['menu']="home";
-		$this->load->view('client/kasus_client',$data);
+		$data['menu']="kasus_aktif";
+		$id=$this->get_user_id();
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_user_id($id);
+		$this->load->view('client/kasus_client_open',$data);
 	}
 	public function kasus_aktif_singgle($slug)
 	{
 		$data['menu']="home";
+		$id=$this->get_user_id();
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_user_id_kasus($id,$slug);
+		
 		$this->load->view('client/kasus_client_singgle',$data);
 	}
 
