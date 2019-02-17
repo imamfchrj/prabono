@@ -39,10 +39,18 @@
                                         <?php }else{?>
                                         <?=strip_tags($list->kronologi_masalah)?></p>
                                         <?php }?>
-
+                                        <?php if($list->firstname){ ?>
+                                        <ul class="info-team">
+                                            <li><span>Nama Advokat:</span><?=$list->firstname?> <?=$list->lastname?></li>
+                                            <li><span>Telpon:</span>><?=$list->hp?></li>
+                                            <li><span>Email:</span>><?=$list->email?></li>
+                                            <!-- <li><span>Tanggal Sidang:</span>22 January 2019</li> -->
+                                            <!-- <li><span>Lokasi:</span>DKI Jakarta</li> -->
+                                        </ul>
+                                        <?php }?>
                                         <div class="flat-view">
                                                 
-                                                <button type="button" class="btn-link float-right" onclick="location.href='<?=base_url()?>client/kasus_aktif/penipuanperdagangan'">Lihat detail kasus</button>
+                                                <button type="button" class="btn-link float-right" onclick="location.href='<?=base_url()?>client/kasus_aktif/<?=$list->id?>'">Lihat detail kasus</button>
                                         </div>
                                         <hr>
                                     </div>
