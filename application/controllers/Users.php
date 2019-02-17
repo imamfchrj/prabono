@@ -35,7 +35,9 @@ class Users extends Advokat_Controller {
 
 	public function daftar_kasus()
 	{
-		$this->load->view('users/daftar_kasus');
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_status(1);
+		$this->load->view('users/daftar_kasus',$data);
 	}
 
 
@@ -49,13 +51,22 @@ class Users extends Advokat_Controller {
 	public function selesai()
 	{
 		$this->is_verified();
-		$this->load->view('users/daftar_selesai');
+		$this->load->model('client/kasus');
+		$id=$this->get_user_id();
+		$data['kasus']=$this->kasus->get_kasus_by_status(2,$id);
+		$this->load->view('users/daftar_selesai',$data);
 	}
 
 	public function daftar_kasus_singgle($slug)
 	{
 		$this->is_verified();
-		$this->load->view('users/daftar_kasus_singgle');
+		$id=$this->get_user_id();
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_status_id_kasus($slug);
+		$this->load->model('client/client_file');
+
+		$data['kronologi_masalah_list']=$this->client_file->get_file_by_id($slug,"kronologi_masalah_file");
+		$this->load->view('users/daftar_kasus_singgle',$data);
 	}
 
 	public function status_verifikasi()

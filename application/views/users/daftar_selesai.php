@@ -18,76 +18,59 @@
                                 <h5 class="">Kasus yang dapat dipilih</h5>
                                 </div>
                             </div>
+
+                        <?php if(count($kasus) < 1){?>
+                        <div class="col-md-12 text-center">
+                                <div class="field clearfix " style="margin-top:24px;"> 
+                                    <div class="form-group row form-biodata" style="background:black;">
+                                        <div href="#" class="blue_deep form-control col-md-12">Kasus Belum Tersedia</div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <?php foreach($kasus as $list){ ?>
                             <div class="col-md-12 box-kasus">
                                 <div class="flat-team team-list style2 clearfix">                  
                                     <div class="content">
-                                        <span class="position">Firda Safridi</span>
-                                         <span class="badge badge-finish float-right">Selesai</span>
-                                        <h5 class="blue_deep name">Penipuan Perdagangan</h5>
-                                        <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem santium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
+                                        <!-- <span class="position">Firda Safridi</span> -->
+                                        <?php if($list->status==1){?>
+                                         <span class="badge badge-success float-right">Open</span>
+                                        <?php }else if($list->status==2){?>
+                                         <span class="badge badge-primary float-right">Aktif</span>
+                                        <?php }else{?>
+                                         <span class="badge badge-dark float-right">Closed</span>
+                                        <?php }?>
+                                        <h5 class="blue_deep name"><?=$list->judul?></h5>
+                                        <p><?=$list->created_at?></p>
+                                        <!-- <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p> -->
+                                        
+                                        <p><b>Kronologi Masalah</b></p>
+                                        <p>
+                                            <?php if(strlen(strip_tags($list->kronologi_masalah))>509){?>
+                                            <?=strip_tags(substr($list->kronologi_masalah,0,509))?>
+                                            <?php }else{?>
+                                            <?=strip_tags($list->kronologi_masalah)?>
+                                            <?php }?>
+                                        </p>
+                                        <?php if($list->firstname_client){ ?>
                                         <ul class="info-team">
-                                            <li><span>Telpon:</span>001-1234-88888</li>
-                                            <li><span>Email:</span>Info.deercreative@gmail.com</li>
-                                            <li><span>Tanggal Sidang:</span>22 January 2019</li>
-                                            <li><span>Lokasi:</span>DKI Jakarta</li>
+                                            <li><span>Nama Advokat:</span><?=$list->firstname_client?> <?=$list->lastname_client?></li>
+                                            <li><span>Telpon:</span> <?=$list->hp_client?></li>
+                                            <li><span>Email:</span> <?=$list->email_client?></li>
+                                            <!-- <li><span>Tanggal Sidang:</span>22 January 2019</li> -->
+                                            <!-- <li><span>Lokasi:</span>DKI Jakarta</li> -->
                                         </ul>
-
+                                        <?php }?>
                                         <div class="flat-view">
-                                                <button type="button" class="flat-button float-right" >Terima Kasus</button>
-                                                <button type="button" class="btn-link float-right" onclick="location.href='<?=base_url()?>users/daftar_kasus/penipuanperdagangan'">Lihat detail kasus</button>
+                                                <button type="button" class="btn-link float-right" onclick="location.href='<?=base_url()?>users/daftar_kasus_singgle/<?=$list->id?>'">Lihat detail kasus</button>
                                         </div>
                                         <hr>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-12 box-kasus">
-                                <div class="flat-team team-list style2 clearfix">                  
-                                    <div class="content">
-                                        <span class="position">Firda Safridi</span>
-                                         <span class="badge badge-finish float-right">Selesai</span>
-                                        <h5 class="blue_deep name">Penipuan Perdagangan</h5>
-                                        <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem santium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
-                                        <ul class="info-team">
-                                            <li><span>Telpon:</span>001-1234-88888</li>
-                                            <li><span>Email:</span>Info.deercreative@gmail.com</li>
-                                            <li><span>Tanggal Sidang:</span>22 January 2019</li>
-                                            <li><span>Lokasi:</span>DKI Jakarta</li>
-                                        </ul>
+                        <?php } ?>
 
-                                        <div class="flat-view">
-                                                <button type="button" class="flat-button float-right" >Terima Kasus</button>
-                                                <button type="button" class="btn-link float-right" onclick="location.href='<?=base_url()?>users/daftar_kasus/penipuanperdagangan'">Lihat detail kasus</button>
-                                        </div>
-                                        <hr>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-12 box-kasus">
-                                <div class="flat-team team-list style2 clearfix">                  
-                                    <div class="content">
-                                        <span class="position">Firda Safridi</span>
-                                         <span class="badge badge-finish float-right">Selesai</span>
-                                        <h5 class="blue_deep name">Penipuan Perdagangan</h5>
-                                        <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p>
-                                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem santium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt.</p>
-                                        <ul class="info-team">
-                                            <li><span>Telpon:</span>001-1234-88888</li>
-                                            <li><span>Email:</span>Info.deercreative@gmail.com</li>
-                                            <li><span>Tanggal Sidang:</span>22 January 2019</li>
-                                            <li><span>Lokasi:</span>DKI Jakarta</li>
-                                        </ul>
-
-                                        <div class="flat-view">
-                                                <button type="button" class="flat-button float-right" >Terima Kasus</button>
-                                                <button type="button" class="btn-link float-right" onclick="location.href='<?=base_url()?>users/daftar_kasus/penipuanperdagangan'">Lihat detail kasus</button>
-                                        </div>
-                                        <hr>
-                                    </div>
-                                </div>
-                            </div>
-
+                        <?php if(count($kasus) > 0){?>
                             <div class="col-md-12 text-center">
                                 <div class="field clearfix " style="margin-top:24px;"> 
                                     <div class="form-group row form-biodata" style="background:black;">
@@ -95,6 +78,7 @@
                                     </div>
                                 </div>
                             </div>
+                        <?php } ?>
                     </div> 
                     
                     <div class="row">

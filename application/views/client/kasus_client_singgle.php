@@ -31,12 +31,16 @@
                                         <h5 class="blue_deep name"><?=$kasus->judul?></h5>
                                         <!-- <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p> -->
                                         <p>
-                                            
-                                        <?php if(strlen(strip_tags($kasus->kronologi_masalah))>509){?>
-                                        <?=strip_tags(substr($kasus->kronologi_masalah,0,509))?></p>
-                                        <?php }else{?>
-                                        <?=strip_tags($kasus->kronologi_masalah)?></p>
-                                        <?php }?>
+                                        
+                                        <p><b>Kronologi Masalah</b></p>
+                                        <p>
+                                        <?=strip_tags($kasus->kronologi_masalah)?>
+                                        </p>
+                                        <p><b>Ekspektasi Kasus</b></p>
+                                        <p>
+                                        <?=strip_tags($kasus->ekspektasi_kasus)?>
+                                        </p>
+                                        
                                         <?php if(isset($kronologi_masalah_list)){?>
                                         <div class="float-right">
                                             <?php foreach($kronologi_masalah_list as $list){ ?>

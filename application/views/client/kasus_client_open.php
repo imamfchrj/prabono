@@ -18,6 +18,16 @@
                                 <h5 class="">Kasus yang dapat dipilih</h5>
                                 </div>
                             </div>
+
+                        <?php if(count($kasus) < 1){?>
+                        <div class="col-md-12 text-center">
+                                <div class="field clearfix " style="margin-top:24px;"> 
+                                    <div class="form-group row form-biodata" style="background:black;">
+                                        <div href="#" class="blue_deep form-control col-md-12">Kasus Belum Tersedia</div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
                         <?php foreach($kasus as $list){ ?>
                             <div class="col-md-12 box-kasus">
                                 <div class="flat-team team-list style2 clearfix">                  
@@ -35,10 +45,11 @@
                                         <p>
                                             
                                         <?php if(strlen(strip_tags($list->kronologi_masalah))>509){?>
-                                        <?=strip_tags(substr($list->kronologi_masalah,0,509))?></p>
+                                        <?=strip_tags(substr($list->kronologi_masalah,0,509))?>
                                         <?php }else{?>
-                                        <?=strip_tags($list->kronologi_masalah)?></p>
+                                        <?=strip_tags($list->kronologi_masalah)?>
                                         <?php }?>
+                                        </p>
                                         <?php if($list->firstname){ ?>
                                         <ul class="info-team">
                                             <li><span>Nama Advokat:</span><?=$list->firstname?> <?=$list->lastname?></li>
@@ -58,6 +69,7 @@
                             </div>
                         <?php } ?>
 
+                        <?php if(count($kasus) > 0){?>
                             <div class="col-md-12 text-center">
                                 <div class="field clearfix " style="margin-top:24px;"> 
                                     <div class="form-group row form-biodata" style="background:black;">
@@ -65,6 +77,7 @@
                                     </div>
                                 </div>
                             </div>
+                        <?php } ?>
                     </div> 
                     
                     <div class="row">
