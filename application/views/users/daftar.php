@@ -423,7 +423,6 @@
                     }
                 })
                 .done(function(data) {
-                    console.log(data);
                     // if(data.is_error==1){ 
                     //     alert_error(data.error);
                     //     return; 

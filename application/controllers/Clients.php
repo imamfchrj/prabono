@@ -20,19 +20,31 @@ class Clients extends Users_Controller {
 		$data['profile']=$this->client_profiler->get_by_id($id);
 		$this->load->model('client/kasus');
 		$data['kasus']=$this->kasus->get_kasus_not_submit($id);
-		$data['kasus_id']=$data['kasus']->id;
+		if($data['kasus']){
+			$data['kasus_id']=$data['kasus']->id;
+		}else{
+			$data['kasus_id']=0;
+		}
 		$this->load->model('client/client_file');
 		$data['kronologi_masalah_list']=$this->client_file->get_file_by_id_group($id,$data['kasus_id'],"kronologi_masalah_file");
 		$this->load->view('client/form',$data);
 	}
 	public function kasus_aktif()
 	{
-		$data['menu']="home";
-		$this->load->view('client/kasus_client',$data);
+		$data['menu']="kasus_aktif";
+		$id=$this->get_user_id();
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_user_id($id);
+		$this->load->view('client/kasus_client_open',$data);
 	}
 	public function kasus_aktif_singgle($slug)
 	{
 		$data['menu']="home";
+		$id=$this->get_user_id();
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_user_id_kasus($id,$slug);
+		$this->load->model('client/client_file');
+		$data['kronologi_masalah_list']=$this->client_file->get_file_by_id_group($id,$slug,"kronologi_masalah_file");
 		$this->load->view('client/kasus_client_singgle',$data);
 	}
 

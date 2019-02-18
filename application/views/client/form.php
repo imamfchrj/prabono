@@ -300,7 +300,6 @@ $(function(){
 
     });
     function simpan_update(){
-        console.log("simpan/update");
         kasus();
     }
     $(".lanjut").click(function(){
@@ -327,7 +326,7 @@ $(function(){
     $(".kembali").click(function(){
         // $(".form-daftar").html("<b>Hello world!</b>");
         $("."+forms[tmp_i]).hide();
-        if(forms[tmp_i]=="form-identitas"){
+        if(tmp_i>0){
             simpan_update();
         }
         tmp_i--;
@@ -418,8 +417,7 @@ var    update_profile  = function (){
 
 <script>
 
-function kasus($is_submit=0){  
-    console.log($is_submit);
+function kasus($is_submit=0){ 
     $.ajax({
         url: ROOT+'clients_ajax/kasus',
         type: 'post',
@@ -443,7 +441,7 @@ function kasus($is_submit=0){
         }
         kasus_id=data.id_kasus;
         if($is_submit==1){
-
+            window.location = ROOT+'client/kasus_aktif';
         }
     })
     .fail(function() {
@@ -525,7 +523,6 @@ $(document).ready(function() {
             type : 'POST',
             data : {province:$(this).val()},
             success : function(result) {
-                console.log(result);
                 $("#lokasi_kejadian").html(result);
             }
         });

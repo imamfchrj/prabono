@@ -44,6 +44,17 @@ class Client_file extends CI_Model
         return array();
     }
 
+
+    function get_file_by_id($kasus_id,$group){
+        $this->db->where('kasus_id', $kasus_id);
+        $this->db->where('group', $group);
+        $query=$this->db->get($this->table);
+        if($query){
+            return $query->result();
+        }
+        return array();
+    }
+
     function delete_by_id($id){
         $this->db->where('id', $id);
         $this->db->delete($this->table);

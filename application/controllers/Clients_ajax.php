@@ -94,7 +94,8 @@ class Clients_ajax extends Users_Controller {
 	
 			return print(json_encode(array(
 				'is_error'=>false,
-				'id_kasus'=>$id_kasus
+				'id_kasus'=>$id_kasus,
+
 			)));
 
 		}

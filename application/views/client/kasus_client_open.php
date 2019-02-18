@@ -15,54 +15,69 @@
                                         <input type="submit" class="search-submit" id="searchwidget" value="">
                                     </form>                            
                                 </div>
+                                <h5 class="">Kasus yang dapat dipilih</h5>
                                 </div>
                             </div>
+
+                        <?php if(count($kasus) < 1){?>
+                        <div class="col-md-12 text-center">
+                                <div class="field clearfix " style="margin-top:24px;"> 
+                                    <div class="form-group row form-biodata" style="background:black;">
+                                        <div href="#" class="blue_deep form-control col-md-12">Kasus Belum Tersedia</div>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
+                        <?php foreach($kasus as $list){ ?>
                             <div class="col-md-12 box-kasus">
-                                <div class="flat-team team-list style2 clearfix">    
+                                <div class="flat-team team-list style2 clearfix">                  
                                     <div class="content">
                                         <!-- <span class="position">Firda Safridi</span> -->
-                                        <?php if($kasus->status==1){?>
+                                        <?php if($list->status==1){?>
                                          <span class="badge badge-success float-right">Open</span>
-                                        <?php }else if($kasus->status==2){?>
+                                        <?php }else if($list->status==2){?>
                                          <span class="badge badge-primary float-right">Aktif</span>
                                         <?php }else{?>
                                          <span class="badge badge-dark float-right">Closed</span>
                                         <?php }?>
-                                        <h5 class="blue_deep name"><?=$kasus->judul?></h5>
+                                        <h5 class="blue_deep name"><?=$list->judul?></h5>
                                         <!-- <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p> -->
                                         <p>
-                                        
-                                        <p><b>Kronologi Masalah</b></p>
-                                        <p>
-                                        <?=strip_tags($kasus->kronologi_masalah)?>
-                                        </p>
-                                        <p><b>Ekspektasi Kasus</b></p>
-                                        <p>
-                                        <?=strip_tags($kasus->ekspektasi_kasus)?>
-                                        </p>
-                                        
-                                        <?php if(isset($kronologi_masalah_list)){?>
-                                        <div class="float-right">
-                                            <?php foreach($kronologi_masalah_list as $list){ ?>
-                                            <a class="blue" target="_blank" href="<?=base_url()?>probono_asset/probono/asset/<?=$list->file?>"><i class="fa fa-file-pdf-o text-danger"></i>&nbsp;<?=$list->name?></a><br>
-                                            <!-- <a class="blue" target="_blank" href="#"><i class="fa fa-file-pdf-o text-danger"></i>&nbsp;<?=$kronologi_masalah_list->name?></a> -->
-                                            <?php } ?>
-                                        </div>
+                                            
+                                        <?php if(strlen(strip_tags($list->kronologi_masalah))>509){?>
+                                        <?=strip_tags(substr($list->kronologi_masalah,0,509))?>
+                                        <?php }else{?>
+                                        <?=strip_tags($list->kronologi_masalah)?>
                                         <?php }?>
-                                        <?php if($kasus->firstname){ ?>
+                                        </p>
+                                        <?php if($list->firstname){ ?>
                                         <ul class="info-team">
-                                            <li><span>Nama Advokat:</span><?=$kasus->firstname?> <?=$kasus->lastname?></li>
-                                            <li><span>Telpon:</span>><?=$kasus->hp?></li>
-                                            <li><span>Email:</span>><?=$kasus->email?></li>
+                                            <li><span>Nama Advokat:</span><?=$list->firstname?> <?=$list->lastname?></li>
+                                            <li><span>Telpon:</span>><?=$list->hp?></li>
+                                            <li><span>Email:</span>><?=$list->email?></li>
                                             <!-- <li><span>Tanggal Sidang:</span>22 January 2019</li> -->
                                             <!-- <li><span>Lokasi:</span>DKI Jakarta</li> -->
                                         </ul>
                                         <?php }?>
                                         <div class="flat-view">
+                                                
+                                                <button type="button" class="btn-link float-right" onclick="location.href='<?=base_url()?>client/kasus_aktif/<?=$list->id?>'">Lihat detail kasus</button>
                                         </div>
+                                        <hr>
                                     </div>
                                 </div>
                             </div>
+                        <?php } ?>
+
+                        <?php if(count($kasus) > 0){?>
+                            <div class="col-md-12 text-center">
+                                <div class="field clearfix " style="margin-top:24px;"> 
+                                    <div class="form-group row form-biodata" style="background:black;">
+                                        <a href="#" class="blue_deep form-control col-md-12">Lihat lebih banyak</a>
+                                    </div>
+                                </div>
+                            </div>
+                        <?php } ?>
                     </div> 
                     
                     <div class="row">
