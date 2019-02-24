@@ -244,7 +244,7 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
                                         <?php }?>
                                     </select>
                                 </div>
-                                <label class="col-md-12" for="exampleInputEmail1">Provinsi <span class="text-danger email-error"></span></label>
+                                <label class="col-md-12" for="exampleInputEmail1">Kota <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12">
                                     <select class="form-control select-imp" id="lokasi_kejadian">

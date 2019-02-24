@@ -94,7 +94,7 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <p>Firda Safridi</p>
+                        <p><?=get_from_sess("advokat_email")?></p>
                         <hr>
                         <a class="blue" href="<?=base_url()?>">Ubah Profile</a>
                     </div>
