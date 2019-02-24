@@ -19,10 +19,12 @@ class Users extends Advokat_Controller {
 			array(
 				'admin/master_bidang_keahlian_m',
 				'user/advokat_file',
-				'user/advokat_profiler'
+				'user/advokat_profiler',
+                'admin/Master_province_m'
 			)
 		);
 		$id=$this->get_user_id();
+        $data['provinces']=$this->Master_province_m->get_all();
 		//$data['probono'] =$this->master_bidang_keahlian_m->get_by_id($id);
 		$data['probono'] =$this->master_bidang_keahlian_m->get_all_by_id($id);
 		$data['profile']=$this->advokat_profiler->get_by_id($id);
@@ -84,8 +86,8 @@ class Users extends Advokat_Controller {
 
 		$this->form_validation->set_rules('gender', "Jenis Kelamin", 'trim|xss_clean|integer|max_length[1]');
 
-		$this->form_validation->set_rules('first_title', "Title Depan", 'trim|xss_clean|max_length[20]');
-		$this->form_validation->set_rules('last_title', "Title Depan", 'trim|xss_clean|max_length[20]');
+		//$this->form_validation->set_rules('first_title', "Title Depan", 'trim|xss_clean|max_length[20]');
+		//$this->form_validation->set_rules('last_title', "Title Depan", 'trim|xss_clean|max_length[20]');
 		$this->form_validation->set_rules('hp', "No Handphone", 'trim|xss_clean|is_natural|max_length[12]');
 		$this->form_validation->set_rules('id_ktp', "No Kartu Identitas", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('photo_ktp', "Photo KTP", 'trim|xss_clean');
@@ -98,7 +100,13 @@ class Users extends Advokat_Controller {
 		$this->form_validation->set_rules('company_firm_name', "Provinsi", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('position_at_company', "Provinsi", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('biography', "Provinsi", 'trim|xss_clean|max_length[250]');
-		$this->form_validation->set_rules('education', "Provinsi", 'trim|xss_clean|max_length[250]');
+		$this->form_validation->set_rules('univ_s1', "Universitas S1", 'trim|xss_clean|max_length[250]');
+		$this->form_validation->set_rules('jur_s1', "Jurusan S1", 'trim|xss_clean|max_length[250]');
+        $this->form_validation->set_rules('univ_s2', "Universitas S2", 'trim|xss_clean|max_length[250]');
+        $this->form_validation->set_rules('jur_s2', "Jurusan S2", 'trim|xss_clean|max_length[250]');
+        $this->form_validation->set_rules('univ_s3', "Universitas S3", 'trim|xss_clean|max_length[250]');
+        $this->form_validation->set_rules('jur_s3', "Jurusan S3", 'trim|xss_clean|max_length[250]');
+		//$this->form_validation->set_rules('education', "Provinsi", 'trim|xss_clean|max_length[250]');
 
 		if($this->form_validation->run()){
 			
@@ -122,7 +130,13 @@ class Users extends Advokat_Controller {
 				"company_firm_name"=>$this->form_validation->set_value('company_firm_name'),
 				"position_at_company"=>$this->form_validation->set_value('position_at_company'),
 				"biography"=>$this->form_validation->set_value('biography'),
-				"education"=>$this->form_validation->set_value('education'),
+				"univ_s1"=>$this->form_validation->set_value('univ_s1'),
+				"jur_s1"=>$this->form_validation->set_value('jur_s1'),
+                "univ_s2"=>$this->form_validation->set_value('univ_s2'),
+                "jur_s2"=>$this->form_validation->set_value('jur_s2'),
+                "univ_s3"=>$this->form_validation->set_value('univ_s3'),
+                "jur_s3"=>$this->form_validation->set_value('jur_s3'),
+				//"education"=>$this->form_validation->set_value('education'),
 			);
 			$this->advokat_profiler->update_profile($id,$data);
 	

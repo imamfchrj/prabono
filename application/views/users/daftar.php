@@ -111,27 +111,27 @@
                                             <label class="col-md-12" >Riwayat Pendidikan <span class="text-danger email-error"></span></label>
                                             
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="univ_s1" placeholder="Universitas - S1" value="">
+                                                <input type="text" class="form-control" id="univ_s1" placeholder="Universitas - S1" value="<?=$profile->univ_s1?>">
                                             </div>
                                             
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="jur_s1" placeholder="Jurusan" value="">
+                                                <input type="text" class="form-control" id="jur_s1" placeholder="Jurusan" value="<?=$profile->jur_s1?>">
                                             </div>
 
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="univ_s2" placeholder="Universitas - S2" value="">
+                                                <input type="text" class="form-control" id="univ_s2" placeholder="Universitas - S2" value="<?=$profile->univ_s2?>">
                                             </div>
 
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="jur_s2" placeholder="Jurusan" value="">
+                                                <input type="text" class="form-control" id="jur_s2" placeholder="Jurusan" value="<?=$profile->jur_s2?>">
                                             </div>
 
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="univ_s3" placeholder="Universitas - S3" value="">
+                                                <input type="text" class="form-control" id="univ_s3" placeholder="Universitas - S3" value="<?=$profile->univ_s3?>">
                                             </div>
 
                                             <div class="col-md-6">
-                                                <input type="text" class="form-control" id="jur_s3" placeholder="Jurusan" value="">
+                                                <input type="text" class="form-control" id="jur_s3" placeholder="Jurusan" value="<?=$profile->jur_s3?>">
                                             </div>
 
 
@@ -190,10 +190,14 @@
                                                 <textarea class="form-control" rows="3"  id="alamat_ktp"><?=$profile->alamat_ktp?></textarea>
                                             </div>
 
-                                            <label class="col-md-12" >Area Praktik <span class="text-danger email-error"></span></label>
-                                            
+                                            <label class="col-md-12" for="exampleInputEmail1">Area Praktik <span class="text-danger email-error"></span></label>
+
                                             <div class="col-md-12">
-                                                <input type="text" class="form-control" id="province" placeholder="Provinsi" value="<?=$profile->province?>">
+                                                <select class="form-control select-imp" id="province">
+                                                        <?php foreach ($provinces as $list) { ?>
+                                                            <option value="<?= $list->id ?>"><?= $list->name ?></option>
+                                                        <?php } ?>
+                                                </select>
                                             </div>
 
                                             <div class="col-md-12 form-group">
@@ -408,6 +412,12 @@
                         first_title: $("#first_title").val(),
                         last_title: $("#last_title").val(),
                         hp: $("#hp").val(),
+                        univ_s1: $("#univ_s1").val(),
+                        jur_s1: $("#jur_s1").val(),
+                        univ_s2: $("#univ_s2").val(),
+                        jur_s2: $("#jur_s2").val(),
+                        univ_s3: $("#univ_s3").val(),
+                        jur_s3: $("#jur_s3").val(),
                         id_ktp: $("#id_ktp").val(),
                         photo_ktp: $("#photo_ktp").val(),
                         id_kta_advokat: $("#id_kta_advokat").val(),
@@ -418,8 +428,8 @@
                         province: $("#province").val(),
                         company_firm_name: $("#company_firm_name").val(),
                         position_at_company: $("#position_at_company").val(),
-                        biography: $('#biography').summernote('code'),
-                        education: $('#education').summernote('code')
+                        biography: $('#biography').summernote('code')
+                       // education: $('#education').summernote('code')
                     }
                 })
                 .done(function(data) {
@@ -644,6 +654,43 @@
             
         }) ;
     }
+    </script>
+
+    <!-- Modal Term & Condition-->
+    <div class="modal fade" id="modal-term-condition" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title" id="exampleModalLabel">Term & Condition</h5>
+                </div>
+                <div class="modal-body">
+                            <textarea cols="50" rows="5" style="overflow:scroll;">Diisi sama term & Conditions
+                            </textarea>
+
+                    <input type="checkbox" id="is_accepted" value="" onclick="is_accept()">   I accept the Term & Condition<br>
+
+                </div>
+
+                <div class="modal-footer">
+                    <a href="#" id="submitend" class="btn btn-success success">Confirm</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function is_accept() {
+            var checkBox = document.getElementById("is_accepted");
+            var n_button = document.getElementById("submitend");
+            if (checkBox.checked == true){
+                n_button.style.display = "block";
+            } else {
+                n_button.style.display = "none";
+            }
+        }
+
     </script>
 
 <?php $this->load->view('landing_page/layout/footer')?>
