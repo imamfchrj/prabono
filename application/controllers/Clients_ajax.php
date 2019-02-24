@@ -60,7 +60,7 @@ class Clients_ajax extends Users_Controller {
 	{
 		header('Content-Type: application/json');
         $this->form_validation->set_rules('id_kasus', "id_kasus", 'trim|xss_clean|is_natural');
-		$this->form_validation->set_rules('judul', "Nama Depan", 'trim|required|xss_clean|callback__length_judul');
+		$this->form_validation->set_rules('judul', "Judul", 'trim|xss_clean|callback__length_judul');
 		$this->form_validation->set_rules('is_kusus', "kusus", 'trim|xss_clean|is_natural|max_length[1]');
 		$this->form_validation->set_rules('initial_name', "Nama Inisial", 'trim|xss_clean|max_length[50]');
 		$this->form_validation->set_rules('kronologi_masalah', "Kronologi Masalah", 'trim|xss_clean');

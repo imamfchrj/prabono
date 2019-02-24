@@ -62,7 +62,17 @@ class Clients extends Users_Controller {
         echo "<option value='0'> Pilih Kota </option>";
         foreach($result as $row)
             echo "<option value='".$row->id."'>".strtoupper($row->name)."</option>";
-    }
+	}
+	
+	public function agenda($slug){
+		$data['menu']="agenda";
+		$id=$this->get_user_id();
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_user_id_kasus($id,$slug);
+		$this->load->model('client/client_file');
+		$data['kronologi_masalah_list']=$this->client_file->get_file_by_id_group($id,$slug,"kronologi_masalah_file");
+		$this->load->view('client/kasus_agenda',$data);
+	}
 
 
 }
