@@ -33,11 +33,10 @@ class Users_ajax extends Advokat_Controller {
                 "advokat_id"=>$advokat_id,
                 "status"=>2
             );
-            $kambing=$this->kasus->update_value_by_id($id,$data);
+            $this->kasus->update_value_by_id($id,$data);
 
 			return print(json_encode(array(
-				'is_error'=>true,
-                'error_message'=>  $kambing
+				'is_error'=>false
 				
 			)));
 

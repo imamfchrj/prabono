@@ -138,9 +138,6 @@
                                                         <li <?php //if($menu=='berita') echo 'class="active active2"'?> >
                                                             <a href="<?//=base_url()?>berita">Berita</a>
                                                         </li>-->
-                                                        <li <?php if($menu=='tentangkami') echo 'class="active active2"'?> >
-                                                            <a href="<?=base_url()?>tentangkami">Tentang Kami</a>
-                                                        </li>
                                                         <li <?php if($menu=='ajukankasus') echo 'class="active active2"'?> >
                                                             <a href="#" data-toggle="modal" data-target="#modal-login" data-id="1" class="choose_login">Ajukan Kasus</a>
                                                         </li>
