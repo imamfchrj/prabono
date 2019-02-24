@@ -3470,3 +3470,34 @@ footer .logo-footer .logo {
     outline: none;
     /* margin-bottom: 20px; */
 }
+
+.nav-single{
+	margin-bottom: 20px;
+}
+
+.badge-primary {
+	background-color: #3b91ff;
+}
+
+
+.row-striped:nth-of-type(odd){
+	background-color: #efefef;
+	border-left: 4px #000000 solid;
+  }
+  
+  .row-striped:nth-of-type(even){
+	background-color: #ffffff;
+	border-left: 4px #efefef solid;
+  }
+  
+  .pad15 {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	  
+  }
+
+  .color-warning{
+	color:#efb34a;
+  }

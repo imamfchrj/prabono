@@ -18,21 +18,39 @@
                                 </div>
                             </div>
                             <div class="col-md-12 box-kasus">
-                                <div class="flat-team team-list style2 clearfix">    
+                                <div class="flat-team team-list style2 clearfix"> 
+                                
+                           
                                     <div class="content">
                                         <!-- <span class="position">Firda Safridi</span> -->
                                         <?php if($kasus->status==1){?>
                                          <span class="badge badge-success float-right">Open</span>
+
+
                                         <?php }else if($kasus->status==2){?>
                                          <span class="badge badge-primary float-right">Aktif</span>
+
                                         <?php }else{?>
                                          <span class="badge badge-dark float-right">Closed</span>
                                         <?php }?>
+                                        
+                                        <?php if($kasus->status>1){?>
+                                        <ul class="nav nav-tabs nav-single">
+                                            <li <?php if($menu!="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>client/kasus_aktif/<?=$kasus->id?>">Kasus</a></li>
+                                        <li <?php if($menu=="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>clients/agenda/<?=$kasus->id?>">Agenda</a></li>
+                                        <li <?php if($menu=="point") {?>class="active"<?php } ?>><a href="<?=base_url()?>clients/agenda/<?=$kasus->id?>">Request</a></li>
+                                        </ul>
+                                        <?php } ?>
                                         <h5 class="blue_deep name"><?=$kasus->judul?></h5>
                                         <!-- <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p> -->
-                                        <p>
+                                        
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?=$kasus->created_at?></li>
+                                            <li class="list-inline-item float-right "><a href="" class="color-warning"><i class="fa fa-warning" aria-hidden="true"></i> report </a></li>
+                                        </ul>
                                         
                                         <p><b>Kronologi Masalah</b></p>
+
                                         <p>
                                         <?=strip_tags($kasus->kronologi_masalah)?>
                                         </p>
@@ -52,8 +70,8 @@
                                         <?php if($kasus->firstname){ ?>
                                         <ul class="info-team">
                                             <li><span>Nama Advokat:</span><?=$kasus->firstname?> <?=$kasus->lastname?></li>
-                                            <li><span>Telpon:</span>><?=$kasus->hp?></li>
-                                            <li><span>Email:</span>><?=$kasus->email?></li>
+                                            <li><span>Telpon:</span><?=$kasus->hp?></li>
+                                            <li><span>Email:</span><?=$kasus->email?></li>
                                             <!-- <li><span>Tanggal Sidang:</span>22 January 2019</li> -->
                                             <!-- <li><span>Lokasi:</span>DKI Jakarta</li> -->
                                         </ul>
