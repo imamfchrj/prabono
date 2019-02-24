@@ -15,7 +15,7 @@
                      </div>
                   </div>
                </div>
-               <div class="col-md-6">
+               <!-- <div class="col-md-6">
                   <div class="box-primary">
                      <div class="box-primary-header left">
                         <div class="box-title">
@@ -41,7 +41,7 @@
                         </div>
                      </div>
                   </div>
-               </div>
+               </div> -->
             </div>
          </div>
       </div>
