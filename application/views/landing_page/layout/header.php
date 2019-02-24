@@ -81,30 +81,30 @@
 
 
             
-        <div class="flat-top style2">
-                <div class="container">
-                    <div class="row">  
-                        <div class="col-md-7">
-                            <ul class="flat-information">
-                                <li class="phone"><a href="">Telpon: +62 123 4567</a></li>
-                                <li class="email"><a href="">Email: help@probono.com</a></li>
-                            </ul>
-                        </div><!-- /.col-md-7 -->
-                        <div class="col-md-5">
-                            <ul class="social-links style4">
-                                <li><a href ="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href ="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
-                                <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                            </ul>
-                            <ul class="box-text text-right">
-                                <li class="question"><p>Mari bergabung bersama kami?</p></li>
-                                <li class="box"><a href="#" data-toggle="modal" data-target="#modal-login">Login</a></li>
-                            </ul>
-                        </div><!-- /.col-md-5 -->
-                    </div><!-- /.row -->
-                </div><!-- /.container -->
-        </div><!-- /.top -->
+        <!--<div class="flat-top style2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <ul class="flat-information">
+                            <li class="phone"><a href="">Telpon: +62 123 4567</a></li>
+                            <li class="email"><a href="">Email: help@probono.com</a></li>
+                        </ul>
+                    </div>--><!-- /.col-md-7 -->
+                    <!--<div class="col-md-5">
+                        <ul class="social-links style4">
+                            <li><a href ="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href ="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fa fa-rss"></i></a></li>
+                        </ul>
+                        <ul class="box-text text-right">
+                            <li class="question"><p>Mari bergabung bersama kami?</p></li>
+                            <li class="box"><a href="#" data-toggle="modal" data-target="#modal-login">Login</a></li>
+                        </ul>
+                    </div>--><!-- /.col-md-5 -->
+                <!--</div>--><!-- /.row -->
+            <!--</div>--><!-- /.container -->
+        <!--</div>--><!-- /.top -->
             <div class="flat-header-wrap">
                     <!-- Header -->            
                     <header id="header" class="header header-v1 style3 widget-header clearfix">
@@ -129,20 +129,32 @@
                                                         <li <?php if(!$menu) echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>">Home</a>
                                                         </li>
-                                                        <li <?php if($menu=='jasa') echo 'class="active active2"'?> >
-                                                            <a href="<?=base_url()?>jasa">Jasa</a>
+                                                        <!--<li <?php //if($menu=='jasa') echo 'class="active active2"'?> >
+                                                            <a href="<?//=base_url()?>jasa">Jasa</a>
                                                         </li>
-                                                        <li <?php if($menu=='publikasi') echo 'class="active active2"'?> >
-                                                            <a href="<?=base_url()?>publikasi">Publikasi</a>
+                                                        <li <?php //if($menu=='publikasi') echo 'class="active active2"'?> >
+                                                            <a href="<?//=base_url()?>publikasi">Publikasi</a>
                                                         </li>
-                                                        <li <?php if($menu=='berita') echo 'class="active active2"'?> >
-                                                            <a href="<?=base_url()?>berita">Berita</a>
-                                                        </li>
+                                                        <li <?php //if($menu=='berita') echo 'class="active active2"'?> >
+                                                            <a href="<?//=base_url()?>berita">Berita</a>
+                                                        </li>-->
                                                         <li <?php if($menu=='tentangkami') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>tentangkami">Tentang Kami</a>
                                                         </li>
+                                                        <li <?php if($menu=='ajukankasus') echo 'class="active active2"'?> >
+                                                            <a href="#" data-toggle="modal" data-target="#modal-login" data-id="1" class="choose_login">Ajukan Kasus</a>
+                                                        </li>
+                                                        <li <?php if($menu=='carikasus') echo 'class="active active2"'?> >
+                                                            <a href="#" data-toggle="modal" data-target="#modal-login" data-id="2" class="choose_login">Cari Kasus</a>
+                                                        </li>
+                                                        <li <?php if($menu=='tentangkami') echo 'class="active active2"'?> >
+                                                            <a href="<?=base_url()?>tentangkami">Petunjuk Penggunaan</a>
+                                                        </li>
+                                                        <li <?php if($menu=='tentangkami') echo 'class="active active2"'?> >
+                                                            <a href="<?=base_url()?>tentangkami">FAQ</a>
+                                                        </li>
                                                         <li <?php if($menu=='team') echo 'class="active active2"'?> >
-                                                            <a href="<?=base_url()?>team">Team</a>
+                                                            <a href="<?=base_url()?>team">Kontak</a>
                                                         </li>                       
                                                     </ul><!-- /.menu -->
                                                 </nav><!-- /.mainnav -->   
@@ -165,7 +177,26 @@
 </script>
 
 <script>
-
+    $(document).on("click", ".choose_login", function () {
+        //alert ("test");
+        var myId = $(this).data('id');
+        //alert (myId);
+        if (myId == 1){
+            //alert ("aaaaa");
+            $('#user_set').attr('checked', true);
+            $("#daftar_advokat").hide();
+            $("#daftar_user").show();
+            $("#title_advokat").hide();
+            $("#title_user").show();
+        }else{
+            //alert ("bbbb");
+            $('#user_set').attr('checked', false);
+            $("#daftar_user").hide();
+            $("#daftar_advokat").show();
+            $("#title_user").hide();
+            $("#title_advokat").show();
+        }
+    });
 </script>
 
 
@@ -177,7 +208,8 @@
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
-                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <h5 class="modal-title" id="title_user">Login User</h5>
+                    <h5 class="modal-title" id="title_advokat">Login Advokat</h5>
                 </div>
                 <div class="modal-body">
 
@@ -185,7 +217,7 @@
                         <div class="field clearfix ">
                             <div class="form-group row form-biodata">
                                 <div class="col-md-3 col-md-offset-5">
-                                    <input class="user_set" type="checkbox" checked data-width="100%" data-height="40" data-on="User" data-off="Advokat" data-toggle="toggle" data-onstyle="info" data-offstyle="danger">
+                                    <input id="user_set" type="checkbox" style="display:none">
                                 </div>
                                 <label class="col-md-8 col-md-offset-2" >Username</label>
 
@@ -209,10 +241,10 @@
                                     <hr>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <a href="<?=base_url('daftar-user')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi User</a>
+                                    <a href="<?=base_url('daftar-user')?>" class="btn btn-secondary btn-block login-btn" id="daftar_user">Daftar Menjadi User</a>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
-                                    <a href="<?=base_url('daftar-advokat')?>" class="btn btn-secondary btn-block login-btn" >Daftar Menjadi Advokat</a>
+                                    <a href="<?=base_url('daftar-advokat')?>" class="btn btn-secondary btn-block login-btn" id="daftar_advokat">Daftar Menjadi Advokat</a>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
                                 </div>
@@ -278,7 +310,7 @@ var submit = function (response){
         type: 'post',
         dataType: 'json',
         data: {
-            "user_set":$('.user_set').is(":checked"),
+            "user_set":$('#user_set').is(":checked"),
             "email":$("#email").val(),
             "password":$("#password").val(),
             "setuju":$("#setuju").is(":checked"),
@@ -291,7 +323,7 @@ var submit = function (response){
             alert_error(data.error_message);
             return; 
         }
-        if($('.user_set').is(":checked") === true){
+        if($('#user_set').is(":checked") === true){
             window.location = "<?php echo base_url(DEFAULT_PAGE_USER); ?>";
         }else{
             window.location = "<?php echo base_url(DEFAULT_PAGE_ADVOKAT); ?>";

@@ -10,7 +10,7 @@
                    <div class="title-section">
                         <div>
                         <div class="daftar-steps">
-                            <h3>Daftar</h3>
+                            <h3>Daftar Advokat</h3>
                         </div>
                     </div> 
                 </div>
@@ -25,20 +25,24 @@
                                 
                                 
                                 <div class="col-md-12">
+                                    <label for="exampleInputEmail1">Username<span class="text-danger email-error"></span></label>
                                     <input type="text" id="email" class="form-control" placeholder="Email">
                                     <p class="text-danger float-left top-min" id="email-text"></p>
                                 </div>
 
                                 <div class="col-md-12">
+                                    <label for="exampleInputEmail1">No Handphone<span class="text-danger email-error"></span></label>
                                     <input type="text" id="hp" class="form-control" placeholder="No Handphone">
                                     <p class="text-danger float-left top-min" id="hp-text"></p>
                                 </div>
 
                                 <div class="col-md-12">
+                                    <label for="exampleInputEmail1">Password<span class="text-danger email-error"></span></label>
                                     <input type="password" id="password" class="form-control" placeholder="Password">
                                     <p class="text-danger float-left top-min" id="password-text"></p>
                                 </div>
                                 <div class="col-md-12">
+                                    <label for="exampleInputEmail1">Retype Password<span class="text-danger email-error"></span></label>
                                     <input type="password" id="c-password" class="form-control" placeholder="Ulangi Password">
                                     <p class="text-danger float-left top-min" id="c-password-text"></p>
                                 </div>
@@ -146,7 +150,7 @@ var submit = function (response){
             alert_error(data.error_message);
             return; 
         }
-        window.location = "<?php echo base_url('users/caradaftar'); ?>";
+        window.location = "<?php echo base_url(); ?>";
     })
     .fail(function() {
         if(tmp){
