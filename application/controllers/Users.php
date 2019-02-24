@@ -193,6 +193,23 @@ class Users extends Advokat_Controller {
 		)));
 	}
 
+
+	public function agenda($slug){
+		$data['menu']="agenda";
+		$id=$this->get_user_id();
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_status_id_kasus($slug);
+		$this->load->view('users/kasus_agenda',$data);
+	}
+	
+	public function request($slug){
+		$data['menu']="agenda";
+		$id=$this->get_user_id();
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_status_id_kasus($slug);
+		$this->load->view('users/kasus_agenda',$data);
+	}
+
 	public function logout(){
 		$this->logout_sess();
 		redirect();
