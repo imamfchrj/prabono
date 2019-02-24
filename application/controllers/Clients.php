@@ -67,6 +67,16 @@ class Clients extends Users_Controller {
 	public function agenda($slug){
 		$data['menu']="agenda";
 		$id=$this->get_user_id();
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_user_id_kasus($id,$slug);
+		$this->load->view('client/kasus_agenda',$data);
+	}
+	
+	public function request($slug){
+		$data['menu']="agenda";
+		$id=$this->get_user_id();
+		$this->load->model('client/kasus');
+		$data['kasus']=$this->kasus->get_kasus_by_user_id_kasus($id,$slug);
 		$this->load->view('client/kasus_agenda',$data);
 	}
 

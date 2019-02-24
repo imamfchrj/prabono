@@ -418,8 +418,7 @@
                         province: $("#province").val(),
                         company_firm_name: $("#company_firm_name").val(),
                         position_at_company: $("#position_at_company").val(),
-                        biography: $('#biography').summernote('code'),
-                        education: $('#education').summernote('code')
+                        biography: $('#biography').summernote('code')
                     }
                 })
                 .done(function(data) {

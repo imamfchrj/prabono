@@ -36,9 +36,9 @@
                                         
                                         <?php if($kasus->status>1){?>
                                         <ul class="nav nav-tabs nav-single">
-                                            <li <?php if($menu!="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>client/kasus_aktif/<?=$kasus->id?>">Kasus</a></li>
-                                        <li <?php if($menu=="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>clients/agenda/<?=$kasus->id?>">Agenda</a></li>
-                                        <li <?php if($menu=="point") {?>class="active"<?php } ?>><a href="<?=base_url()?>clients/agenda/<?=$kasus->id?>">Request Time Sheet</a></li>
+                                            <li <?php if($menu!="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/daftar_kasus_singgle/<?=$kasus->id?>">Kasus</a></li>
+                                        <li <?php if($menu=="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/agenda/<?=$kasus->id?>">Agenda</a></li>
+                                        <li <?php if($menu=="point") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/request/<?=$kasus->id?>">Request Time Sheet</a></li>
                                         </ul>
                                         <?php } ?>
                                         <h5 class="blue_deep name"><?=$kasus->judul?></h5>
@@ -69,11 +69,9 @@
                                         <?php }?>
                                         <?php if($kasus->firstname){ ?>
                                         <ul class="info-team">
-                                            <li><span>Nama Advokat:</span><?=$kasus->firstname?> <?=$kasus->lastname?></li>
-                                            <li><span>Telpon:</span><?=$kasus->hp?></li>
-                                            <li><span>Email:</span><?=$kasus->email?></li>
-                                            <!-- <li><span>Tanggal Sidang:</span>22 January 2019</li> -->
-                                            <!-- <li><span>Lokasi:</span>DKI Jakarta</li> -->
+                                            <li><span>Nama Client:</span><?=$list->firstname_client?> <?=$list->lastname_client?></li>
+                                            <li><span>Telpon:</span> <?=$list->hp_client?></li>
+                                            <li><span>Email:</span> <?=$list->email_client?></li>
                                         </ul>
                                         <?php }?>
                                         <div class="flat-view">

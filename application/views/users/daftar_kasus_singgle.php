@@ -1,8 +1,6 @@
 <?php $this->load->view('users/layout/header')?>
 
-    <script>
-        var kasus_id=<?=$kasus->id?>;
-    </script>
+
             <main class="main-content" id="main-content">
 
                 <section id="services" class="flat-row vc wrap-iconbox">
@@ -20,21 +18,39 @@
                                 </div>
                             </div>
                             <div class="col-md-12 box-kasus">
-                                <div class="flat-team team-list style2 clearfix">    
+                                <div class="flat-team team-list style2 clearfix"> 
+                                
+                           
                                     <div class="content">
                                         <!-- <span class="position">Firda Safridi</span> -->
                                         <?php if($kasus->status==1){?>
                                          <span class="badge badge-success float-right">Open</span>
+
+
                                         <?php }else if($kasus->status==2){?>
                                          <span class="badge badge-primary float-right">Aktif</span>
+
                                         <?php }else{?>
                                          <span class="badge badge-dark float-right">Closed</span>
                                         <?php }?>
+                                        
+                                        <?php if($kasus->status>1){?>
+                                        <ul class="nav nav-tabs nav-single">
+                                            <li <?php if($menu!="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/daftar_kasus_singgle/<?=$kasus->id?>">Kasus</a></li>
+                                        <li <?php if($menu=="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/agenda/<?=$kasus->id?>">Agenda</a></li>
+                                        <li <?php if($menu=="point") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/request/<?=$kasus->id?>">Request Time Sheet</a></li>
+                                        </ul>
+                                        <?php } ?>
                                         <h5 class="blue_deep name"><?=$kasus->judul?></h5>
-                                        <p><?=$kasus->created_at?></p>
-                                        <p>
+                                        <!-- <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p> -->
+                                        
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?=$kasus->created_at?></li>
+                                            <li class="list-inline-item float-right "><a href="" class="color-warning"><i class="fa fa-warning" aria-hidden="true"></i> report </a></li>
+                                        </ul>
                                         
                                         <p><b>Kronologi Masalah</b></p>
+
                                         <p>
                                         <?=strip_tags($kasus->kronologi_masalah)?>
                                         </p>
@@ -51,20 +67,14 @@
                                             <?php } ?>
                                         </div>
                                         <?php }?>
-                                        <?php if($kasus->firstname_client){ ?>
+                                        <?php if($kasus->firstname){ ?>
                                         <ul class="info-team">
-                                            <li><span>Nama Advokat:</span><?=$kasus->firstname_client?> <?=$kasus->lastname_client?></li>
-                                            <li><span>Telpon:</span><?=$kasus->hp_client?></li>
-                                            <li><span>Email:</span><?=$kasus->email_client?></li>
-                                            <!-- <li><span>Tanggal Sidang:</span>22 January 2019</li> -->
-                                            <!-- <li><span>Lokasi:</span>DKI Jakarta</li> -->
+                                            <li><span>Nama Client:</span><?=$list->firstname_client?> <?=$list->lastname_client?></li>
+                                            <li><span>Telpon:</span> <?=$list->hp_client?></li>
+                                            <li><span>Email:</span> <?=$list->email_client?></li>
                                         </ul>
                                         <?php }?>
                                         <div class="flat-view">
-                                                <hr>
-                                                <?php if($kasus->status==1){?>
-                                                <button type="button" class="flat-button terima_kasus" >Terima Kasus</button>
-                                                <?php } ?>
                                         </div>
                                     </div>
                                 </div>
@@ -77,35 +87,4 @@
                     </div>  
                 </section> 
             </main>
-            <script>
-                
-    $(".terima_kasus").on("click", function() {
-        $.ajax({
-            url: ROOT+'users_ajax/terima_kasus',
-            type: 'post',
-            dataType: 'json',
-            data: {
-                id_kasus:kasus_id,
-            }
-        })
-        .done(function(data) {
-            if(data.is_error==1){ 
-                alert_error(data.error);
-                return; 
-            }
-            alert("Kasus Berhasil diterima");
-            $(".terima_kasus").hide();
-        })
-        .fail(function() {
-            if(tmp){
-                alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
-                tmp = false;
-            }
-        })
-        .always(function() {
-            
-        }) ;
-
-    });
-            </script>
 <?php $this->load->view('landing_page/layout/footer')?>
