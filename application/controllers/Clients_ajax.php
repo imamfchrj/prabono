@@ -115,4 +115,35 @@ class Clients_ajax extends Users_Controller {
 		return TRUE;
 	}
 
+	
+	public function accept_agenda()
+	{
+		header('Content-Type: application/json');
+
+		$this->form_validation->set_rules('agenda_id', "Agenda", 'trim|required|xss_clean|is_natural');
+
+        
+
+		if($this->form_validation->run()){
+			
+			$this->load->model('user/kasus_agenda_m');
+
+			$id=$this->form_validation->set_value('agenda_id');
+			$data=array(
+				"is_accept"=>1
+			);
+			$this->kasus_agenda_m->update_value_by_id($id,$data);
+	
+			return print(json_encode(array(
+				'is_error'=>false
+			)));
+
+		}
+
+		return print(json_encode(array(
+			'is_error'=>true,
+			'error_message'=>  validation_errors()
+		)));
+	}
+
 }

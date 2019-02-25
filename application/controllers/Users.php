@@ -198,7 +198,12 @@ class Users extends Advokat_Controller {
 		$data['menu']="agenda";
 		$id=$this->get_user_id();
 		$this->load->model('client/kasus');
+		$this->load->model('user/kasus_agenda_m');
+		
 		$data['kasus']=$this->kasus->get_kasus_by_status_id_kasus($slug);
+		if($data['kasus']->id){
+			$data['agenda']=$this->kasus_agenda_m->get_by_kasus_id($data['kasus']->id);
+		}
 		$this->load->view('users/kasus_agenda',$data);
 	}
 	

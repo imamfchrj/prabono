@@ -1,5 +1,7 @@
 <?php $this->load->view('users/layout/header')?>
-
+<script>
+        var kasus_id=<?=$kasus->id?>;
+    </script>
 
             <main class="main-content" id="main-content">
 
@@ -74,6 +76,13 @@
                                             <li><span>Email:</span> <?=$list->email_client?></li>
                                         </ul>
                                         <?php }?>
+
+                                        <div class="flat-view">
+                                                <hr>
+                                                <?php if($kasus->status==1){?>
+                                                <button type="button" class="flat-button terima_kasus" >Terima Kasus</button>
+                                                <?php } ?>
+                                        </div>
                                         <div class="flat-view">
                                         </div>
                                     </div>
@@ -87,4 +96,37 @@
                     </div>  
                 </section> 
             </main>
+
+            <script>
+                
+                $(".terima_kasus").on("click", function() {
+                    $.ajax({
+                        url: ROOT+'users_ajax/terima_kasus',
+                        type: 'post',
+                        dataType: 'json',
+                        data: {
+                            id_kasus:kasus_id,
+                        }
+                    })
+                    .done(function(data) {
+                        if(data.is_error==1){ 
+                            alert_error(data.error);
+                            return; 
+                        }
+                        alert("Kasus Berhasil diterima");
+                        $(".terima_kasus").hide();
+                    location.reload();
+                    })
+                    .fail(function() {
+                        if(tmp){
+                            alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                            tmp = false;
+                        }
+                    })
+                    .always(function() {
+                        
+                    }) ;
+            
+                });
+                        </script>
 <?php $this->load->view('landing_page/layout/footer')?>

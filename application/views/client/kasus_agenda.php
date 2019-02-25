@@ -1,6 +1,8 @@
 <?php $this->load->view('client/layout/header')?>
 
-
+<script>
+var id = <?=$kasus->id?>;
+</script>
             <main class="main-content" id="main-content">
 
                 <section id="services" class="flat-row vc wrap-iconbox">
@@ -41,50 +43,33 @@
                                         <li <?php if($menu=="point") {?>class="active"<?php } ?>><a href="<?=base_url()?>clients/agenda/<?=$kasus->id?>">Request Time Sheet</a></li>
                                         </ul>
                                         <?php } ?>
+                                        <?php if(count($agenda)==0){?>
                                         <div class="row-striped">
                                             <div class="pad15">
-                                            <h5 class="blue_deep name"><?=$kasus->judul?></h5>
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> 2019-02-16 21:28:32</li>
-                                                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
-                                                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Pengadilan Negeri Surakarta</li>
-                                                </ul>
-                                                <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                                <p>Agenda tidak ditembukan</p>
                                             </div>
                                         </div>
-                                        <div class="row-striped">
-                                            <div class="pad15">
-                                            <h5 class="blue_deep name"><?=$kasus->judul?></h5>
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> 2019-02-16 21:28:32</li>
-                                                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
-                                                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Pengadilan Negeri Surakarta</li>
-                                                </ul>
-                                                <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                            
+                                        <?php }else{?>
+                                            <?php foreach($agenda as $list){?>
+                                            <div class="row-striped">
+                                                <div class="pad15">
+                                                <h5 class="blue_deep name"><?=$list->title?></h5>
+                                                    <ul class="list-inline">
+                                                        <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?=$list->fromdate?></li>
+                                                        <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> <?=$list->todate?></li>
+                                                        <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> <?=$list->place?></li>
+                                                        <li class="list-inline-item"><i class="fa fa-user" aria-hidden="true"></i> <?php if(!$list->is_accept){echo "Pending";}else{echo "On Progress";}?></li>
+                                                    </ul>
+                                                    <p><?=$list->description?></p>
+                                                    <p><?php if(!$list->is_accept){?>
+                                                        <button onclick="terimaagenda(<?=$list->id?>)">Terima Jadwal</button>
+                                                        <?php }?>
+                                                    </p>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row-striped">
-                                            <div class="pad15">
-                                            <h5 class="blue_deep name"><?=$kasus->judul?></h5>
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> 2019-02-16 21:28:32</li>
-                                                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
-                                                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Pengadilan Negeri Surakarta</li>
-                                                </ul>
-                                                <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            </div>
-                                        </div>
-                                        <div class="row-striped">
-                                            <div class="pad15">
-                                            <h5 class="blue_deep name"><?=$kasus->judul?></h5>
-                                                <ul class="list-inline">
-                                                    <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> 2019-02-16 21:28:32</li>
-                                                    <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> 12:30 PM - 2:00 PM</li>
-                                                    <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> Pengadilan Negeri Surakarta</li>
-                                                </ul>
-                                                <p>Lorem ipsum dolsit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                                            </div>
-                                        </div>
+                                            <?php }?>
+                                        <?php }?>
                                         
                                         <div class="flat-view">
                                         </div>
@@ -99,4 +84,34 @@
                     </div>  
                 </section> 
             </main>
+            <script>
+            function terimaagenda($id){
+
+                $.ajax({
+                    url: ROOT+'clients_ajax/accept_agenda',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        agenda_id :$id,
+
+                    }
+                })
+                .done(function(data) {
+                    if(data.is_error==1){ 
+                        console.log(data.error);
+                        return; 
+                    }
+                    location.reload();
+                })
+                .fail(function() {
+                    if(tmp){
+                        alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                        tmp = false;
+                    }
+                })
+                .always(function() {
+                    
+    }) ;
+            }
+            </script>
 <?php $this->load->view('landing_page/layout/footer')?>
