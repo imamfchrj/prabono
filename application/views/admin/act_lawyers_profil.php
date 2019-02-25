@@ -76,15 +76,39 @@ $this->load->view('admin/layout/header');
                             <div class="clearfix">&nbsp</div>
                         </td>
                         <tr>
-                            <td width="30%"><b>Firts Title</b></td>
+                            <td width="30%"><b>Univesitas S1</b></td>
                             <td>
-                                <?php echo !empty($values->first_title)?$values->first_title:""; ?>
+                                <?php echo !empty($values->univ_s1)?$values->univ_s1:"-"; ?>
                             </td>
                         </tr>
                         <tr>
-                            <td width="30%"><b>Last Title</b></td>
+                            <td width="30%"><b>Jurusan S1</b></td>
                             <td>
-                                <?php echo !empty($values->last_title)?$values->last_title:""; ?>
+                                <?php echo !empty($values->jur_s1)?$values->jur_s1:"-"; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><b>Univesitas S2</b></td>
+                            <td>
+                                <?php echo !empty($values->univ_s2)?$values->univ_s2:"-"; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><b>Jurusan S2</b></td>
+                            <td>
+                                <?php echo !empty($values->jur_s2)?$values->jur_s2:"-"; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><b>Univesitas S3</b></td>
+                            <td>
+                                <?php echo !empty($values->univ_s3)?$values->univ_s3:"-"; ?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="30%"><b>Jurusan S3</b></td>
+                            <td>
+                                <?php echo !empty($values->jur_s3)?$values->jur_s3:"-"; ?>
                             </td>
                         </tr>
                         <tr>
@@ -114,7 +138,7 @@ $this->load->view('admin/layout/header');
                         <tr>
                             <td width="30%"><b>Provinsi</b></td>
                             <td>
-                                <?php echo !empty($values->province)?$values->province:""; ?>
+                                <?php echo !empty($values->name)?$values->name:""; ?>
                             </td>
                         </tr>
                         <tr>
@@ -126,7 +150,7 @@ $this->load->view('admin/layout/header');
                         <tr>
                             <td width="30%"><b>Position</b></td>
                             <td>
-                                <?php echo !empty($values->position_at_company)?$values->id_kta_advokat:""; ?>
+                                <?php echo !empty($values->position_at_company)?$values->position_at_company:""; ?>
                             </td>
                         </tr>
                         </tbody>

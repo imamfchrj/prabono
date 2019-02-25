@@ -21,12 +21,11 @@
         <thead>
           <tr>
             <th class="wd-5p">No</th>
-            <th class="wd-20p">Nama</th>
-            <th class="wd-15p">Username</th>
-            <th class="wd-20p">Email</th>
+            <th class="wd-25p">Nama</th>
+            <th class="wd-25p">Email</th>
             <th class="wd-15p">Number Phone</th>
             <th class="wd-15p">Lokasi Praktek</th>
-            <th class="wd-10p">Actions</th>
+            <th class="wd-15p">Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -56,11 +55,11 @@ $(function(){
                     var value=[];
                     value[0] = no++;
                     value[1] = json.data[i]['firstname']+' '+json.data[i]['lastname'];
-                    value[2] = json.data[i]['username'];
-                    value[3] = json.data[i]['email'];
-                    value[4] = json.data[i]['hp'];
-                    value[5] = json.data[i]['lokasi_praktek'];
-                    value[6] = '<a class="btn btn-sm btn-primary" href="act_lawyers_profil/'+json.data[i]['id']+'" title="Profile" onclick=""><i class="glyphicon glyphicon-pencil"></i> Profile</a>';
+                    value[2] = json.data[i]['email'];
+                    value[3] = json.data[i]['hp'];
+                    value[4] = json.data[i]['name'];
+                    value[5] = '<a class="btn btn-sm btn-primary" href="act_lawyers_profil/'+json.data[i]['id']+'" title="Profile" onclick=""><i class="glyphicon glyphicon-pencil"></i> Profile</a>';
+                    value[5] += '&nbsp;<a class="btn btn-sm btn-danger" href="" title="Block" onclick=""><i class="glyphicon glyphicon-trash"></i> Block</a>';
                     data[i]=value;
                 }
                 console.log(data);
