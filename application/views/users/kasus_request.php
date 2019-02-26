@@ -1,4 +1,4 @@
-<?php $this->load->view('client/layout/header')?>
+<?php $this->load->view('users/layout/header')?>
 
 
             <main class="main-content" id="main-content">
@@ -36,43 +36,31 @@
                                         
                                         <?php if($kasus->status>1){?>
                                         <ul class="nav nav-tabs nav-single">
-                                            <li <?php if($menu!="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/daftar_kasus_singgle/<?=$kasus->id?>">Kasus</a></li>
+                                        <li><a href="<?=base_url()?>users/daftar_kasus_singgle/<?=$kasus->id?>">Kasus</a></li>
                                         <li <?php if($menu=="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/agenda/<?=$kasus->id?>">Agenda</a></li>
                                         <li <?php if($menu=="point") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/request/<?=$kasus->id?>">Request Time Sheet</a></li>
                                         </ul>
                                         <?php } ?>
-                                        <h5 class="blue_deep name"><?=$kasus->judul?></h5>
-                                        <!-- <p><a href="#">#PerdaganganInternationsal</a> <a href="#">#PencucisanUang</a></p> -->
                                         
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?=$kasus->created_at?></li>
-                                            <li class="list-inline-item float-right "><a href="" class="color-warning"><i class="fa fa-warning" aria-hidden="true"></i> report </a></li>
-                                        </ul>
-                                        
-                                        <p><b>Kronologi Masalah</b></p>
-
-                                        <p>
-                                        <?=strip_tags($kasus->kronologi_masalah)?>
-                                        </p>
-                                        <p><b>Ekspektasi Kasus</b></p>
-                                        <p>
-                                        <?=strip_tags($kasus->ekspektasi_kasus)?>
-                                        </p>
-                                        
-                                        <?php if(isset($kronologi_masalah_list)){?>
-                                        <div class="float-right">
-                                            <?php foreach($kronologi_masalah_list as $list){ ?>
-                                            <a class="blue" target="_blank" href="<?=base_url()?>probono_asset/probono/asset/<?=$list->file?>"><i class="fa fa-file-pdf-o text-danger"></i>&nbsp;<?=$list->name?></a><br>
-                                            <!-- <a class="blue" target="_blank" href="#"><i class="fa fa-file-pdf-o text-danger"></i>&nbsp;<?=$kronologi_masalah_list->name?></a> -->
-                                            <?php } ?>
+                                        <?php if(count($timesheet)==0){?>
+                                        <div class="row-striped">
+                                            <div class="pad15">
+                                                <p>Timesheet tidak ditembukan</p>
+                                            </div>
                                         </div>
-                                        <?php }?>
-                                        <?php if($kasus->firstname){ ?>
-                                        <ul class="info-team">
-                                            <li><span>Nama Client:</span><?=$list->firstname_client?> <?=$list->lastname_client?></li>
-                                            <li><span>Telpon:</span> <?=$list->hp_client?></li>
-                                            <li><span>Email:</span> <?=$list->email_client?></li>
-                                        </ul>
+                                            
+                                        <?php }else{?>
+                                            <table class="table">
+                                            <?php foreach($timesheet as $list){?>
+                                                <tr>
+                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?=$list->title?></td>
+                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?=$list->fromdate?></td>
+                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?php if(!$list->is_accept){ if(strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate) < 0){echo "On Progress";}else{echo "Selesai";}}else{echo "Pending";}?></td>
+                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?php if(isset($list->id)){echo '<i class="fa fa-check aria-hidden="true"></i>';}else{ echo '<i class="fa fa-spinner" aria-hidden="true"></i>';}?></td>
+                                                </tr>
+                                            <?php }?>
+
+                                            </table>
                                         <?php }?>
                                         <div class="flat-view">
                                         </div>

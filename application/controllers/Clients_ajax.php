@@ -146,4 +146,43 @@ class Clients_ajax extends Users_Controller {
 		)));
 	}
 
+	public function set_point()	
+	{
+
+        $this->form_validation->set_rules('agenda_id', "agenda", 'trim|required|xss_clean|is_natural');
+        $this->form_validation->set_rules('advokat_id', "agenda", 'trim|required|xss_clean|is_natural');
+        $this->form_validation->set_rules('status', "Status", 'trim|required|xss_clean|is_natural');
+        $this->form_validation->set_rules('id_time', "Status", 'trim|required|xss_clean|is_natural');
+        
+
+		if($this->form_validation->run()){
+			
+			$this->load->model('user/advokat_point_m');
+			$status=$this->form_validation->set_value('status');
+			$id_time=$this->form_validation->set_value('id_time');
+			$data=array(
+				"agenda_id"=>$this->form_validation->set_value('agenda_id'),
+				"advokat_id"=>$this->form_validation->set_value('advokat_id'),
+			);
+			if($status){
+				$this->advokat_point_m->set($data);
+			}else{
+				$this->advokat_point_m->delete_by_id($id_time);
+			}
+
+			
+
+			return print(json_encode(array(
+				'is_error'=>false,
+
+			)));
+
+		}
+
+		return print(json_encode(array(
+			'is_error'=>true,
+			'error_message'=>  validation_errors()
+		)));
+    }
+
 }

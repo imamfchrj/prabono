@@ -1,8 +1,5 @@
 <?php $this->load->view('client/layout/header')?>
 
-<script>
-    var kasus_id=<?=$kasus->id?>;
-</script>
 
             <main class="main-content" id="main-content">
 
@@ -48,7 +45,7 @@
                                         <?php if(count($timesheet)==0){?>
                                         <div class="row-striped">
                                             <div class="pad15">
-                                                <p>Timesheet tidak ditembukan</p>
+                                                <p>Agenda tidak ditembukan</p>
                                             </div>
                                         </div>
                                             
@@ -56,11 +53,9 @@
                                             <table class="table">
                                             <?php foreach($timesheet as $list){?>
                                                 <tr>
-                                                <?php $status=strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate)?>
-                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><input type="checkbox" onclick="check_timesheet(<?=$list->agenda_id?>,<?php if(!$list->id){echo "0";}else{echo $list->id;} ?>,<?php if(!$list->advokat_id){echo "0";}else{echo $list->advokat_id;} ?>)" id="time<?=$list->agenda_id?>" <?php if($list->id) echo "checked"?> <?php if($list->is_accept){ if($status < 0){echo "disabled";}}else{echo "disabled";}?>></input></td>
                                                     <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?=$list->title?></td>
                                                     <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?=$list->fromdate?></td>
-                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?php if(!$list->is_accept){ if(strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate) < 0){echo "Pending";}else{echo "Selesai";}}else{echo "On Progress";}?></td>
+                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?php if($list->is_accept){ if(strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate) < 0){echo "On Progress";}else{echo "Selesai";}}else{echo "Pending";}?></td>
                                                     <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?php if(isset($list->id)){echo '<i class="fa fa-check aria-hidden="true"></i>';}else{ echo '<i class="fa fa-spinner" aria-hidden="true"></i>';}?></td>
                                                 </tr>
                                             <?php }?>
@@ -80,40 +75,4 @@
                     </div>  
                 </section> 
             </main>
-
-            <script>
-            function check_timesheet($var,$id_time,$advokat_id){
-                var status= 0;
-                if($("#time"+$var).is(":checked")){
-                    status=1;
-                }
-                $.ajax({
-                        url: ROOT+'clients_ajax/set_point',
-                        type: 'post',
-                        dataType: 'json',
-                        data: {
-                            agenda_id:$var,
-                            advokat_id:$advokat_id,
-                            id_time:$id_time,
-                            status:status
-                        }
-                    })
-                    .done(function(data) {
-                        if(data.is_error==1){ 
-                            alert_error(data.error);
-                            return; 
-                        }
-                    location.reload();
-                    })
-                    .fail(function() {
-                        if(tmp){
-                            alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
-                            tmp = false;
-                        }
-                    })
-                    .always(function() {
-                        
-                    }) ;
-            }
-            </script>
 <?php $this->load->view('landing_page/layout/footer')?>

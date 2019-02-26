@@ -59,10 +59,11 @@ var id = <?=$kasus->id?>;
                                                 <div class="pad15">
                                                 <h5 class="blue_deep name"><?=$list->title?></h5>
                                                     <ul class="list-inline">
+                                                        <li class="list-inline-item"><a href="javascript:void(0)" onclick="get_agenda(<?=$list->id?>);return false;"><i class="fa fa-pencil" aria-hidden="true"></i> Rubah Jadwal</a></li>
                                                         <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?=$list->fromdate?></li>
                                                         <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> <?=$list->todate?></li>
                                                         <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> <?=$list->place?></li>
-                                                        <li class="list-inline-item"><i class="fa fa-user" aria-hidden="true"></i> <?php if(!$list->is_accept){echo "Pending";}else{echo "On Progress";}?></li>
+                                                        <li class="list-inline-item"><i class="fa fa-user" aria-hidden="true"></i> <?php if(!$list->is_accept){ if(strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate) < 0){echo "On Progress";}else{echo "Selesai";}}else{echo "Pending";}?></li>
                                                     </ul>
                                                     <p><?=$list->description?></p>
                                                 </div>
@@ -88,7 +89,7 @@ var id = <?=$kasus->id?>;
             </main>
 
 
-<div id="Mtambah_agenda" class="modal fade " role="dialog">
+            <div id="Mtambah_agenda" class="modal fade " role="dialog">
   <div class="modal-dialog modal-md">
 
     <!-- Modal content-->
@@ -99,6 +100,8 @@ var id = <?=$kasus->id?>;
       </div>
       <div class="modal-body">
         <div class="form-group row">
+            <div class="col-md-12" id="error_tambah">
+            </div>
             <div class="col-md-12">
                 <label>Judul</label>
                 <input type="text" class="form-control" id="title" placeholder="Judul" value="">
@@ -146,19 +149,83 @@ var id = <?=$kasus->id?>;
   </div>
 </div>
 
+<div id="Mrubah_agenda" class="modal fade " role="dialog">
+  <div class="modal-dialog modal-md">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Rubah Agenda</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+            <div class="col-md-12" id="error_rubah">
+            </div>
+            <div class="col-md-12">
+                <label>Judul</label>
+                <input type="hidden" class="form-control" id="agenda_id" placeholder="Judul" value="">
+                <input type="text" class="form-control" id="edit_title" placeholder="Judul" value="">
+            </div>
+            <div class="col-md-12">
+                <label>Tempat</label>
+                <input type="text" class="form-control" id="edit_place" placeholder="Tempat" value="">
+            </div>
+            
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Dari Tanggal</label>
+            <div class='input-group date' id='fromdate'>
+                <input type='text' id="edit_fromdate_input" class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="form-group">
+            <label>Sampai Dengan</label>
+            <div class='input-group date' id='todate'>
+                <input type='text'  id="edit_todate_input" class="form-control" />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+            <label>Deskripsi</label>
+    <textarea rows="4" class="form-group" id="edit_description">
+
+</textarea>
+    </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default rubah_agenda_input">Rubah</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
             <script>
                 $(".tambah_agenda").on("click", function() {
                     $("#Mtambah_agenda").modal();
                 });
                 $(".tambah_agenda_input").on("click", function() {
-                    console.log($("#fromdate_input").val());
                     tambah_agenda();
+                });
+                
+                $(".rubah_agenda_input").on("click", function() {
+                    edit_agenda();
                 });
                 
             </script>
 
-            <script>
+<script>
             function tambah_agenda(){
 
                 $.ajax({
@@ -192,6 +259,85 @@ var id = <?=$kasus->id?>;
                     
     }) ;
             }
+
+
+
+            function edit_agenda(){
+
+            $.ajax({
+                url: ROOT+'users_ajax/tambah_agenda',
+                type: 'post',
+                dataType: 'json',
+                data: {
+                    // csrf_token: ""
+                    kasus_id :id,
+                    agenda_id : $("#agenda_id").val(),
+                    title : $("#edit_title").val(),
+                    place : $("#edit_place").val(),
+                    description : $("#edit_description").val(),
+                    fromdate : $("#edit_fromdate_input").val(),
+                    todate : $("#edit_todate_input").val()
+                }
+            })
+            .done(function(data) {
+                if(data.is_error==1){ 
+
+                    $("#error_tambah").html(data.error);
+                    return; 
+                }
+                location.reload();
+            })
+            .fail(function() {
+                if(tmp){
+                    alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                    tmp = false;
+                }
+            })
+            .always(function() {
+                
+            }) ;
+            }
+            </script>
+
+
+        <script>
+            function get_agenda($var){
+
+                $.ajax({
+                    url: ROOT+'users_ajax/get_agenda/'+$var,
+                    type: 'get',
+                    dataType: 'json',
+                    data: {
+                    }
+                })
+                .done(function(data) {
+                    if(data.is_error==1){ 
+                        $("#error_rubah").html(data.error);
+                        return; 
+                    }
+                    
+                    $("#Mrubah_agenda").modal();
+                    console.log(data.data.title);
+
+                    $("#error_rubah").html(data.data.title);
+                    
+                    $("#agenda_id").val(data.data.id);
+                    $("#edit_title").val(data.data.title);
+                    $("#edit_place").val(data.data.place);
+                    $("#edit_description").val(data.data.description);
+                    $("#edit_fromdate_input").val(data.data.fromdate);
+                    $("#edit_todate_input").val(data.data.todate);
+                })
+                .fail(function() {
+                    if(tmp){
+                        alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                        tmp = false;
+                    }
+                })
+                .always(function() {
+                    
+                }) ;
+            }
             </script>
 
             
@@ -210,6 +356,22 @@ var id = <?=$kasus->id?>;
         });
         $("#todate").on("dp.change", function (e) {
             $('#fromdate').data("DateTimePicker").maxDate(e.date);
+        });
+
+
+        $('#edit_`fromdate').datetimepicker({
+
+        format: 'YYYY-MM-DD  HH:mm',
+        });
+        $('#edit_`todate').datetimepicker({
+        useCurrent: false, //Important! See issue #edit_`1075
+        format: 'YYYY-MM-DD  HH:mm',
+        });
+        $("#edit_`fromdate").on("dp.change", function (e) {
+        $('#edit_`todate').data("DateTimePicker").minDate(e.date);
+        });
+        $("#edit_`todate").on("dp.change", function (e) {
+        $('#edit_`fromdate').data("DateTimePicker").maxDate(e.date);
         });
     });
 </script>

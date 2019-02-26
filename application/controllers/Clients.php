@@ -77,12 +77,22 @@ class Clients extends Users_Controller {
 	}
 	
 	public function request($slug){
-		$data['menu']="agenda";
+		$data['menu']="point";
+
 		$id=$this->get_user_id();
 		$this->load->model('client/kasus');
 		$data['kasus']=$this->kasus->get_kasus_by_user_id_kasus($id,$slug);
-		$this->load->view('client/kasus_agenda',$data);
+		
+		$this->load->model('user/advokat_point_m');
+		if($data['kasus']->id){
+			$data['timesheet']=$this->advokat_point_m->get_by_kasus_id($data['kasus']->id);
+		}
+
+		$this->load->view('client/kasus_request',$data);
 	}
+
+
+	
 
 
 }
