@@ -12,14 +12,16 @@ class List_advokat_m extends CI_Model
     private $table_biography = 'advokat_profiles_file_biography';
     private $table_education = 'advokat_profiles_file_education';
     private $table_users = 'users_advokat';
+    private $table_province = 'provinces';
 
     private function _select_table()
     {
         $this->db->select(array(
-            'a.*','b.username','b.email'
+            'a.*','b.username','b.email','c.name'
         ));
         $this->db->from($this->table.' as a');
         $this->db->join($this->table_users.' as b','b.id=a.user_id');
+        $this->db->join($this->table_province.' as c','a.province=c.id', 'left');
     }
 
     function get_all_aktif(){

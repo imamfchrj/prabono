@@ -78,17 +78,17 @@
           <li class="nav-item"><a href="<?=base_url()?>admin/mst_jasa" class="nav-link <?php if($sub_menu == 'mst_jasa') echo 'active'?>">Jasa</a></li>
           <li class="nav-item"><a href="<?=base_url()?>admin/mst_publikasi" class="nav-link <?php if($sub_menu == 'mst_publikasi') echo 'active'?>">Publikasi</a></li>
         </ul>
-        <a href="#" class="br-menu-link <?php if($menu == 'report') echo 'active show-sub'?>">
+        <!--<a href="#" class="br-menu-link <?php if($menu == 'report') echo 'active show-sub'?>">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-book-outline tx-22"></i>
             <span class="menu-item-label">Report</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
-          </div><!-- menu-item -->
-        </a><!-- br-menu-link -->
-        <ul class="br-menu-sub nav flex-column">
-          <li class="nav-item"><a href="<?=base_url()?>admin/report_a" class="nav-link <?php if($sub_menu == 'report_a') echo 'active'?>">Report A</a></li>
-          <li class="nav-item"><a href="<?=base_url()?>admin/report_b" class="nav-link <?php if($sub_menu == 'report_b') echo 'active'?>">Report B</a></li>
-        </ul>
+          </div>--><!-- menu-item -->
+        <!--</a>--><!-- br-menu-link -->
+        <!--<ul class="br-menu-sub nav flex-column">
+          <li class="nav-item"><a href="<?//=base_url()?>admin/report_a" class="nav-link <?php// if($sub_menu == 'report_a') echo 'active'?>">Report A</a></li>
+          <li class="nav-item"><a href="<?//=base_url()?>admin/report_b" class="nav-link <?php //if($sub_menu == 'report_b') echo 'active'?>">Report B</a></li>
+        </ul>-->
       </div><!-- br-sideleft-menu -->
 
       <br>
