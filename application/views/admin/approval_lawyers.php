@@ -17,7 +17,7 @@
                         <div class="media align-items-center">
                             <img src="http://via.placeholder.com/280x280" class="wd-72 rounded-circle" alt="">
                             <div class="media-body mg-l-10">
-                                <p class="tx-inverse tx-medium mg-b-0"><?php echo $row->firstname; ?></p>
+                                <p class="tx-inverse tx-medium mg-b-0"><?php echo $row->firstname.' '.$row->lastname; ?></p>
                                 <p class="tx-12 mg-b-0">
                                 <span><?php echo $row->id_kta_advokat; ?></span>
                                 </p>
@@ -32,12 +32,10 @@
                     </div><!-- br-lawyers-header -->
                     <hr>
                     <p>My Biography :</p>
-
                     <p><?php echo $row->biography; ?></p>
 
-                    <p>My Education :</p>
-
-                    <p><?php echo $row->education; ?></p>
+                    <p>Lokasi Praktek :</p>
+                    <p><?php echo $row->name; ?></p>
                     <a href="act_lawyers_profil/<?php echo $row->id; ?>"><p class="tx-purple tx-bold">Read More >></p></a>
                     <input class="form-control" type="hidden" id="id_advokat" name="id_advokat" value="<?php echo $row->id; ?>">
                     <hr>
