@@ -638,6 +638,43 @@ class Admin_api extends Api_Controller {
         }
     }
 
+    public function client_get($id="")
+    {
+
+        $this->load->model('admin/list_client_m');
+        if($id==""){
+            //get all
+            $data=$this->list_client_m->get_all_aktif();
+            echo json_encode(array(
+                'is_error'=>false,
+                'data'=> $data
+            ));
+            return;
+        }
+
+        $this->form_validation->set_data(array(
+            'id'    =>  $id
+        ));
+        $this->form_validation->set_rules('id', 'id client profile', 'trim|required|xss_clean|numeric|htmlentities');
+
+        if ($this->form_validation->run()) {
+            $id=$this->form_validation->set_value('id');
+            $data=$this->list_client_m->get_by_id($id);
+            echo json_encode(array(
+                'is_error'=>false,
+                'data'=> $data
+            ));
+            return;
+        }else{
+            $data=$this->list_client_m->get_all_aktif();
+            echo json_encode(array(
+                'is_error'=>true,
+                'error_message'=>  validation_errors()
+            ));
+            return;
+        }
+    }
+
     public function advokat_approve()
     {
 

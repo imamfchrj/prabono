@@ -26,6 +26,25 @@ class Admin extends Auth_Controller {
 		$this->load->view('admin/client',$data);
 	}
 
+    public function act_client_profil($id=0)
+    {
+        $this->load->model(array('admin/list_client_m'));
+        $data['profile'] =$this->list_client_m->get_all_aktif();
+        if($id){
+            $this->form_validation->set_data(array(
+                'id'    =>  $id
+            ));
+            $this->form_validation->set_rules('id', 'id client advokat', 'trim|required|xss_clean|numeric|htmlentities');
+
+            if ($this->form_validation->run()) {
+                $id=$this->form_validation->set_value('id');
+                $data['values']=$this->list_client_m->get_by_id($id);
+            }
+        }
+
+        $this->load->view('admin/act_client_profil',$data);
+    }
+
     public function form_user()
     {
         $this->load->view('admin/form_user');
