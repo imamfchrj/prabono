@@ -71,9 +71,9 @@
                                         <?php }?>
                                         <?php if($kasus->firstname){ ?>
                                         <ul class="info-team">
-                                            <li><span>Nama Client:</span><?=$list->firstname_client?> <?=$list->lastname_client?></li>
-                                            <li><span>Telpon:</span> <?=$list->hp_client?></li>
-                                            <li><span>Email:</span> <?=$list->email_client?></li>
+                                            <li><span>Nama Client:</span><?=$kasus->firstname_client?> <?=$kasus->lastname_client?></li>
+                                            <li><span>Telpon:</span> <?=$kasus->hp_client?></li>
+                                            <li><span>Email:</span> <?=$kasus->email_client?></li>
                                         </ul>
                                         <?php }?>
 
