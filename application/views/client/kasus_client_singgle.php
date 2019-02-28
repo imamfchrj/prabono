@@ -1,6 +1,8 @@
 <?php $this->load->view('client/layout/header')?>
 
-
+<script>
+    var id = <?=$kasus->id?>;
+</script>
             <main class="main-content" id="main-content">
 
                 <section id="services" class="flat-row vc wrap-iconbox">
@@ -46,7 +48,9 @@
                                         
                                         <ul class="list-inline">
                                             <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?=$kasus->created_at?></li>
-                                            <li class="list-inline-item float-right "><a href="" class="color-warning"><i class="fa fa-warning" aria-hidden="true"></i> report </a></li>
+                                           
+
+                                            <li class="list-inline-item float-right "><a href="javascript:void(0)" onclick="report();return false;" class="color-warning"><i class="fa fa-warning" aria-hidden="true"></i> report </a></li>
                                         </ul>
                                         
                                         <p><b>Kronologi Masalah</b></p>
@@ -89,4 +93,88 @@
                     </div>  
                 </section> 
             </main>
+
+
+
+
+            <div id="Mreport" class="modal fade " role="dialog">
+  <div class="modal-dialog modal-sm">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Report Advokat</h4>
+      </div>
+      <div class="modal-body">
+        <div class="form-group row">
+            <div class="col-md-12" id="error_rubah">
+            </div>
+            <div class="col-md-12">
+                <select class="form-control select-imp" id="status" >
+                    <option value="1">Ganti Advokat</option>
+                    <option value="2">Tutup Kasus</option>
+                </select>
+            </div>
+            <div class="col-md-12">
+                    <label>Berikan Alasan Anda</label>
+                    <textarea rows="4" class="form-group" id="edit_description"></textarea>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default report_submit">Submit</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+ function report(){
+	$("#Mreport").modal();
+ }
+</script>
+
+
+<script>
+
+
+                $(".report_submit").on("click", function() {
+                    add_report();
+                });
+            function add_report(){
+
+                $.ajax({
+                    url: ROOT+'clients_ajax/report',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        kasus_id :id,
+                        status : $("#status").val(),
+                        description : $("#edit_description").val(),
+                    }
+                })
+                .done(function(data) {
+                    if(data.is_error==1){ 
+                        $("#error_rubah").html(data.error);
+                        return; 
+                    }
+                    
+                    $("#Mreport").modal('hide');
+                })
+                .fail(function() {
+                    if(tmp){
+                        alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                        tmp = false;
+                    }
+                })
+                .always(function() {
+                    
+                }) ;
+            }
+            </script>
+
+
+
 <?php $this->load->view('landing_page/layout/footer')?>

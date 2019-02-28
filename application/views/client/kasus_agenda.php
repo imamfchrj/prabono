@@ -40,7 +40,7 @@ var id = <?=$kasus->id?>;
                                         <ul class="nav nav-tabs nav-single">
                                             <li <?php if($menu!="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>client/kasus_aktif/<?=$kasus->id?>">Kasus</a></li>
                                         <li <?php if($menu=="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>clients/agenda/<?=$kasus->id?>">Agenda</a></li>
-                                        <li <?php if($menu=="point") {?>class="active"<?php } ?>><a href="<?=base_url()?>clients/agenda/<?=$kasus->id?>">Request Time Sheet</a></li>
+                                        <li <?php if($menu=="point") {?>class="active"<?php } ?>><a href="<?=base_url()?>clients/request/<?=$kasus->id?>">Request Time Sheet</a></li>
                                         </ul>
                                         <?php } ?>
                                         <?php if(count($agenda)==0){?>
