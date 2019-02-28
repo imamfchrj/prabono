@@ -87,7 +87,7 @@ class Users_ajax extends Advokat_Controller {
 			
 			$data=array(
 				"kasus_id"=>$this->form_validation->set_value('kasus_id'),
-				"advokat_id"=>$this->form_validation->set_value('advokat_id'),
+				// "advokat_id"=>$this->form_validation->set_value('advokat_id'),
 				"title"=>$this->form_validation->set_value('title'),
 				"place"=>$this->form_validation->set_value('place'),
 				"fromdate"=>$this->form_validation->set_value('fromdate'),
@@ -98,7 +98,7 @@ class Users_ajax extends Advokat_Controller {
 			if(!$this->form_validation->set_value('agenda_id')){
 				$this->kasus_agenda_m->set($data);
 			}else{
-				$this->kasus_agenda_m->update_value_by_id($this->form_validation->set_value('kasus_id'),$data);
+				$this->kasus_agenda_m->update_value_by_id($this->form_validation->set_value('agenda_id'),$data);
 			}
 	
 			return print(json_encode(array(

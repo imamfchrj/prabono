@@ -59,7 +59,7 @@ var id = <?=$kasus->id?>;
                                                         <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?=$list->fromdate?></li>
                                                         <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> <?=$list->todate?></li>
                                                         <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> <?=$list->place?></li>
-                                                        <li class="list-inline-item"><i class="fa fa-user" aria-hidden="true"></i> <?php if(!$list->is_accept){echo "Pending";}else{echo "On Progress";}?></li>
+                                                        <li class="list-inline-item"><i class="fa fa-user" aria-hidden="true"></i> <?php if($list->is_accept){ if(strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate) < 0){echo "On Progress";}else{echo "Selesai";}}else{echo "Pending";}?></li>
                                                     </ul>
                                                     <p><?=$list->description?></p>
                                                     <p><?php if(!$list->is_accept){?>
