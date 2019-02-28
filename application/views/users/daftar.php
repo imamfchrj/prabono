@@ -138,7 +138,7 @@
                                             <label class="col-md-12" >No Handphone <span class="text-danger email-error"></span></label>
 
                                             <div class="col-md-12">
-                                                <input type="text" class="form-control" id="hp" placeholder="Masukkan No Handphone" value="<?=$profile->hp?>">
+                                                <input type="NUMBER" class="form-control" id="hp" placeholder="Masukkan No Handphone" value="<?=$profile->hp?>">
                                             </div>
 
                                             <label class="col-md-12" >Email <span class="text-danger email-error"></span></label>
@@ -153,7 +153,7 @@
                                             <label class="col-md-12" >Kartu Identitas <span class="text-danger email-error"></span></label>
 
                                             <div class="col-md-6">
-                                                <input type="text" id="id_ktp" class="form-control" placeholder="Nomer Identitas" value="<?=$profile->id_ktp?>">
+                                                <input type="number" id="id_ktp" class="form-control" placeholder="Nomer Identitas" value="<?=$profile->id_ktp?>">
                                             </div>
 
                                             <div class="col-md-6">
@@ -165,7 +165,7 @@
                                             <label class="col-md-12" >Kartu Tanda Anggota <span class="text-danger email-error"></span></label>
 
                                             <div class="col-md-6">
-                                                <input type="text" id="id_kta_advokat" class="form-control" placeholder="Nomer Keanggotaan" value="<?=$profile->id_kta_advokat?>">
+                                                <input type="number" id="id_kta_advokat" class="form-control" placeholder="Nomer Keanggotaan" value="<?=$profile->id_kta_advokat?>">
                                             </div>
 
                                             <div class="col-md-6">
@@ -194,6 +194,7 @@
 
                                             <div class="col-md-12">
                                                 <select class="form-control select-imp" id="province">
+                                                            <option value="<?=$profile->province?>">Pilih Provinsi</option>
                                                         <?php foreach ($provinces as $list) { ?>
                                                             <option value="<?= $list->id ?>"><?= $list->name ?></option>
                                                         <?php } ?>

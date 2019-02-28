@@ -50,3 +50,10 @@ function cek_checked($val=0){
     }
     return "";
 }
+
+function convert_date($end_date, $start_date){
+    $timing =strtotime($end_date)-strtotime($start_date);
+    $hour = floor($timing/3600);
+    $minute = floor(($timing%3600)/60);
+    return $hour . " Jam " . $minute ." Menit";
+}

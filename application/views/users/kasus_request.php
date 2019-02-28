@@ -54,8 +54,8 @@
                                             <?php foreach($timesheet as $list){?>
                                                 <tr>
                                                     <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?=$list->title?></td>
-                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?=$list->fromdate?></td>
-                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?php if(!$list->is_accept){ if(strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate) < 0){echo "On Progress";}else{echo "Selesai";}}else{echo "Pending";}?></td>
+                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?=convert_date($list->todate, $list->fromdate)?></td>
+                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?php if($list->is_accept){ if(strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate) < 0){echo "On Progress";}else{echo "Selesai";}}else{echo "Pending";}?></td>
                                                     <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?php if(isset($list->id)){echo '<i class="fa fa-check aria-hidden="true"></i>';}else{ echo '<i class="fa fa-spinner" aria-hidden="true"></i>';}?></td>
                                                 </tr>
                                             <?php }?>

@@ -112,7 +112,7 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
                                 <label class="col-md-12" >Kartu Identitas (KTP/SIM/Paspor)<span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-6">
-                                    <input type="text" id="id_ktp" class="form-control" placeholder="Nomer Identitas" value="<?=$profile->id_ktp?>">
+                                    <input type="number" id="id_ktp" class="form-control" placeholder="Nomer Identitas" value="<?=$profile->id_ktp?>">
                                 </div>
 
                                 <div class="col-md-6">
@@ -142,7 +142,7 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
                                 <label class="col-md-12" for="exampleInputEmail1">No Handphone <span class="text-danger email-error"></span></label>
 
                                 <div class="col-md-12">
-                                    <input type="text" class="form-control" placeholder="Masukkan No Handphone"  id="hp" value="<?=$profile->hp?>">
+                                    <input type="number" class="form-control" placeholder="Masukkan No Handphone"  id="hp" value="<?=$profile->hp?>">
                                 </div>
 
                                 <label class="col-md-12" for="exampleInputEmail1">Email <span class="text-danger email-error"></span></label>
@@ -239,6 +239,7 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
 
                                 <div class="col-md-12">
                                     <select class="form-control select-imp" id="province">
+                                        <option value="0">Pilih provinsi</option>
                                         <?php foreach($provinces as $list){ ?>
                                         <option value="<?=$list->id?>"><?=$list->name?></option>
                                         <?php }?>
@@ -285,18 +286,15 @@ $(function(){
     var forms = ["form-biodata", "form-identitas", "form-biografi", "form-edukasi", "form-bidang"];
     var tmp_i =0;
     $(".submit").click(function(){
-        //submit();
     });
     $("#submitBtn").click(function(){
         $("#submitend").hide();
     });
     $("#submitend").click(function(){
-        // submit();
         $('#biodataform').submit();
         $("#submitend").hide();
         
         kasus(1);
-        // window.location = ROOT+'client/kasus_aktif';
 
     });
     function simpan_update(){

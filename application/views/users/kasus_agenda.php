@@ -63,7 +63,7 @@ var id = <?=$kasus->id?>;
                                                         <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?=$list->fromdate?></li>
                                                         <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> <?=$list->todate?></li>
                                                         <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> <?=$list->place?></li>
-                                                        <li class="list-inline-item"><i class="fa fa-user" aria-hidden="true"></i> <?php if(!$list->is_accept){ if(strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate) < 0){echo "On Progress";}else{echo "Selesai";}}else{echo "Pending";}?></li>
+                                                        <li class="list-inline-item"><i class="fa fa-user" aria-hidden="true"></i> <?php if($list->is_accept){ if(strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate) < 0){echo "On Progress";}else{echo "Selesai";}}else{echo "Pending";}?></li>
                                                     </ul>
                                                     <p><?=$list->description?></p>
                                                 </div>
@@ -358,19 +358,19 @@ var id = <?=$kasus->id?>;
         });
 
 
-        $('#edit_`fromdate').datetimepicker({
+        $('#edit_fromdate').datetimepicker({
 
         format: 'YYYY-MM-DD  HH:mm',
         });
-        $('#edit_`todate').datetimepicker({
+        $('#edit_todate').datetimepicker({
         useCurrent: false, //Important! See issue #edit_`1075
         format: 'YYYY-MM-DD  HH:mm',
         });
-        $("#edit_`fromdate").on("dp.change", function (e) {
-        $('#edit_`todate').data("DateTimePicker").minDate(e.date);
+        $("#edit_fromdate").on("dp.change", function (e) {
+        $('#edit_todate').data("DateTimePicker").minDate(e.date);
         });
-        $("#edit_`todate").on("dp.change", function (e) {
-        $('#edit_`fromdate').data("DateTimePicker").maxDate(e.date);
+        $("#edit_todate").on("dp.change", function (e) {
+        $('#edit_fromdate').data("DateTimePicker").maxDate(e.date);
         });
     });
 </script>
