@@ -58,6 +58,12 @@
             <span class="menu-item-label">Pro Bono Status</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
+        <a href="<?=base_url()?>admin/tracking_agenda" class="br-menu-link <?php if($menu == 'agenda') echo 'active'?>">
+          <div class="br-menu-item">
+              <i class="menu-item-icon icon ion-ios-list-outline tx-24"></i>
+              <span class="menu-item-label">Tracking Agenda</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
         <a href="<?=base_url()?>admin/complaint" class="br-menu-link <?php if($menu == 'complaint') echo 'active'?>">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-email-outline tx-24"></i>

@@ -735,4 +735,41 @@ class Admin_api extends Api_Controller {
         }
     }
 
+    public function tracking_agenda_get($id="")
+    {
+
+        $this->load->model('admin/status_probono_m');
+        if($id==""){
+            //get all
+            $data=$this->status_probono_m->get_all_agenda();
+            echo json_encode(array(
+                'is_error'=>false,
+                'data'=> $data
+            ));
+            return;
+        }
+
+        $this->form_validation->set_data(array(
+            'id'    =>  $id
+        ));
+        $this->form_validation->set_rules('id', 'id agenda', 'trim|required|xss_clean|numeric|htmlentities');
+
+        if ($this->form_validation->run()) {
+            $id=$this->form_validation->set_value('id');
+            $data=$this->status_probono_m->get_by_id($id);
+            echo json_encode(array(
+                'is_error'=>false,
+                'data'=> $data
+            ));
+            return;
+        }else{
+            $data=$this->status_probono_m->get_all_agenda();
+            echo json_encode(array(
+                'is_error'=>true,
+                'error_message'=>  validation_errors()
+            ));
+            return;
+        }
+    }
+
 }
