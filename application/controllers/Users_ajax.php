@@ -149,6 +149,52 @@ class Users_ajax extends Advokat_Controller {
 			'is_error'=>true,
 			'error_message'=>  validation_errors()
 		)));
+	}
+	
+
+
+
+	public function report()	
+	{
+
+        $this->form_validation->set_rules('kasus_id', "kasus", 'trim|required|xss_clean|is_natural');
+        $this->form_validation->set_rules('status', "Status", 'trim|required|xss_clean|is_natural');
+        $this->form_validation->set_rules('description', "Status", 'trim|required|xss_clean');
+        
+
+		if($this->form_validation->run()){
+
+			$id=$this->get_user_id();
+			
+			$this->load->model('user/complaint_m');
+			$this->load->model('client/kasus');
+			$kasus=$this->kasus->get_kasus_by_only_id($this->form_validation->set_value('kasus_id'));
+			if(!$kasus){
+				return print(json_encode(array(
+					'is_error'=>true,
+					'error_message'=>  "Advokat belum dipilih."
+				)));
+			}
+			$data=array(
+				"kasus_id"=>$this->form_validation->set_value('kasus_id'),
+				"status"=>$this->form_validation->set_value('status'),
+				"description"=>$this->form_validation->set_value('description'),
+				"user_id"=>$kasus->user_id,
+				"is_user"=>0,
+				"advokat_id"=>$id
+			);
+			$this->complaint_m->set($data);
+			return print(json_encode(array(
+				'is_error'=>false,
+
+			)));
+
+		}
+
+		return print(json_encode(array(
+			'is_error'=>true,
+			'error_message'=>  validation_errors()
+		)));
     }
 
 }

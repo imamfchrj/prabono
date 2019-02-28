@@ -317,7 +317,6 @@ var id = <?=$kasus->id?>;
                     }
                     
                     $("#Mrubah_agenda").modal();
-                    console.log(data.data.title);
 
                     $("#error_rubah").html(data.data.title);
                     
