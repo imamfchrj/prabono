@@ -15,6 +15,7 @@ class Status_probono_m extends CI_Model
     private $table_users_advokat_profile = 'advokat_profiles';
     private $table_provinces = 'provinces';
     private $table_regencies = 'regencies';
+    private $table_agenda = 'kasus_agenda';
 
     private function _select_table()
     {
@@ -36,8 +37,34 @@ class Status_probono_m extends CI_Model
         $this->db->join($this->table_provinces.' as e','d.province_id=e.id');
     }
 
+    private function _select_table_agenda()
+    {
+        $this->db->select(array(
+            'a.*', 'b.judul as judul_kasus',
+            'ca.firstname as user_name','ca.lastname as user_lastname','da.firstname as advokat_name','da.lastname as advokat_lastname',
+            'ca.hp as hp_user','da.hp as hp_advokat'
+        ));
+        $this->db->from($this->table_agenda.' as a');
+        $this->db->join($this->table.' as b','b.id=a.kasus_id');
+        $this->db->join($this->table_users.' as c','c.id=b.user_id');
+        $this->db->join($this->table_users_profile.' as ca','ca.user_id=c.id');
+        $this->db->join($this->table_users_advokat.' as d','d.id=a.advokat_id');
+        $this->db->join($this->table_users_advokat_profile.' as da','da.user_id=d.id');
+
+    }
+
     function get_all(){
         $this->_select_table();
+        $query=$this->db->get();
+        if($query){
+            return $query->result();
+        }
+        return false;
+    }
+
+    function get_all_agenda(){
+        $this->_select_table_agenda();
+        $this->db->where('is_accept', 0);
         $query=$this->db->get();
         if($query){
             return $query->result();
