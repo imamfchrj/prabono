@@ -42,7 +42,25 @@ class Status_probono_m extends CI_Model
         $this->db->select(array(
             'a.*', 'b.judul as judul_kasus',
             'ca.firstname as user_name','ca.lastname as user_lastname','da.firstname as advokat_name','da.lastname as advokat_lastname',
-            'ca.hp as hp_user','da.hp as hp_advokat'
+            'ca.hp as hp_user','da.hp as hp_advokat',
+            'TIMESTAMPDIFF(day, a.created_at, now()) as days'
+        ));
+        $this->db->from($this->table_agenda.' as a');
+        $this->db->join($this->table.' as b','b.id=a.kasus_id');
+        $this->db->join($this->table_users.' as c','c.id=b.user_id');
+        $this->db->join($this->table_users_profile.' as ca','ca.user_id=c.id');
+        $this->db->join($this->table_users_advokat.' as d','d.id=a.advokat_id');
+        $this->db->join($this->table_users_advokat_profile.' as da','da.user_id=d.id');
+
+    }
+
+    private function _select_table_kpi()
+    {
+        $this->db->select(array(
+            'a.*', 'b.judul as judul_kasus',
+            'da.firstname as advokat_name','da.lastname as advokat_lastname',
+            'da.hp as hp_advokat', 'd.email as advokat_email',
+            'SUM(TIMESTAMPDIFF(HOUR, a.fromdate, a.todate)) as hours'
         ));
         $this->db->from($this->table_agenda.' as a');
         $this->db->join($this->table.' as b','b.id=a.kasus_id');
@@ -72,6 +90,17 @@ class Status_probono_m extends CI_Model
         return false;
     }
 
+    function get_all_kpi(){
+        $this->_select_table_kpi();
+        $this->db->where('is_accept', 1);
+        $this->db->group_by('a.advokat_id');
+        $query=$this->db->get();
+        if($query){
+            return $query->result();
+        }
+        return false;
+    }
+
     function set($array){
         $this->db->set($array);
         $this->db->insert($this->table);
@@ -87,6 +116,16 @@ class Status_probono_m extends CI_Model
 
     function get_by_id($id){
         $this->_select_table();
+        $this->db->where('a.id', $id);
+        $query=$this->db->get($this->table);
+        if($query){
+            return $query->row();
+        }
+        return false;
+    }
+
+    function get_kpi_by_id($id){
+        $this->_select_table_kpi();
         $this->db->where('a.id', $id);
         $query=$this->db->get($this->table);
         if($query){
