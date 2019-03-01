@@ -100,6 +100,12 @@ class Admin extends Auth_Controller {
 		$this->load->view('admin/status_probono',$data);
 	}
 
+    public function tracking_agenda()
+    {
+        $data['menu']="agenda";
+        $this->load->view('admin/tracking_agenda',$data);
+    }
+
 	public function complaint()
 	{
 		$data['menu']="complaint";
