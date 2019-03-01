@@ -21,38 +21,16 @@
                 <thead>
                     <tr>
                     <th class="wd-5p">No</th>
-                    <th class="wd-15p ">Status</th>
-                    <th class="wd-15p">Client Email</th>
-                    <th class="wd-35p">Description</th>
-                    <th class="wd-15p">Lawyer Name</th>
-                    <th class="wd-15p">Kategori</th>
+                    <th class="wd-25p ">Judul Kasus</th>
+                    <th class="wd-15p">Jenis Kasus</th>
+                    <th class="wd-15p">Nama Client</th>
+                    <th class="wd-15p">Nama Advokat</th>
+                    <th class="wd-15p">Lokasi Kejadian</th>
+                    <th class="wd-10p">Status</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Cancel</td>
-                        <td>probono@gmail.com</td>
-                        <td>The Lawyers cannot confirm he can do this</td>
-                        <td>Luffy</td>
-                        <td>Agraria</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>On Process</td>
-                        <td>probono@gmail.com</td>
-                        <td>The Lawyers cannot confirm he can do this</td>
-                        <td>Luffy</td>
-                        <td>Notaris</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Closed</td>
-                        <td>probono@gmail.com</td>
-                        <td>The Lawyers cannot confirm he can do this</td>
-                        <td>Luffy</td>
-                        <td>Kurator</td>
-                    </tr>
+
                 </tbody>
                 </table>
             </div><!-- table-wrapper -->
@@ -65,9 +43,29 @@ $(function(){
     $('#tableStatus').DataTable({
         responsive: true,
         language: {
-        searchPlaceholder: 'Search...',
-        sSearch: '',
-        lengthMenu: '_MENU_ items/page',
+            searchPlaceholder: 'Search...',
+            sSearch: '',
+            lengthMenu: '_MENU_ items/page',
+        },
+        ajax:{
+            "url": ROOT+"/admin_api/status_probono_get",
+            "dataSrc": function ( json ) {
+                var data=[];
+                var no=1;
+                for ( var i=0, ien=json.data.length ; i<ien ; i++ ) {
+                    var value=[];
+                    value[0] = no++;
+                    value[1] = json.data[i]['judul'];
+                    value[2] = json.data[i]['jenis_kasus'];
+                    value[3] = json.data[i]['user_name']+' '+json.data[i]['user_lastname'];
+                    value[4] = json.data[i]['advokat_name']+' '+json.data[i]['advokat_lastname'];
+                    value[5] = json.data[i]['kota'];
+                    value[6] = json.data[i]['status'];
+                    data[i]=value;
+                }
+                console.log(data);
+                return data;
+            }
         }
     });
 
