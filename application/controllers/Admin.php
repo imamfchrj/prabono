@@ -83,6 +83,18 @@ class Admin extends Auth_Controller {
 		$this->load->view('admin/kpi_lawyers',$data);
 	}
 
+    public function kpi_lawyers_detail($id=0)
+    {
+        $this->load->model(array('admin/status_probono_m',
+                                 'admin/list_advokat_m'));
+        $data['tes']=$id;
+        $data['values'] =$this->status_probono_m->get_kpi_by_id($id);
+        $data['kpi'] =$this->status_probono_m->get_all_kpi($id);
+        $data['profile'] =$this->list_advokat_m->get_by_user_id($id);
+        //echo $this->db->last_query();exit;
+        $this->load->view('admin/kpi_lawyers_detail',$data);
+    }
+
 	public function approval_lawyers()
 	{
 		$data['menu']="lawyers";

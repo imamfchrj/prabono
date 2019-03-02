@@ -67,6 +67,16 @@ class List_advokat_m extends CI_Model
         return false;
     }
 
+    function get_by_user_id($id){
+        $this->_select_table();
+        $this->db->where('a.user_id', $id);
+        $query=$this->db->get($this->table);
+        if($query){
+            return $query->row();
+        }
+        return false;
+    }
+
     function delete_by_id($id){
         $this->db->where('id', $id);
         $this->db->delete($this->table);

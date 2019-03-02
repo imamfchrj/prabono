@@ -21,9 +21,9 @@ $this->load->view('admin/layout/header');
                         <thead>
                         <tr>
                             <th class="wd-5p">No</th>
-                            <th class="wd-30p">Nama Advokat</th>
+                            <th class="wd-25p">Nama Advokat</th>
                             <th class="wd-25p">Email</th>
-                            <th class="wd-15p">Number Phone</th>
+                            <th class="wd-20p">Number Phone</th>
                             <th class="wd-15p">Time Sheet</th>
                             <th class="wd-10p">Actions</th>
                         </tr>
@@ -58,7 +58,7 @@ $this->load->view('admin/layout/header');
                                 value[2] = json.data[i]['advokat_email'];
                                 value[3] = json.data[i]['hp_advokat'];
                                 value[4] = json.data[i]['hours']+' Hours';
-                                value[5] = '<a class="btn btn-sm btn-primary" href="act_lawyers_profil/'+json.data[i]['id']+'" title="Profile" onclick=""><i class="glyphicon glyphicon-pencil"></i> Profile</a>';
+                                value[5] = '<a class="btn btn-sm btn-primary" href="kpi_lawyers_detail/'+json.data[i]['advokat_id']+'" title="Profile" onclick=""><i class="glyphicon glyphicon-pencil"></i> Detail</a>';
                                 data[i]=value;
                             }
                             console.log(data);
