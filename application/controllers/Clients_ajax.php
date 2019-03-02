@@ -82,7 +82,7 @@ class Clients_ajax extends Users_Controller {
 
 			$id=$this->get_user_id();
 			$id_kasus=$this->form_validation->set_value('id_kasus');
-			
+			$status=1;
 			$data=array(
 				"judul"=>$this->form_validation->set_value('judul'),
 				"user_id"=>$id,
@@ -91,7 +91,9 @@ class Clients_ajax extends Users_Controller {
 				"kronologi_masalah"=>$this->form_validation->set_value('kronologi_masalah'),
 				"ekspektasi_kasus"=>$this->form_validation->set_value('ekspektasi_kasus'),
 				"lokasi_kejadian"=>$this->form_validation->set_value('lokasi_kejadian'),
-				"is_submit"=>$this->form_validation->set_value('is_submit')
+				"is_submit"=>$this->form_validation->set_value('is_submit'),
+				"status"=>$status
+
 			);
 			if($id_kasus){
 				$this->kasus->update_value_by_id($id_kasus,$data);

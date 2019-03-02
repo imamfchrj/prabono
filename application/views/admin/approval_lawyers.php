@@ -12,7 +12,7 @@
                 <div class="col-md-12 text-center">
                     <div class="field clearfix " style="margin-top:24px;">
                         <div class="form-group row form-biodata" style="background:black;">
-                            <div href="#" class="blue_deep form-control col-md-12">Kasus Belum Tersedia</div>
+                            <div href="#" class="blue_deep form-control col-md-12">Belum Tersedia</div>
                         </div>
                     </div>
                 </div>

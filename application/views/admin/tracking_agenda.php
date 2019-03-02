@@ -62,7 +62,7 @@ $(function(){
                     value[4] = json.data[i]['hp_user'];
                     value[5] = json.data[i]['advokat_name']+' '+json.data[i]['advokat_lastname'];
                     value[6] = json.data[i]['hp_advokat'];
-                    value[7] = json.data[i]['advokat_id'];
+                    value[7] = json.data[i]['days'];
                     data[i]=value;
                 }
                 console.log(data);
