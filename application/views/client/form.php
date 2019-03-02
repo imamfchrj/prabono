@@ -456,12 +456,12 @@ function kasus($is_submit=0){
 <script>
 
 $("#file_surat_tidak_mampu").change(function(){
-    upload_data(ROOT+'upload/do_upload',"#file_surat_tidak_mampu","#surat_tidak_mampu");
+    upload_data(ROOT+'upload/do_upload_file2',"#file_surat_tidak_mampu","#surat_tidak_mampu");
 });
 
 
 $("#file_photo_ktp").change(function(){
-    upload_data(ROOT+'upload/do_upload',"#file_photo_ktp","#photo_ktp");
+    upload_data(ROOT+'upload/do_upload_file2',"#file_photo_ktp","#photo_ktp");
 });
 </script>
 
@@ -622,9 +622,11 @@ $(document).ready(function() {
                         </button>
                         <h5 class="modal-title" id="exampleModalLabel">Term & Condition</h5>
                     </div>
-                    <div class="modal-body">
-                        <textarea cols="50" rows="5" style="overflow:scroll;">Diisi sama term & Conditions
-                        </textarea>
+                    <div class="modal-body" style="padding:20px;">
+                        <div id="" style="overflow:scroll; height:300px;">
+
+                            <?php $this->load->view('client/term_and_condition')?>
+                        </div>
 
                         <input type="checkbox" id="is_accepted" value="" onclick="is_accept()">   I accept the Term & Condition<br>
 

@@ -202,7 +202,7 @@
                                             </div>
 
                                             <div class="col-md-12 form-group">
-                                                <input type="checkbox" name="is_law_firm" id="is_law_firm" onclick="lawfirm()" <?=cek_checked($profile->is_law_firm)?>>    Mewakili kantor hukum .. ?
+                                                <input type="checkbox" name="is_law_firm" id="is_law_firm" onclick="lawfirm()" <?=cek_checked($profile->is_law_firm)?>>    Mewakili kantor hukum.
                                             </div>
 
                                             <div class="col-md-6">
@@ -286,12 +286,12 @@
 
             <script>
                 $("#file_photo_ktp").change(function(){
-                    upload_data(ROOT+'upload/do_upload',"#file_photo_ktp","#photo_ktp");
+                    upload_data(ROOT+'upload/do_upload_file2',"#file_photo_ktp","#photo_ktp");
                 });
 
 
                 $("#file_kta_advokat").change(function(){
-                    upload_data(ROOT+'upload/do_upload',"#file_kta_advokat","#kta_advokat");
+                    upload_data(ROOT+'upload/do_upload_file2',"#file_kta_advokat","#kta_advokat");
                 });
 
             </script>
@@ -666,13 +666,15 @@
                     </button>
                     <h5 class="modal-title" id="exampleModalLabel">Term & Condition</h5>
                 </div>
-                <div class="modal-body">
-                            <textarea cols="50" rows="5" style="overflow:scroll;">Diisi sama term & Conditions
-                            </textarea>
+                    <div class="modal-body" style="padding:20px;">
+                        <div id="" style="overflow:scroll; height:300px;">
 
-                    <input type="checkbox" id="is_accepted" value="" onclick="is_accept()">   I accept the Term & Condition<br>
+                            <?php $this->load->view('client/term_and_condition')?>
+                        </div>
 
-                </div>
+                        <input type="checkbox" id="is_accepted" value="" onclick="is_accept()">   I accept the Term & Condition<br>
+
+                    </div>
 
                 <div class="modal-footer">
                     <a href="#" id="submitend" class="btn btn-success success">Confirm</a>
