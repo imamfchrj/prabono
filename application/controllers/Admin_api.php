@@ -680,13 +680,15 @@ class Admin_api extends Api_Controller {
 
         $this->load->model('admin/list_advokat_m');
 
-        $this->form_validation->set_rules('id', 'User ID', 'trim|required|xss_clean|numeric|htmlentities|required');
+        $this->form_validation->set_rules('id', 'User', 'trim|required|xss_clean|numeric|htmlentities|required');
+        $this->form_validation->set_rules('verified', 'Verified', 'trim|required|xss_clean|numeric|htmlentities|required');
 
         if ($this->form_validation->run()) {
             $id = $this->form_validation->set_value('id');
+            $verified = $this->form_validation->set_value('verified');
 
             $data = array('id' => $id,
-                'is_verified' => 1
+                'is_verified' => $verified
             );
             $data = $this->list_advokat_m->update_value_by_id($id, $data);
             echo json_encode(array(
@@ -838,7 +840,7 @@ class Admin_api extends Api_Controller {
             $complaint_data=$this->complaint_m->get_by_id($id);
             if($complaint_data){
                 $status=$complaint_data->status;
-                // 1 ganti advokat (advokat)
+                // 1 ganti advokat (user)
                 // 3 berhenti membantu kasus (advokat)
                 if(in_array($status,array(1,3))){
                     $kasus=array(

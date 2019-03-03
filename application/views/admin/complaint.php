@@ -31,11 +31,11 @@
                     <?php if($row->is_user){?>
                         <p>Nama Client : <?=$row->firstname_client?></p>
                         <p>Email Client : <?=$row->email_client?></p>
-                        <p>Email Client : <?=$row->hp_client?></p>
+                        <p>No HP Client : <?=$row->hp_client?></p>
                     <?php }else{?>
                         <p>Nama Advokat : <?=$row->firstname?></p>
                         <p>Email Advokat : <?=$row->email?></p>
-                        <p>Email Advokat : <?=$row->hp?></p>
+                        <p>No HP Advokat : <?=$row->hp?></p>
                     <?php }?>
 
 
@@ -48,7 +48,7 @@
                     <?php }else{?>
                         <p>Nama Client : <?=$row->firstname_client?></p>
                         <p>Email Client : <?=$row->email_client?></p>
-                        <p>Email Client : <?=$row->hp_client?></p>
+                        <p>No HP Client : <?=$row->hp_client?></p>
 
                     <?php }?>
 

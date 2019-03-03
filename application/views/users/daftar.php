@@ -403,9 +403,11 @@
                 if($('#is_law_firm').is(":checked")){
                     law_firm=1;
                 }
+                $is_submit=0;
                 if($button!=false){
                     $("#submitend").hide();
                     $("#submitend-loader").show();
+                    $is_submit=1;
                 }
                 $.ajax({
                     url: ROOT+'users/ajax_daftar',
@@ -434,14 +436,16 @@
                         province: $("#province").val(),
                         company_firm_name: $("#company_firm_name").val(),
                         position_at_company: $("#position_at_company").val(),
-                        biography: $('#biography').summernote('code')
+                        biography: $('#biography').summernote('code'),
+                        is_submit: $is_submit
                     }
                 })
                 .done(function(data) {
+                    console.log(data);
                     if($button != false){
                         $("#submitend").show();
                         $("#submitend-loader").hide();
-                        window.location = "<?php echo base_url('users/status_verifikasi')."/"; ?>";
+                        // window.location = "<?php echo base_url('users/status_verifikasi')."/"; ?>";
                     }
                 })
                 .fail(function() {

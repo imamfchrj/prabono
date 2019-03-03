@@ -395,7 +395,7 @@ var    update_profile  = function (){
     })
     .done(function(data) {
         if(data.is_error==1){ 
-            alert_error(data.error);
+            // alert_error(data.error);
             return; 
         }
         // window.location = "<?php echo base_url('client/kasus_aktif'); ?>";
