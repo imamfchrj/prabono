@@ -164,6 +164,10 @@
     <script src="<?=base_url()?>assets_123/lib/jquery-ui/jquery-ui.js"></script>
     <script src="<?=base_url()?>assets_123/lib/jquery-switchbutton/jquery.switchButton.js"></script>
     <script src="<?=base_url()?>assets_123/lib/peity/jquery.peity.js"></script>
+    <script src="<?=base_url()?>assets_123/lib/morris.js/morris.js"></script>
+    <script src="<?=base_url()?>assets_123/lib/raphael/raphael.min.js"></script>
+    <script src="<?=base_url()?>assets_123/lib/highlightjs/highlight.pack.js"></script>
     <!-- table -->
 
     <script src="<?=base_url()?>assets_123/js/bracket.js"></script>
+    <script src="<?=base_url()?>assets_123/js/chart.morris.js"></script>

@@ -1,7 +1,7 @@
-$(function(){
+$(document).ready(function(){
   'use strict';
 
-  new Morris.Bar({
+  /*new Morris.Bar({
     element: 'morrisBar1',
     data: [
       { y: '2006', a: 100, b: 90 },
@@ -185,6 +185,6 @@ $(function(){
     ],
     colors: ['#3D449C','#268FB2','#2DC486','#74DE00'],
     resize: true
-  });
+  });*/
 
 });

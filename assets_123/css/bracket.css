@@ -14890,7 +14890,19 @@ textarea.parsley-success:focus {
 }
 
 .bg-purple {
-  background-color: #6f42c1;
+   background-color: #6f42c1;
+ }
+
+.bg-pria {
+  background-color: #3D449C;
+}
+
+.bg-wanita {
+  background-color: #268FB2;
+}
+
+.bg-noop {
+  background-color: #74DE00;
 }
 
 .bg-pink {

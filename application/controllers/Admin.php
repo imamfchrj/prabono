@@ -17,6 +17,21 @@ class Admin extends Auth_Controller {
 	public function index()
 	{
 		$data['menu']="dashboard";
+		$s_aktif=2;
+		$s_open=1;
+		$s_close=0;
+		$gender=1;
+        $this->load->model(array('admin/list_client_m',
+                                 'admin/list_advokat_m',
+                                 'admin/status_probono_m'
+                                ));
+        $data['client'] =$this->list_client_m->get_all_aktif($gender);
+        $data['client_gender'] =$this->list_client_m->get_all_gender();
+        $data['advokat'] =$this->list_advokat_m->get_all_aktif();
+        $data['advokat_gender'] =$this->list_advokat_m->get_all_gender();
+        $data['k_aktif'] =$this->status_probono_m->get_kasus($s_aktif);
+        $data['k_open'] =$this->status_probono_m->get_kasus($s_open);
+        $data['k_close'] =$this->status_probono_m->get_kasus($s_close);
 		$this->load->view('admin/main',$data);
 	}
 
@@ -82,6 +97,18 @@ class Admin extends Auth_Controller {
 		$data['sub_menu']="kpi_lawyers";
 		$this->load->view('admin/kpi_lawyers',$data);
 	}
+
+    public function kpi_lawyers_detail($id=0)
+    {
+        $this->load->model(array('admin/status_probono_m',
+                                 'admin/list_advokat_m'));
+        $data['tes']=$id;
+        $data['values'] =$this->status_probono_m->get_kpi_by_id($id);
+        $data['kpi'] =$this->status_probono_m->get_all_kpi($id);
+        $data['profile'] =$this->list_advokat_m->get_by_user_id($id);
+        //echo $this->db->last_query();exit;
+        $this->load->view('admin/kpi_lawyers_detail',$data);
+    }
 
 	public function approval_lawyers()
 	{
