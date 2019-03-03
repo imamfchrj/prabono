@@ -223,6 +223,18 @@ class Users extends Advokat_Controller {
 		$this->load->view('users/kasus_request',$data);
 	}
 
+
+
+	public function notification(){
+		$data['menu']="notification";
+
+		$id=$this->get_user_id();
+
+		$this->load->model('client/notification_m');
+		$data["notification"]=$this->notification_m->get_all($id,1);
+		$this->load->view('users/notification',$data);
+	}
+
 	public function logout(){
 		$this->logout_sess();
 		redirect();

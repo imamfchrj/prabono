@@ -90,10 +90,10 @@ function send_notif($user_id,$href,$description,$icon="info",$is_advokat=1){
     $CI->notification_m->set($data);
 }
 
-function get_notif($user_id,$id_advokat){
+function get_notif($user_id,$id_advokat,$is_advokat=0){
 	$CI =& get_instance();
     $CI->load->model('client/notification_m');
-    $data=$CI->notification_m->get_all($user_id,0,4);
+    $data=$CI->notification_m->get_all($user_id,$is_advokat,4);
     $html='<ul class="menu">';
     foreach($data as $list){
         $html=$html.'<li>';
@@ -103,7 +103,7 @@ function get_notif($user_id,$id_advokat){
         $html=$html.'</li>';
     }
     $html=$html.'</ul>';
-    $count=$CI->notification_m->get_count($user_id,0);
+    $count=$CI->notification_m->get_count($user_id,$is_advokat);
     $data['html']=$html;
     $data['count']=$count;
     return $data;

@@ -167,6 +167,7 @@ class Kasus extends CI_Model
             $this->table.".is_banned,".
             $this->table.".note_banned,".
             $this->table.".created_at,".
+            $this->table.".user_id,".
             $this->table_advokat_profiles.".firstname,".
             $this->table_advokat_profiles.".lastname,".
             $this->table_advokat_profiles.".hp,".

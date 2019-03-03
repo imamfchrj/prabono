@@ -182,9 +182,9 @@ class Clients_ajax extends Users_Controller {
 			);
 			if($status){
 				$this->advokat_point_m->set($data);
-				send_notif($this->form_validation->set_value('advokat_id'),"users/agenda/".$this->form_validation->set_value('agenda_id'),"Anda mendapatkan point klik disini untuk melihat","agenda",1);	
+				send_notif($this->form_validation->set_value('advokat_id'),"users/request/".$this->form_validation->set_value('agenda_id'),"Anda mendapatkan point klik disini untuk melihat","agenda",1);	
 			}else{
-				send_notif($this->form_validation->set_value('advokat_id'),"users/agenda/".$this->form_validation->set_value('agenda_id'),"User menghapus point anda","agenda",1);	
+				send_notif($this->form_validation->set_value('advokat_id'),"users/request/".$this->form_validation->set_value('agenda_id'),"User menghapus point anda","agenda",1);	
 				$this->advokat_point_m->delete_by_id($id_time);
 			}
 

@@ -170,22 +170,6 @@
                                         <!-- inner menu: contains the actual data -->
                                         <ul class="menu">
                                         <?=$notif_limit["html"]?>
-                                        <!-- <li>
-                                            <a href="<?=base_url()?>">
-                                            <i class="fa fa-file-text-o text-yellow"></i> Very long description here that may not fit into the
-                                            page and may cause design problems
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="<?=base_url()?>">
-                                            <i class="fa fa-calendar text-green"></i> 5 new members joined
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a href="<?=base_url()?>">
-                                            <i class="fa fa-info text-blue"></i> 5 new members joined
-                                            </a>
-                                        </li> -->
                                         </ul>
                                     </li>
                                     <li class="footer"><a href="<?=base_url()?>clients/notification">View all</a></li>
@@ -196,7 +180,3 @@
                     </div><!-- /.row -->
                 </div><!-- /.container -->
             </div>
-
-            <style>
-                
-                </style>

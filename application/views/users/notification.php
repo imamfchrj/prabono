@@ -1,4 +1,4 @@
-<?php $this->load->view('client/layout/header')?>
+<?php $this->load->view('users/layout/header')?>
 
 
             <main class="main-content" id="main-content">
