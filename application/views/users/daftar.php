@@ -221,7 +221,7 @@
                                                 <div id="biography" maxlength="150">
                                                 <?=$profile->biography?>
                                                 </div>
-                                                <span id="chars">150</span> characters remaining<hr>
+
                                             </div>
 
                                             <label class="col-md-12 form-group" >Upload CV</label>
@@ -445,7 +445,7 @@
                     if($button != false){
                         $("#submitend").show();
                         $("#submitend-loader").hide();
-                        // window.location = "<?php echo base_url('users/status_verifikasi')."/"; ?>";
+                        window.location = "<?php echo base_url('users/status_verifikasi')."/"; ?>";
                     }
                 })
                 .fail(function() {

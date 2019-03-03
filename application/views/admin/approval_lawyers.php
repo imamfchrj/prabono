@@ -50,7 +50,7 @@
                     <hr>
                     <div class="form-layout-footer-imam tx-center">
                         <button class="btn btn-info btn-submit-form" onclick="update(<?=$row->id;?>,1)">Approve</button>
-                        <button class="btn btn-secondary" id="maintabel" onclick="update(<?=$row->id;?>,3)">Reject</button>
+                        <button class="btn btn-secondary" id="maintabel" onclick="update(<?=$row->id;?>,2)">Reject</button>
                     </div><!-- form-layout-footer -->
                 </div><!-- br-lawyers-body rounded-10 -->
             </div><!-- row -->
@@ -78,8 +78,8 @@
                     alert(data.error_message);
                     return;
                 }
-                // window.location = ROOT+'admin/approval_lawyers';
-                location.reload();
+                window.location = ROOT+'admin/approval_lawyers';
+                //location.reload();
             })
             .always(function(){
                 // $('#buy_button_loading').addClass('d-none');

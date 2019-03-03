@@ -23,22 +23,35 @@
         <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal"></span> E-PROBONO <span class="tx-normal"></span></div>
         <div class="tx-center mg-b-60">Administrator</div>
 
-        <div class="form-group row form-admin">
-            <input type="text" id="email" class="form-control" placeholder="Enter your email">
+        <div class="form-group">
+            <input type="text" id="username" class="form-control" placeholder="Enter your email">
         </div><!-- form-group -->
         <div class="form-group">
             <input type="password" id="password" class="form-control" placeholder="Enter your password">
-            <a href="" class="tx-info tx-12 d-block mg-t-10">Forgot password?</a>
+<!--            <a href="" class="tx-info tx-12 d-block mg-t-10">Forgot password?</a>-->
         </div><!-- form-group -->
-        <button type="submit" class="btn btn-info btn-block">Sign In</button>
+        <button type="submit" class="btn btn-info btn-block" onclick="login()">Sign In</button>
 
-        <div class="mg-t-60 tx-center">Not yet a member? <a href="" class="tx-info">Sign Up</a></div>
     </div><!-- login-wrapper -->
 </div><!-- d-flex -->
 
 <script src="<?=base_url()?>assets_123/lib/jquery/jquery.js"></script>
 <script src="<?=base_url()?>assets_123/lib/popper.js/popper.js"></script>
 <script src="<?=base_url()?>assets_123/lib/bootstrap/bootstrap.js"></script>
+
+<script>
+    function login(){
+        console.log("halo");
+        if($("#username").val()=="admin" && $("#password").val()=="admin"){
+            window.location = "<?=base_url()?>admin/dashboard";
+            return;
+        }
+        alert_error("Username atau Password salah");
+        return;
+    }
+
+</script>
+<script src="<?=base_url()?>probono_asset/javascript/alert.js"></script>
 
 </body>
 </html>

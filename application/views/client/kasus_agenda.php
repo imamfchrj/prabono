@@ -12,10 +12,10 @@ var id = <?=$kasus->id?>;
                             <div class="col-md-12 header-daftar">
                                 <div class=" style3">
                                 <div class="widget widget_search widget_search_left" >
-                                    <form role="search" method="get" class="search-form" action="#">
-                                        <input type="search" class="search-field" placeholder="Search…" value="" name="s" > 
-                                        <input type="submit" class="search-submit" id="searchwidget" value="">
-                                    </form>                            
+<!--                                    <form role="search" method="get" class="search-form" action="#">-->
+<!--                                        <input type="search" class="search-field" placeholder="Search…" value="" name="s" > -->
+<!--                                        <input type="submit" class="search-submit" id="searchwidget" value="">-->
+<!--                                    </form>                            -->
                                 </div>
                                 </div>
                             </div>

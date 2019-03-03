@@ -14,7 +14,7 @@ class Admin extends Auth_Controller {
 		echo hashpass('halooo');
 	}
 
-	public function index()
+	public function dashboard()
 	{
 		$data['menu']="dashboard";
 		$s_aktif=2;
