@@ -39,6 +39,16 @@ class Upload extends CI_Controller {
         }
 
 
+        public function do_upload_file2()
+        {
+
+                $this->load->helper('custom_upload');
+                $this->load->model('user/advokat_file');
+                $data=upload_file();
+                echo json_encode($data);
+        }
+
+
         public function client_upload_file()
         {
                 $this->form_validation->set_rules('img_address', "IMG Address", 'trim|required|xss_clean|callback__check_group_user');
@@ -105,7 +115,7 @@ class Upload extends CI_Controller {
 		if(in_array($val,$daftar_group)){
                         return TRUE;
 		}
-                $this->form_validation->set_message('_check_group', "Silahkan terima Persyaratan dan ketentuan.");
+                $this->form_validation->set_message('_check_group_user', "Silahkan terima Persyaratan dan ketentuan.");
                 return FALSE;
         }
 
@@ -115,7 +125,7 @@ class Upload extends CI_Controller {
 		if(in_array($val,$daftar_group)){
                         return TRUE;
 		}
-                $this->form_validation->set_message('_check_group', "Silahkan terima Persyaratan dan ketentuan.");
+                $this->form_validation->set_message('_check_user', "Silahkan terima Persyaratan dan ketentuan.");
                 return FALSE;
         }
 

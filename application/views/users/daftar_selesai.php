@@ -54,7 +54,7 @@
                                         </p>
                                         <?php if($list->firstname_client){ ?>
                                         <ul class="info-team">
-                                            <li><span>Nama Advokat:</span><?=$list->firstname_client?> <?=$list->lastname_client?></li>
+                                        <li><span>Nama Client:</span> <?php if(!$list->is_kusus){?><?=$list->firstname_client?> <?=$list->lastname_client?><?php }else{ echo $list->initial_name;}?></li>
                                             <li><span>Telpon:</span> <?=$list->hp_client?></li>
                                             <li><span>Email:</span> <?=$list->email_client?></li>
                                             <!-- <li><span>Tanggal Sidang:</span>22 January 2019</li> -->

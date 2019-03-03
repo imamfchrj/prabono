@@ -92,6 +92,18 @@ class Clients extends Users_Controller {
 	}
 
 
+
+	public function notification(){
+		$data['menu']="notification";
+
+		$id=$this->get_user_id();
+
+		$this->load->model('client/notification_m');
+		$data["notification"]=$this->notification_m->get_all($id,0);
+		$this->load->view('client/notification',$data);
+	}
+
+
 	
 
 

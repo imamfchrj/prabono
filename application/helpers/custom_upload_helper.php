@@ -7,7 +7,7 @@ function upload_image($name="userfile"){
         $config['upload_path']          = ".".UPLOAD_PATH;
         $config['allowed_types']        = 'gif|jpg|png|psd|jpeg|jpg2|jpe|j2k|jpf|jpm|pdf|svg';
         $config['encrypt_name']         = TRUE;
-        // $config['max_size']             = 1000000;
+        $config['max_size']             = 5000;
         // $config['max_width']            = 10240;
         // $config['max_height']           = 7680;
     
@@ -15,8 +15,8 @@ function upload_image($name="userfile"){
     
         if ( ! $CI->upload->do_upload($name))
         {
-                $error = array('error' => $CI->upload->display_errors());
-                return array("is_error"=>"1","error"=>$error);
+                
+                return array("is_error"=>true,"error"=>$CI->upload->display_errors());
         }
         else
         {
@@ -34,7 +34,7 @@ function upload_file($name="userfile"){
         $config['upload_path']          = ".".UPLOAD_PATH;
         $config['allowed_types']        = 'gif|jpg|png|psd|jpeg|jpg2|jpe|j2k|jpf|jpm|pdf|svg|csv|pdf|xls|ppt|pptx|doc|docx|dot|dotx|xlsx|word|xl|3gp|mp4|m4a|f4v|flv|webm|srt|svg';
         $config['encrypt_name']         = TRUE;
-        // $config['max_size']             = 1000000;
+        $config['max_size']             = 5000;
         // $config['max_width']            = 10240;
         // $config['max_height']           = 7680;
     
@@ -42,8 +42,8 @@ function upload_file($name="userfile"){
     
         if ( ! $CI->upload->do_upload($name))
         {
-                $error = array('error' => $CI->upload->display_errors());
-                return array("is_error"=>"1","error"=>$error);
+                
+                return array("is_error"=>true,"error"=>$CI->upload->display_errors());
         }
         else
         {

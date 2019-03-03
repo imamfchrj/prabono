@@ -40,7 +40,12 @@ class Users_ajax extends Advokat_Controller {
                 "advokat_id"=>$advokat_id,
                 "status"=>2
             );
-            $this->kasus->update_value_by_id($id,$data);
+			$this->kasus->update_value_by_id($id,$data);
+			//disini belum
+			$kasus=$this->kasus->get_kasus_by_status_id_kasus($id,2);
+			if($kasus){
+				send_notif($kasus->user_id,"clients/kasus_aktif_singgle/".$id,"Kasus Anda <b>".$kasus->judul."</b> di terima! Lihat disini untuk detailnya.","advokat",0);	
+			}
 
 			return print(json_encode(array(
 				'is_error'=>false
@@ -95,10 +100,20 @@ class Users_ajax extends Advokat_Controller {
 				"description"=>$this->form_validation->set_value('description'),
 				"advokat_id"=>$id,
 			);
+
+			$this->load->model('client/kasus');
+			$kasus=$this->kasus->get_kasus_by_status_id_kasus($this->form_validation->set_value('kasus_id'),2);
+
 			if(!$this->form_validation->set_value('agenda_id')){
 				$this->kasus_agenda_m->set($data);
+				if($kasus){
+					send_notif($kasus->user_id,"clients/agenda/".$this->form_validation->set_value('kasus_id'),"Advokat membuat agenda kegiatan <b>".$this->form_validation->set_value('title')."</b>. Klik disini untuk melihat selengkapnya","agenda",0);	
+				}
 			}else{
 				$this->kasus_agenda_m->update_value_by_id($this->form_validation->set_value('agenda_id'),$data);
+				if($kasus){
+					send_notif($kasus->user_id,"clients/agenda/".$this->form_validation->set_value('kasus_id'),"Advokat merubah agenda kegiatan <b>".$this->form_validation->set_value('title')."</b>. Klik disini untuk melihat selengkapnya","agenda",0);	
+				}
 			}
 	
 			return print(json_encode(array(

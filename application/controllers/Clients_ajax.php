@@ -138,11 +138,18 @@ class Clients_ajax extends Users_Controller {
 			$this->load->model('user/kasus_agenda_m');
 
 			$id=$this->form_validation->set_value('agenda_id');
+			$agenda=$this->kasus_agenda_m->get_by_id($id);
+			if(!$agenda){
+				return print(json_encode(array(
+					'is_error'=>true,
+					'error_message'=>  "Agenda tidak ditemukan"
+				)));
+			}
 			$data=array(
 				"is_accept"=>1
 			);
 			$this->kasus_agenda_m->update_value_by_id($id,$data);
-	
+			send_notif($agenda->advokat_id,"users/agenda/".$id,"User Menerima Agenda anda. Klik disini untuk melihat lebih banyak.","agenda",1);
 			return print(json_encode(array(
 				'is_error'=>false
 			)));
@@ -175,7 +182,9 @@ class Clients_ajax extends Users_Controller {
 			);
 			if($status){
 				$this->advokat_point_m->set($data);
+				send_notif($this->form_validation->set_value('advokat_id'),"users/request/".$this->form_validation->set_value('agenda_id'),"Anda mendapatkan point klik disini untuk melihat","agenda",1);	
 			}else{
+				send_notif($this->form_validation->set_value('advokat_id'),"users/request/".$this->form_validation->set_value('agenda_id'),"User menghapus point anda","agenda",1);	
 				$this->advokat_point_m->delete_by_id($id_time);
 			}
 
