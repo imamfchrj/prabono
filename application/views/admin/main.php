@@ -20,7 +20,7 @@ $this->load->view('admin/layout/header');
                         <div class="mg-l-20">
                             <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Total Client</p>
                             <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1"><?php echo count($client); ?></p>
-                            <!--<span class="tx-11 tx-roboto tx-white-6">24% higher yesterday</span>-->
+                            <span class="tx-11 tx-roboto tx-white-6">persons</span>
                         </div>
                     </div>
                 </div>
@@ -32,7 +32,7 @@ $this->load->view('admin/layout/header');
                         <div class="mg-l-20">
                             <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Total Advokat</p>
                             <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1"><?php echo count($advokat); ?></p>
-                            <!--<span class="tx-11 tx-roboto tx-white-6">$390,212 before tax</span>-->
+                            <span class="tx-11 tx-roboto tx-white-6">persons</span>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@ $this->load->view('admin/layout/header');
                         <div class="mg-l-20">
                             <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Kasus Open</p>
                             <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1"><?php echo count($k_open); ?></p>
-                            <!--<span class="tx-11 tx-roboto tx-white-6">23% average duration</span>-->
+                            <span class="tx-11 tx-roboto tx-white-6">case</span>
                         </div>
                     </div>
                 </div>
@@ -56,7 +56,7 @@ $this->load->view('admin/layout/header');
                         <div class="mg-l-20">
                             <p class="tx-10 tx-spacing-1 tx-mont tx-medium tx-uppercase tx-white-8 mg-b-10">Kasus Aktif</p>
                             <p class="tx-24 tx-white tx-lato tx-bold mg-b-2 lh-1"><?php echo count($k_aktif); ?></p>
-                            <!--<span class="tx-11 tx-roboto tx-white-6">65.45% on average time</span>-->
+                            <span class="tx-11 tx-roboto tx-white-6">case</span>
                         </div>
                     </div>
                 </div>
@@ -117,11 +117,9 @@ $this->load->view('admin/layout/header');
                             </div>
                         </div><!-- d-flex -->
                     </div>
-                    <div class="row tx-center">
-                        <div class="pd-x-15 pd-b-15">
-                            <div id="morrisDonut2" class="ht-200 ht-sm-300"></div>
-                        </div><!-- col-6 -->
-                    </div><!-- row -->
+                    <div class="pd-x-15 pd-b-15">
+                        <div id="morrisDonut2" class="ht-200 ht-sm-300"></div>
+                    </div><!-- col-6 -->
                 </div><!-- card -->
             </div>
         </div>
