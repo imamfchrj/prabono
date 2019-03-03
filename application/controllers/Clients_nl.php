@@ -8,10 +8,10 @@ class Clients_nl extends All_Controller {
 	{
         parent::__construct();
         $this->load->library('session');
-		if($this->is_user_logged_in()){
-            redirect(DEFAULT_PAGE_USER);
-            exit;
-        }
+		// if($this->is_user_logged_in()){
+        //     redirect(DEFAULT_PAGE_USER);
+        //     exit;
+        // }
     }
     
 	public function register()
@@ -93,6 +93,20 @@ class Clients_nl extends All_Controller {
         /*
         if user set true=client else false it will be advokat
         */
+
+        if( get_from_sess("user_id") ){
+            echo json_encode(array(
+                'is_error'=>false
+            ));
+            return;
+        }
+        if( get_from_sess("advokat_user_id") ){
+            echo json_encode(array(
+                'is_error'=>false
+            ));
+            return;
+        }
+
         $user_set=$this->input->post('user_set');
         if($user_set=="true"){
             $this->user_login();

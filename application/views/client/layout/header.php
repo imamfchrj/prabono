@@ -96,7 +96,7 @@
                     <div class="col-sm-6">
                         <p><?=get_from_sess('username')?></p>
                         <hr>
-                        <a class="blue" href="<?=base_url()?>">Ubah Profile</a>
+                        <a class="blue" href="<?=base_url()?>laporkan-masalah-hukum">Ubah Profile</a>
                     </div>
                 </div>
 
