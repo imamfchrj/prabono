@@ -182,10 +182,6 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
                                         <option value="1">Kasus Khusus</option>
                                     </select>
                                 </div>
-                                <div class="col-md-12 inisial-name">
-                                    <b>Notes:</b><br>
-                                    <p>Terkait masalah kerahasian kasus yang sensitif seperti kasus kekerasan anak,perceraian,pelecehan seksual ,keamanan negara dan saksi kunci akan diberikan kerahasian tentang biodata pencari keadilan.</p><br>
-                                </div>
 
                                 <label class="col-md-12 inisial-name" for="initial_name">Masukkan Nama Inisial<span class="text-danger email-error"></span></label>
                                 <div class="col-md-6">
@@ -194,7 +190,7 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
                             </div>
                             <div class="form-group row form-biografi" style="display:none ;">
 
-                                <label class="col-md-12" for="exampleInputEmail1">Ringkasan Penjelasan <span class="text-danger email-error"></span></label>
+                                <label class="col-md-12" for="exampleInputEmail1">Ringkasan Penjelasan (Maks. 300 Karakter)<span class="text-danger email-error"></span></label>
                                 <div class="col-md-12">
                                     <div id="kronologi_masalah">
                                         <?=$kasus->kronologi_masalah?>
@@ -226,7 +222,7 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
 
                             </div>
                             <div class="form-group row form-edukasi" style="display:none ;">
-                                <label class="col-md-12" for="exampleInputEmail1">Harapan Akan Kasus Kedepannya <span class="text-danger email-error"></span></label>
+                                <label class="col-md-12" for="exampleInputEmail1">Harapan Akan Kasus Kedepannya (Maks. 200 Karakter)<span class="text-danger email-error"></span></label>
                                 <div class="col-md-12">
                                     <div id="ekspektasi_kasus">
                                         <?=$kasus->ekspektasi_kasus?>

@@ -700,41 +700,39 @@ class Admin_api extends Api_Controller {
         }
     }
 
-    public function status_probono_get($id="")
+    public function status_probono_get()
     {
 
-        $this->load->model('admin/status_probono_m');
-        if($id==""){
+//        $this->load->model('admin/status_probono_m');
+
+        $this->load->model("client/kasus");
             //get all
-            $data=$this->status_probono_m->get_all();
+            $data=$this->kasus->get_kasus_all();
+            $result=array();
+            $i=0;
+            foreach ($data as $list){
+                $result[$i]["judul"]=$list->judul;
+                $kusus="Umum";
+                if($list->is_kusus){
+                    $kusus="Kusus";
+                }
+                $result[$i]["jenis_kasus"]=$kusus;
+                $result[$i]["user_name"]=$list->firstname_client;
+                $result[$i]["user_lastname"]=$list->lastname_client;
+                $result[$i]["advokat_name"]=$list->firstname;
+                $result[$i]["advokat_lastname"]=$list->lastname;
+                $result[$i]["kota"]=$list->regencies_name;
+                $status="Open";
+                if($list->status==2){
+                    $status="Aktif";
+                }
+                $result[$i]["status"]=$status;
+                $i++;
+            }
             echo json_encode(array(
                 'is_error'=>false,
-                'data'=> $data
+                'data'=> $result
             ));
-            return;
-        }
-
-        $this->form_validation->set_data(array(
-            'id'    =>  $id
-        ));
-        $this->form_validation->set_rules('id', 'id kasus', 'trim|required|xss_clean|numeric|htmlentities');
-
-        if ($this->form_validation->run()) {
-            $id=$this->form_validation->set_value('id');
-            $data=$this->status_probono_m->get_by_id($id);
-            echo json_encode(array(
-                'is_error'=>false,
-                'data'=> $data
-            ));
-            return;
-        }else{
-            $data=$this->status_probono_m->get_all();
-            echo json_encode(array(
-                'is_error'=>true,
-                'error_message'=>  validation_errors()
-            ));
-            return;
-        }
     }
 
     public function tracking_agenda_get($id="")
