@@ -311,8 +311,8 @@
                     // submit();
                     $('#biodataform').submit();
                     $("#submitend").hide();
-
-                    window.location = ROOT+'users/status_verifikasi';
+                    save("submitend");
+                    // window.location = ROOT+'users/status_verifikasi';
 
                 });
                 $(".lanjut").click(function(){
@@ -397,10 +397,16 @@
                 setTimeout("autoSave()", <?=TICKER_AUTO_SAVE?>); // Autosaves every minute.
                 save();
             }
-            function save(){
+
+            $("#submitend-loader").hide();
+            function save($button=false){
                 var law_firm=0;
                 if($('#is_law_firm').is(":checked")){
                     law_firm=1;
+                }
+                if($button!=false){
+                    $("#submitend").hide();
+                    $("#submitend-loader").show();
                 }
                 $.ajax({
                     url: ROOT+'users/ajax_daftar',
@@ -433,16 +439,20 @@
                     }
                 })
                 .done(function(data) {
-                    // if(data.is_error==1){ 
-                    //     alert_error(data.error);
-                    //     return; 
-                    // }
-                    // window.location = "<?php echo base_url('users/status_verifikasi')."/"; ?>";
+                    if($button != false){
+                        $("#submitend").show();
+                        $("#submitend-loader").hide();
+                        window.location = "<?php echo base_url('users/status_verifikasi')."/"; ?>";
+                    }
                 })
                 .fail(function() {
                     if(tmp){
                         alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
                         tmp = false;
+                    }
+                    if($button != false){
+                        $("#submitend").show();
+                        $("#submitend-loader").hide();
                     }
                 })
                 .always(function() {
@@ -677,6 +687,7 @@
                     </div>
 
                 <div class="modal-footer">
+                    <div class="loader-btn" id="submitend-loader"  style="display:none;"> </div>
                     <a href="#" id="submitend" class="btn btn-success success">Confirm</a>
                 </div>
             </div>

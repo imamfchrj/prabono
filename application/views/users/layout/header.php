@@ -94,9 +94,9 @@
                     </div>
 
                     <div class="col-sm-6">
-                        <p><?=get_from_sess("advokat_email")?></p>
+                        <p><?=get_from_sess("advokat_username")?></p>
                         <hr>
-                        <a class="blue" href="<?=base_url()?>">Ubah Profile</a>
+                        <a class="blue" href="<?=base_url()?>users/daftar">Ubah Profile</a>
                     </div>
                 </div>
 

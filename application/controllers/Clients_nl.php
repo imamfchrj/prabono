@@ -115,7 +115,7 @@ class Clients_nl extends All_Controller {
                 if($user->password==hashpass($this->form_validation->set_value('password'))){
                     $set_session=array(
                         'user_id'	=> $user->id,
-                        'username'	=> $user->username,
+                        'username'	=> $user->firstname . " " . $user->lastname ,
                         'email'		=> $user->email,
                         'status'	=> $user->activated,
                         'login_config' => hashuser($user->email)
@@ -156,7 +156,7 @@ class Clients_nl extends All_Controller {
                 if($user->password==hashpass($this->form_validation->set_value('password'))){
                     $set_session=array(
                         'advokat_user_id'	=> $user->id,
-                        'advokat_username'	=> $user->username,
+                        'advokat_username'	=> $user->firstname . " " . $user->lastname ,
                         'advokat_email'		=> $user->email,
                         'advokat_status'	=> $user->activated,
                         'advokat_login_config' => hashadvokat($user->email)

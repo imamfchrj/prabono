@@ -29,10 +29,8 @@ class Users extends Advokat_Controller {
 		$data['probono'] =$this->master_bidang_keahlian_m->get_all_by_id($id);
 		$data['profile']=$this->advokat_profiler->get_by_id($id);
 		$data['users']=$this->advokat_profiler->get_user_by_id($id);
-		$data['users']=$this->advokat_profiler->get_user_by_id($id);
 		$data['biography_list']=$this->advokat_file->get_file_by_id_group($id,"advokat_biography");
 		$data['education_list']=$this->advokat_file->get_file_by_id_group($id,"advokat_education");
-		
 		$this->load->view('users/daftar',$data);
 	}
 
@@ -74,6 +72,13 @@ class Users extends Advokat_Controller {
 
 	public function status_verifikasi()
 	{
+		$this->load->model("user/auth_advokat");
+		$id=$this->get_user_id();
+		$status=$this->auth_advokat->get_is_verified_by_id($id);
+		if($status->is_verified == 1){
+			redirect("users/daftar_kasus");
+			return;
+		}
 		$this->load->view('users/status_verifikasi');
 	}
 
@@ -86,8 +91,6 @@ class Users extends Advokat_Controller {
 
 		$this->form_validation->set_rules('gender', "Jenis Kelamin", 'trim|xss_clean|integer|max_length[1]');
 
-		//$this->form_validation->set_rules('first_title', "Title Depan", 'trim|xss_clean|max_length[20]');
-		//$this->form_validation->set_rules('last_title', "Title Depan", 'trim|xss_clean|max_length[20]');
 		$this->form_validation->set_rules('hp', "No Handphone", 'trim|xss_clean|is_natural|max_length[12]');
 		$this->form_validation->set_rules('id_ktp', "No Kartu Identitas", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('photo_ktp', "Photo KTP", 'trim|xss_clean');
