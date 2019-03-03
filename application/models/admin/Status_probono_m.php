@@ -17,6 +17,14 @@ class Status_probono_m extends CI_Model
     private $table_regencies = 'regencies';
     private $table_agenda = 'kasus_agenda';
 
+    private function _select_table_kasus()
+    {
+        $this->db->select(array(
+            'a.*'
+        ));
+        $this->db->from($this->table.' as a');
+    }
+
     private function _select_table()
     {
         $this->db->select(array(
@@ -124,6 +132,16 @@ class Status_probono_m extends CI_Model
             if($query){
                 return $query->result();
             }
+        }
+        return false;
+    }
+
+    function get_kasus($status){
+        $this->_select_table_kasus();
+        $this->db->where('a.status', $status);
+        $query=$this->db->get();
+        if($query){
+            return $query->result();
         }
         return false;
     }
