@@ -398,7 +398,6 @@
                 save();
             }
 
-            $("#submitend-loader").hide();
             function save($button=false){
                 var law_firm=0;
                 if($('#is_law_firm').is(":checked")){

@@ -294,7 +294,7 @@ $(function(){
         $('#biodataform').submit();
         $("#submitend").hide();
         
-        kasus(1);
+        kasus(1,"submitend");
 
     });
     function simpan_update(){
@@ -415,7 +415,11 @@ var    update_profile  = function (){
 
 <script>
 
-function kasus($is_submit=0){ 
+function kasus($is_submit=0,$button=false){
+    if($button!=false) {
+        $("#submitend").hide();
+        $("#submitend-loader").show();
+    }
     $.ajax({
         url: ROOT+'clients_ajax/kasus',
         type: 'post',
@@ -446,6 +450,10 @@ function kasus($is_submit=0){
         if(tmp){
             alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
             tmp = false;
+        }
+        if($button!=false) {
+            $("#submitend").show();
+            $("#submitend-loader").hide();
         }
     })
     .always(function() {
@@ -633,6 +641,7 @@ $(document).ready(function() {
                     </div>
 
                     <div class="modal-footer">
+                    <div class="loader-btn" id="submitend-loader"  style="display:none;"> </div>
                         <a href="#" id="submitend" class="btn btn-success success">Confirm</a>
                     </div>
                 </div>
