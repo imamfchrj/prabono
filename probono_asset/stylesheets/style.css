@@ -3523,3 +3523,126 @@ footer .logo-footer .logo {
 	0% { transform: rotate(0deg); }
 	100% { transform: rotate(360deg); }
   }
+
+
+  .notif {
+	color: #2368ff;
+    font-size: 16px;
+  }
+
+
+
+.navbar-custom-menu>.navbar-nav>li {
+    position: relative;
+}
+@media (min-width: 768px){
+	.navbar-nav>li {
+		float: left;
+	}
+}
+.nav>li {
+    position: relative;
+    display: block;
+}
+
+.navbar-custom-menu>.navbar-nav>li>.dropdown-menu {
+    position: absolute;
+    right: 0;
+    left: auto;
+}
+.navbar-nav>.notifications-menu>.dropdown-menu, .navbar-nav>.messages-menu>.dropdown-menu, .navbar-nav>.tasks-menu>.dropdown-menu {
+    width: 280px;
+    padding: 0 0 0 0;
+    margin: 0;
+    top: 100%;
+}
+.navbar-nav>li>.dropdown-menu {
+    margin-top: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+.open>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    box-shadow: none;
+    border-color: #eee;   
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.navbar-nav>.notifications-menu>.dropdown-menu>li.header, .navbar-nav>.messages-menu>.dropdown-menu>li.header, .navbar-nav>.tasks-menu>.dropdown-menu>li.header {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background-color: #ffffff;
+    padding: 7px 10px;
+    border-bottom: 1px solid #f4f4f4;
+    color: #444444;
+    font-size: 14px;
+}
+.navbar-nav>.notifications-menu>.dropdown-menu>li, .navbar-nav>.messages-menu>.dropdown-menu>li, .navbar-nav>.tasks-menu>.dropdown-menu>li {
+    position: relative;
+}
+
+.navbar-nav>.notifications-menu>.dropdown-menu>li .menu, .navbar-nav>.messages-menu>.dropdown-menu>li .menu, .navbar-nav>.tasks-menu>.dropdown-menu>li .menu {
+    max-height: 200px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow-x: hidden;
+}
+
+.navbar-nav>.notifications-menu>.dropdown-menu>li .menu>li>a {
+    color: #444444;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 10px;
+}
+
+.navbar-nav>.notifications-menu>.dropdown-menu>li .menu>li>a, .navbar-nav>.messages-menu>.dropdown-menu>li .menu>li>a, .navbar-nav>.tasks-menu>.dropdown-menu>li .menu>li>a {
+    display: block;
+    white-space: nowrap;
+    border-bottom: 1px solid #f4f4f4;
+}
+
+
+.text-aqua {
+	color:#1ba0e3;
+}
+
+.text-red {
+	color:red;
+}
+
+.text-blue {
+	color:#0770cd;
+}
+
+.text-yellow {
+	color:rgb(252, 160, 0);
+}
+
+.text-green {
+	color:rgb(30, 212, 145);;
+}
