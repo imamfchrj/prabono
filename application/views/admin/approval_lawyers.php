@@ -5,7 +5,7 @@
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="br-mainpanel">
         <div class="pd-30">
-            <h4 class="tx-gray-800 mg-b-5">Lawyers Management - Approval Menu</h4>
+            <h4 class="tx-gray-800 mg-b-5">Advokat Management - Approval Menu</h4>
         </div><!-- d-flex -->
         <div class="br-approve-lawyers-body">
             <?php if(count($values) < 1){?>

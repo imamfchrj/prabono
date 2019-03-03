@@ -14,6 +14,7 @@
     <link href="<?=base_url()?>assets_123/lib/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet">
     <link href="<?=base_url()?>assets_123/lib/jquery-switchbutton/jquery.switchButton.css" rel="stylesheet">
     <link href="<?=base_url()?>assets_123/lib/datatables/jquery.dataTables.css" rel="stylesheet"> <!-- table -->
+    <link href="<?=base_url()?>assets_123/lib/morris.js/morris.css" rel="stylesheet">
 
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="<?=base_url()?>assets_123/css/bracket.css">
@@ -43,7 +44,7 @@
         <a href="#" class="br-menu-link <?php if($menu == 'lawyers') echo 'active show-sub'?>">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-eye tx-24"></i>
-            <span class="menu-item-label">Lawyers Management</span>
+            <span class="menu-item-label">Advokat Management</span>
             <i class="menu-item-arrow fa fa-angle-down"></i>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->

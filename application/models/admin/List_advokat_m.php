@@ -24,6 +24,19 @@ class List_advokat_m extends CI_Model
         $this->db->join($this->table_province.' as c','a.province=c.id', 'left');
     }
 
+    private function _select_table_gender()
+    {
+        $this->db->select(array(
+            '(case when a.gender=1 then "Laki-Laki"
+             when a.gender=2 then "Perempuan"
+             else "Tidak ingin disebutkan"
+             end) as advokat_gender, count(*) as no_of_gender'
+        ));
+        $this->db->from($this->table.' as a');
+        $this->db->join($this->table_users.' as b','b.id=a.user_id');
+        $this->db->join($this->table_province.' as c','a.province=c.id', 'left');
+    }
+
     function get_all_aktif(){
         $this->_select_table();
         $this->db->where('a.is_verified',1);
@@ -37,6 +50,18 @@ class List_advokat_m extends CI_Model
     function get_all_pending(){
         $this->_select_table();
         $this->db->where('a.is_verified',0);
+        $query=$this->db->get();
+        if($query){
+            return $query->result();
+        }
+        return false;
+    }
+
+    function get_all_gender(){
+        $this->_select_table_gender();
+        $this->db->where('a.gender is NOT NULL', NULL, FALSE);
+        $this->db->where('a.is_verified', 1);
+        $this->db->group_by('a.gender');
         $query=$this->db->get();
         if($query){
             return $query->result();
@@ -60,6 +85,16 @@ class List_advokat_m extends CI_Model
     function get_by_id($id){
         $this->_select_table();
         $this->db->where('a.id', $id);
+        $query=$this->db->get($this->table);
+        if($query){
+            return $query->row();
+        }
+        return false;
+    }
+
+    function get_by_user_id($id){
+        $this->_select_table();
+        $this->db->where('a.user_id', $id);
         $query=$this->db->get($this->table);
         if($query){
             return $query->row();
