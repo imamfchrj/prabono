@@ -135,7 +135,9 @@ class Admin extends Auth_Controller {
 
 	public function complaint()
 	{
-		$data['menu']="complaint";
+        $data['menu']="complaint";
+        $this->load->model("user/complaint_m");
+        $data["complaint"]=$this->complaint_m->get_all_complaint();
 		$this->load->view('admin/complaint',$data);
 	}
 

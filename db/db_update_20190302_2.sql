@@ -1,0 +1,1 @@
+ALTER TABLE `complaint` ADD `is_accept` TINYINT NOT NULL DEFAULT '0' AFTER `description`;
