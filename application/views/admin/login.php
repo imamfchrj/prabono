@@ -23,11 +23,11 @@
         <div class="signin-logo tx-center tx-28 tx-bold tx-inverse"><span class="tx-normal"></span> E-PROBONO <span class="tx-normal"></span></div>
         <div class="tx-center mg-b-60">Administrator</div>
 
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Enter your username">
+        <div class="form-group row form-admin">
+            <input type="text" id="email" class="form-control" placeholder="Enter your email">
         </div><!-- form-group -->
         <div class="form-group">
-            <input type="password" class="form-control" placeholder="Enter your password">
+            <input type="password" id="password" class="form-control" placeholder="Enter your password">
             <a href="" class="tx-info tx-12 d-block mg-t-10">Forgot password?</a>
         </div><!-- form-group -->
         <button type="submit" class="btn btn-info btn-block">Sign In</button>
