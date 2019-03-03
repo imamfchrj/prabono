@@ -46,11 +46,11 @@
                     <p>Lokasi Praktek :</p>
                     <p><?php echo $row->name; ?></p>
                     <a href="act_lawyers_profil/<?php echo $row->id; ?>"><p class="tx-purple tx-bold">Read More >></p></a>
-                    <input class="form-control" type="hidden" id="id_advokat" name="id_advokat" value="<?php echo $row->id; ?>">
+                    <!-- <input class="form-control" type="hidden" id="id_advokat" name="id_advokat" value="<?php echo $row->id; ?>"> -->
                     <hr>
                     <div class="form-layout-footer-imam tx-center">
-                        <button class="btn btn-info btn-submit-form">Approve</button>
-                        <button class="btn btn-secondary" id="maintabel">Reject</button>
+                        <button class="btn btn-info btn-submit-form" onclick="update(<?=$row->id;?>,1)">Approve</button>
+                        <button class="btn btn-secondary" id="maintabel" onclick="update(<?=$row->id;?>,3)">Reject</button>
                     </div><!-- form-layout-footer -->
                 </div><!-- br-lawyers-body rounded-10 -->
             </div><!-- row -->
@@ -59,16 +59,18 @@
             ?>
         </div><!-- br-approve-lawyers-body -->
     <script>
-        $(".btn-submit-form").click(function(){
-                update();
-        });
-        function update(){
+        // $(".btn-submit-form").click(function(){
+        //         update();
+        // });
+        function update($advokat_id,$verified){
             $.ajax({
                 url: ROOT+'/admin_api/advokat_approve',
                 dataType: 'json',
                 type: 'post',
                 data: {
-                    id: $('#id_advokat').val(),
+                    id: $advokat_id,
+                    verified: $verified,
+
                 }
             })
             .done(function(data) {
@@ -76,7 +78,8 @@
                     alert(data.error_message);
                     return;
                 }
-                window.location = ROOT+'admin/approval_lawyers';
+                // window.location = ROOT+'admin/approval_lawyers';
+                location.reload();
             })
             .always(function(){
                 // $('#buy_button_loading').addClass('d-none');

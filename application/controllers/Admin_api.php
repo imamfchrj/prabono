@@ -680,13 +680,15 @@ class Admin_api extends Api_Controller {
 
         $this->load->model('admin/list_advokat_m');
 
-        $this->form_validation->set_rules('id', 'User ID', 'trim|required|xss_clean|numeric|htmlentities|required');
+        $this->form_validation->set_rules('id', 'User', 'trim|required|xss_clean|numeric|htmlentities|required');
+        $this->form_validation->set_rules('verified', 'Verified', 'trim|required|xss_clean|numeric|htmlentities|required');
 
         if ($this->form_validation->run()) {
             $id = $this->form_validation->set_value('id');
+            $verified = $this->form_validation->set_value('verified');
 
             $data = array('id' => $id,
-                'is_verified' => 1
+                'is_verified' => $verified
             );
             $data = $this->list_advokat_m->update_value_by_id($id, $data);
             echo json_encode(array(
@@ -800,7 +802,60 @@ class Admin_api extends Api_Controller {
             ));
             return;
         }else{
-            $data=$this->status_probono_m->get_all_kpi();
+            // $data=$this->status_probono_m->get_all_kpi();
+            echo json_encode(array(
+                'is_error'=>true,
+                'error_message'=>  validation_errors()
+            ));
+            return;
+        }
+    }
+
+    public function change_status_complaint()
+    {
+
+
+        $this->form_validation->set_rules('id', 'Complaint', 'trim|required|xss_clean|numeric|htmlentities');
+        $this->form_validation->set_rules('kasus_id', 'Kasus', 'trim|required|xss_clean|numeric|htmlentities');
+        $this->form_validation->set_rules('status', 'Status', 'trim|required|xss_clean|numeric|htmlentities');
+
+        if ($this->form_validation->run()) {
+            $this->load->model("user/complaint_m");
+            $this->load->model("client/kasus");
+            $id=$this->form_validation->set_value('id');
+            $kasus_id=$this->form_validation->set_value('kasus_id');
+            $status=$this->form_validation->set_value('status');
+            $data=array(
+                "is_accept"=>$status
+            );
+            $this->complaint_m->update_value_by_id($id,$data);
+            
+            if($status==2){
+
+                echo json_encode(array(
+                    'is_error'=>false
+                ));
+                return;
+            }
+            $complaint_data=$this->complaint_m->get_by_id($id);
+            if($complaint_data){
+                $status=$complaint_data->status;
+                // 1 ganti advokat (user)
+                // 3 berhenti membantu kasus (advokat)
+                if(in_array($status,array(1,3))){
+                    $kasus=array(
+                        "status"=>1
+                    );
+                    $this->kasus->update_value_by_id($kasus_id,$kasus);
+                }
+            }
+            //if advokat change, he not get point anymore
+            
+            echo json_encode(array(
+                'is_error'=>false
+            ));
+            return;
+        }else{
             echo json_encode(array(
                 'is_error'=>true,
                 'error_message'=>  validation_errors()
