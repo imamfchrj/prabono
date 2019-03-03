@@ -105,6 +105,7 @@ class Users extends Advokat_Controller {
         $this->form_validation->set_rules('jur_s2', "Jurusan S2", 'trim|xss_clean|max_length[250]');
         $this->form_validation->set_rules('univ_s3', "Universitas S3", 'trim|xss_clean|max_length[250]');
         $this->form_validation->set_rules('jur_s3', "Jurusan S3", 'trim|xss_clean|max_length[250]');
+        $this->form_validation->set_rules('is_submit', "Jurusan S3", 'trim|xss_clean');
 		//$this->form_validation->set_rules('education', "Provinsi", 'trim|xss_clean|max_length[250]');
 
 		if($this->form_validation->run()){
@@ -112,6 +113,8 @@ class Users extends Advokat_Controller {
 			$this->load->model('user/advokat_profiler');
 
 			$id=$this->get_user_id();
+
+			
 			$data=array(
 				"firstname"=>$this->form_validation->set_value('firstname'),
 				"lastname"=>$this->form_validation->set_value('lastname'),
@@ -137,6 +140,15 @@ class Users extends Advokat_Controller {
                 "jur_s3"=>$this->form_validation->set_value('jur_s3'),
 				//"education"=>$this->form_validation->set_value('education'),
 			);
+			if($this->form_validation->set_value('is_submit')==1){
+				$advokat_profile=$this->advokat_profiler->get_by_id($id);
+				if($advokat_profile){
+					if($advokat_profile->is_verified==2){
+						$data["is_verified"]=0;
+					}
+				}
+
+			}
 			$this->advokat_profiler->update_profile($id,$data);
 	
 			return print(json_encode(array(
