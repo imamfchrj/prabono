@@ -28,12 +28,34 @@ class Auth_advokat extends CI_Model
         return $id;
     }
 
+
+    function get_is_verified_by_id($id){
+        $this->db->select("is_verified");
+        $this->db->where('user_id', $id);
+        $query=$this->db->get($this->table_advokat_profiles);
+        if($query){
+            return $query->row();
+        }
+        return false;
+    }
+
+
     function get_data_user_by_email($email){
 
-        $this->db->select("password,id,email,activated,banned,ban_reason,username");
-        $this->db->where('email', $email);
-        $this->db->where('activated', 1);
-        $this->db->where('banned', 0);
+        $this->db->select(
+            $this->table.".password,".
+            $this->table.".id,".
+            $this->table.".email,".
+            $this->table.".activated,".
+            $this->table.".banned,".
+            $this->table.".ban_reason,".
+            $this->table_advokat_profiles.".firstname,".
+            $this->table_advokat_profiles.".lastname,".
+            $this->table.".username");
+        $this->db->where($this->table.'.email', $email);
+        $this->db->where($this->table.'.activated', 1);
+        $this->db->where($this->table.'.banned', 0);
+        $this->db->join($this->table_advokat_profiles,$this->table_advokat_profiles.".user_id=".$this->table.".id","left");
         $query=$this->db->get($this->table);
         if($query){
             return $query->row();

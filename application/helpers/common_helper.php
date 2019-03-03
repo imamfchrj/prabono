@@ -57,3 +57,55 @@ function convert_date($end_date, $start_date){
     $minute = floor(($timing%3600)/60);
     return $hour . " Jam " . $minute ." Menit";
 }
+
+
+function send_notif($user_id,$href,$description,$icon="info",$is_advokat=1){
+	$CI =& get_instance();
+    $CI->load->model('client/notification_m');
+    switch ($icon) {
+        case "info":
+            $icon="fa-info text-aqua";
+            break;
+        case "agenda":
+            $icon="fa-calendar text-yellow";
+            break;
+        case "client":
+            $icon="fa-calendar text-green";
+            break;
+        case "advokat":
+            $icon="fa-users text-blue";
+            break;
+        default:
+        $icon="fa-info text-blue";
+    }
+    $data = array(
+        "user_id"=>$user_id,
+        "is_advokat"=>$is_advokat,
+        "icon"=>$icon,
+        "href"=>$href,
+        "description"=>$description,
+        "is_read"=>0,
+    );
+
+    $CI->notification_m->set($data);
+}
+
+function get_notif($user_id,$id_advokat,$is_advokat=0){
+	$CI =& get_instance();
+    $CI->load->model('client/notification_m');
+    $data=$CI->notification_m->get_all($user_id,$is_advokat,4);
+    $html='<ul class="menu">';
+    foreach($data as $list){
+        $html=$html.'<li>';
+        $html=$html.'<a href="'.base_url().$list->href.'">';
+        $html=$html.'<i class="fa '.$list->icon.'"></i>  '.$list->description;
+        $html=$html.'</a>';
+        $html=$html.'</li>';
+    }
+    $html=$html.'</ul>';
+    $count=$CI->notification_m->get_count($user_id,$is_advokat);
+    $data['html']=$html;
+    $data['count']=$count;
+    return $data;
+}
+

@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <!--[if IE 8 ]><html class="ie" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-US" lang="en-US"><!--<![endif]-->
+<?php 
+        $notif_limit=get_notif(get_from_sess("user_id"),0);
+    ?>
 <head>
     <!-- Basic Page Needs -->
     <meta charset="utf-8">
@@ -33,6 +36,7 @@
     <!-- Favicon and touch icons  -->
     <link href="<?=base_url()?>probono_asset/icon/apple-touch-icon-48-precomposed.png" rel="icon" sizes="48x48">
     <link href="<?=base_url()?>probono_asset/icon/apple-touch-icon-32-precomposed.png" rel="icon">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link href="<?=base_url()?>probono_asset/icon/favicon.png" rel="shortcut icon">
 </head>                                 
 <body class="header_sticky page-loading style-body onepage"> 
@@ -96,7 +100,7 @@
                     <div class="col-sm-6">
                         <p><?=get_from_sess('username')?></p>
                         <hr>
-                        <a class="blue" href="<?=base_url()?>">Ubah Profile</a>
+                        <a class="blue" href="<?=base_url()?>laporkan-masalah-hukum     ">Ubah Profile</a>
                     </div>
                 </div>
 
@@ -121,7 +125,7 @@
                         <li><a href="#"><i class="fa fa-rss"></i></a></li>
                     </ul>
                     <div class="copy-right">
-                        <p>Copyright © 2017 <a href="#">Consultant Plus</a>.<br>All Rights Reserved.</p>
+                        <p>Copyright © 2019 <a href="#">Redcloud Project</a>.<br>All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
@@ -151,9 +155,27 @@
         
             <div class="flat-top">
                 <div class="container">
-                    <div class="row">    
-                        <div class="col-md-12">
-                            <p class="info-link"><a href="#">Support Email:</a>support@pronono.com</p>
+                    <div class="row navbar navbar-static-top" style="margin-bottom:0px;">    
+                        <div class="col-md-12 navbar-custom-menu">
+                            <ul class="float-right nav navbar-nav">
+                            <!-- <p class="info-link"><a href="#">Kamu memiliki <span>5</span> Notifikasi</a><i class="fa fa-bell aria-hidden notif"  ></i></p> -->
+                                <li class="info-link dropdown notifications-menu">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                                    <i class="fa fa-bell-o"></i>
+                                    <span class="label label-warning"><?=$notif_limit["count"]?></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                    <li class="header">You have <?=$notif_limit["count"]?> notifications</li>
+                                    <li>
+                                        <!-- inner menu: contains the actual data -->
+                                        <ul class="menu">
+                                        <?=$notif_limit["html"]?>
+                                        </ul>
+                                    </li>
+                                    <li class="footer"><a href="<?=base_url()?>clients/notification">View all</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
                         </div>        
                     </div><!-- /.row -->
                 </div><!-- /.container -->

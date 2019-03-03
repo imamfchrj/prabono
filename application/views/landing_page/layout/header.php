@@ -232,6 +232,7 @@
                                         <div id="html_element"></div>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
+                                    <div class="btn-block loader-btn" id="loader-btn" style="display:none;"></div>
                                     <button  class="btn btn-secondary btn-block login-btn submit" >Masuk</button>
                                 </div>
                                 <div class="col-md-8 col-md-offset-2">
@@ -302,6 +303,8 @@ $(function(){
 <script>
 tmp=true;
 var submit = function (response){  
+    $("#loader-btn").show();
+    $(".submit").hide();
     $.ajax({
         url: ROOT+'clients_nl/ajax_login',
         type: 'post',
@@ -325,14 +328,19 @@ var submit = function (response){
         }else{
             window.location = "<?php echo base_url(DEFAULT_PAGE_ADVOKAT); ?>";
         }
+        $("#loader-btn").hide();
+        $(".submit").show();
     })
     .fail(function(data) {
-        console.log(data);
         if(tmp){
             alert_error( "Server tidak merespon. Mohon cek koneksi internet anda. (Lakukan refresh jika dibutuhkan)\n" );
             grecaptcha.reset();
             tmp = false;
         }
+        
+        $("#loader-btn").hide();
+        $(".submit").show();
+        
     })
     .always(function() {
         

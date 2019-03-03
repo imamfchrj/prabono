@@ -294,7 +294,7 @@ $(function(){
         $('#biodataform').submit();
         $("#submitend").hide();
         
-        kasus(1);
+        kasus(1,"submitend");
 
     });
     function simpan_update(){
@@ -415,7 +415,11 @@ var    update_profile  = function (){
 
 <script>
 
-function kasus($is_submit=0){ 
+function kasus($is_submit=0,$button=false){
+    if($button!=false) {
+        $("#submitend").hide();
+        $("#submitend-loader").show();
+    }
     $.ajax({
         url: ROOT+'clients_ajax/kasus',
         type: 'post',
@@ -447,6 +451,10 @@ function kasus($is_submit=0){
             alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
             tmp = false;
         }
+        if($button!=false) {
+            $("#submitend").show();
+            $("#submitend-loader").hide();
+        }
     })
     .always(function() {
         
@@ -456,12 +464,12 @@ function kasus($is_submit=0){
 <script>
 
 $("#file_surat_tidak_mampu").change(function(){
-    upload_data(ROOT+'upload/do_upload',"#file_surat_tidak_mampu","#surat_tidak_mampu");
+    upload_data(ROOT+'upload/do_upload_file2',"#file_surat_tidak_mampu","#surat_tidak_mampu");
 });
 
 
 $("#file_photo_ktp").change(function(){
-    upload_data(ROOT+'upload/do_upload',"#file_photo_ktp","#photo_ktp");
+    upload_data(ROOT+'upload/do_upload_file2',"#file_photo_ktp","#photo_ktp");
 });
 </script>
 
@@ -622,15 +630,18 @@ $(document).ready(function() {
                         </button>
                         <h5 class="modal-title" id="exampleModalLabel">Term & Condition</h5>
                     </div>
-                    <div class="modal-body">
-                        <textarea cols="50" rows="5" style="overflow:scroll;">Diisi sama term & Conditions
-                        </textarea>
+                    <div class="modal-body" style="padding:20px;">
+                        <div id="" style="overflow:scroll; height:300px;">
+
+                            <?php $this->load->view('client/term_and_condition')?>
+                        </div>
 
                         <input type="checkbox" id="is_accepted" value="" onclick="is_accept()">   I accept the Term & Condition<br>
 
                     </div>
 
                     <div class="modal-footer">
+                    <div class="loader-btn" id="submitend-loader"  style="display:none;"> </div>
                         <a href="#" id="submitend" class="btn btn-success success">Confirm</a>
                     </div>
                 </div>
