@@ -34,6 +34,10 @@ class Upload extends CI_Controller {
                 $array['user_id']=$user_id;
                 $array['name']=$data['raw_name'];
                 $array['file']=$data['filename'];
+                if($data["is_error"]){
+                        echo json_encode($data);
+                        return;
+                }
                 $this->advokat_file->set($array);
                 echo json_encode($data);
         }
