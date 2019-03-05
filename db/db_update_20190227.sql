@@ -44,11 +44,6 @@ CREATE TABLE `complaint` (
 -- Dumping data untuk tabel `complaint`
 --
 
-INSERT INTO `complaint` (`id`, `kasus_id`, `advokat_id`, `user_id`, `is_user`, `status`, `description`, `created_at`, `updated_at`) VALUES
-(1, 1, 3, 1, 1, 1, 'advokat tidak bisa di telpon', '2019-02-27 23:58:42', '2019-02-27 23:58:42'),
-(2, 1, 3, 1, 1, 2, 'Kasus sudah selesai', '2019-02-27 23:59:13', '2019-02-27 23:59:13'),
-(3, 3, 3, 1, 0, 3, 'User telah memutuskan kasus selesai', '2019-02-28 00:07:42', '2019-02-28 00:07:42');
-
 --
 -- Indexes for dumped tables
 --
@@ -67,7 +62,7 @@ ALTER TABLE `complaint`
 -- AUTO_INCREMENT untuk tabel `complaint`
 --
 ALTER TABLE `complaint`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

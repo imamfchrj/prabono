@@ -10,16 +10,33 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="wrap-services-single">
-                            <div class="featured-services">
+                            <!-- <div class="featured-services">
                                 <img src="<?=base_url()?>probono_asset/images/services/single.jpg" alt="image">
-                            </div>
+                            </div> -->
                             <div class="flat-text text1 ">
-                                <h3 class="title-text">Is your website converting?</h3>
-                                <p>Conversion. What every successful marketing website obsesses about.</p>
-                                <p>Our conversion focused website design, with a laser focus on getting your website visitors to take action, changes organizations perception of what a website can — and should — do.</p>
-                                <p>We’ve seen our flagship solution have dramatic marketing results for high-tech, consulting, and niche businesses in both B2B & B2C. See FAQs or the companies who invested in our solution.</p>
+                                <h3 class="title-text">Tentang Kami</h3>
+                                <p>Ibu Asih, seorang ibu rumah tangga di Kabupaten Wonosobo, memiliki anak yang terkena jerat hukum. Ia bingung mencari bantuan kemana dan kepada siapa. Bahkan untuk sekadar berkonsultasi proses apa saja yang akan ia lalui.</p>
+                                <p>Di belahan tempat yang lain, Bagus, seorang advokat berkantor di ruas Sudirman, Jakarta, sadar dan ingin menunaikan kewajibannya untuk memberikan layanan hukum secara cuma-cuma. Namun, ia terkendala untuk mengetahui siapa pencari keadilan yang membutuhkan jasanya.</p>
+                                <p>Kedua situasi di atas sering terjadi: kebutuhan akan jasa hukum tidak bertemu dengan kewajiban memberikan layanan hukum secara cuma-cuma. Hasilnya, akses terhadap keadilan sulit dicapai. Jurang terhadap ketidakadilan semakin curam.</p>
+                                <p>Cerita sederhana ini bukan sekadar fiksi! Cerita ini nyata dalam kehidupan sehari-hari dan tertangkap melalui penelitian dan survei yang kami lakukan pada 2018. Hasilnya gamblang, advokat yang memiliki kewajiban untuk memberikan layanan bantuan hukum secara cuma-cuma terkendala dengan berbagai hal: mulai dari dukungan kantor, internalisasi nilai, kekurangan pada monitoring dan pencatatan, hingga ketiadaan permintaan dari pencari keadilan.</p>
+                                <p>Untuk itu, kami hadir untuk menciptakan ruang pertemuan antara pemberi layanan hukum secara cuma-cuma dengan pencari keadilan. Kami hadir untuk membuka ruang akses terhadap keadilan menjadi lebih besar.</p>
+                                <p>Kami dikembangkan oleh Masyarakat Pemantau Peradilan Indonesia (MaPPI-FHUI) dengan didukung oleh Yayasan TIFA, untuk mempertemukan advokat dan pencari keadilan dalam layanan probono, yaitu layanan hukum secara cuma-cuma.</p>
+                                
+                                <h3 class="title-text">Apa tujuan kami?</h3>
+                                <p>Layanan ini dikembangkan untuk tujuan mempertemukan kebutuhan pencari keadilan dengan kewajiban advokat untuk layanan hukum secara cuma-cuma (probono). Agar tujuan pencapaian akses terhadap keadilan semakin besar.</p>
+
+                                <h3 class="title-text">Dengan siapa kami bekerjasama?</h3>
+                                <p>Sistem layanan ini dapat berhasil dikembangkan dengan dukungan dan kerjasama dengan:</p>
+                                <ul class="list">
+                                    <li><b>1. Yayasan TIFA</b></li>
+                                    <li><b>2. Para Advokat</b></li>
+                                    <li><b>3. Lembaga Pemerintah: Badan Pembinaan Hukum Nasional</b></li>
+                                    <li><b>4. Kantor Hukum</b></li>
+                                    <li><b>5. Organisasi Lain</b></li>
+                                </ul>
                             </div>
-                            <div class="flat-text text2">
+                            
+                            <?php /* echo '<div class="flat-text text2">
                                 <h3 class="title-text">5 signs you need a conversion focused web design</h3>
                                 <ul class="step">
                                     <li><span>01. Calls-to-action</span> EOf course, this is top of the list. A site-wide call-to-action (most critical to your business, typically an overarching CTA) and a strategic page-by-page call-to-action (e.g. opt-in, download, click-through to a landing page) is a formula that works.</li>
@@ -152,7 +169,7 @@
                                         <button name="submit" type="submit" class="flat-button" id="submit" title="Submit now">SUBMIT</button>
                                     </span>
                                 </div>
-                            </form>
+                            </form>*/?>
                         </div>
                     </div>
                     <?php $this->load->view('landing_page/widget/widget-3');?>
