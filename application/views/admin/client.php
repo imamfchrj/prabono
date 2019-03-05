@@ -23,7 +23,7 @@
             <tr>
               <th class="wd-5p">No</th>
               <th class="wd-25p">Nama</th>
-              <th class="wd-15p">Alias</th>
+<!--              <th class="wd-15p">Alias</th>-->
               <th class="wd-20p">Email</th>
               <th class="wd-20p">Number Phone</th>
               <th class="wd-15p">Action</th>
@@ -55,11 +55,11 @@
                         var value=[];
                         value[0] = no++;
                         value[1] = json.data[i]['firstname']+' '+json.data[i]['lastname'];
-                        value[2] = json.data[i]['nama_samaran'];
-                        value[3] = json.data[i]['email'];
-                        value[4] = json.data[i]['hp'];
-                        value[5] = '<a class="btn btn-sm btn-primary" href="act_client_profil/'+json.data[i]['id']+'" title="Profile" onclick=""><i class="glyphicon glyphicon-pencil"></i> Profile</a>';
-                        value[5] += '&nbsp;<a class="btn btn-sm btn-danger" href="" title="Block" onclick=""><i class="glyphicon glyphicon-trash"></i> Block</a>';
+                        //value[2] = json.data[i]['nama_samaran'];
+                        value[2] = json.data[i]['email'];
+                        value[3] = json.data[i]['hp'];
+                        value[4] = '<a class="btn btn-sm btn-primary" href="act_client_profil/'+json.data[i]['id']+'" title="Profile" onclick=""><i class="glyphicon glyphicon-pencil"></i> Profile</a>';
+                        //value[4] += '&nbsp;<a class="btn btn-sm btn-danger" href="" title="Block" onclick=""><i class="glyphicon glyphicon-trash"></i> Block</a>';
                         data[i]=value;
                     }
                     console.log(data);

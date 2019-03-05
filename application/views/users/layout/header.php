@@ -112,7 +112,7 @@
                             <a href="<?=base_url()?>users/caradaftar"><li>Cara mendaftar</li></a>
                             <a href="<?=base_url()?>users/daftar_kasus"><li>Daftar Kasus</li></a>
                             <a href="<?=base_url()?>users/selesai"><li>Kasus Saya</li></a>
-                            <a href="<?=base_url()?>users/faq"><li>FAQ</li></a>
+<!--                            <a href="--><?//=base_url()?><!--users/faq"><li>FAQ</li></a>-->
                             <a href="<?=base_url()?>users/logout"><li>Logout</li></a>
                         </ul><!-- /.menu -->
                     </nav><!-- /.mainnav --> 
@@ -165,7 +165,7 @@
                                 <li class="info-link dropdown notifications-menu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <i class="fa fa-bell-o"></i>
-                                    <span class="label label-warning"><?=$notif_limit["count"]?></span>
+                                    <span class="label label-info"><?=$notif_limit["count"]?></span>
                                     </a>
                                     <ul class="dropdown-menu">
                                     <li class="header">You have <?=$notif_limit["count"]?> notifications</li>

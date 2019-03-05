@@ -110,7 +110,7 @@
                         <ul class="menu"> 
                             <a href="<?=base_url()?>laporkan-masalah-hukum"><li>Ajukan Kasus</li></a>
                             <a href="<?=base_url()?>client/kasus_aktif"><li>Kasus</li></a>
-                            <a href="<?=base_url()?>client/faq"><li>FAQ</li></a>
+<!--                            <a href="--><?//=base_url()?><!--client/faq"><li>FAQ</li></a>-->
                             <a href="<?=base_url()?>client/logout"><li>Logout</li></a>
                         </ul><!-- /.menu -->
                     </nav><!-- /.mainnav --> 
@@ -162,7 +162,7 @@
                                 <li class="info-link dropdown notifications-menu">
                                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                     <i class="fa fa-bell-o"></i>
-                                    <span class="label label-warning"><?=$notif_limit["count"]?></span>
+                                    <span class="label label-info"><?=$notif_limit["count"]?></span>
                                     </a>
                                     <ul class="dropdown-menu">
                                     <li class="header">You have <?=$notif_limit["count"]?> notifications</li>
