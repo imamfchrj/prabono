@@ -150,6 +150,9 @@
                                                         <li <?php if($menu=='tentangkami') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>tentangkami">FAQ</a>
                                                         </li>
+                                                        <li <?php if($menu=='tentangkami') echo 'class="active active2"'?> >
+                                                            <a href="<?=base_url()?>tentangkami">Tentang Kami</a>
+                                                        </li>
                                                         <li <?php if($menu=='team') echo 'class="active active2"'?> >
                                                             <a href="<?=base_url()?>team">Kontak</a>
                                                         </li>                       
