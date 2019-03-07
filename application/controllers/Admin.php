@@ -7,7 +7,9 @@ class Admin extends Auth_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		
+        if(!$this->session->userdata('username')){
+            redirect('admin');
+        }
 	}
 	
 	public function tes(){
@@ -284,5 +286,17 @@ class Admin extends Auth_Controller {
 		$data['sub_menu']="report_b";
 		$this->load->view('admin/report_b',$data);
 	}
+
+	public function logout()
+    {
+        $this->session->sess_destroy();
+
+        $this->session->set_userdata(array(
+            'user_id'	=> "",
+            'username'	=> "",
+            'status'	=> "",
+            'login_config' => ""));
+        redirect('admin');
+    }
 
 }
