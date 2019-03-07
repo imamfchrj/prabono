@@ -33,17 +33,17 @@
                             </div><!-- media-body -->
                         </div><!-- media -->
                         <nav class="nav nav-inline tx-size-24 mg-b-0 lh-0">
-                            <a href="" class="nav-link tx-gray-light hover-inverse pd-x-5"><i class="icon ion-printer"></i></a>
+<!--                            <a href="" class="nav-link tx-gray-light hover-inverse pd-x-5"><i class="icon ion-printer"></i></a>-->
                             <a id="closeMail" href="" class="nav-link pd-x-5 mg-l-15 hidden-xl-up">
                             <i class="icon ion-close"></i>
                             </a>
                         </nav>
                     </div><!-- br-lawyers-header -->
                     <hr>
-                    <p>My Biography :</p>
+                    <p><b>My Biography :</b></p>
                     <p><?php echo $row->biography; ?></p>
 
-                    <p>Lokasi Praktek :</p>
+                    <p><b>Lokasi Praktek :</b></p>
                     <p><?php echo $row->name; ?></p>
                     <a href="act_lawyers_profil/<?php echo $row->id; ?>"><p class="tx-purple tx-bold">Read More >></p></a>
                     <!-- <input class="form-control" type="hidden" id="id_advokat" name="id_advokat" value="<?php echo $row->id; ?>"> -->
