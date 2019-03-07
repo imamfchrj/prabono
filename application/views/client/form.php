@@ -467,6 +467,7 @@ $("#file_surat_tidak_mampu").change(function(){
 $("#file_photo_ktp").change(function(){
     upload_data(ROOT+'upload/do_upload_file2',"#file_photo_ktp","#photo_ktp");
 });
+
 </script>
 
 <script>
@@ -613,6 +614,23 @@ $(document).ready(function() {
                 });
             }
             
+</script>
+<script>
+    $(document).ready(function(){
+        var content;
+        $('#judul').on('keyup', function(){
+            var letters = $(this).val().split(" ").length;
+            $('#judul').text(11-letters+" letters left");
+            // limit message
+            if(letters>=11){
+                $(this).val(content);
+                alert('no more than 10 letters, please!');
+            } else {
+                content = $(this).val();
+            }
+        });
+
+    });
 </script>
 
 

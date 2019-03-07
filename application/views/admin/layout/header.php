@@ -8,13 +8,13 @@
         <nav class="nav">
            <div class="dropdown">
             <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-              <span class="logged-name hidden-md-down">Fachrurroji</span>
+              <span class="logged-name hidden-md-down"><?=$this->session->userdata('username');?></span>
               <img src="http://via.placeholder.com/64x64" class="wd-32 rounded-circle" alt="">
               <span class="square-10 bg-success"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-header wd-200">
               <ul class="list-unstyled user-profile-nav">
-                <li><a href="<?=base_url()?>admin"><i class="icon ion-power"></i> Sign Out</a></li>
+                <li><a href="<?=base_url()?>admin/logout"><i class="icon ion-power"></i> Sign Out</a></li>
               </ul>
             </div><!-- dropdown-menu -->
           </div><!-- dropdown -->
