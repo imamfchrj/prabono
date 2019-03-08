@@ -106,7 +106,7 @@ var submit = function (response){
             "email":$("#email").val(),
             "password":$("#password").val(),
             "setuju":$("#setuju").is(":checked"),
-            "g-recaptcha-response":response
+            "g-recaptcha-response":grecaptcha.getResponse()
         }
     })
     .done(function(data) {
@@ -116,7 +116,7 @@ var submit = function (response){
             grecaptcha.reset();
             return; 
         }
-        console.log(data);
+        grecaptcha.reset();
         window.location = "<?php echo base_url(DEFAULT_PAGE_USER); ?>";
     })
     .fail(function() {

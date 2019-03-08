@@ -8,7 +8,15 @@ class Admin_api extends Api_Controller {
 
 	function __construct()
 	{
-		parent::__construct();
+        parent::__construct();
+        
+        if(!$this->session->userdata('username_admin')){
+			echo json_encode(array(
+				'is_error'=>true,
+				'error_message'=>  "Maaf Anda perlu melakukan relogin kembali"
+            ));
+            exit;
+        }
 		
     }
     

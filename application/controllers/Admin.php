@@ -7,7 +7,7 @@ class Admin extends Auth_Controller {
 	function __construct()
 	{
 		parent::__construct();
-        if(!$this->session->userdata('username')){
+        if(!$this->session->userdata('username_admin')){
             redirect('admin');
         }
 	}

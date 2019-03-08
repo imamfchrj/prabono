@@ -37,6 +37,11 @@
                 <input type="password" id="password" class="form-control" placeholder="Enter your password">
     <!--            <a href="" class="tx-info tx-12 d-block mg-t-10">Forgot password?</a>-->
             </div><!-- form-group -->
+
+            <div class="form-group g-cap">
+                                    <div id="html_element"></div>
+                                </div>
+
             <button class="btn btn-info btn-block login-btn">Sign In</button>
 
         </div><!-- login-wrapper -->
@@ -46,6 +51,20 @@
 <script src="<?=base_url()?>assets_123/lib/jquery/jquery.js"></script>
 <script src="<?=base_url()?>assets_123/lib/popper.js/popper.js"></script>
 <script src="<?=base_url()?>assets_123/lib/bootstrap/bootstrap.js"></script>
+
+
+<script type="text/javascript">
+      var onloadCallback = function() {
+        grecaptcha.render('html_element', {
+          'sitekey' : '<?=config_item('recatpcha_site_key');?>'
+        });
+      };
+    </script>
+
+<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit&hl=id"
+        async defer></script>
+
+
 
 <script>
     //function login(){
@@ -75,11 +94,14 @@ $(".login-btn").click(function() {
     })
     .done(function (data) {
         if (data.is_error == true) {
-           // alert("aaaaa");
+            grecaptcha.reset();
             alert(data.error_message);
             return;
         }
         window.location = ROOT+'admin/dashboard';
+    })
+    .fail(function (data){
+        grecaptcha.reset();
     })
     .always(function () {
 
