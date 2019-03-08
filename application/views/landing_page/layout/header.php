@@ -114,7 +114,7 @@
                                     <div class="col-md-3">
                                         <div id="logo" class="logo">
                                             <a href="#" rel="home">
-                                                <img src="<?=base_url()?>probono_asset/images/logo.png" alt="image">
+                                                <img src="<?=base_url()?>probono_asset/images/logo_3.jpeg" alt="image">
                                             </a>
                                         </div><!-- /.logo -->
                                         <div class="btn-menu">

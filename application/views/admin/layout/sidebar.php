@@ -38,7 +38,7 @@
         <a href="<?=base_url()?>admin/client" class="br-menu-link <?php if($menu == 'client') echo 'active'?>">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-people tx-22"></i>
-            <span class="menu-item-label">User Management</span>
+            <span class="menu-item-label">Client Management</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
         <a href="#" class="br-menu-link <?php if($menu == 'lawyers') echo 'active show-sub'?>">

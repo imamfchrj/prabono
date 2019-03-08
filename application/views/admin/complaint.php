@@ -23,39 +23,41 @@
             ?>
             <div class="form-layout form-layout-1">
                 <div class="br-lawyers-body rounded-10">
-                    <h5><b>Pelapor</b></h5>
                     <hr>
-                    <p>Tanggal :</p>
+                    <h5 class="text-center"><b>Pelapor</b></h5>
+                    <hr>
+                    <p><b>Tanggal :</b></p>
                     <p><?php echo $row->created_at; ?></p>
-                    
+
                     <?php if($row->is_user){?>
-                        <p>Nama Client : <?=$row->firstname_client?></p>
-                        <p>Email Client : <?=$row->email_client?></p>
-                        <p>No HP Client : <?=$row->hp_client?></p>
+                        <p><b>Nama Client : </b><?=$row->firstname_client?></p>
+                        <p><b>Email Client : </b><?=$row->email_client?></p>
+                        <p><b>No HP Client : </b><?=$row->hp_client?></p>
                     <?php }else{?>
-                        <p>Nama Advokat : <?=$row->firstname?></p>
-                        <p>Email Advokat : <?=$row->email?></p>
-                        <p>No HP Advokat : <?=$row->hp?></p>
+                        <p><b>Nama Advokat : </b><?=$row->firstname?></p>
+                        <p><b>Email Advokat : </b><?=$row->email?></p>
+                        <p><b>No HP Advokat : </b><?=$row->hp?></p>
                     <?php }?>
 
-
-                    <h5><b>Terlapor</b></h5>
+                    <hr>
+                    <h5 class="text-center"><b>Terlapor</b></h5>
                     <hr>
                     <?php if($row->is_user){?>
-                        <p>Nama Advokat : <?=$row->firstname?></p>
-                        <p>Email Advokat : <?=$row->email?></p>
-                        <p>Email Advokat : <?=$row->hp?></p>
+                        <p><b>Nama Advokat : </b><?=$row->firstname?></p>
+                        <p><b>Email Advokat : </b><?=$row->email?></p>
+                        <p><b>Email Advokat : </b><?=$row->hp?></p>
                     <?php }else{?>
-                        <p>Nama Client : <?=$row->firstname_client?></p>
-                        <p>Email Client : <?=$row->email_client?></p>
-                        <p>No HP Client : <?=$row->hp_client?></p>
+                        <p><b>Nama Client : </b><?=$row->firstname_client?></p>
+                        <p><b>Email Client : </b><?=$row->email_client?></p>
+                        <p><b>No HP Client : </b><?=$row->hp_client?></p>
 
                     <?php }?>
 
-                    <h5>Alasan :</h5>
+                    <hr>
+                    <h5 class="text-center">Alasan :</h5>
+                    <hr>
                     <p><?php echo $row->description; ?></p>
 
-                    <hr>
                     <div class="form-layout-footer-imam tx-center">
                         <button class="btn btn-info btn-submit-form" onclick="update(<?=$row->id?>,<?=$row->kasus_id?>)">Approve</button>
                         <button class="btn btn-secondary" id="maintabel" onclick="update(<?=$row->id?>,<?=$row->kasus_id?>,2)">Reject</button>

@@ -22,10 +22,10 @@ $this->load->view('admin/layout/header');
                 <p class="mg-b-25"><?php echo !empty($values->id_ktp)?$values->id_ktp:""; ?></p>
 
                 <p class="mg-b-0 tx-24">
-                    <a href="" class="tx-white-8 mg-r-5"><i class="fa fa-facebook-official"></i></a>
-                    <a href="" class="tx-white-8 mg-r-5"><i class="fa fa-twitter"></i></a>
-                    <a href="" class="tx-white-8 mg-r-5"><i class="fa fa-pinterest"></i></a>
-                    <a href="" class="tx-white-8"><i class="fa fa-instagram"></i></a>
+<!--                    <a href="" class="tx-white-8 mg-r-5"><i class="fa fa-facebook-official"></i></a>-->
+<!--                    <a href="" class="tx-white-8 mg-r-5"><i class="fa fa-twitter"></i></a>-->
+<!--                    <a href="" class="tx-white-8 mg-r-5"><i class="fa fa-pinterest"></i></a>-->
+<!--                    <a href="" class="tx-white-8"><i class="fa fa-instagram"></i></a>-->
                 </p>
             </div><!-- card-body -->
         </div><!-- card -->
@@ -106,6 +106,7 @@ $this->load->view('admin/layout/header');
             </div><!-- col-4 -->
         </div>
     </div><!-- form-layout -->
+    </div>
 
     <!-- ########## END: MAIN PANEL ########## -->
 

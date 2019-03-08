@@ -12,7 +12,7 @@ $this->load->view('admin/layout/header');
     <!-- ########## START: MAIN PANEL ########## -->
     <div class="br-mainpanel">
         <div class="pd-x-20 pd-sm-x-30 pd-t-20 pd-sm-t-30">
-            <h4 class="tx-gray-800 mg-b-5">Lawyers Management - KPI Lawyers</h4>
+            <h4 class="tx-gray-800 mg-b-5">Advokat Management - KPI Advokat</h4>
         </div>
         <div class="br-pagebody">
             <div class="br-section-wrapper">

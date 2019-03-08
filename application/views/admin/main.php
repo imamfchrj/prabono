@@ -88,7 +88,7 @@ $this->load->view('admin/layout/header');
                         <div class="d-flex align-items-center justify-content-between">
                             <div>
                                 <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Client By Gender</h6>
-                                <p class="mg-b-0">Duis autem vel eum iriure dolor in hendrerit in vulputate...</p>
+                                <p class="mg-b-0">Jumlah Client aktif by Gender</p>
                             </div>
                             <div class="tx-13">
                                 <p class="mg-b-0"><span class="square-10 rounded-circle bg-pria mg-r-10"></span> Laki-Laki</p>
@@ -108,7 +108,7 @@ $this->load->view('admin/layout/header');
                         <div class="d-flex align-items-center justify-content-between">
                             <div>
                                 <h6 class="tx-13 tx-uppercase tx-inverse tx-semibold tx-spacing-1">Advokat By Gender</h6>
-                                <p class="mg-b-0">Duis autem vel eum iriure dolor in hendrerit in vulputate...</p>
+                                <p class="mg-b-0">Jumlah Advokat aktif by Gender</p>
                             </div>
                             <div class="tx-13">
                                 <p class="mg-b-0"><span class="square-10 rounded-circle bg-pria mg-r-10"></span> Laki-Laki</p>
@@ -124,8 +124,7 @@ $this->load->view('admin/layout/header');
             </div>
         </div>
     </div><!-- br-pagebody -->
-</div>
-<!-- ########## END: MAIN PANEL ########## -->
+
 <script>
 $(document).ready(function(){
     var donut_chart= new Morris.Donut({
