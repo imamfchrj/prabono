@@ -16,6 +16,15 @@ function hashuser($pass){
     return strtolower($hashed_value);
 }
 
+
+function hashadmin($pass){
+	$CI =& get_instance();
+    $salt = $CI->config->item('salt')."admin";
+    $with_love = "ADM";
+    $hashed_value = $with_love.md5($salt.$pass);
+    return strtolower($hashed_value);
+}
+
 function hashadvokat($pass){
 	$CI =& get_instance();
     $salt = $CI->config->item('salt')."pengacara";
