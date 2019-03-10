@@ -8,6 +8,11 @@ function hashpass($pass){
     return strtoupper($hashed_value);
 }
 
+
+function hashpass_adm($pass){
+    return '$$CDF'.hashpass($pass);
+}
+
 function hashuser($pass){
 	$CI =& get_instance();
     $salt = $CI->config->item('salt')."user";

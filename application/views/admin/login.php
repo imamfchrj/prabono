@@ -89,7 +89,8 @@ $(".login-btn").click(function() {
         dataType: 'json',
         data: {
             "username": $("#username").val(),
-            "password": $("#password").val()
+            "password": $("#password").val(),
+            "g-recaptcha-response":grecaptcha.getResponse()
         }
     })
     .done(function (data) {

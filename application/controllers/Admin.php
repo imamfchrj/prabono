@@ -12,9 +12,6 @@ class Admin extends Auth_Controller {
         }
 	}
 	
-	public function tes(){
-		echo hashpass('halooo');
-	}
 
 	public function dashboard()
 	{
