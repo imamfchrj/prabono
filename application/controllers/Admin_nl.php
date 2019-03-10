@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_nl extends All_Controller {
+class Admin_nl extends Admin_Controller {
     
     
 	function __construct()

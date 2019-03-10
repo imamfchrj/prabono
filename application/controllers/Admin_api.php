@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 include_once('Api_Controller.php');
 
-class Admin_api extends Api_Controller {
+class Admin_api extends Admin_Controller {
 	
 
 	function __construct()
