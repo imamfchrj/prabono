@@ -16,7 +16,11 @@ $this->load->view('admin/layout/header');
             </div><!-- card-header -->
             <div class="card-body">
                 <div class="card-profile-img">
-                    <img src="http://via.placeholder.com/280x280" alt="">
+                    <?php
+                    $photo_profile = !empty($values->foto)?base_url().'probono_asset/probono/asset/'.$values->foto:base_url().'probono_asset/probono/asset/default-avatar.png';
+                    ?>
+                    <img src="<?php echo $photo_profile ?>" width="120" height="110" class="img-responsive" alt="">
+
                 </div><!-- card-profile-img -->
                 <h4 class="tx-normal tx-roboto tx-black"><?php echo !empty($values->firstname)?$values->firstname.' '.$values->lastname:""; ?></h4>
                 <p class="mg-b-25"><?php echo !empty($values->id_ktp)?$values->id_ktp:""; ?></p>
@@ -38,11 +42,10 @@ $this->load->view('admin/layout/header');
                             <td width="30%"><b>Foto KTP</b></td>
                             <td>
                                 <?php
-                                    $photo_ktp = !empty($values->photo_ktp)?base_url().$values->photo_ktp:'http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image';
+                                    $photo_ktp = !empty($values->photo_ktp)?base_url().'probono_asset/probono/asset/'.$values->photo_ktp:'http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image';
                                 ?>
-                                <a class="mix-preview fancybox-button" href="<?php echo base_url($values->photo_ktp); ?>" title="KTP atas nama : <?php echo $values->firstname.' '.$values->lastname?> No KTP : <?php echo $values->id_ktp?>">
-                                    <img src="<?php echo $photo_ktp?>" width="200px" />
-                                </a>
+                                <img src="<?php echo $photo_ktp ?>" width="200" height="150" class="img-responsive" alt="">
+
                                 <div class="clearfix">&nbsp</div>
                             </td>
                         </tr>
@@ -92,11 +95,31 @@ $this->load->view('admin/layout/header');
                             <td width="30%"><b>Surat Keterangan Tidak Mampu</b></td>
                             <td>
                                 <?php
-                                $surat_ktm = !empty($values->surat_tidak_mampu)?base_url().$values->surat_tidak_mampu:'http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image';
+                                $ktm = $values->surat_tidak_mampu;
+                                if($ktm){
+                                    $ext = pathinfo($ktm, PATHINFO_EXTENSION);
+                                    $image = array ("jpeg","tiff","gif","bmp","png","jpg");
+                                    $surat_ktm = base_url().'probono_asset/probono/asset/'.$ktm;
+                                    if (in_array($ext, $image))
+                                    {
                                 ?>
-                                <a class="mix-preview fancybox-button" href="<?php echo base_url($values->surat_tidak_mampu); ?>" title="Surat Tidak Mampu A.N : <?php echo $values->firstname.' '.$values->lastname?> No KTP : <?php echo $values->surat_tidak_mampu?>">
-                                    <img src="<?php echo $surat_tidak_mampu?>" width="200px" />
-                                </a>
+                                     <img src="<?php echo $surat_ktm ?>" width="200" height="150" class="img-responsive" alt="">
+                                <?php
+                                    }
+                                    else
+                                    {
+
+                                ?>
+                                    <a href="<?php echo $surat_ktm?>" target="_blank" class="btn btn-danger">
+                                        <i class="fa fa-download"></i> Download Surat KTM
+                                    </a>
+                                <?php
+                                    }
+                                }else{
+                                    echo '-';
+                                }
+
+                                ?>
                                 <div class="clearfix">&nbsp</div>
                             </td>
                         </tr>

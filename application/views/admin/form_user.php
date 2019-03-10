@@ -15,45 +15,106 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label class="form-control-label">Username: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="username" value="imam.fchrj@gmail.com" disabled>
+                            <input class="form-control" type="text" id="username" value="<?php if($values){echo $values->username;}?>" placeholder="Enter Username">
                         </div>
                     </div><!-- col-4 -->
                     <div class="col-lg-4">
                         <div class="form-group">
-                            <label class="form-control-label">Firstname: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="firstname" value="Imam" placeholder="Enter firstname">
-                        </div>
-                    </div><!-- col-4 -->
-                    <div class="col-lg-4">
-                        <div class="form-group">
-                            <label class="form-control-label">Lastname:<span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="lastname" value="Fachrurroji" placeholder="Enter lastname">
-                        </div>
-                    </div><!-- col-4 -->
-                    <div class="col-lg-8">
-                        <div class="form-group mg-b-10-force">
-                            <label class="form-control-label">Alias: <span class="tx-danger">*</span></label>
-                            <input class="form-control" type="text" name="alias" value="IF" placeholder="Enter alias">
-                        </div>
-                    </div><!-- col-8 -->
-                    <div class="col-lg-4">
-                        <div class="form-group mg-b-10-force">
-                            <label class="form-control-label">Lokasi Provinsi: <span class="tx-danger">*</span></label>
-                            <select class="form-control select2" data-placeholder="Choose provinsi">
-                                <option label="Choose provinsi"></option>
-                                <option value="USA">DKI JAKARTA</option>
-                                <option value="UK">Jawa Barat</option>
-                                <option value="China">Jawa Timur</option>
-                            </select>
+                            <label class="form-control-label">Password <span class="tx-danger">*</span></label>
+                            <input class="form-control" type="text" id="password" value="" placeholder="Enter Password">
                         </div>
                     </div><!-- col-4 -->
                 </div><!-- row -->
 
                 <div class="form-layout-footer">
-                    <button class="btn btn-info">Submit Form</button>
-                    <button class="btn btn-secondary">Cancel</button>
+                    <button class="btn btn-info btn-submit-form">Submit Form</button>
+                    <button class="btn btn-secondary" id="maintabel">Cancel</button>
                 </div><!-- form-layout-footer -->
             </div><!-- form-layout -->
+
+    <script>
+        var id="<?php if($values){echo $values->id;}else{echo '0';}?>";
+
+        $(".btn-submit-form").click(function(){
+            // alert("The paragraph was clicked.");
+            if(id !=0){
+                update();
+            }else{
+                insert();
+            }
+        });
+
+        function insert(){
+            $.ajax({
+                url: ROOT+'/admin_api/admin_insert',
+                dataType: 'json',
+                type: 'post',
+                data: {
+                    username: $('#username').val(),
+                    password: $('#password').val()
+                }
+            })
+            .done(function(data) {
+                if(data.is_error){
+                    alert(data.error_message);
+                    return;
+                }
+                window.location = ROOT+'admin/admin';
+            })
+            .always(function(){
+                // $('#buy_button_loading').addClass('d-none');
+                // $('#buy_button').removeClass('d-none');
+            })
+            .error(function(data){
+
+            });
+        }
+
+        function update(){
+            // alert('imam');
+            if($('#username').val()==""){
+                console.log("Tidak boleh kosong");
+                return;
+            }
+            if($('#password').val()==""){
+                console.log("Tidak boleh kosong");
+                return;
+            }
+            if(id==0){
+                console.log("Tidak boleh 0");
+                return;
+            }
+            $.ajax({
+                url: ROOT+'/admin_api/admin_update',
+                dataType: 'json',
+                type: 'post',
+                data: {
+                    username: $('#username').val(),
+                    password: $('#password').val(),
+                    id: id
+                }
+            })
+            //alert ('aaa');
+                .done(function(data) {
+                    if(data.is_error){
+                        alert(data.error_message);
+                        return;
+                    }
+                    window.location = ROOT+'admin/admin';
+                })
+                .always(function(){
+                    // $('#buy_button_loading').addClass('d-none');
+                    // $('#buy_button').removeClass('d-none');
+                })
+                .error(function(data){
+                    }
+                );
+        }
+
+        $( "#maintabel" ).click(function() {
+            window.location = ROOT+'admin/admin';
+        });
+    </script>
 
 <?php
     $this->load->view('admin/layout/footer');

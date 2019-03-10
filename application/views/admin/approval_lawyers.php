@@ -24,7 +24,10 @@
                 <div class="br-lawyers-body rounded-10">
                     <div class="br-lawyers-header d-flex justify-content-between">
                         <div class="media align-items-center">
-                            <img src="http://via.placeholder.com/280x280" class="wd-72 rounded-circle" alt="">
+                            <?php
+                            $photo_profile = !empty($row->foto)?base_url().'probono_asset/probono/asset/'.$row->foto:base_url().'probono_asset/probono/asset/default-avatar.png';
+                            ?>
+                            <img src="<?php echo $photo_profile ?>" class="wd-75 rounded-circle" alt="">
                             <div class="media-body mg-l-10">
                                 <p class="tx-inverse tx-medium mg-b-0"><?php echo $row->firstname.' '.$row->lastname; ?></p>
                                 <p class="tx-12 mg-b-0">
