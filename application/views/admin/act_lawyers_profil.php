@@ -16,7 +16,10 @@ $this->load->view('admin/layout/header');
             </div><!-- card-header -->
             <div class="card-body">
                 <div class="card-profile-img">
-                    <img src="http://via.placeholder.com/280x280" alt="">
+                    <?php
+                    $photo_profile = !empty($values->foto)?base_url().'probono_asset/probono/asset/'.$values->foto:base_url().'probono_asset/probono/asset/default-avatar.png';
+                    ?>
+                    <img src="<?php echo $photo_profile ?>" width="120" height="110" class="img-responsive" alt="">
                 </div><!-- card-profile-img -->
                 <h4 class="tx-normal tx-roboto tx-black"><?php echo !empty($values->firstname)?$values->firstname.' '.$values->lastname:""; ?></h4>
                 <p class="mg-b-25"><?php echo !empty($values->id_kta_advokat)?$values->id_kta_advokat:""; ?></p>
@@ -45,11 +48,10 @@ $this->load->view('admin/layout/header');
                         <td width="30%"><b>Foto KTP</b></td>
                         <td>
                             <?php
-                                $photo_ktp = !empty($values->photo_ktp)?base_url().$values->photo_ktp:'http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image';
+                            $photo_ktp = !empty($values->photo_ktp)?base_url().'probono_asset/probono/asset/'.$values->photo_ktp:'http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image';
                             ?>
-                            <a class="mix-preview fancybox-button" href="<?php echo base_url($values->photo_ktp); ?>" title="KTP atas nama : <?php echo $values->firstname.' '.$values->lastname?> No KTP : <?php echo $values->id_ktp?>">
-                                <img src="<?php echo $photo_ktp?>" width="200px" />
-                            </a>
+                            <img src="<?php echo $photo_ktp ?>" width="200" height="150" class="img-responsive" alt="">
+
                             <div class="clearfix">&nbsp</div>
 
                         </td>
@@ -68,11 +70,10 @@ $this->load->view('admin/layout/header');
                         <td width="30%"><b>Foto ID Advokat</b></td>
                         <td>
                             <?php
-                            $photo_kta_advokat = !empty($values->kta_advokat)?base_url().$values->kta_advokat:'http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image';
+                            $photo_kta = !empty($values->kta_advokat)?base_url().'probono_asset/probono/asset/'.$values->kta_advokat:'http://www.placehold.it/200x150/EFEFEF/AAAAAA&text=no+image';
                             ?>
-                            <a class="mix-preview fancybox-button" href="<?php echo base_url($values->kta_advokat); ?>" title="KTA atas nama : <?php echo $values->firstname.' '.$values->lastname?> No KTA Advokat : <?php echo $values->id_kta_advokat?>">
-                                <img src="<?php echo $photo_kta_advokat?>" width="200px" />
-                            </a>
+                            <img src="<?php echo $photo_kta ?>" width="200" height="150" class="img-responsive" alt="">
+
                             <div class="clearfix">&nbsp</div>
                         </td>
                         <tr>

@@ -35,6 +35,12 @@
             <span class="menu-item-label">Dashboard</span>
           </div><!-- menu-item -->
         </a><!-- br-menu-link -->
+        <a href="<?=base_url()?>admin/admin" class="br-menu-link <?php if($menu == 'admin') echo 'active'?>">
+          <div class="br-menu-item">
+              <i class="menu-item-icon icon ion-ios-people tx-22"></i>
+              <span class="menu-item-label">Admin Management</span>
+          </div><!-- menu-item -->
+        </a><!-- br-menu-link -->
         <a href="<?=base_url()?>admin/client" class="br-menu-link <?php if($menu == 'client') echo 'active'?>">
           <div class="br-menu-item">
             <i class="menu-item-icon icon ion-ios-people tx-22"></i>

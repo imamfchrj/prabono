@@ -16,7 +16,10 @@ $this->load->view('admin/layout/header');
             </div><!-- card-header -->
             <div class="card-body">
                 <div class="card-profile-img">
-                    <img src="http://via.placeholder.com/280x280" alt="">
+                    <?php
+                    $photo_profile = !empty($profile->foto)?base_url().'probono_asset/probono/asset/'.$profile->foto:base_url().'probono_asset/probono/asset/default-avatar.png';
+                    ?>
+                    <img src="<?php echo $photo_profile ?>" width="120" height="110" class="img-responsive" alt="">
                 </div><!-- card-profile-img -->
                 <h4 class="tx-normal tx-roboto tx-black"><?php echo !empty($profile->firstname)?$profile->firstname.' '.$profile->lastname:""; ?></h4>
                 <p class="mg-b-25"><?php echo !empty($profile->id_kta_advokat)?$profile->id_kta_advokat:""; ?></p>

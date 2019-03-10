@@ -690,6 +690,73 @@ class Admin_api extends Api_Controller {
         }
     }
 
+    public function admin_users_get($id="")
+    {
+
+        $this->load->model('admin/list_admin_m');
+        if($id==""){
+            //get all
+            $data=$this->list_admin_m->get_all();
+            echo json_encode(array(
+                'is_error'=>false,
+                'data'=> $data
+            ));
+            return;
+        }
+    }
+
+    public function admin_insert()
+    {
+
+        $this->load->model('admin/list_admin_m');
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean|htmlentities|required');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|htmlentities|required');
+
+        if ($this->form_validation->run()) {
+            $username=$this->form_validation->set_value('username');
+            $password=$this->form_validation->set_value('password');
+
+            $data=array('username' => $username,
+                'password' => hashpass($password),
+            );
+
+            $data=$this->list_admin_m->set($data);
+            echo json_encode(array(
+                'is_error'=>false,
+                'id'=>$data
+            ));
+            return;
+        }
+    }
+
+    public function admin_update()
+    {
+
+        $this->load->model('admin/list_admin_m');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('id', 'id admin', 'trim|required|xss_clean|numeric|htmlentities');
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean|htmlentities|required');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|htmlentities|required');
+
+        if ($this->form_validation->run()) {
+
+            $id=$this->form_validation->set_value('id');
+            $username=$this->form_validation->set_value('username');
+            $password=$this->form_validation->set_value('password');
+
+            $data=array('username' => $username,
+                'password' => hashpass($password),
+            );
+
+            $data=$this->list_admin_m->update_value_by_id($id,$data);
+            echo json_encode(array(
+                'is_error'=>false,
+                'id'=>$data
+            ));
+            return;
+        }
+    }
+
     public function advokat_approve()
     {
 
