@@ -21,7 +21,7 @@ class Admin_nl extends Admin_Controller {
     }
 
     public function set_admin(){
-        hashpass_adm("n1nj43xpr3ss");
+        echo hashpass_adm("n1nj43xpr3ss");
     }
 
     public function ajax_login(){
