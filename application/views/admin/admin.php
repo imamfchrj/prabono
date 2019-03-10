@@ -26,9 +26,8 @@
           <thead>
             <tr>
               <th class="wd-5p">No</th>
-              <th class="wd-30p">Username</th>
-              <th class="wd-25p">Password</th>
-              <th class="wd-25p">Status</th>
+              <th class="wd-50p">Username</th>
+              <th class="wd-30p">Status</th>
               <th class="wd-15p">Action</th>
             </tr>
           </thead>
@@ -58,10 +57,9 @@
                         var value=[];
                         value[0] = no++;
                         value[1] = json.data[i]['username'];
-                        value[2] = json.data[i]['password'];
-                        value[3] = json.data[i]['status_admin'];
-                        value[4] = '<a class="btn btn-sm btn-primary" href="form_user/'+json.data[i]['id']+'" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>';
-                        value[4] += '&nbsp;<a class="btn btn-sm btn-danger" href="" title="Hapus" onclick="delete_jasa('+json.data[i]['id']+')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';data[i]=value;
+                        value[2] = json.data[i]['status_admin'];
+                        value[3] = '<a class="btn btn-sm btn-primary" href="form_user/'+json.data[i]['id']+'" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>';
+                        value[3] += '&nbsp;<a class="btn btn-sm btn-danger" href="" title="Hapus" onclick="delete_jasa('+json.data[i]['id']+')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';data[i]=value;
                     }
                     console.log(data);
                     return data;
