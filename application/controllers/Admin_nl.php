@@ -20,10 +20,6 @@ class Admin_nl extends Admin_Controller {
 		$this->load->view('admin/login');
     }
 
-    public function set_admin(){
-        echo hashpass_adm("n1nj43xpr3ss");
-    }
-
     public function ajax_login(){
         $this->form_validation->set_rules('g-recaptcha-response', "Captcha", 'required|trim|xss_clean|callback__check_recaptcha');
         $this->form_validation->set_rules('username', "Username", 'trim|required|xss_clean');
