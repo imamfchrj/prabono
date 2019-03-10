@@ -481,6 +481,37 @@ $(document).ready(function() {
             ['para', ['ul', 'ol', 'paragraph']]
         ]
     });
+
+    var content;
+        $('#judul').on('keyup', function(){
+            var letters = $(this).val().split(" ").length;
+            $('#judul').text(11-letters+" letters left");
+            // limit message
+            var letters = $(this).val().split(" ").length;
+            if(letters>10){
+                $(this).val(content);
+                alert('Tidak boleh lebih dari 10 kata');
+            } else {
+                content = $(this).val();
+            }
+        });
+
+    var content_kronologi_masalah;
+    $("#kronologi_masalah").on("summernote.change", function (e) {   // callback as jquery custom event 
+        var content = $('#kronologi_masalah').summernote('code');
+        var nohtml = content.replace(/(<([^>]+)>)/ig," "); 
+        // var double = nohtml.replace("  "," "); 
+        var double = $.trim(nohtml);
+        var clean = double.replace(/ +(?= )/g,'');
+        var letters = clean.split(" ").length;
+        if(letters>300){
+            $('#kronologi_masalah').summernote('code', content_kronologi_masalah);
+            alert('Tidak boleh lebih dari 300 kata');
+        } else {
+            content_kronologi_masalah = $('#kronologi_masalah').summernote('code');
+        }
+    });
+
     $('#ekspektasi_kasus').summernote({
         minHeight: 200,
         toolbar: [
@@ -490,15 +521,30 @@ $(document).ready(function() {
             ['para', ['ul', 'ol', 'paragraph']]
         ]
     });
-    $('#editorEdukasi').summernote({
-        minHeight: 200,
-        toolbar: [
-            // [groupName, [list of button]]
-            ['style', ['bold', 'italic', 'underline', 'clear']],
-            ['fontsize', ['fontsize']],
-            ['para', ['ul', 'ol', 'paragraph']]
-        ]
+    var content_ekspektasi_kasus;
+    $("#ekspektasi_kasus").on("summernote.change", function (e) {   // callback as jquery custom event 
+        var content = $('#ekspektasi_kasus').summernote('code');
+        var nohtml = content.replace(/(<([^>]+)>)/ig," "); 
+        // var double = nohtml.replace("  "," "); 
+        var double = $.trim(nohtml);
+        var clean = double.replace(/ +(?= )/g,'');
+        var letters = clean.split(" ").length;
+        if(letters>300){
+            $('#ekspektasi_kasus').summernote('code', content_ekspektasi_kasus);
+            alert('Tidak boleh lebih dari 300 kata');
+        } else {
+            content_ekspektasi_kasus = $('#ekspektasi_kasus').summernote('code');
+        }
     });
+    // $('#editorEdukasi').summernote({
+    //     minHeight: 200,
+    //     toolbar: [
+    //         // [groupName, [list of button]]
+    //         ['style', ['bold', 'italic', 'underline', 'clear']],
+    //         ['fontsize', ['fontsize']],
+    //         ['para', ['ul', 'ol', 'paragraph']]
+    //     ]
+    // });
 
     $("#is_kusus").change(function(){
 
@@ -622,13 +668,16 @@ $(document).ready(function() {
             var letters = $(this).val().split(" ").length;
             $('#judul').text(11-letters+" letters left");
             // limit message
-            if(letters>=11){
+            if(letters>10){
                 $(this).val(content);
-                alert('no more than 10 letters, please!');
+                alert('Tidak boleh lebih dari 10 kata');
             } else {
                 content = $(this).val();
             }
         });
+
+        //
+        
 
     });
 </script>

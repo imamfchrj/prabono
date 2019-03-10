@@ -12,6 +12,11 @@ class Admin_nl extends Admin_Controller {
 
 	public function login()
 	{
+
+        if($this->session->userdata('user_id_admin')){
+            redirect('admin/dashboard');
+            exit;
+        }
 		$this->load->view('admin/login');
     }
 

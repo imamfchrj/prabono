@@ -503,6 +503,22 @@
                     //     }
                     // }
                 });
+
+                var content_biography;
+                $("#biography").on("summernote.change", function (e) {   // callback as jquery custom event 
+                    var content = $('#biography').summernote('code');
+                    var nohtml = content.replace(/(<([^>]+)>)/ig," "); 
+                    // var double = nohtml.replace("  "," "); 
+                    var double = $.trim(nohtml);
+                    var clean = double.replace(/ +(?= )/g,'');
+                    var letters = clean.split(" ").length;
+                    if(letters>300){
+                        $('#biography').summernote('code', content_biography);
+                        alert('Tidak boleh lebih dari 300 kata');
+                    } else {
+                        content_biography = $('#biography').summernote('code');
+                    }
+                });
                 $('#education').summernote({
                     minHeight: 200,
                     toolbar: [
@@ -511,6 +527,22 @@
                         // ['fontsize', ['fontsize']],
                         ['para', ['ul', 'ol', 'paragraph']]
                     ]
+                });
+
+                var content_education;
+                $("#education").on("summernote.change", function (e) {   // callback as jquery custom event 
+                    var content = $('#education').summernote('code');
+                    var nohtml = content.replace(/(<([^>]+)>)/ig," "); 
+                    // var double = nohtml.replace("  "," "); 
+                    var double = $.trim(nohtml);
+                    var clean = double.replace(/ +(?= )/g,'');
+                    var letters = clean.split(" ").length;
+                    if(letters>300){
+                        $('#education').summernote('code', content_education);
+                        alert('Tidak boleh lebih dari 300 kata');
+                    } else {
+                        content_education = $('#education').summernote('code');
+                    }
                 });
             });
             </script>
