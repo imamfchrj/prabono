@@ -45,7 +45,6 @@ class Upload extends CI_Controller {
 
         public function do_upload_file2()
         {
-
                 $this->load->helper('custom_upload');
                 $this->load->model('user/advokat_file');
                 $data=upload_file();

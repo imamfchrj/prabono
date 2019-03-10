@@ -37,6 +37,7 @@ class Auth extends CI_Model
             $this->table.".ban_reason,".
             $this->table_users_profile.".firstname,".
             $this->table_users_profile.".lastname,".
+            $this->table_users_profile.".foto,".
             $this->table.".username");
         $this->db->where($this->table.'.email', $email);
         $this->db->where($this->table.'.activated', 1);

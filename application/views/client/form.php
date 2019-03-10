@@ -529,9 +529,9 @@ $(document).ready(function() {
         var double = $.trim(nohtml);
         var clean = double.replace(/ +(?= )/g,'');
         var letters = clean.split(" ").length;
-        if(letters>300){
+        if(letters>250){
             $('#ekspektasi_kasus').summernote('code', content_ekspektasi_kasus);
-            alert('Tidak boleh lebih dari 300 kata');
+            alert('Tidak boleh lebih dari 250 kata');
         } else {
             content_ekspektasi_kasus = $('#ekspektasi_kasus').summernote('code');
         }

@@ -93,7 +93,18 @@
                     </div>
                     <div class="col-sm-6">
                         <nav id="mainnav2" class="row">
-                            <img src="https://i0.wp.com/www.winhelponline.com/blog/wp-content/uploads/2017/12/user.png?fit=256%2C256&quality=100&ssl=1" class="img-responsive img-circle" alt="Cinque Terre" width="100" height="100"> 
+                            <div class="circle">
+                            <?php if(!get_from_sess('foto')) {?>
+                                <img src="<?=base_url()?>probono_asset/images/defaultprofile.jpg" class="profile-pic img-profile" alt="Probono"> 
+                            <?php }  else{ ?>
+                                <img src="<?=base_url()?>probono_asset/probono/asset/<?=get_from_sess('foto')?>" class="profile-pic img-profile" alt="Probono"> 
+                            <?php }  ?>
+                            </div>
+
+                            <div class="p-image">
+                            <i class="fa fa-camera upload-button"></i>
+                                <input class="file-upload" style="display:none;" type="file" accept="image/*"/>
+                            </div>
                         </nav>
                     </div>
 
@@ -180,3 +191,46 @@
                     </div><!-- /.row -->
                 </div><!-- /.container -->
             </div>
+
+            <script>
+            $(document).ready(function() {
+
+                $(".file-upload").on('change', function(){
+                    var myFormData = new FormData();
+                        myFormData.append('userfile',$(".file-upload").prop('files')[0]);
+
+                        $.ajax({
+                            url: "<?=base_url()?>clients_ajax/do_upload_profile",
+                            type: 'POST',
+                            processData: false, // important
+                            contentType: false, // important
+                            dataType : 'json',
+                            data: myFormData
+                        }).done(function(data) {
+
+                        if(data.is_error==1){ 
+                            alert_error(data.error);
+                            console.log(data);
+                            return; 
+                        }
+                        // $($nameput).val(data.filename);
+
+                        $(".profile-pic").attr("src","<?=base_url()?>probono_asset/probono/asset/"+data.image_url);
+
+                        })
+                        .fail(function() {
+                            if(tmp){
+                                alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                                tmp = false;
+                            }
+                        })
+                        .always(function() {
+                            
+                        }) ;
+                });
+
+                    $(".upload-button").on('click', function() {
+                        $(".file-upload").click();
+                    });
+                });
+            </script>

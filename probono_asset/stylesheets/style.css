@@ -3646,3 +3646,47 @@ footer .logo-footer .logo {
 .text-green {
 	color:rgb(30, 212, 145);;
 }
+
+.header {
+	border-top: 4px solid #0770cd;
+}
+
+
+.profile-pic {
+    max-width: 200px;
+    max-height: 200px;
+    display: block;
+}
+
+.file-upload {
+    display: none;
+}
+.circle {
+    border-radius: 1000px !important;
+    overflow: hidden;
+    width: 100px;
+    height: 100px;
+    border: 8px solid rgba(255, 255, 255, 0.7);
+    top: 72px;
+}
+.img-profile {
+    max-width: 100%;
+    height: auto;
+}
+.p-image {
+  color: #666666;
+  margin-top: -28px;
+  margin-left:10px;
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.p-image:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+.upload-button {
+  font-size: 1.2em;
+}
+
+.upload-button:hover {
+  transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+  color: #999;
+}
