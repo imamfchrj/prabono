@@ -131,12 +131,12 @@
                 <div class="divider wrapp">
                 </div>
                 <div class="wrap-header-bottom">
-                    <ul class="social-links style4">
-                        <li><a href ="#"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href ="#"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a href="#"><i class="fa fa-rss"></i></a></li>
-                    </ul>
+<!--                    <ul class="social-links style4">-->
+<!--                        <li><a href ="#"><i class="fa fa-facebook"></i></a></li>-->
+<!--                        <li><a href ="#"><i class="fa fa-twitter"></i></a></li>-->
+<!--                        <li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
+<!--                        <li><a href="#"><i class="fa fa-rss"></i></a></li>-->
+<!--                    </ul>-->
                     <div class="copy-right">
                         <p>Copyright © 2018 <a href="#">Redcloud Project</a>.<br>All Rights Reserved.</p>
                     </div>

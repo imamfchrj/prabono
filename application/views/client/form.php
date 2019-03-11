@@ -251,7 +251,7 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
 
                                 <div class="col-md-12">
                                     <b>Tambahkan lokasi kejadian</b>
-                                    <p>Untuk memudahkan kami menemukan pengacara anda</p>
+                                    <p>Untuk memudahkan kami menemukan pendamping hukum anda</p>
                                 </div>
                             </div>
                             
@@ -482,19 +482,19 @@ $(document).ready(function() {
         ]
     });
 
-    var content;
-        $('#judul').on('keyup', function(){
-            var letters = $(this).val().split(" ").length;
-            $('#judul').text(11-letters+" letters left");
-            // limit message
-            var letters = $(this).val().split(" ").length;
-            if(letters>10){
-                $(this).val(content);
-                alert('Tidak boleh lebih dari 10 kata');
-            } else {
-                content = $(this).val();
-            }
-        });
+    // var content;
+    //     $('#judul').on('keyup', function(){
+    //         var letters = $(this).val().split(" ").length;
+    //         $('#judul').text(11-letters+" letters left");
+    //         // limit message
+    //         var letters = $(this).val().split(" ").length;
+    //         if(letters>10){
+    //             $(this).val(content);
+    //             alert('Tidak boleh lebih dari 10 kata');
+    //         } else {
+    //             content = $(this).val();
+    //         }
+    //     });
 
     var content_kronologi_masalah;
     $("#kronologi_masalah").on("summernote.change", function (e) {   // callback as jquery custom event 
