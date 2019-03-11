@@ -24,13 +24,13 @@
                               </blockquote>
                            </div>
                         </div>
-                        <div class="avatar">
-                           <div class="testimonial-author-thumbnail">    
-                              <img src="https://images.pexels.com/photos/555790/pexels-photo-555790.png?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="image">
-                           </div>
-                           <div class="name">Firda Safridi</div>
-                           <div class="position">Ceo &amp; Founder</div>
-                        </div>
+<!--                        <div class="avatar">-->
+<!--                           <div class="testimonial-author-thumbnail">    -->
+<!--                              <img src="https://images.pexels.com/photos/555790/pexels-photo-555790.png?auto=compress&cs=tinysrgb&dpr=2&h=400&w=400" alt="image">-->
+<!--                           </div>-->
+<!--                           <div class="name">Firda Safridi</div>-->
+<!--                           <div class="position">Ceo &amp; Founder</div>-->
+<!--                        </div>-->
                      </div>
                   </div>
                </div>
