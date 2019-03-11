@@ -111,7 +111,7 @@
                         <div class="container">
                             <div class="row">                 
                                 <div class="header-wrap clearfix">
-                                    <div class="col-md-3">
+                                    <div class="col-md-2">
                                         <div id="logo" class="logo">
                                             <a href="#" rel="home">
                                                 <img src="<?=base_url()?>probono_asset/images/logo_3.jpeg" alt="image">
@@ -121,7 +121,7 @@
                                             <span></span>
                                         </div><!-- //mobile menu button --> 
                                     </div>
-                                    <div class="col-md-9">
+                                    <div class="col-md-10">
                                         <div class="flat-wrap-header">
                                             <div class="nav-wrap">        
                                                 <nav id="mainnav" class="mainnav">

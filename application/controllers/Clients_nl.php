@@ -132,6 +132,7 @@ class Clients_nl extends All_Controller {
                         'username'	=> $user->firstname . " " . $user->lastname ,
                         'email'		=> $user->email,
                         'status'	=> $user->activated,
+                        'foto'	=> $user->foto,
                         'login_config' => hashuser($user->email)
                     );
 					$this->session->set_userdata($set_session);
@@ -173,6 +174,7 @@ class Clients_nl extends All_Controller {
                         'advokat_username'	=> $user->firstname . " " . $user->lastname ,
                         'advokat_email'		=> $user->email,
                         'advokat_status'	=> $user->activated,
+                        'foto'	=> $user->foto,
                         'advokat_login_config' => hashadvokat($user->email)
                     );
                     echo json_encode(array(

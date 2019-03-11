@@ -15,6 +15,37 @@ class Clients_ajax extends Users_Controller {
 			)));
 		}
 	}
+
+
+	public function do_upload_profile()
+	{
+		$id=$this->get_user_id();
+		if(!$id){
+			return print(json_encode(array(
+				'is_error'=>true,
+				'error_message'=>  "User anda tidak di temukan. Silahkan login terlebih dahulu."
+			)));
+		}
+		$this->load->helper('custom_upload');
+		$data = upload_image();
+		if(!$data["is_error"]){
+			$data=array(
+				"foto"=>$data["filename"]
+			);
+			$this->load->library('session');
+			$this->load->model('client/client_profiler');
+			$this->client_profiler->update_profile($id,$data);
+			$this->session->set_userdata('foto', $data["foto"]);
+			return print(json_encode(array(
+				'is_error'=>false,
+				'image_url'=>  $data["foto"]
+			)));
+		}
+		return print(json_encode(array(
+			'is_error'=>true,
+			'error_message'=>  $data["error"]
+		)));
+	}
 	
 	public function clients_profile()
 	{

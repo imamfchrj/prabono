@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Admin_nl extends All_Controller {
+class Admin_nl extends Admin_Controller {
     
     
 	function __construct()
@@ -12,6 +12,11 @@ class Admin_nl extends All_Controller {
 
 	public function login()
 	{
+
+        if($this->session->userdata('user_id_admin')){
+            redirect('admin/dashboard');
+            exit;
+        }
 		$this->load->view('admin/login');
     }
 
