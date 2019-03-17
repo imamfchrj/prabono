@@ -26,7 +26,7 @@ div.probono_009{font-family:"Calibri Bold Italic",serif;font-size:10.9px;color:r
 <div style="position:absolute;left:0px;top:0px">
 </div>
 <div style="position:absolute;left:233.96px;top:71.28px" class="probono_002"><span class="probono_002">Syarat dan Ketentuan</span></div>
-<div style="position:absolute;left:232.57px;top:92.40px" class="probono_002"><span class="probono_002">E-probono.org (Nama Website)</span></div>
+<div style="position:absolute;left:232.57px;top:92.40px" class="probono_002"><span class="probono_002">E-probono.org</span></div>
 <div style="position:absolute;left:90.00px;top:158.88px" class="probono_003"><span class="probono_003">1.  Tentang E-probono.org</span></div>
 <div style="position:absolute;left:103.65px;top:173.28px" class="probono_005"><span class="probono_005">1.1.</span><span class="probono_006"> </span><span class="probono_005">E-probono.org adalah sebuah sistem</span><span class="probono_007">  pro bono</span><span class="probono_005"> berbasis</span><span class="probono_007"> website</span><span class="probono_005"> tersedia di</span><span class="probono_008"> </span><A HREF="http://www.xxxx.com/">www.xxxx.com</A> </span><span class="probono_005"> (untuk</span></div>
 <div style="position:absolute;left:121.65px;top:187.92px" class="probono_005"><span class="probono_005">selanjutnya disebut dengan “laman situs”) yang bertujuan untuk menyediakan layanan</span><span class="probono_007"> pro</span></div>

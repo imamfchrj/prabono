@@ -190,7 +190,7 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
                             </div>
                             <div class="form-group row form-biografi" style="display:none ;">
 
-                                <label class="col-md-12" for="exampleInputEmail1">Ringkasan Penjelasan (Maks. 300 Karakter)<span class="text-danger email-error"></span></label>
+                                <label class="col-md-12" for="exampleInputEmail1">Ringkasan Penjelasan (Maks. 300 Kata)<span class="text-danger email-error"></span></label>
                                 <div class="col-md-12">
                                     <div id="kronologi_masalah">
                                         <?=$kasus->kronologi_masalah?>
@@ -222,7 +222,7 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
 
                             </div>
                             <div class="form-group row form-edukasi" style="display:none ;">
-                                <label class="col-md-12" for="exampleInputEmail1">Harapan Akan Kasus Kedepannya (Maks. 200 Karakter)<span class="text-danger email-error"></span></label>
+                                <label class="col-md-12" for="exampleInputEmail1">Harapan Akan Kasus Kedepannya (Maks. 200 Kata)<span class="text-danger email-error"></span></label>
                                 <div class="col-md-12">
                                     <div id="ekspektasi_kasus">
                                         <?=$kasus->ekspektasi_kasus?>

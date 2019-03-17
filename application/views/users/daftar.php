@@ -216,7 +216,7 @@
                                         </div>
                                         <div class="form-group row form-biografi" style="display:none;">
                                             
-                                            <label class="col-md-12 form-group" >Biografi ( Max 150 Characters )</label>
+                                            <label class="col-md-12 form-group" >Biografi (Maks. 150 Kata)</label>
                                             <div class="col-md-12">
                                                 <div id="biography" maxlength="150">
                                                 <?=$profile->biography?>
