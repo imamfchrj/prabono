@@ -143,7 +143,7 @@ $this->load->view('admin/layout/header');
                             </td>
                         </tr>
                         <tr>
-                            <td width="30%"><b>Company Name</b></td>
+                            <td width="30%"><b>Kantor Hukum</b></td>
                             <td>
                                 <?php echo !empty($values->company_firm_name)?$values->company_firm_name:""; ?>
                             </td>
