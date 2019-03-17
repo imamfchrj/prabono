@@ -103,7 +103,7 @@
 
                             <div class="p-image">
                             <i class="fa fa-camera upload-button"></i>
-                                <input class="file-upload" style="display:none;" type="file" accept="image/*"/>
+                                <input class="file-upload-profile" style="display:none;" type="file" accept="image/*"/>
                             </div>
                         </nav>
                     </div>
@@ -215,9 +215,9 @@
                 // }
 
 
-                $(".file-upload").on('change', function(){
+                $(".file-upload-profile").on('change', function(){
                     var myFormData = new FormData();
-                        myFormData.append('userfile',$(".file-upload").prop('files')[0]);
+                        myFormData.append('userfile',$(".file-upload-profile").prop('files')[0]);
 
                         $.ajax({
                             url: "<?=base_url()?>users_ajax/do_upload_profile",
@@ -250,7 +250,7 @@
                 });
 
                     $(".upload-button").on('click', function() {
-                        $(".file-upload").click();
+                        $(".file-upload-profile").click();
                     });
                 });
             </script>
