@@ -296,7 +296,6 @@ $(function(){
         if(response.length == 0){
             $("#setuju-text").html("Please accept gcaptcha");
         }
-        console.log(response);
         $("#setuju-text").html("");
         submit(response);
     });
@@ -324,6 +323,8 @@ var submit = function (response){
         if(data.is_error==1){ 
             grecaptcha.reset();
             alert_error(data.error_message);
+            $("#loader-btn").hide();
+            $(".submit").show();
             return; 
         }
         if($('#user_set').is(":checked") === true){
@@ -340,9 +341,9 @@ var submit = function (response){
             grecaptcha.reset();
             tmp = false;
         }
-        
         $("#loader-btn").hide();
         $(".submit").show();
+        
         
     })
     .always(function() {
