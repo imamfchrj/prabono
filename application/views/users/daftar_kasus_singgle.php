@@ -29,14 +29,16 @@
                                          <span class="badge badge-success float-right">Open</span>
 
 
-                                        <?php }else if($kasus->status==2){?>
+                                         <?php }else if($kasus->status==2){?>
                                          <span class="badge badge-primary float-right">Aktif</span>
+                                         <?php }else if($kasus->status==4){?>
+                                         <span class="badge badge-success float-right">Wait</span>
 
                                         <?php }else{?>
                                          <span class="badge badge-dark float-right">Closed</span>
                                         <?php }?>
                                         
-                                        <?php if($kasus->status>1){?>
+                                        <?php if($kasus->status==2){?>
                                         <ul class="nav nav-tabs nav-single">
                                             <li <?php if($menu!="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/daftar_kasus_singgle/<?=$kasus->id?>">Kasus</a></li>
                                         <li <?php if($menu=="agenda") {?>class="active"<?php } ?>><a href="<?=base_url()?>users/agenda/<?=$kasus->id?>">Agenda</a></li>

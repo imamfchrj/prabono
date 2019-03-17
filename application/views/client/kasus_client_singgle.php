@@ -31,6 +31,9 @@
 
                                         <?php }else if($kasus->status==2){?>
                                          <span class="badge badge-primary float-right">Aktif</span>
+                                         <?php }else if($kasus->status==4){?>
+                                         <span class="badge badge-success float-right">Wait</span>
+
 
                                         <?php }else{?>
                                          <span class="badge badge-dark float-right">Closed</span>
@@ -81,6 +84,11 @@
                                         </ul>
                                         <?php }?>
                                         <div class="flat-view">
+                                                <hr>
+                                                <?php if($kasus->status==4){?>
+                                                <button type="button" class="flat-button terima_kasus" >Terima Kasus</button>
+                                                <button type="button" class="flat-button btn-danger tolak_kasus" >Tolak Kasus</button>
+                                                <?php } ?>
                                         </div>
                                     </div>
                                 </div>
@@ -174,6 +182,77 @@
                 }) ;
             }
             </script>
+
+
+        
+<script>
+                
+                $(".terima_kasus").on("click", function() {
+                    $.ajax({
+                        url: ROOT+'clients_ajax/terima_kasus',
+                        type: 'post',
+                        dataType: 'json',
+                        data: {
+                            id_kasus:id,
+                        }
+                    })
+                    .done(function(data) {
+                        if(data.is_error==1){ 
+                            alert_error(data.error);
+                            return; 
+                        }
+                        alert("Kasus Berhasil diterima");
+                        $(".tolak_kasus").hide();
+                        $(".terima_kasus").hide();
+                    location.reload();
+                    })
+                    .fail(function() {
+                        if(tmp){
+                            alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                            tmp = false;
+                        }
+                    })
+                    .always(function() {
+                        
+                    }) ;
+            
+                });
+                        </script>
+                        
+                        <script>
+                
+                $(".tolak_kasus").on("click", function() {
+                    $.ajax({
+                        url: ROOT+'clients_ajax/tolak_kasus',
+                        type: 'post',
+                        dataType: 'json',
+                        data: {
+                            id_kasus:id,
+                        }
+                    })
+                    .done(function(data) {
+                        if(data.is_error==1){ 
+                            alert_error(data.error);
+                            return; 
+                        }
+                        alert("Kasus Berhasil diterima");
+                        $(".tolak_kasus").hide();
+                        $(".terima_kasus").hide();
+                    location.reload();
+                    })
+                    .fail(function() {
+                        if(tmp){
+                            alert_error( "Server tidak merespon. Mohon cek koneksi internet anda.\nServer not responding. Please check your internet connection." );
+                            tmp = false;
+                        }
+                    })
+                    .always(function() {
+                        
+                    }) ;
+            
+                });
+                        </script>
+
 
 
 
