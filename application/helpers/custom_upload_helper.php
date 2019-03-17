@@ -48,7 +48,7 @@ function upload_file($name="userfile"){
         else
         {
                 $data = $CI->upload->data();
-                return array("is_error"=>"0","filename"=>$data["file_name"],"raw_name"=>$_FILES[$name]['name']);
+                return array("is_error"=>0,"filename"=>$data["file_name"],"raw_name"=>$_FILES[$name]['name']);
         }
 }
     
