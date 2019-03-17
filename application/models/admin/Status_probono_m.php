@@ -16,6 +16,7 @@ class Status_probono_m extends CI_Model
     private $table_provinces = 'provinces';
     private $table_regencies = 'regencies';
     private $table_agenda = 'kasus_agenda';
+    private $table_timesheet = 'advokat_timesheet';
 
     private function _select_table_kasus()
     {
@@ -91,6 +92,7 @@ class Status_probono_m extends CI_Model
         $this->db->join($this->table_users_profile.' as ca','ca.user_id=c.id');
         $this->db->join($this->table_users_advokat.' as d','d.id=a.advokat_id');
         $this->db->join($this->table_users_advokat_profile.' as da','da.user_id=d.id');
+        $this->db->join($this->table_timesheet.' as e','e.agenda_id=a.id');
     }
 
     function get_all(){

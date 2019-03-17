@@ -50,7 +50,8 @@ class Users extends Advokat_Controller {
 		$this->is_verified();
 		$this->load->model('client/kasus');
 		$id=$this->get_user_id();
-		$data['kasus']=$this->kasus->get_kasus_by_status(2,$id);
+        $status=array(2,4);
+		$data['kasus']=$this->kasus->get_kasus_by_status($status,$id);
 		$this->load->view('users/daftar_selesai',$data);
 	}
 
