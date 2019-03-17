@@ -57,7 +57,7 @@
                                             <?php foreach($timesheet as $list){?>
                                                 <tr>
                                                 <?php $status=strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate)?>
-                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><input type="checkbox" onclick="check_timesheet(<?=$list->agenda_id?>,<?php if(!$list->id){echo "0";}else{echo $list->id;} ?>,<?php if(!$list->advokat_id){echo "0";}else{echo $list->advokat_id;} ?>)" id="time<?=$list->agenda_id?>" <?php if($list->id) echo "checked"?> <?php if($list->is_accept){ if($status < 0){echo "disabled";}}else{}?>></input></td>
+                                                    <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><input type="checkbox" onclick="check_timesheet(<?=$list->agenda_id?>,<?php if(!$list->id){echo "0";}else{echo $list->id;} ?>,<?php if(!$list->advokat_id){echo "0";}else{echo $list->advokat_id;} ?>)" id="time<?=$list->agenda_id?>" <?php if($list->id) echo "checked"?> <?php if($list->is_accept){ if($status > 0){echo "disabled";}}else{}?>></input></td>
                                                     <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?=$list->title?><?php echo date("Y-m-d H:i:s").'-'.$list->todate?></td>
                                                     <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?=$list->todate?></td>
                                                     <td style="border-top:0px;border-bottom: 1px solid #ddd;;"><?=convert_date($list->todate, $list->fromdate)?></td>
