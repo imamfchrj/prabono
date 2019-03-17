@@ -8,10 +8,10 @@
         <nav class="nav">
            <div class="dropdown">
             <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-              <span class="logged-name hidden-md-down"><?=$this->session->userdata('username');?></span>
+              <span class="logged-name hidden-md-down"><?=$this->session->userdata('username_admin');?></span>
                 <?php
                  ?>
-                <img src="<?php echo base_url().'probono_asset/probono/asset/default-avatar.png'; ?>" class="wd-25 rounded-circle" alt="">
+                <img src="<?php echo base_url().'assets_123/img/default-avatar.png'; ?>" class="wd-25 rounded-circle" alt="">
               <span class="square-10 bg-success"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-header wd-200">

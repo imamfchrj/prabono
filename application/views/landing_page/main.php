@@ -85,7 +85,7 @@
          </div>
       </div>
    </section>
-   <section class="flat-row v7">
+   <section class="flat-row v7 bg-theme">
       <div class="container">
          <div class="row">
             <div class="col-md-12">
@@ -164,7 +164,7 @@
          </div>
       </div>
    </section>
-   <section class="flat-row v1">
+   <section class="flat-row v1 bg-theme">
       <div class="container">
          <div class="row">
             <div class="col-md-12">
@@ -232,7 +232,7 @@
          </div>
       </div>
    </section>
-   <section class="flat-row v9 bg-theme">
+   <section class="flat-row v9">
       <div class="container">
          <div class="row">
             <div class="col-md-12">

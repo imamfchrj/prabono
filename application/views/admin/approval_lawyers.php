@@ -25,7 +25,7 @@
                     <div class="br-lawyers-header d-flex justify-content-between">
                         <div class="media align-items-center">
                             <?php
-                            $photo_profile = !empty($row->foto)?base_url().'probono_asset/probono/asset/'.$row->foto:base_url().'probono_asset/probono/asset/default-avatar.png';
+                            $photo_profile = !empty($row->foto)?base_url().'probono_asset/probono/asset/'.$row->foto:base_url().'assets_123/img/default-avatar.png';
                             ?>
                             <img src="<?php echo $photo_profile ?>" class="wd-75 rounded-circle" alt="">
                             <div class="media-body mg-l-10">
