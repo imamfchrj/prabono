@@ -70,7 +70,7 @@ class Users_ajax extends Advokat_Controller {
             $id=$this->form_validation->set_value('id_kasus');
             $data=array(
                 "advokat_id"=>$advokat_id,
-                "status"=>2
+                "status"=>4
             );
 			$this->kasus->update_value_by_id($id,$data);
 			//disini belum

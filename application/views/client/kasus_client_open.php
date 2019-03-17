@@ -37,6 +37,9 @@
                                          <span class="badge badge-success float-right">Open</span>
                                         <?php }else if($list->status==2){?>
                                          <span class="badge badge-primary float-right">Aktif</span>
+                                         <?php }else if($kasus->status==4){?>
+                                         <span class="badge badge-success float-right">Wait</span>
+
                                         <?php }else{?>
                                          <span class="badge badge-dark float-right">Closed</span>
                                         <?php }?>

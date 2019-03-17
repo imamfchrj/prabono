@@ -279,5 +279,103 @@ class Clients_ajax extends Users_Controller {
 		)));
     }
 
+
+	public function tolak_kasus()
+	{
+        $this->form_validation->set_rules('id_kasus', "Kasus", 'trim|required|xss_clean|is_natural|callback__check_kasus_pending');
+        
+
+		if($this->form_validation->run()){
+			
+			$this->load->model('client/kasus');
+
+            $advokat_id=$this->get_user_id();
+            if(!$advokat_id){
+                return print(json_encode(array(
+                    'is_error'=>true,
+                    'error_message'=>  "Silahkan melakukan relogin kembali."
+                )));
+            }
+			$id=$this->form_validation->set_value('id_kasus');
+			
+			//disini belum
+			$kasus=$this->kasus->get_kasus_by_status_id_kasus($id,2);
+			if($kasus){
+				send_notif($kasus->advokat_id,"clients/kasus_aktif_singgle/".$id,"Kasus Anda <b>".$kasus->judul." di tolak</b> oleh user! Lihat disini untuk detailnya.","client",1);	
+			}
+
+            $data=array(
+                "advokat_id"=>0,
+                "status"=>1
+            );
+			$this->kasus->update_value_by_id($id,$data);
+
+			return print(json_encode(array(
+				'is_error'=>false
+				
+			)));
+
+		}
+
+		return print(json_encode(array(
+			'is_error'=>true,
+			'error_message'=>  validation_errors()
+		)));
+	}
+	
+	public function terima_kasus()
+	{
+        $this->form_validation->set_rules('id_kasus', "Kasus", 'trim|required|xss_clean|is_natural|callback__check_kasus_pending');
+        
+
+		if($this->form_validation->run()){
+			
+			$this->load->model('client/kasus');
+
+            $advokat_id=$this->get_user_id();
+            if(!$advokat_id){
+                return print(json_encode(array(
+                    'is_error'=>true,
+                    'error_message'=>  "Silahkan melakukan relogin kembali."
+                )));
+            }
+			$id=$this->form_validation->set_value('id_kasus');
+			
+			//disini belum
+			$kasus=$this->kasus->get_kasus_by_status_id_kasus($id,2);
+			if($kasus){
+				send_notif($kasus->advokat_id,"clients/kasus_aktif_singgle/".$id,"Kasus Anda <b>".$kasus->judul." di terima</b> oleh user! Lihat disini untuk detailnya.","client",1);	
+			}
+
+            $data=array(
+                "status"=>2
+            );
+			$this->kasus->update_value_by_id($id,$data);
+
+			return print(json_encode(array(
+				'is_error'=>false
+				
+			)));
+
+		}
+
+		return print(json_encode(array(
+			'is_error'=>true,
+			'error_message'=>  validation_errors()
+		)));
+	}
+	
+
+	function _check_kasus_pending($val){
+        $this->db->where("id",$val);
+        $this->db->where("status",4);
+        $query=$this->db->get("kasus");
+		if($query){
+            return TRUE;
+        }
+		$this->form_validation->set_message('_check_kasus_pending', "Kasus Tidak Tersedia.");
+		return FALSE;
+	}
+
 }
 

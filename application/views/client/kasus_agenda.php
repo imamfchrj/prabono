@@ -31,6 +31,9 @@ var id = <?=$kasus->id?>;
 
                                         <?php }else if($kasus->status==2){?>
                                          <span class="badge badge-primary float-right">Aktif</span>
+                                         <?php }else if($kasus->status==4){?>
+                                         <span class="badge badge-success float-right">Wait</span>
+
                                         <?php }else{?>
                                          <span class="badge badge-dark float-right">Closed</span>
                                         <?php }?>
@@ -62,8 +65,8 @@ var id = <?=$kasus->id?>;
                                                         <li class="list-inline-item"><i class="fa fa-user" aria-hidden="true"></i> <?php if($list->is_accept){ if(strtotime(date("Y-m-d H:i:s"))-strtotime($list->todate) < 0){echo "On Progress";}else{echo "Selesai";}}else{echo "Pending";}?></li>
                                                     </ul>
                                                     <p><?=$list->description?></p>
-                                                    <p><?php if(!$list->is_accept){?>
-                                                        <button onclick="terimaagenda(<?=$list->id?>)">Terima Jadwal</button>
+                                                    <p><?php if(!$list->is_accept==3){?>
+                                                        <button onclick="terimaagenda(<?=$list->id?>)">Terima Pertemuan</button>
                                                         <?php }?>
                                                     </p>
                                                 </div>

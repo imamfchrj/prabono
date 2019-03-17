@@ -33,6 +33,9 @@ var id = <?=$kasus->id?>;
 
                                         <?php }else if($kasus->status==2){?>
                                          <span class="badge badge-primary float-right">Aktif</span>
+                                         <?php }else if($kasus->status==4){?>
+                                         <span class="badge badge-success float-right">Wait</span>
+
                                         <?php }else{?>
                                          <span class="badge badge-dark float-right">Closed</span>
                                         <?php }?>
@@ -59,7 +62,7 @@ var id = <?=$kasus->id?>;
                                                 <div class="pad15">
                                                 <h5 class="blue_deep name"><?=$list->title?></h5>
                                                     <ul class="list-inline">
-                                                        <li class="list-inline-item"><a href="javascript:void(0)" onclick="get_agenda(<?=$list->id?>);return false;"><i class="fa fa-pencil" aria-hidden="true"></i> Rubah Jadwal</a></li>
+                                            <?php if(!$list->agenda_id) {?> <li class="list-inline-item"><a href="javascript:void(0)" onclick="get_agenda(<?=$list->id?>);return false;"><i class="fa fa-pencil" aria-hidden="true"></i> Rubah Jadwal</a></li><?php }?> 
                                                         <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?=$list->fromdate?></li>
                                                         <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> <?=$list->todate?></li>
                                                         <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> <?=$list->place?></li>
