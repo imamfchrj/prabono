@@ -17,7 +17,7 @@ $this->load->view('admin/layout/header');
             <div class="card-body">
                 <div class="card-profile-img">
                     <?php
-                    $photo_profile = !empty($profile->foto)?base_url().'probono_asset/probono/asset/'.$profile->foto:base_url().'probono_asset/probono/asset/default-avatar.png';
+                    $photo_profile = !empty($profile->foto)?base_url().'probono_asset/probono/asset/'.$profile->foto:base_url().'assets_123/img/default-avatar.png';
                     ?>
                     <img src="<?php echo $photo_profile ?>" width="120" height="110" class="img-responsive" alt="">
                 </div><!-- card-profile-img -->

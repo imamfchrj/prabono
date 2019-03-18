@@ -927,6 +927,11 @@ class Admin_api extends Admin_Controller {
                         "status"=>1
                     );
                     $this->kasus->update_value_by_id($kasus_id,$kasus);
+                }else{
+                    $kasus=array(
+                        "status"=>3
+                    );
+                    $this->kasus->update_value_by_id($kasus_id,$kasus);
                 }
             }
             //if advokat change, he not get point anymore

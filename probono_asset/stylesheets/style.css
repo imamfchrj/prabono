@@ -2428,7 +2428,7 @@ footer .logo-footer .logo {
     top: 0;
     width: 100%;
 	height: 100%;
-	background: url(../images/background.jpg)  center center fixed;
+	background: url(../images/probono2.png) center center;
 	/* background: url(../images/slides/s13.jpg); */
 }
 
@@ -2437,6 +2437,7 @@ footer .logo-footer .logo {
 }
 
 .overlay-parallax.style3 {
+	background: url(../images/background.jpg) center center;
 	background-color: rgba( 0, 0, 0, 0.4);
 }
 
@@ -3648,7 +3649,7 @@ footer .logo-footer .logo {
 }
 
 .header {
-	border-top: 4px solid #0770cd;
+	border-top: 4px solid #fecb02;
 }
 
 

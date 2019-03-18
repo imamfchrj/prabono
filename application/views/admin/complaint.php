@@ -100,7 +100,9 @@
         }
 
         $( "#maintabel" ).click(function() {
-            window.location = ROOT+'admin/mst_news_kategori';
+            $('#buy_button_loading').addClass('d-none');
+            $('#buy_button').removeClass('d-none');
+            //location.reload();
         });
     </script>
 <?php

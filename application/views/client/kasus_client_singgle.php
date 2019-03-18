@@ -235,7 +235,7 @@
                             alert_error(data.error);
                             return; 
                         }
-                        alert("Kasus Berhasil diterima");
+                        alert("Kasus Berhasil Ditolak");
                         $(".tolak_kasus").hide();
                         $(".terima_kasus").hide();
                     location.reload();

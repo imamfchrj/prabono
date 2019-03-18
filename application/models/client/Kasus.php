@@ -181,7 +181,7 @@ class Kasus extends CI_Model
             $this->db->where($this->table.".advokat_id",$user_id);
         }
         if($status){
-            $this->db->where($this->table.".status",$status);
+            $this->db->where_in($this->table.".status",$status);
         }
         $query=$this->db->get($this->table);
         if($query){

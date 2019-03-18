@@ -43,7 +43,7 @@
                                 <div class="col-md-12">
                                     
                                     <div style="margin-bottom:20px;">
-                                    <label><input type="checkbox" id="setuju" value=""> Setuju dengan <a class="blue" href="<?=base_url().'probono_asset/probono/asset/term_conditions.pdf'?>" target="_blank">Syarat & Ketentuan</a> yang berlaku. <span id="setuju-text" class="text-danger"><span></label>
+                                    <label><input type="checkbox" id="setuju" value=""> Setuju dengan <a class="blue" href="<?=base_url().'assets_123/img/term_conditions.pdf'?>" target="_blank">Syarat & Ketentuan</a> yang berlaku. <span id="setuju-text" class="text-danger"><span></label>
                                     </div>
                                 </div>
                                 <div class="col-md-12 g-cap">
