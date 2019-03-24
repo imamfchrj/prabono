@@ -88,7 +88,7 @@ class Users extends Advokat_Controller {
 
 		$this->form_validation->set_rules('gender', "Jenis Kelamin", 'trim|xss_clean|integer|max_length[1]');
 
-		$this->form_validation->set_rules('hp', "No Handphone", 'trim|xss_clean|is_natural|max_length[12]');
+		$this->form_validation->set_rules('hp', "No Handphone", 'trim|xss_clean|is_natural|max_length[13]');
 		$this->form_validation->set_rules('id_ktp', "No Kartu Identitas", 'trim|xss_clean|max_length[250]');
 		$this->form_validation->set_rules('photo_ktp', "Photo KTP", 'trim|xss_clean');
 		$this->form_validation->set_rules('alamat_domisili', "No KTA Advokat", 'trim|xss_clean|max_length[250]');
@@ -147,6 +147,9 @@ class Users extends Advokat_Controller {
 					if($advokat_profile->is_verified==2){
 						$data["is_verified"]=0;
 					}
+                    if($advokat_profile->is_verified==0){
+                        $data["is_submit"]=1;
+                    }
 				}
 
 			}
