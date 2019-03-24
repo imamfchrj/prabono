@@ -799,6 +799,7 @@ class Admin_api extends Admin_Controller {
                     $kusus="Kusus";
                 }
                 $result[$i]["jenis_kasus"]=$kusus;
+                $result[$i]["kasus_id"]=$list->id;
                 $result[$i]["user_name"]=$list->firstname_client;
                 $result[$i]["user_lastname"]=$list->lastname_client;
                 $result[$i]["advokat_name"]=$list->firstname;

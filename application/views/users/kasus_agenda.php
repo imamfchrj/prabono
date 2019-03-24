@@ -62,7 +62,7 @@ var id = <?=$kasus->id?>;
                                                 <div class="pad15">
                                                 <h5 class="blue_deep name"><?=$list->title?></h5>
                                                     <ul class="list-inline">
-                                            <?php if(!$list->agenda_id) {?> <li class="list-inline-item"><a href="javascript:void(0)" onclick="get_agenda(<?=$list->id?>);return false;"><i class="fa fa-pencil" aria-hidden="true"></i> Rubah Jadwal</a></li><?php }?> 
+                                            <?php if(!$list->agenda_id) {?> <li class="list-inline-item"><a href="javascript:void(0)" onclick="get_agenda(<?=$list->id?>);return false;"><i class="fa fa-pencil" aria-hidden="true"></i> Ubah Jadwal</a></li><?php }?>
                                                         <li class="list-inline-item"><i class="fa fa-calendar-o" aria-hidden="true"></i> <?=$list->fromdate?></li>
                                                         <li class="list-inline-item"><i class="fa fa-clock-o" aria-hidden="true"></i> <?=$list->todate?></li>
                                                         <li class="list-inline-item"><i class="fa fa-location-arrow" aria-hidden="true"></i> <?=$list->place?></li>
@@ -159,7 +159,7 @@ var id = <?=$kasus->id?>;
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Rubah Agenda</h4>
+        <h4 class="modal-title">Ubah Agenda</h4>
       </div>
       <div class="modal-body">
         <div class="form-group row">
@@ -206,7 +206,7 @@ var id = <?=$kasus->id?>;
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default rubah_agenda_input">Rubah</button>
+        <button type="button" class="btn btn-default rubah_agenda_input">Ubah</button>
       </div>
     </div>
 
