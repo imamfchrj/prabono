@@ -329,6 +329,7 @@ var id = <?=$kasus->id?>;
                     $("#edit_description").val(data.data.description);
                     $("#edit_fromdate_input").val(data.data.fromdate);
                     $("#edit_todate_input").val(data.data.todate);
+                    console.log(data.data)
                 })
                 .fail(function() {
                     if(tmp){
@@ -361,19 +362,18 @@ var id = <?=$kasus->id?>;
         });
 
 
-        $('#edit_fromdate').datetimepicker({
+        $('#edit_fromdate_input').datetimepicker({
 
-        format: 'YYYY-MM-DD  HH:mm',
+            format: 'YYYY-MM-DD  HH:mm',
         });
-        $('#edit_todate').datetimepicker({
-        useCurrent: false, //Important! See issue #edit_`1075
-        format: 'YYYY-MM-DD  HH:mm',
+        $('#edit_todate_input').datetimepicker({
+            format: 'YYYY-MM-DD  HH:mm',
         });
-        $("#edit_fromdate").on("dp.change", function (e) {
-        $('#edit_todate').data("DateTimePicker").minDate(e.date);
+        $("#edit_fromdate_input").on("dp.change", function (e) {
+            $('#edit_todate_input').data("DateTimePicker").minDate(e.date);
         });
-        $("#edit_todate").on("dp.change", function (e) {
-        $('#edit_fromdate').data("DateTimePicker").maxDate(e.date);
+        $("#edit_todate_input").on("dp.change", function (e) {
+            $('#edit_fromdate_input').data("DateTimePicker").maxDate(e.date);
         });
     });
 </script>
