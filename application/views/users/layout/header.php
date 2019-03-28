@@ -119,7 +119,7 @@
                 <div id="nav_menu-2" class="">
                     <nav id="mainnav2" class="mainnav2">
                         <ul class="menu"> 
-                        <a href="<?=base_url()?>users/daftar_kasus"><li>Home</li>
+<!--                        <a href="--><?//=base_url()?><!--users/daftar_kasus"><li>Home</li>-->
                             <a href="<?=base_url()?>users/caradaftar"><li>Cara mendaftar</li></a>
                             <a href="<?=base_url()?>users/daftar_kasus"><li>Daftar Kasus</li></a>
                             <a href="<?=base_url()?>users/selesai"><li>Kasus Saya</li></a>

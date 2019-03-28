@@ -29,7 +29,7 @@ class Admin_nl extends Admin_Controller {
             $this->load->model('admin/auth');
             $user=$this->auth->get_data_user_by_username($this->form_validation->set_value('username'));
             if($user){
-                if($user->password==hashpass_adm($this->form_validation->set_value('password'))){
+                if($user->password==hashpass($this->form_validation->set_value('password'))){
                     $set_session=array(
                         'user_id_admin'	=> $user->id,
                         'username_admin'	=> $user->username ,
@@ -54,7 +54,7 @@ class Admin_nl extends Admin_Controller {
         }
         echo json_encode(array(
             'is_error'=>true,
-            'error_message'=>  "halah"
+            'error_message'=>  $error
         ));
         return;
     }

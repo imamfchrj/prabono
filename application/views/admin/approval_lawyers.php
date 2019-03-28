@@ -53,7 +53,7 @@
                     <hr>
                     <div class="form-layout-footer-imam tx-center">
                         <button class="btn btn-info btn-submit-form" onclick="update(<?=$row->id;?>,1)">Approve</button>
-                        <button class="btn btn-secondary" id="maintabel" onclick="update(<?=$row->id;?>,2)">Reject</button>
+                        <button class="btn btn-secondary" onclick="update(<?=$row->id;?>,0)">Reject</button>
                     </div><!-- form-layout-footer -->
                 </div><!-- br-lawyers-body rounded-10 -->
             </div><!-- row -->
@@ -93,9 +93,6 @@
             );
         }
 
-        $( "#maintabel" ).click(function() {
-            window.location = ROOT+'admin/mst_news_kategori';
-        });
     </script>
 <?php
     $this->load->view('admin/layout/footer');

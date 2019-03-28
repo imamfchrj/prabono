@@ -11,8 +11,8 @@
                                 <div class=" style3">
                                 <div class="widget widget_search widget_search_left" >
                                     <form role="search" method="get" class="search-form" action="#">
-                                        <input type="search" class="search-field" placeholder="Search…" value="" name="s" > 
-                                        <input type="submit" class="search-submit" id="searchwidget" value="">
+<!--                                        <input type="search" class="search-field" placeholder="Search…" value="" name="s" > -->
+<!--                                        <input type="submit" class="search-submit" id="searchwidget" value="">-->
                                     </form>                            
                                 </div>
                                 <h5 class="">Kasus yang dapat dipilih</h5>
