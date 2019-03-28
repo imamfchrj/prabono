@@ -142,7 +142,8 @@
          </div>
       </div>
    </section>
-   <section class="section-video parallax parallax4">
+<!--   <section class="section-video parallax parallax4">-->
+   <section class="section-main-menu">
       <div class="overlay-parallax style3"></div>
       <div class="video">
          <div class="container">

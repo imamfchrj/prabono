@@ -770,7 +770,8 @@ class Admin_api extends Admin_Controller {
             $verified = $this->form_validation->set_value('verified');
 
             $data = array('id' => $id,
-                'is_verified' => $verified
+                'is_verified' => $verified,
+                'is_submit'=>0,
             );
             $data = $this->list_advokat_m->update_value_by_id($id, $data);
             echo json_encode(array(
@@ -799,6 +800,7 @@ class Admin_api extends Admin_Controller {
                     $kusus="Kusus";
                 }
                 $result[$i]["jenis_kasus"]=$kusus;
+                $result[$i]["kasus_id"]=$list->id;
                 $result[$i]["user_name"]=$list->firstname_client;
                 $result[$i]["user_lastname"]=$list->lastname_client;
                 $result[$i]["advokat_name"]=$list->firstname;

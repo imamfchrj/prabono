@@ -181,6 +181,16 @@ class Status_probono_m extends CI_Model
         return false;
     }
 
+    function get_agenda_by_id($id){
+        $this->_select_table_agenda();
+        $this->db->where('a.kasus_id', $id);
+        $query=$this->db->get();
+        if($query){
+            return $query->result();
+        }
+        return false;
+    }
+
     function delete_by_id($id){
         $this->db->where('id', $id);
         $this->db->delete($this->table);

@@ -699,7 +699,7 @@ $(document).ready(function() {
                             <?php $this->load->view('client/term_and_condition')?>
                         </div>
 
-                        <input type="checkbox" id="is_accepted" value="" onclick="is_accept()">   I accept the Term & Condition<br>
+                        <input type="checkbox" id="is_accepted" value="" onclick="is_accept()">   Saya setuju dengan syarat & ketentuan<br>
 
                     </div>
 

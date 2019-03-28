@@ -49,7 +49,7 @@ class List_advokat_m extends CI_Model
 
     function get_all_pending(){
         $this->_select_table();
-        $this->db->where('a.is_verified',0);
+        $this->db->where('a.is_submit',1);
         $query=$this->db->get();
         if($query){
             return $query->result();

@@ -25,7 +25,7 @@
                                         </div>
 
                                         <div class="col-md-12">
-                                            <p>Mohon tunggu kami akan melakukan proses verifikasi <br>otomatis, atau maksimal 24 jam jika manual review diperlukan.</p>
+                                            <p>Mohon tunggu kami akan melakukan proses verifikasi, <br> setelah Anda melengkapi data profile.</p>
                                         </div>
 
                                         <div class="col-md-12" style="height:100px;">
@@ -34,10 +34,10 @@
                                         </div>
 
                                         <div class="col-md-12">
-                                            <p>Kami akan mengirimkan email pemberitahuan setelah validasi selesai.</p>
+<!--                                            <p>Kami akan mengirimkan email pemberitahuan setelah validasi selesai.</p>-->
                                         </div>
                                         <div class="col-md-12">
-                                            <a class="blue" href="<?=base_url()?>/sers/daftar">Kembali ke halaman profile.</a>
+                                            <a class="blue" href="<?=base_url()?>users/daftar">Kembali ke halaman profile.</a>
                                         </div>
                                        
                                         

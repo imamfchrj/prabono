@@ -1,0 +1,1 @@
+alter table advokat_profiles add is_submit tinyint

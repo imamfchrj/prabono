@@ -21,12 +21,13 @@
                 <thead>
                     <tr>
                     <th class="wd-5p">No</th>
-                    <th class="wd-25p ">Judul Kasus</th>
-                    <th class="wd-15p">Jenis Kasus</th>
+                    <th class="wd-20p ">Judul Kasus</th>
+                    <th class="wd-10p">Jenis Kasus</th>
                     <th class="wd-15p">Nama Client</th>
                     <th class="wd-15p">Nama Advokat</th>
                     <th class="wd-15p">Lokasi Kejadian</th>
                     <th class="wd-10p">Status</th>
+                    <th class="wd-10p">Agenda</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -61,6 +62,7 @@ $(function(){
                     value[4] = json.data[i]['advokat_name']+' '+json.data[i]['advokat_lastname'];
                     value[5] = json.data[i]['kota'];
                     value[6] = json.data[i]['status'];
+                    value[7] = '<a class="btn btn-sm btn-primary" href="agenda_detail/'+json.data[i]['kasus_id']+'" title="" onclick=""><i class="glyphicon glyphicon-pencil"></i> Detail</a>';
                     data[i]=value;
                 }
                 console.log(data);

@@ -151,6 +151,16 @@ class Admin extends Admin_Controller {
 		$this->load->view('admin/status_probono',$data);
 	}
 
+    public function agenda_detail($id=0)
+    {
+        $this->load->model(array('admin/status_probono_m',
+            'client/kasus'));
+        $data['tes']=$id;
+        $data['values'] =$this->status_probono_m->get_agenda_by_id($id);
+        $data['kasus'] =$this->kasus->get_kasus_by_status_id_kasus($id);
+        $this->load->view('admin/agenda_detail',$data);
+    }
+
     public function tracking_agenda()
     {
         $data['menu']="agenda";
