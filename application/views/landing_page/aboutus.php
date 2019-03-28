@@ -170,6 +170,26 @@
                                     </span>
                                 </div>
                             </form>*/?>
+                            <form id="requestform" class="flat-request-form style3" method="post" action="./contact/contact-process.php" novalidate="novalidate">
+                                <h3 class="title-text text-center">Request Call Back.</h3>
+                                <div class="field clearfix"> 
+                                    <span class="flat-input wrap-input-name">
+                                        <input type="text" value="" tabindex="1" placeholder="Your name" name="name" id="name" required="">
+                                    </span>
+                                    <span class="flat-input wrap-input-phone">
+                                        <input type="text" value="" tabindex="2" placeholder="You phone number" name="phone" id="phone" required="">
+                                    </span>
+                                    <div class="flat-input wrap-input-calendar clearfix">
+                                        <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                                            <input class="form-control" placeholder="Set time" type="text" value="" readonly>
+                                            <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                                        </div>
+                                    </div>
+                                    <span class="flat-form wrap-btn text-center">
+                                        <button name="submit" type="submit" class="flat-button" id="submit" title="Submit now">SUBMIT</button>
+                                    </span>
+                                </div>
+                            </form>
                         </div>
                     </div>
                     <?php $this->load->view('landing_page/widget/widget-3');?>

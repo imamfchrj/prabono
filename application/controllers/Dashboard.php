@@ -72,4 +72,35 @@ class Dashboard extends CI_Controller {
 		$this->load->view('landing_page/team',$data);
 	}
 
+	public function ajax_saran()
+	{
+		$this->form_validation->set_rules('name', "Nama", 'trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('hp', "HP", 'trim|xss_clean|max_length[50]');
+		$this->form_validation->set_rules('saran', "Saran", 'trim|xss_clean|max_length[250]');
+        
+
+		if($this->form_validation->run()){
+			
+			$this->load->model('saran_m');
+			
+			$data=array(
+				"nama"=>$this->form_validation->set_value('name'),
+				"hp"=>$this->form_validation->set_value('hp'),
+				"saran"=>$this->form_validation->set_value('saran'),
+			);
+
+			$kasus=$this->saran_m->set($data);
+
+			return print(json_encode(array(
+				'is_error'=>false
+			)));
+
+		}
+
+		return print(json_encode(array(
+			'is_error'=>true,
+			'error_message'=>  validation_errors()
+		)));
+	}
+
 }
