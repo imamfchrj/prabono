@@ -183,7 +183,8 @@
                                         <?=$notif_limit["html"]?>
                                         </ul>
                                     </li>
-                                    <li class="footer"><a href="<?=base_url()?>clients/notification">View all</a></li>
+                                    <li class="footer"><a href="<?=base_url()?>clients/notification">Tandai baca</a></li>
+                                    <li class="footer"><a href="<?=base_url()?>clients/notification">Lihat semua</a></li>
                                     </ul>
                                 </li>
                             </ul>

@@ -245,8 +245,9 @@ class Users extends Advokat_Controller {
 		$data['menu']="notification";
 
 		$id=$this->get_user_id();
-
+		
 		$this->load->model('client/notification_m');
+		$this->notification_m->read_all($id,1);
 		$data["notification"]=$this->notification_m->get_all($id,1);
 		$this->load->view('users/notification',$data);
 	}

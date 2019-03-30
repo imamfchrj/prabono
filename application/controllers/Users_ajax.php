@@ -66,7 +66,8 @@ class Users_ajax extends Advokat_Controller {
                     'is_error'=>true,
                     'error_message'=>  "Silahkan melakukan relogin kembali."
                 )));
-            }
+			}
+			
             $id=$this->form_validation->set_value('id_kasus');
             $data=array(
                 "advokat_id"=>$advokat_id,
@@ -74,7 +75,7 @@ class Users_ajax extends Advokat_Controller {
             );
 			$this->kasus->update_value_by_id($id,$data);
 			//disini belum
-			$kasus=$this->kasus->get_kasus_by_status_id_kasus($id,2);
+			$kasus=$this->kasus->get_kasus_by_only_id($id);
 			if($kasus){
 				send_notif($kasus->user_id,"clients/kasus_aktif_singgle/".$id,"Kasus Anda <b>".$kasus->judul."</b> di terima! Lihat disini untuk detailnya.","advokat",0);	
 			}

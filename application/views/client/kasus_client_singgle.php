@@ -165,7 +165,7 @@
                 })
                 .done(function(data) {
                     if(data.is_error==1){ 
-                        $("#error_rubah").html(data.error);
+                        $("#error_rubah").html(data.error_message);
                         return; 
                     }
                     
@@ -198,7 +198,7 @@
                     })
                     .done(function(data) {
                         if(data.is_error==1){ 
-                            alert_error(data.error);
+                            alert_error(data.error_message);
                             return; 
                         }
                         alert("Kasus Berhasil diterima");
@@ -232,7 +232,7 @@
                     })
                     .done(function(data) {
                         if(data.is_error==1){ 
-                            alert_error(data.error);
+                            alert_error(data.error_message);
                             return; 
                         }
                         alert("Kasus Berhasil Ditolak");

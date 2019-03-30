@@ -99,6 +99,7 @@ class Clients extends Users_Controller {
 		$id=$this->get_user_id();
 
 		$this->load->model('client/notification_m');
+		$this->notification_m->read_all($id,0);
 		$data["notification"]=$this->notification_m->get_all($id,0);
 		$this->load->view('client/notification',$data);
 	}

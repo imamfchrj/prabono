@@ -1,10 +1,47 @@
 <div class="col-md-3">
    <div class="sidebar">
       <div class="widget widget_contact2">
-         <h5 class="widget-title style2">Butuh bantuan kami?</h5>
-         <p>Hubungi kami di kantor Probono terdekat dengan Anda atau kirimkan pertanyaan bisnis secara online. </p>
-         <button type="button" class="flat-button">Hubungi Kami</button>
+         <h5 class="widget-title style2">Kritik & Saran</h5>
+          
+         <span class="flat-input wrap-input-name">
+             <input type="text" value="" id="name" style="width:100%;" tabindex="1" placeholder="Nama" name="name" required="">
+         </span>
+         <span class="flat-input wrap-input-name">
+             <input type="text" value="" id="hp" style="width:100%;" tabindex="1" placeholder="No Hp" name="hp" required="">
+         </span>
+         <span class="flat-input wrap-input-name">
+             <textarea  id="saran" cols="10" rows="4"></textarea>
+         </span>
+         <button type="button" onclick="simpan()" class="flat-button">Kirim</button>
       </div>
+
+      <script>
+         function simpan() {
+            $.ajax({
+               url :       ROOT+'/dashboard/ajax_saran',
+               dataType :  'json',
+               type :      'post',
+               data: {
+                  name: $("#name").val(),
+                  hp: $("#hp").val(),
+                  saran: $("#saran").val(),
+               } 
+            })
+            .done(function(data) {
+                if(data.is_error){
+                    alert(data.error_message);
+                    return;
+                }
+                location.reload();
+            })
+            .always(function(){
+            })
+            .error(function(data){
+                }
+            );
+         }
+      </script>
+      
       <!-- /.widget-contact -->
       <div class="widget widget_download">
          <a href="#"><i class="fa fa-file-word-o"></i>Brosur.doc</a>

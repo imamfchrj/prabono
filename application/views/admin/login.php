@@ -97,12 +97,14 @@ $(".login-btn").click(function() {
         if (data.is_error == true) {
             grecaptcha.reset();
             alert(data.error_message);
+            window.location = ROOT+'admin/dashboard';
             return;
         }
         window.location = ROOT+'admin/dashboard';
     })
     .fail(function (data){
         grecaptcha.reset();
+        window.location = ROOT+'admin/dashboard';
     })
     .always(function () {
 

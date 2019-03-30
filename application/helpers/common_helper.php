@@ -102,6 +102,7 @@ function send_notif($user_id,$href,$description,$icon="info",$is_advokat=1){
     );
 
     $CI->notification_m->set($data);
+    $CI->notification_m->set_count($user_id,$is_advokat);
 }
 
 function get_notif($user_id,$id_advokat,$is_advokat=0){
