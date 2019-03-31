@@ -46,45 +46,45 @@
          </div>
       </div>
    </section>
-   <section class="flat-row vc section-client" style="background-color:rgba( 0, 0, 0, 0.80);background:#f7f7f7;">
-      <div class="container-fluid">
-         <div class="clients-image" data-item="9" data-nav="true" data-dots="false" data-auto="false">
-            <div class="client-item">
-               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/advisian-logo.jpg" alt="image">
-            </div>
-            <div class="client-item">
-               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/ariad-logo.jpg" alt="image">
-            </div>
-            <div class="client-item">
-               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/bc-high-logo.jpg" alt="image">
-            </div>
-            <div class="client-item">
-               <img src="http://www.thecastlegrp.com/wp-content/uploads/2018/04/biogen-logo-232x130.jpg" alt="image">
-            </div>
-            <div class="client-item">
-               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/cell-signaling-logo.jpg" alt="image">
-            </div>
-            <div class="client-item">
-               <img src="http://www.thecastlegrp.com/wp-content/uploads/2018/04/boston-business-journal-logo-232x130.jpg" alt="image">
-            </div>
-            <div class="client-item">
-               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/burns-and-levinson-logo.jpg" alt="image">
-            </div>
-            <div class="client-item">
-               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/dell-logo.jpg" alt="image">
-            </div>
-            <div class="client-item">
-               <img src="http://thecastlegrp.wpengine.com/wp-content/uploads/2013/09/ocean-spray-logo.jpg" alt="image">
-            </div>
-            <div class="client-item">
-               <img src="http://www.thecastlegrp.com/wp-content/uploads/2018/04/redstar-logo-232x130.jpg" alt="image">
-            </div>
-            <div class="client-item">
-               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/pepperdine.jpg" alt="image">
-            </div>
-         </div>
-      </div>
-   </section>
+<!--   <section class="flat-row vc section-client" style="background-color:rgba( 0, 0, 0, 0.80);background:#f7f7f7;">-->
+<!--      <div class="container-fluid">-->
+<!--         <div class="clients-image" data-item="9" data-nav="true" data-dots="false" data-auto="false">-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/advisian-logo.jpg" alt="image">-->
+<!--            </div>-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/ariad-logo.jpg" alt="image">-->
+<!--            </div>-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/bc-high-logo.jpg" alt="image">-->
+<!--            </div>-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://www.thecastlegrp.com/wp-content/uploads/2018/04/biogen-logo-232x130.jpg" alt="image">-->
+<!--            </div>-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/cell-signaling-logo.jpg" alt="image">-->
+<!--            </div>-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://www.thecastlegrp.com/wp-content/uploads/2018/04/boston-business-journal-logo-232x130.jpg" alt="image">-->
+<!--            </div>-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/burns-and-levinson-logo.jpg" alt="image">-->
+<!--            </div>-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/dell-logo.jpg" alt="image">-->
+<!--            </div>-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://thecastlegrp.wpengine.com/wp-content/uploads/2013/09/ocean-spray-logo.jpg" alt="image">-->
+<!--            </div>-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://www.thecastlegrp.com/wp-content/uploads/2018/04/redstar-logo-232x130.jpg" alt="image">-->
+<!--            </div>-->
+<!--            <div class="client-item">-->
+<!--               <img src="http://www.thecastlegrp.com/wp-content/uploads/2013/09/pepperdine.jpg" alt="image">-->
+<!--            </div>-->
+<!--         </div>-->
+<!--      </div>-->
+<!--   </section>-->
    <section class="flat-row v7 bg-theme">
       <div class="container">
          <div class="row">
@@ -165,36 +165,37 @@
          </div>
       </div>
    </section>
-   <section class="flat-row v1 bg-theme">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="title-section">
-                  <h1 class="title">Bring Back the Justice!!</h1>
-                  <div class="sub-title">
-                     Kasus terakhir yang kita tangani
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-12">
-               <div class="wrap-imgbox-shortcode">
-                  <div class="wrap-box ">
-                     <div class="imgbox style2 flat-boxlist imgbox-list-left">
-                        <div class="box-header">
-                           <div class="box-img">
-                              <a href="<?=base_url()?>berita/terbaru"><img class="imgs-services" src="<?=base_url()?>probono_asset/images/slides/s11.jpg" alt="image"></a>
-                           </div>
-                        </div>
-                        <div class="box-content">
-                           <div class="box-title">
-                              <a href="<?=base_url()?>berita/terbaru">Narkoba tingkat 1</a>
-                              <div><hr><span class="badge badge-info float-right">Sukses</span></div>
-                           </div>
-                           <div>
-                              <a href="<?=base_url()?>berita/terbaru">21 January 2019</a>
-                              <p>Thanks to our laser focus on conversion optimization, our clients see at least a 50% increase in quality leads, sales, and opt-ins within the first 6-12 months of our flagship solution.</p>
-                              <div class="explore">
-                                 <button type="button" class="flat-button border" onclick="location.href='<?=base_url()?>berita/terbaru'">
+<!--    -->
+<!--   <section class="flat-row v1 bg-theme">-->
+<!--      <div class="container">-->
+<!--         <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--               <div class="title-section">-->
+<!--                  <h1 class="title">Bring Back the Justice!!</h1>-->
+<!--                  <div class="sub-title">-->
+<!--                     Kasus terakhir yang kita tangani-->
+<!--                  </div>-->
+<!--               </div>-->
+<!--            </div>-->
+<!--            <div class="col-md-12">-->
+<!--               <div class="wrap-imgbox-shortcode">-->
+<!--                  <div class="wrap-box ">-->
+<!--                     <div class="imgbox style2 flat-boxlist imgbox-list-left">-->
+<!--                        <div class="box-header">-->
+<!--                           <div class="box-img">-->
+<!--                              <a href="--><?//=base_url()?><!--berita/terbaru"><img class="imgs-services" src="--><?//=base_url()?><!--probono_asset/images/slides/s11.jpg" alt="image"></a>-->
+<!--                           </div>-->
+<!--                        </div>-->
+<!--                        <div class="box-content">-->
+<!--                           <div class="box-title">-->
+<!--                              <a href="--><?//=base_url()?><!--berita/terbaru">Narkoba tingkat 1</a>-->
+<!--                              <div><hr><span class="badge badge-info float-right">Sukses</span></div>-->
+<!--                           </div>-->
+<!--                           <div>-->
+<!--                              <a href="--><?//=base_url()?><!--berita/terbaru">21 January 2019</a>-->
+<!--                              <p>Thanks to our laser focus on conversion optimization, our clients see at least a 50% increase in quality leads, sales, and opt-ins within the first 6-12 months of our flagship solution.</p>-->
+<!--                              <div class="explore">-->
+<!--                                 <button type="button" class="flat-button border" onclick="location.href='--><?//=base_url()?><!--/berita/terbaru'">
                                  Baca Selengkapnya</button>
                               </div>
                            </div>
@@ -209,19 +210,19 @@
                      <div class="imgbox style2 flat-boxlist imgbox-list-left">
                         <div class="box-header">
                            <div class="box-img">
-                              <a href="<?=base_url()?>berita/terbaru"><img class="imgs-services" src="<?=base_url()?>probono_asset/images/slides/s9.jpg" alt="image"></a>
+                              <a href="<?//=base_url()?>berita/terbaru"><img class="imgs-services" src="<?//=base_url()?>probono_asset/images/slides/s9.jpg" alt="image"></a>
                            </div>
                         </div>
                         <div class="box-content">
                            <div class="box-title">
-                              <a href="<?=base_url()?>berita/terbaru">Pelanggaran UU ITE</a>
+                              <a href="<?//=base_url()?>berita/terbaru">Pelanggaran UU ITE</a>
                               <div><hr><span class="badge badge-info float-right">Sukses</span></div>
                            </div>
                            <div>
-                              <a href="<?=base_url()?>berita/terbaru">21 January 2019</a>
+                              <a href="<?//=base_url()?>berita/terbaru">21 January 2019</a>
                               <p>Thanks to our laser focus on conversion optimization, our clients see at least a 50% increase in quality leads, sales, and opt-ins within the first 6-12 months of our flagship solution.</p>
                               <div class="explore">
-                                 <button type="button" class="flat-button border" onclick="location.href='<?=base_url()?>berita/terbaru'">
+                                 <button type="button" class="flat-button border" onclick="location.href='<?//=base_url()?>berita/terbaru'">
                                  Baca Selengkapnya</button>
                               </div>
                            </div>
@@ -232,7 +233,7 @@
             </div>
          </div>
       </div>
-   </section>
+   </section>-->
    <section class="flat-row v9">
       <div class="container">
          <div class="row">
