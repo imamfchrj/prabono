@@ -757,6 +757,13 @@ class Admin_api extends Admin_Controller {
         }
     }
 
+    public function admin_delete()
+    {
+        $this->load->model('admin/list_admin_m');
+        $id=$this->input->post('id');
+        $this->list_admin_m->delete_by_id($id);
+    }
+
     public function advokat_approve()
     {
 
