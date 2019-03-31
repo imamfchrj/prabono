@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
+      <link href="<?=base_url()?>probono_asset/icon/favicon.png" rel="icon">
     <title>Probono</title>
 
     <!-- vendor css -->
@@ -18,6 +18,7 @@
 
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="<?=base_url()?>assets_123/css/bracket.css">
+
   </head>
   <script>
     var ROOT="<?=base_url()?>";
