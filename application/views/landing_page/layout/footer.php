@@ -88,7 +88,7 @@
 <!-- /.logo -->
 <!--                        </div>-->
                         <div class="copy-right">
-                            <p>© 2019 Redcloud Project. All Rights Reserved. <a href="">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
+                            <p>© 2019 IFFS Project. All Rights Reserved. <a href="">Terms of Use</a> and <a href="#">Privacy Policy</a></p>
                         </div>
                     </div>
 <!--                    <div class="col-md-8 col-md-offset-2">-->
