@@ -690,6 +690,32 @@ class Admin_api extends Admin_Controller {
         }
     }
 
+    public function client_update()
+    {
+
+        $this->load->model('admin/list_client_m');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('id', 'id admin', 'trim|required|xss_clean|numeric|htmlentities');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|htmlentities|required');
+
+        if ($this->form_validation->run()) {
+
+            $id=$this->form_validation->set_value('id');
+            $password=$this->form_validation->set_value('password');
+
+            $data=array(
+                'password' => hashpass($password),
+            );
+
+            $data=$this->list_client_m->update_value_by_id_user($id,$data);
+            echo json_encode(array(
+                'is_error'=>false,
+                'id'=>$data
+            ));
+            return;
+        }
+    }
+
     public function admin_users_get($id="")
     {
 
@@ -786,6 +812,32 @@ class Admin_api extends Admin_Controller {
                 'id' => $data
             ));
 
+            return;
+        }
+    }
+
+    public function advokat_update()
+    {
+
+        $this->load->model('admin/list_advokat_m');
+        $this->load->library('form_validation');
+        $this->form_validation->set_rules('id', 'id admin', 'trim|required|xss_clean|numeric|htmlentities');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|xss_clean|htmlentities|required');
+
+        if ($this->form_validation->run()) {
+
+            $id=$this->form_validation->set_value('id');
+            $password=$this->form_validation->set_value('password');
+
+            $data=array(
+                'password' => hashpass($password),
+            );
+
+            $data=$this->list_advokat_m->update_value_by_id_user($id,$data);
+            echo json_encode(array(
+                'is_error'=>false,
+                'id'=>$data
+            ));
             return;
         }
     }

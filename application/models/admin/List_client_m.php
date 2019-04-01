@@ -87,4 +87,11 @@ class List_client_m extends CI_Model {
         $this->db->delete($this->table);
     }
 
+    function update_value_by_id_user($id,$value){
+        $data = $value;
+        $this->db->where('id', $id);
+        $data = $this->db->update($this->table_users, $data);
+        return $data;
+    }
+
 }

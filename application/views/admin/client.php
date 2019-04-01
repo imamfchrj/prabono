@@ -59,7 +59,7 @@
                         value[2] = json.data[i]['email'];
                         value[3] = json.data[i]['hp'];
                         value[4] = '<a class="btn btn-sm btn-primary" href="act_client_profil/'+json.data[i]['id']+'" title="Profile" onclick=""><i class="glyphicon glyphicon-pencil"></i> Profile</a>';
-                        //value[4] += '&nbsp;<a class="btn btn-sm btn-danger" href="" title="Block" onclick=""><i class="glyphicon glyphicon-trash"></i> Block</a>';
+                        value[4] += '&nbsp;<a class="btn btn-sm btn-success" href="act_client_edit/'+json.data[i]['id']+'" title="Change" onclick=""><i class="glyphicon glyphicon-trash"></i> Edit </a>';
                         data[i]=value;
                     }
                     console.log(data);
