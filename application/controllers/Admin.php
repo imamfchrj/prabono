@@ -65,6 +65,24 @@ class Admin extends Admin_Controller {
         $this->load->view('admin/act_client_profil',$data);
     }
 
+    public function act_client_edit($id=0)
+    {
+        $data['menu']="client";
+        if($id){
+            $this->load->model('admin/list_client_m');
+            $this->form_validation->set_data(array(
+                'id'    =>  $id
+            ));
+            $this->form_validation->set_rules('id', 'id client', 'trim|required|xss_clean|numeric|htmlentities');
+
+            if ($this->form_validation->run()) {
+                $id=$this->form_validation->set_value('id');
+                $data['values']=$this->list_client_m->get_by_id($id);
+            }
+        }
+        $this->load->view('admin/form_client',$data);
+    }
+
     public function admin()
     {
         $data['menu']="admin";
@@ -113,6 +131,24 @@ class Admin extends Admin_Controller {
         }
 
         $this->load->view('admin/act_lawyers_profil',$data);
+    }
+
+    public function act_lawyers_edit($id=0)
+    {
+        $data['menu']="lawyers";
+        if($id){
+            $this->load->model('admin/list_advokat_m');
+            $this->form_validation->set_data(array(
+                'id'    =>  $id
+            ));
+            $this->form_validation->set_rules('id', 'id advokat', 'trim|required|xss_clean|numeric|htmlentities');
+
+            if ($this->form_validation->run()) {
+                $id=$this->form_validation->set_value('id');
+                $data['values']=$this->list_advokat_m->get_by_id($id);
+            }
+        }
+        $this->load->view('admin/form_advokat',$data);
     }
 
 	public function kpi_lawyers()

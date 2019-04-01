@@ -138,7 +138,7 @@
 <!--                        <li><a href="#"><i class="fa fa-rss"></i></a></li>-->
 <!--                    </ul>-->
                     <div class="copy-right">
-                        <p>Copyright © 2018 <a href="#">Redcloud Project</a>.<br>All Rights Reserved.</p>
+                        <p>Copyright © 2018 <a href="#">IFFS Project</a>.<br>All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

@@ -136,7 +136,7 @@
                         <li><a href="#"><i class=""></i></a></li>
                     </ul>
                     <div class="copy-right">
-                        <p>Copyright © 2019 <a href="#">Redcloud Project</a>.<br>All Rights Reserved.</p>
+                        <p>Copyright © 2019 <a href="#">IFFS Project</a>.<br>All Rights Reserved.</p>
                     </div>
                 </div>
             </div>

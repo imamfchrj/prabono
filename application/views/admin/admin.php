@@ -59,7 +59,7 @@
                         value[1] = json.data[i]['username'];
                         value[2] = json.data[i]['status_admin'];
                         value[3] = '<a class="btn btn-sm btn-primary" href="form_user/'+json.data[i]['id']+'" title="Edit" onclick=""><i class="glyphicon glyphicon-pencil"></i> Edit</a>';
-                        value[3] += '&nbsp;<a class="btn btn-sm btn-danger" href="" title="Hapus" onclick="delete_jasa('+json.data[i]['id']+')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';data[i]=value;
+                        value[3] += '&nbsp;<a class="btn btn-sm btn-danger" href="" title="Hapus" onclick="delete_admin('+json.data[i]['id']+')"><i class="glyphicon glyphicon-trash"></i> Delete</a>';data[i]=value;
                     }
                     console.log(data);
                     return data;
@@ -73,6 +73,23 @@
         });
 
     });
+
+    function delete_admin(id) {
+        if (confirm('Are you sure to delete..?')) {
+            //alert(id);
+            $.ajax({
+                url: ROOT+'admin_api/admin_delete/',
+                dataType: 'json',
+                type: 'post',
+                data: {
+                    id: id
+                },
+                success: function(response) {
+                    window.location = ROOT+'admin/admin';
+                }
+            })
+        }
+    }
 </script>
 <?php
     $this->load->view('admin/layout/footer');

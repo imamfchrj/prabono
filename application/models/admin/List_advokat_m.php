@@ -50,6 +50,7 @@ class List_advokat_m extends CI_Model
     function get_all_pending(){
         $this->_select_table();
         $this->db->where('a.is_submit',1);
+        $this->db->where('a.is_verified',0);
         $query=$this->db->get();
         if($query){
             return $query->result();
@@ -105,6 +106,13 @@ class List_advokat_m extends CI_Model
     function delete_by_id($id){
         $this->db->where('id', $id);
         $this->db->delete($this->table);
+    }
+
+    function update_value_by_id_user($id,$value){
+        $data = $value;
+        $this->db->where('id', $id);
+        $data = $this->db->update($this->table_users, $data);
+        return $data;
     }
 
 }

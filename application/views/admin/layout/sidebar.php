@@ -5,8 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-    <title>Bracket Responsive Bootstrap 4 Admin Template</title>
+      <link href="<?=base_url()?>probono_asset/icon/favicon.png" rel="icon">
+    <title>Probono</title>
 
     <!-- vendor css -->
     <link href="<?=base_url()?>assets_123/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -18,6 +18,7 @@
 
     <!-- Bracket CSS -->
     <link rel="stylesheet" href="<?=base_url()?>assets_123/css/bracket.css">
+
   </head>
   <script>
     var ROOT="<?=base_url()?>";
@@ -86,10 +87,10 @@
         </a><!-- br-menu-link -->
         <ul class="br-menu-sub nav flex-column">
           <li class="nav-item"><a href="<?=base_url()?>admin/mst_category" class="nav-link <?php if($sub_menu == 'mst_category') echo 'active'?>">Kategori Probono</a></li>
-          <li class="nav-item"><a href="<?=base_url()?>admin/mst_news" class="nav-link <?php if($sub_menu == 'mst_news') echo 'active'?>">Berita</a></li>
-          <li class="nav-item"><a href="<?=base_url()?>admin/mst_news_kategori" class="nav-link <?php if($sub_menu == 'mst_news_kategori') echo 'active'?>">Kategori Berita</a></li>
-          <li class="nav-item"><a href="<?=base_url()?>admin/mst_jasa" class="nav-link <?php if($sub_menu == 'mst_jasa') echo 'active'?>">Jasa</a></li>
-          <li class="nav-item"><a href="<?=base_url()?>admin/mst_publikasi" class="nav-link <?php if($sub_menu == 'mst_publikasi') echo 'active'?>">Publikasi</a></li>
+<!--          <li class="nav-item"><a href="--><?//=base_url()?><!--admin/mst_news" class="nav-link --><?php //if($sub_menu == 'mst_news') echo 'active'?><!--">Berita</a></li>-->
+<!--          <li class="nav-item"><a href="--><?//=base_url()?><!--admin/mst_news_kategori" class="nav-link --><?php //if($sub_menu == 'mst_news_kategori') echo 'active'?><!--">Kategori Berita</a></li>-->
+<!--          <li class="nav-item"><a href="--><?//=base_url()?><!--admin/mst_jasa" class="nav-link --><?php //if($sub_menu == 'mst_jasa') echo 'active'?><!--">Jasa</a></li>-->
+<!--          <li class="nav-item"><a href="--><?//=base_url()?><!--admin/mst_publikasi" class="nav-link --><?php //if($sub_menu == 'mst_publikasi') echo 'active'?><!--">Publikasi</a></li>-->
         </ul>
         <!--<a href="#" class="br-menu-link <?php if($menu == 'report') echo 'active show-sub'?>">
           <div class="br-menu-item">

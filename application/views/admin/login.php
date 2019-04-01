@@ -4,8 +4,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <title>Bracket Responsive Bootstrap 4 Admin Template</title>
+    <link href="<?=base_url()?>probono_asset/icon/favicon.png" rel="icon">
+    <title>Probono</title>
 
     <!-- vendor css -->
     <link href="<?=base_url()?>assets_123/lib/font-awesome/css/font-awesome.css" rel="stylesheet">
