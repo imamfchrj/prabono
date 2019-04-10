@@ -1,6 +1,16 @@
 <?php $this->load->view('landing_page/layout/header')?>
 
     <main class="main-content" id="main-content">
+
+        <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript" src="//gitcdn.link/repo/Lwangaman/jQuery-Clock-Plugin/master/jqClock.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                customtimestamp = parseInt($("#jqclock").data("time"));
+                $("#jqclock").clock({"langSet":"en","timestamp":customtimestamp});
+                $("#jqclock-local").clock({"langSet":"en"});
+            });
+        </script>
         
         <!-- Services -->
         <section class="flat-row section-services pd-bottom6">
@@ -38,6 +48,9 @@
                                         <a href="http://instagram.com/mappifhui" class="instagram"><i class="fa fa-instagram"></i></a>
                                         </li>
                                     </ul>
+                                        <div id="jqclock" class="jqclock" data-time="<?php echo time(); ?>"></div>
+                                        <!--//local time
+                                        <div id="jqclock-local" class="jqclock"></div>-->
                                 </div>
                             </div>
                         </div>  
