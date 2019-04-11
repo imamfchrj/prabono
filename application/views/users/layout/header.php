@@ -74,6 +74,19 @@
     <script>
         var ROOT = "<?=base_url()?>";
     </script>
+
+    <!-- time zone -->
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script type="text/javascript" src="//gitcdn.link/repo/Lwangaman/jQuery-Clock-Plugin/master/jqClock.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            customtimestamp = parseInt($("#jqclock").data("time"));
+            $("#jqclock").clock({"langSet":"en","timestamp":customtimestamp});
+            $("#jqclock-local").clock({"langSet":"en"});
+        });
+    </script>
+
+
     <!-- Preloader -->
     <div class="loading-overlay">
     </div>  
@@ -139,6 +152,7 @@
 <!--                    </ul>-->
                     <div class="copy-right">
                         <p>Copyright © 2018 <a href="#">IFFS Project</a>.<br>All Rights Reserved.</p>
+                        <div id="jqclock" class="jqclock" data-time="<?php echo time(); ?>"></div>
                     </div>
                 </div>
             </div>
