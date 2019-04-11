@@ -71,12 +71,7 @@
     <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
     <script src="<?=base_url()?>probono_asset/revolution/js/slider.js"></script>
 
-    <script>
-        var ROOT = "<?=base_url()?>";
-    </script>
-
     <!-- time zone -->
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <script type="text/javascript" src="//gitcdn.link/repo/Lwangaman/jQuery-Clock-Plugin/master/jqClock.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function(){
@@ -84,6 +79,10 @@
             $("#jqclock").clock({"langSet":"en","timestamp":customtimestamp});
             $("#jqclock-local").clock({"langSet":"en"});
         });
+    </script>
+
+    <script>
+        var ROOT = "<?=base_url()?>";
     </script>
 
 
