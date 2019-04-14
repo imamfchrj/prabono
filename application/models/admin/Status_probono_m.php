@@ -75,6 +75,7 @@ class Status_probono_m extends CI_Model
         $this->db->join($this->table_users_profile.' as ca','ca.user_id=c.id');
         $this->db->join($this->table_users_advokat.' as d','d.id=a.advokat_id');
         $this->db->join($this->table_users_advokat_profile.' as da','da.user_id=d.id');
+        $this->db->join($this->table_timesheet.' as e','a.id=e.agenda_id');
 
     }
 
@@ -174,6 +175,7 @@ class Status_probono_m extends CI_Model
     function get_kpi_by_id($id){
         $this->_select_table_agenda();
         $this->db->where('a.advokat_id', $id);
+        $this->db->where('a.is_accept', 1);
         $query=$this->db->get();
         if($query){
             return $query->result();

@@ -95,6 +95,7 @@ var id = <?=$kasus->id?>;
                     type: 'post',
                     dataType: 'json',
                     data: {
+                        kasus_id :id,
                         agenda_id :$id,
 
                     }
