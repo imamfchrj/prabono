@@ -71,9 +71,22 @@
     <script src="<?=base_url()?>probono_asset/revolution/js/jquery.themepunch.revolution.min.js"></script>
     <script src="<?=base_url()?>probono_asset/revolution/js/slider.js"></script>
 
+    <script type="text/javascript" src="//gitcdn.link/repo/Lwangaman/jQuery-Clock-Plugin/master/jqClock.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            customtimestamp = parseInt($("#jqclock").data("time"));
+            $("#jqclock").clock({"langSet":"en","timestamp":customtimestamp});
+            $("#jqclock-local").clock({"langSet":"en"});
+        });
+    </script>
     <script>
         var ROOT = "<?=base_url()?>";
     </script>
+
+
+
+    <!-- time zone -->
+
     <!-- Preloader -->
     <div class="loading-overlay">
     </div>  
@@ -137,6 +150,7 @@
                     </ul>
                     <div class="copy-right">
                         <p>Copyright © 2019 <a href="#">IFFS Project</a>.<br>All Rights Reserved.</p>
+                        <div id="jqclock" class="jqclock" data-time="<?php echo time(); ?>"></div>
                     </div>
                 </div>
             </div>
