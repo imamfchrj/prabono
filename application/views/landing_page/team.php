@@ -37,18 +37,20 @@
                                         3.	Melakukan otoritas pemberdayaan masyarakat demi kepentingan masyarakat dan ilmu pengetahuan.
                                     </p>
                                     <h6 class="name">Kontak</h6>
+
+                                    <div class="textwidget"><iframe src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15861.008770581555!2d106.82925419049077!3d-6.361397169498871!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1462122921734" frameborder="0" style="border:0" allowfullscreen></iframe></div>
                                     <ul class="info-team">
                                         <li><span>Alamat:</span>Fakultas Hukum Universitas Indonesia, Gedung D, Lantai 4
                                         </li>
                                         <li><span></span>Ruang 404 Kampus UI Depok 16424</li>
                                         <li><span>Email:</span>office@mappifhui.org</li>
                                         <li class="team-social"><span>Social:</span>
-                                        <a href="http://www.facebook.com/mappifhui" class="facebook"><i class="fa fa-facebook"></i></a>
-                                        <a href="http://twitter.com/mappifhui" class="twitter"><i class="fa fa-twitter"></i></a>
-                                        <a href="http://instagram.com/mappifhui" class="instagram"><i class="fa fa-instagram"></i></a>
+                                            <a href="http://www.facebook.com/mappifhui" class="facebook"><i class="fa fa-facebook"></i></a>
+                                            <a href="http://twitter.com/mappifhui" class="twitter"><i class="fa fa-twitter"></i></a>
+                                            <a href="http://instagram.com/mappifhui" class="instagram"><i class="fa fa-instagram"></i></a>
                                         </li>
                                     </ul>
-                                        <div id="jqclock" class="jqclock" data-time="<?php echo time(); ?>"></div>
+<!--                                        <div id="jqclock" class="jqclock" data-time="--><?php //echo time(); ?><!--"></div>-->
                                         <!--//local time
                                         <div id="jqclock-local" class="jqclock"></div>-->
                                 </div>

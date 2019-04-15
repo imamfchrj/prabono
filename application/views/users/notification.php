@@ -24,6 +24,15 @@
                                     <div class="content">
                                         <h5>Pemberitahuan Anda</h5>
                                         <hr>
+                                        <?php if(count($notification) < 1){?>
+                                            <div class="col-md-12 text-center">
+                                                <div class="field clearfix " style="margin-top:24px;">
+                                                    <div class="form-group row form-biodata" style="background:black;">
+                                                        <div href="#" class="blue_deep form-control col-md-12">Notification Tidak Ditemukan</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php }?>
                                             <table class="table" id="container">
                                                 <?php foreach($notification as $list){?>
                                                 <tr class='clickable-row' data-href='<?=base_url()?><?=$list->href?>' >

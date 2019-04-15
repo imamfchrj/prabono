@@ -45,7 +45,7 @@
                                         <?php if(count($timesheet)==0){?>
                                         <div class="row-striped">
                                             <div class="pad15">
-                                                <p>Agenda tidak ditembukan</p>
+                                                <p>Agenda tidak ditemukan</p>
                                             </div>
                                         </div>
                                             
