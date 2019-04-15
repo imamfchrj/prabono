@@ -32,8 +32,14 @@ class Users extends Advokat_Controller {
 
 	public function daftar_kasus()
 	{
+		$search = $this->input->get("search");
 		$this->load->model('client/kasus');
-		$data['kasus']=$this->kasus->get_kasus_by_status(1);
+		$data['kasus']=array();
+		if($search) {
+			$data['kasus']=$this->kasus->get_kasus_by_status(1,0,$search);
+		}else{
+			$data['kasus']=$this->kasus->get_kasus_by_status(1);
+		}
 		$this->load->view('users/daftar_kasus',$data);
 	}
 
