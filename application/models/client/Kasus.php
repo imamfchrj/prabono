@@ -150,7 +150,7 @@ class Kasus extends CI_Model
     
 
 
-    function get_kasus_by_status($status=0,$user_id=0){
+    function get_kasus_by_status($status=0,$user_id=0,$search=0){
         $this->db->select(
             $this->table.".id,".
             $this->table.".judul,".
@@ -180,6 +180,12 @@ class Kasus extends CI_Model
         if($user_id){
             $this->db->where($this->table.".advokat_id",$user_id);
         }
+        if($search){
+            $search =  str_replace(" ","%",$search);
+            $this->db->like($this->table.".judul", $search); 
+            // $this->db->like($this->table.".judul", $search); 
+            // $this->db->where($this->table.".advokat_id",$user_id);
+        }
         if($status){
             $this->db->where_in($this->table.".status",$status);
         }
@@ -189,6 +195,7 @@ class Kasus extends CI_Model
         }
         return array();
     }
+
 
     function get_kasus_by_status_id_kasus($kasus_id,$status=0){
         $this->db->select(

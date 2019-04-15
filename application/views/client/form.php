@@ -136,7 +136,14 @@ var kasus_id=<?php if(isset($kasus->id)){echo $kasus->id;}else{echo 0;}?>;
                                 </div>
 
                                 <div class="col-md-6">
-                                        <input type="text" class="form-control" id="penghasilan" placeholder="Penghasilan" id="penghasilan" value="<?=$profile->penghasilan?>">
+                                        <!-- <input type="text" class="form-control" id="penghasilan" placeholder="Penghasilan" id="penghasilan" value="<?=$profile->penghasilan?>"> -->
+
+                                    <select class="form-control select-imp" id="penghasilan" >
+                                        <option value="<?=$profile->penghasilan?>">Pilih Penghasilan</option>
+                                        <option value="< Rp 2 jt">< Rp 2 jt</option>
+                                        <option value="Rp 2 jt - Rp 5 jt">Rp 2 jt - Rp 5 jt</option>
+                                        <option value="> Rp 5 jt">> Rp 5 jt</option>
+                                    </select>
                                 </div>
 
                                 <label class="col-md-12" for="exampleInputEmail1">No Handphone <span class="text-danger email-error"></span></label>
