@@ -161,8 +161,7 @@ class Clients_ajax extends Users_Controller {
 		header('Content-Type: application/json');
 
 		$this->form_validation->set_rules('agenda_id', "Agenda", 'trim|required|xss_clean|is_natural');
-
-        
+        $this->form_validation->set_rules('kasus_id', "Kasus", 'trim|required|xss_clean|is_natural');
 
 		if($this->form_validation->run()){
 			
@@ -180,7 +179,7 @@ class Clients_ajax extends Users_Controller {
 				"is_accept"=>1
 			);
 			$this->kasus_agenda_m->update_value_by_id($id,$data);
-			send_notif($agenda->advokat_id,"users/agenda/".$id,"User Menerima Agenda anda. Klik disini untuk melihat lebih banyak.","agenda",1);
+			send_notif($agenda->advokat_id,"users/agenda/".$this->form_validation->set_value('kasus_id'),"User Menerima Agenda anda. Klik disini untuk melihat lebih banyak.","agenda",1);
 			return print(json_encode(array(
 				'is_error'=>false
 			)));
@@ -344,7 +343,7 @@ class Clients_ajax extends Users_Controller {
 			//disini belum
 			$kasus=$this->kasus->get_kasus_by_only_id($id);
 			if($kasus){
-				send_notif($kasus->advokat_id,"clients/kasus_aktif_singgle/".$id,"Kasus Anda <b>".$kasus->judul." di terima</b> oleh user! Lihat disini untuk detailnya.","client",1);	
+				send_notif($kasus->advokat_id,"users/daftar_kasus_singgle/".$id,"Kasus Anda <b>".$kasus->judul." di terima</b> oleh user! Lihat disini untuk detailnya.","client",1);
 			}
 
             $data=array(

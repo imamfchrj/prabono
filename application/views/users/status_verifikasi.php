@@ -25,7 +25,7 @@
                                         </div>
 
                                         <div class="col-md-12">
-                                            <p>Mohon tunggu kami akan melakukan proses verifikasi, <br> setelah Anda melengkapi data profile.</p>
+                                            <p>Mohon tunggu kami akan melakukan proses verifikasi<br> 2 x 24 jam <br> setelah Anda melengkapi data profile.</p>
                                         </div>
 
                                         <div class="col-md-12" style="height:100px;">
