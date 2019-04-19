@@ -2131,6 +2131,9 @@ article.post ul.meta-post li a:hover {
 .contact-form-maps .title-section {
 	margin-bottom: 38px;
 }
+.padding-row{
+	padding:20;
+}
 
 .contact-form-maps .title-section .title {
     font-size: 25px;
@@ -2428,7 +2431,8 @@ footer .logo-footer .logo {
     top: 0;
     width: 100%;
 	height: 100%;
-	background: url(../images/probono2.png) center center;
+	background-color:#fffcef;
+	/* background: url(../images/probono2.png) center center; */
 	/* background: url(../images/slides/s13.jpg); */
 }
 
@@ -2437,8 +2441,8 @@ footer .logo-footer .logo {
 }
 
 .overlay-parallax.style3 {
-	background: url(../images/probono1.png) center center;
-	background-color: rgba( 0, 0, 0, 0.4);
+	/* background: url(../images/probono1.png) center center; */
+	background-color: rgb(153, 77, 102);
 }
 
 /* Home Gallery
@@ -3007,6 +3011,13 @@ footer .logo-footer .logo {
     position: relative;
 	/* padding: 136px 0px 136px; */
 	padding: 96px 0px 96px;
+}
+
+
+.section-main-menu2 {
+    position: relative;
+	/* padding: 136px 0px 136px; */
+	padding: 40px 0px 40px;
 }
 
 .section-main-menu-opacity {

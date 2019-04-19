@@ -226,7 +226,8 @@
 }
 
 .bg-theme {
-    background-color: #fecb02;
+    /* background-color: #fecb02; */
+    background-color: #fffcef;
 }
 
 .flat-row.row-border {
@@ -314,7 +315,7 @@
     font-size: 20px;
     line-height: 25px;
     font-weight: 300;
-    color: #999;
+    color: #666666;
 }
 
 /* Style2 */
@@ -2169,7 +2170,7 @@ ul.portfolio-filter > li a:hover,
 
 .flat-team span.position {
     font-size: 12px;
-    color: #999;
+    color: #666666;
     display: block;
     margin-bottom: 2px;
 }

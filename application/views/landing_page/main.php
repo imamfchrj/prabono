@@ -6,13 +6,24 @@
       <div class="overlay-parallax"></div>
       <div class="video">
          <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="title-section left  section-main-menu-opacity">
-                     <h1 class="title color-white">Pro Bono Wadah dunia untuk keadila</h1>
-                     <div class="sub-title font-playfair">
-                        Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.
-                     </div>
+            <div class="row shad" >
+               <div class="col-md-8">
+                  <div class="title-section padding-row left">
+                     <!-- <h3 class="sub-title color-white">Tingkat pertumbuhan advokat seharusnya berbanding lurus dengan akses masyarakat terhadap keadilan. mari perkuat keadilan masyarakat dengan bergabung dengan gerakan Probono.</h3> -->
+                     <!-- <div class="sub-title font-playfair">
+                        < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM. 
+                     </div> -->
+                     <img class="img-responsive" src="probono_asset/images/probono2.png"/>
+                  </div>
+               </div>
+               <div class="col-md-4">
+                  <div class="title-section padding-row left ">
+                     <h3 class="sub-title color-black">Tingkat pertumbuhan advokat seharusnya berbanding lurus dengan akses masyarakat terhadap keadilan. mari perkuat keadilan masyarakat dengan bergabung dengan gerakan Probono.</h3>
+                     <hr>
+                     <button name="submit" class="flat-button" id="submit" title="Submit now"  onclick="location.href='<?=base_url()?>daftar-advokat'">Bergabung</button>
+                     <!-- <div class="sub-title font-playfair">
+                        < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM. 
+                     </div> -->
                   </div>
                </div>
                <!-- <div class="col-md-6">
@@ -85,80 +96,37 @@
 <!--         </div>-->
 <!--      </div>-->
 <!--   </section>-->
-   <section class="flat-row v7 bg-theme">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-12">
-               <div class="title-section">
-                  <h1 class="title">Punya masalah hukum?</h1>
-                  <div class="sub-title">
-                     Ceritakan masalah hukum dengan langkah 3 sederhana
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="container">
-         <div class="row">
-            <div class="col-md-4">
-               <div class="imgbox">
-                  <div class="box-header">
-                     <div class="box-img img-middle">
-                        <img src="<?=base_url()?>probono_asset/probono/tellus.svg" alt="image">
-                     </div>
-                  </div>
-                  <div class="box-content">
-                     <div class="box-title"><a href="#">Ceritakan</a></div>
-                     <p>Ceritakan masalah anda dengan mengisi form yang tersedia!</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="imgbox">
-                  <div class="box-header">
-                     <div class="box-img img-middle">
-                        <img src="<?=base_url()?>probono_asset/probono/register.svg" alt="image">
-                     </div>
-                  </div>
-                  <div class="box-content">
-                     <div class="box-title"><a href="#">Registrasi</a></div>
-                     <p>Isi form biodata diri anda. Agar kami dapat mengenal anda lebih dekat.</p>
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="imgbox last">
-                  <div class="box-header">
-                     <div class="box-img img-middle">
-                        <img src="<?=base_url()?>probono_asset/probono/connection.svg" alt="image">
-                     </div>
-                  </div>
-                  <div class="box-content">
-                     <div class="box-title"><a href="#">Terkoneksi</a></div>
-                     <p>Temukan pengacara terbaik untuk mendapingi anda!</p>
+<!--   <section class="section-video parallax parallax4">-->
+   <section class="section-main-menu2">
+      <div class="overlay-parallax style3"></div>
+
+      <div class="video">
+         <div class="container">
+            <div class="row" >
+               <div class="col-md-12">
+                        <!-- <h3 class="sub-title color-white">Tingkat pertumbuhan advokat seharusnya berbanding lurus dengan akses masyarakat terhadap keadilan. mari perkuat keadilan masyarakat dengan bergabung dengan gerakan Probono.</h3> -->
+                        <!-- <div class="sub-title font-playfair">
+                           < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM. 
+                        </div> -->
+                     <img class="img-responsive" style="width:100%;" src="probono_asset/images/probono1.png"/>
                   </div>
                </div>
             </div>
          </div>
       </div>
    </section>
-<!--   <section class="section-video parallax parallax4">-->
-   <section class="section-main-menu">
+   <section class="section-main-menu2">
       <div class="overlay-parallax style3"></div>
+
       <div class="video">
          <div class="container">
-            <div class="row">
-               <div class="col-md-12 wrap-video section-main-menu-opacity">
-                  <div class="title-section left style4">
-                     <h2 class="title color-white">Lawan Kriminalisasi</h2>
-                     <div class="sub-title font-playfair">
-                        Pembukam gerakan rakyat<br>Kebebasan bersuara di negri yang merdeka. <br>
-                     </div>
-                  </div>
-                  <div class="flat-control">
-                     <a class="fancybox fa fa-play" data-type="iframe" href="https://www.youtube.com/embed/ZldeXyTP3RU?autoplay=1"> 
-                     </a>
-                     <span>Tonton Vidio <br>Tentang Kami</span>
+            <div class="row" >
+               <div class="col-md-12">
+                        <!-- <h3 class="sub-title color-white">Tingkat pertumbuhan advokat seharusnya berbanding lurus dengan akses masyarakat terhadap keadilan. mari perkuat keadilan masyarakat dengan bergabung dengan gerakan Probono.</h3> -->
+                        <!-- <div class="sub-title font-playfair">
+                           < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM. 
+                        </div> -->
+                     <img class="img-responsive" style="width:100%;" src="probono_asset/images/probono1.png"/>
                   </div>
                </div>
             </div>
@@ -234,6 +202,63 @@
          </div>
       </div>
    </section>-->
+   <section class="flat-row v7 bg-theme">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-12">
+               <div class="title-section">
+                  <h1 class="title">Punya masalah hukum?</h1>
+                  <div class="sub-title">
+                     Ceritakan masalah hukum dengan langkah 3 sederhana
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4">
+               <div class="imgbox">
+                  <div class="box-header">
+                     <div class="box-img img-middle">
+                        <img src="<?=base_url()?>probono_asset/probono/tellus.svg" alt="image">
+                     </div>
+                  </div>
+                  <div class="box-content">
+                     <div class="box-title"><a href="#">Daftar</a></div>
+                     <p>DaftarCeritakan masalah anda dengan mengisi form yang tersedia!</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="imgbox">
+                  <div class="box-header">
+                     <div class="box-img img-middle">
+                        <img src="<?=base_url()?>probono_asset/probono/register.svg" alt="image">
+                     </div>
+                  </div>
+                  <div class="box-content">
+                     <div class="box-title"><a href="#">Cari Kasus</a></div>
+                     <p>Isi form biodata diri anda. Agar kami dapat mengenal anda lebih dekat.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="imgbox last">
+                  <div class="box-header">
+                     <div class="box-img img-middle">
+                        <img src="<?=base_url()?>probono_asset/probono/connection.svg" alt="image">
+                     </div>
+                  </div>
+                  <div class="box-content">
+                     <div class="box-title"><a href="#">Dampingi</a></div>
+                     <p>Temukan pengacara terbaik untuk mendapingi anda!</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
    <section class="flat-row v9">
       <div class="container">
          <div class="row">
