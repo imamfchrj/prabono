@@ -98,41 +98,77 @@
 <!--   </section>-->
 <!--   <section class="section-video parallax parallax4">-->
    <section class="section-main-menu2">
-      <div class="overlay-parallax style3"></div>
+        <div class="overlay-parallax style3"></div>
 
-      <div class="video">
-         <div class="container">
-            <div class="row" >
-               <div class="col-md-12">
+        <div class="video">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-md-12">
                         <!-- <h3 class="sub-title color-white">Tingkat pertumbuhan advokat seharusnya berbanding lurus dengan akses masyarakat terhadap keadilan. mari perkuat keadilan masyarakat dengan bergabung dengan gerakan Probono.</h3> -->
                         <!-- <div class="sub-title font-playfair">
-                           < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM. 
+                           < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.
                         </div> -->
-                     <img class="img-responsive" style="width:100%;" src="probono_asset/images/probono1.png"/>
-                  </div>
-               </div>
+                        <img class="img-responsive" style="width:100%;" src="probono_asset/images/probono1.png"/>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </section>
-   <section class="section-main-menu2">
-      <div class="overlay-parallax style3"></div>
+        </div>
+        </div>
+    </section>
+    <section class="section-main-menu2">
+        <div class="overlay-parallax style4"></div>
 
-      <div class="video">
-         <div class="container">
-            <div class="row" >
-               <div class="col-md-12">
+        <div class="video">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-md-12">
                         <!-- <h3 class="sub-title color-white">Tingkat pertumbuhan advokat seharusnya berbanding lurus dengan akses masyarakat terhadap keadilan. mari perkuat keadilan masyarakat dengan bergabung dengan gerakan Probono.</h3> -->
                         <!-- <div class="sub-title font-playfair">
-                           < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM. 
+                           < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.
                         </div> -->
-                     <img class="img-responsive" style="width:100%;" src="probono_asset/images/probono1.png"/>
-                  </div>
-               </div>
+                        <img class="img-responsive" style="width:100%;" src="probono_asset/images/ungu.png"/>
+                    </div>
+                </div>
             </div>
-         </div>
-      </div>
-   </section>
+        </div>
+        </div>
+    </section>
+    <section class="section-main-menu2">
+        <div class="overlay-parallax style3"></div>
+
+        <div class="video">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-md-12">
+                        <!-- <h3 class="sub-title color-white">Tingkat pertumbuhan advokat seharusnya berbanding lurus dengan akses masyarakat terhadap keadilan. mari perkuat keadilan masyarakat dengan bergabung dengan gerakan Probono.</h3> -->
+                        <!-- <div class="sub-title font-playfair">
+                           < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.
+                        </div> -->
+                        <img class="img-responsive" style="width:100%;" src="probono_asset/images/probono2.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="section-main-menu2">
+        <div class="overlay-parallax style5"></div>
+
+        <div class="video">
+            <div class="container">
+                <div class="row" >
+                    <div class="col-md-12">
+                        <!-- <h3 class="sub-title color-white">Tingkat pertumbuhan advokat seharusnya berbanding lurus dengan akses masyarakat terhadap keadilan. mari perkuat keadilan masyarakat dengan bergabung dengan gerakan Probono.</h3> -->
+                        <!-- <div class="sub-title font-playfair">
+                           < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.
+                        </div> -->
+                        <img class="img-responsive" style="width:100%;" src="probono_asset/images/biru.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
 <!--    -->
 <!--   <section class="flat-row v1 bg-theme">-->
 <!--      <div class="container">-->
@@ -207,9 +243,9 @@
          <div class="row">
             <div class="col-md-12">
                <div class="title-section">
-                  <h1 class="title">Punya masalah hukum?</h1>
+                  <h1 class="title">Mari bergabung untuk memperkuat keadilan bagi publik melalui Probono!</h1>
                   <div class="sub-title">
-                     Ceritakan masalah hukum dengan langkah 3 sederhana
+                      3 langkah mudah untuk bergabung
                   </div>
                </div>
             </div>

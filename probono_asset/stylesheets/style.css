@@ -2442,7 +2442,18 @@ footer .logo-footer .logo {
 
 .overlay-parallax.style3 {
 	/* background: url(../images/probono1.png) center center; */
-	background-color: rgb(153, 77, 102);
+	background-color: #ffffff;
+	/*background-color: rgb(153, 77, 102);*/
+}
+
+.overlay-parallax.style4 {
+	/* background: url(../images/probono1.png) center center; */
+	background-color: rgb(191, 0, 255);
+}
+
+.overlay-parallax.style5 {
+	/* background: url(../images/probono1.png) center center; */
+	background-color: rgb(0, 0, 255);
 }
 
 /* Home Gallery
