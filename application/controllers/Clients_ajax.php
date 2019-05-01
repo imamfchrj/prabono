@@ -196,6 +196,7 @@ class Clients_ajax extends Users_Controller {
 	{
 
         $this->form_validation->set_rules('agenda_id', "agenda", 'trim|required|xss_clean|is_natural');
+//        $this->form_validation->set_rules('kasus_id', "kasus", 'trim|required|xss_clean|is_natural');
         $this->form_validation->set_rules('advokat_id', "agenda", 'trim|required|xss_clean|is_natural');
         $this->form_validation->set_rules('status', "Status", 'trim|required|xss_clean|is_natural');
         $this->form_validation->set_rules('id_time', "Status", 'trim|required|xss_clean|is_natural');
@@ -206,15 +207,17 @@ class Clients_ajax extends Users_Controller {
 			$this->load->model('user/advokat_point_m');
 			$status=$this->form_validation->set_value('status');
 			$id_time=$this->form_validation->set_value('id_time');
+			$kasus=$this->advokat_point_m->get_by_agenda_id($this->form_validation->set_value('agenda_id'));
 			$data=array(
 				"agenda_id"=>$this->form_validation->set_value('agenda_id'),
 				"advokat_id"=>$this->form_validation->set_value('advokat_id'),
+//				"kasus_id"=>$this->form_validation->set_value('kasus_id'),
 			);
 			if($status){
 				$this->advokat_point_m->set($data);
-				send_notif($this->form_validation->set_value('advokat_id'),"users/request/".$this->form_validation->set_value('agenda_id'),"Anda mendapatkan point klik disini untuk melihat","agenda",1);	
+				send_notif($this->form_validation->set_value('advokat_id'),"users/request/".$kasus->kasus_id,"Anda mendapatkan point klik disini untuk melihat","agenda",1);
 			}else{
-				send_notif($this->form_validation->set_value('advokat_id'),"users/request/".$this->form_validation->set_value('agenda_id'),"User menghapus point anda","agenda",1);	
+				send_notif($this->form_validation->set_value('advokat_id'),"users/request/".$kasus->kasus_id,"User menghapus point anda","agenda",1);
 				$this->advokat_point_m->delete_by_id($id_time);
 			}
 
