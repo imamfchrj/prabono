@@ -55,6 +55,26 @@ class Advokat_point_m extends CI_Model
         return false;
     }
 
+    function get_by_agenda_id($id){
+        $this->db->select(
+            $this->table.".id,".
+            $this->table_kasus_agenda.".kasus_id,".
+            $this->table_kasus_agenda.".title,".
+            $this->table_kasus_agenda.".is_accept,".
+            $this->table_kasus_agenda.".fromdate,".
+            $this->table_kasus_agenda.".todate,".
+            $this->table_kasus_agenda.".advokat_id,".
+            $this->table_kasus_agenda.".id as 'agenda_id'"
+        );
+        $this->db->where($this->table_kasus_agenda.'.id', $id);
+        $this->db->join($this->table,$this->table.".agenda_id=".$this->table_kasus_agenda.".id","left");
+        $query=$this->db->get($this->table_kasus_agenda);
+        if($query){
+            return $query->row();
+        }
+        return false;
+    }
+
     function get_all(){
         $query=$this->db->get($this->table);
         if($query){
