@@ -86,8 +86,8 @@
                                         <div class="flat-view">
                                                 <hr>
                                                 <?php if($kasus->status==4){?>
-                                                <button type="button" class="flat-button terima_kasus" >Terima Kasus</button>
-                                                <button type="button" class="flat-button btn-danger tolak_kasus" >Tolak Kasus</button>
+                                                <button type="button" class="flat-button terima_kasus" >Setujui Advokat Ini</button>
+                                                <button type="button" class="flat-button btn-danger tolak_kasus" >Advokat Lain</button>
                                                 <?php } ?>
                                         </div>
                                     </div>
