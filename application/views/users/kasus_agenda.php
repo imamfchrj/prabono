@@ -174,12 +174,12 @@ var id = <?=$kasus->id?>;
                 <label>Tempat</label>
                 <input type="text" class="form-control" id="edit_place" placeholder="Tempat" value="">
             </div>
-            
+
     <div class="col-md-6">
         <div class="form-group">
             <label>Dari Tanggal</label>
             <div class='input-group date' id='fromdate'>
-                <input type='text' id="edit_fromdate_input" class="form-control" />
+                <input type='text' id="edit_fromdate_input" class="form-control"/>
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>

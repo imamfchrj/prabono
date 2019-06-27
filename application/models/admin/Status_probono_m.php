@@ -67,7 +67,7 @@ class Status_probono_m extends CI_Model
             'ca.firstname as user_name','ca.lastname as user_lastname','da.firstname as advokat_name','da.lastname as advokat_lastname',
             'ca.hp as hp_user','da.hp as hp_advokat', 'da.id_kta_advokat',
             'TIMESTAMPDIFF(day, a.created_at, now()) as days',
-            'TIMESTAMPDIFF(HOUR, a.fromdate, a.todate) as hours'
+            'CONCAT(FLOOR(TIMESTAMPDIFF(MINUTE,a.fromdate,a.todate)/60),\' h \',MOD(TIMESTAMPDIFF(MINUTE,a.fromdate,a.todate),60),\' m\') as hours'
         ));
         $this->db->from($this->table_agenda.' as a');
         $this->db->join($this->table.' as b','b.id=a.kasus_id');
@@ -85,7 +85,7 @@ class Status_probono_m extends CI_Model
             'a.*', 'b.judul as judul_kasus',
             'da.firstname as advokat_name','da.lastname as advokat_lastname',
             'da.hp as hp_advokat', 'd.email as advokat_email',
-            'SUM(TIMESTAMPDIFF(HOUR, a.fromdate, a.todate)) as hours'
+            'CONCAT(FLOOR(sum(TIMESTAMPDIFF(MINUTE,a.fromdate,a.todate))/60),\' h \',MOD(sum(TIMESTAMPDIFF(MINUTE,a.fromdate,a.todate)),60),\' m\') as hours'
         ));
         $this->db->from($this->table_agenda.' as a');
         $this->db->join($this->table.' as b','b.id=a.kasus_id');
