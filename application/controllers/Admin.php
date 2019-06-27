@@ -37,8 +37,41 @@ class Admin extends Admin_Controller {
         $data['k_aktif'] =$this->status_probono_m->get_kasus($s_aktif);
         $data['k_open'] =$this->status_probono_m->get_kasus($s_open);
         $data['k_close'] =$this->status_probono_m->get_kasus($s_close);
+        $data['client_gender']=$this->get_gender($data["client_gender"]);
+        $data['advokat_gender']=$this->get_gender($data["advokat_gender"]);
 		$this->load->view('admin/main',$data);
-	}
+    }
+    
+    function get_gender($data){
+        $return=array();
+
+        $nogen->client_gender="Tidak ingin disebutkan";
+        $nogen->no_of_gender=0;
+        $nogen->gender=0;
+        array_push($return,$nogen);
+
+        $laki->client_gender="Laki-laki";
+        $laki->no_of_gender=0;
+        $laki->gender=1;
+        array_push($return,$laki);
+
+        $perem->client_gender="Perempuan";
+        $perem->no_of_gender=0;
+        $perem->gender=2;
+        array_push($return,$perem);
+
+        foreach($data as $list) {
+            if(strcmp($list->gender, '1')==0){
+                echo "halo";
+                $return[1]->no_of_gender++;
+            }else if(strcmp($list->gender, '2') ==0){
+                $return[2]->no_of_gender++;
+            }else{
+                $return[0]->no_of_gender++;
+            }
+        }
+        return $return;
+    }
 
 	public function client()
 	{
