@@ -108,7 +108,8 @@
                         <!-- <div class="sub-title font-playfair">
                            < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.
                         </div> -->
-                        <img class="img-responsive" style="width:100%;" src="probono_asset/images/probono1.png"/>
+                        <!--<img class="img-responsive" style="width:100%;" src="probono_asset/images/probono1.png"/>-->
+                        <img class="img-responsive" style="width:100%;" src="probono_asset/images/Probono-1.png"/>
                     </div>
                 </div>
             </div>
@@ -144,7 +145,8 @@
                         <!-- <div class="sub-title font-playfair">
                            < Bantuan hukum untuk rakyat miskin, buta hukum, dan korban pelanggaran HAM.
                         </div> -->
-                        <img class="img-responsive" style="width:100%;" src="probono_asset/images/probono2.png"/>
+                        <!--<img class="img-responsive" style="width:100%;" src="probono_asset/images/probono2.png"/>-->
+                        <img class="img-responsive" style="width:100%;" src="probono_asset/images/Probono-2.png"/>
                     </div>
                 </div>
             </div>
