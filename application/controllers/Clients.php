@@ -29,6 +29,7 @@ class Clients extends Users_Controller {
 		$data['kronologi_masalah_list']=$this->client_file->get_file_by_id_group($id,$data['kasus_id'],"kronologi_masalah_file");
 		$this->load->view('client/form',$data);
 	}
+
 	public function kasus_aktif()
 	{
 		$data['menu']="kasus_aktif";
@@ -37,6 +38,7 @@ class Clients extends Users_Controller {
 		$data['kasus']=$this->kasus->get_kasus_by_user_id($id);
 		$this->load->view('client/kasus_client_open',$data);
 	}
+	
 	public function kasus_aktif_singgle($slug)
 	{
 		$data['menu']="home";
