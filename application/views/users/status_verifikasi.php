@@ -25,7 +25,9 @@
                                         </div>
 
                                         <div class="col-md-12">
-                                            <p>Mohon tunggu kami akan melakukan proses verifikasi<br> 2 x 24 jam <br> setelah Anda melengkapi data profile.</p>
+                                            <!-- <p>Mohon tunggu kami akan melakukan proses verifikasi<br> 2 x 24 jam <br> setelah Anda melengkapi data profile.</p> -->
+
+                                    <label>Kami sudah menerima permintaan pendaftaran Anda. Kami akan melakukan proses verifikasi. Anda dapat masuk kembali dengan <a class="blue" href="<?=base_url().$header?>/daftar_kasus">alamat email dan kata sandi yang sudah didaftarkan</a>. Jika belum bisa masuk, Anda berarti belum terverifikasi</label>
                                         </div>
 
                                         <div class="col-md-12" style="height:100px;">

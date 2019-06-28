@@ -1,5 +1,5 @@
 
-<?php $this->load->view('client/layout/header_not_login')?>
+<?php $this->load->view($header.'/layout/header')?>
 
 <main class="main-content" id="main-content">
 
@@ -26,14 +26,14 @@
                                 <div class="col-md-12">
                                     
                                     <div style="margin-bottom:20px;">
-                                    <label>Kami sudah menerima permintaan pendaftaran Anda. Kami akan melakukan proses verifikasi. Anda dapat masuk kembali dengan <a class="blue" href="<?=base_url()?>">alamat email dan kata sandi yang sudah didaftarkan</a>. Jika belum bisa masuk, Anda berarti belum terverifikasi</label>
+                                    <label>Kami sudah menerima permintaan pendaftaran Anda. Kami akan melakukan proses verifikasi. Anda dapat masuk kembali dengan <a class="blue" href="<?=base_url().$header?>/daftar_kasus">alamat email dan kata sandi yang sudah didaftarkan</a>. Jika belum bisa masuk, Anda berarti belum terverifikasi</label>
                                     </div>
                                 </div>
                             </div>
                             
                         </div>
                         <div class="field clearfix field-btn">
-                            <a class="blue" href="<?=base_url()?>" style="float:right;">Home</a>
+                            <a class="blue" href="<?=base_url().$header?>/daftar_kasus" style="float:right;">Home</a>
                         </div>
 
                     </div>

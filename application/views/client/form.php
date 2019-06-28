@@ -446,7 +446,7 @@ function kasus($is_submit=0,$button=false){
         }
         kasus_id=data.id_kasus;
         if($is_submit==1){
-            window.location = ROOT+'client/kasus_aktif';
+            window.location = ROOT+'client/daftar-info';
         }
     })
     .fail(function() {

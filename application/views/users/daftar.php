@@ -441,7 +441,6 @@
                     }
                 })
                 .done(function(data) {
-                    console.log(data);
                     if($button != false){
                         $("#submitend").show();
                         $("#submitend-loader").hide();

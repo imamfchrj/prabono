@@ -58,9 +58,15 @@ class Clients_nl extends All_Controller {
         return;
     }
 
-    public function register_info() {
-
-		$data['menu']="home";
+    public function register_info($path) {
+        if($path == "client") {
+            $data['header']="client";
+        }else if ($path == "users") {
+            $data['header']="users";
+        }else {
+            redirect('');
+        }
+        $data['menu']="home";
 		$this->load->view('client/daftar_info',$data);
     }
 
