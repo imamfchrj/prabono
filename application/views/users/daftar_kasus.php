@@ -9,10 +9,51 @@
                             
                             <div class="col-md-12 header-daftar">
                                 <div class=" style3">
-                                <div class="widget widget_search widget_search_left" >
-                                    <form role="search" method="get" class="search-form" action="">
-                                        <input type="search" class="search-field" placeholder="Search…" value="" name="search" > 
-                                        <input type="submit" class="search-submit" id="searchwidget" value="">
+                                <div class="widget widget_search_left" >
+                                    <form role="search" method="get" class="search-form form-group row" action="">
+                                        <input style="margin-right:10px;height:45px;" type="search" name="search" class="search-field col-md-3" placeholder="Search…" value="" >  
+                                        <select style="margin-right:10px;height:45px;"  class="search-field select-imp col-md-3" name="domisili">
+                                                    <option value="">Pilih Provinsi</option>
+                                                    <option value="11">ACEH</option>
+                                                    <option value="12">SUMATERA UTARA</option>
+                                                    <option value="13">SUMATERA BARAT</option>
+                                                    <option value="14">RIAU</option>
+                                                    <option value="15">JAMBI</option>
+                                                    <option value="16">SUMATERA SELATAN</option>
+                                                    <option value="17">BENGKULU</option>
+                                                    <option value="18">LAMPUNG</option>
+                                                    <option value="19">KEPULAUAN BANGKA BELITUNG</option>
+                                                    <option value="21">KEPULAUAN RIAU</option>
+                                                    <option value="31">DKI JAKARTA</option>
+                                                    <option value="32">JAWA BARAT</option>
+                                                    <option value="33">JAWA TENGAH</option>
+                                                    <option value="34">DI YOGYAKARTA</option>
+                                                    <option value="35">JAWA TIMUR</option>
+                                                    <option value="36">BANTEN</option>
+                                                    <option value="51">BALI</option>
+                                                    <option value="52">NUSA TENGGARA BARAT</option>
+                                                    <option value="53">NUSA TENGGARA TIMUR</option>
+                                                    <option value="61">KALIMANTAN BARAT</option>
+                                                    <option value="62">KALIMANTAN TENGAH</option>
+                                                    <option value="63">KALIMANTAN SELATAN</option>
+                                                    <option value="64">KALIMANTAN TIMUR</option>
+                                                    <option value="65">KALIMANTAN UTARA</option>
+                                                    <option value="71">SULAWESI UTARA</option>
+                                                    <option value="72">SULAWESI TENGAH</option>
+                                                    <option value="73">SULAWESI SELATAN</option>
+                                                    <option value="74">SULAWESI TENGGARA</option>
+                                                    <option value="75">GORONTALO</option>
+                                                    <option value="76">SULAWESI BARAT</option>
+                                                    <option value="81">MALUKU</option>
+                                                    <option value="82">MALUKU UTARA</option>
+                                                    <option value="91">PAPUA BARAT</option>
+                                                    <option value="94">PAPUA</option>
+                                        </select>
+                                        <select style="margin-right:10px;height:45px;"  class="search-field select-imp col-md-2"  name="order_by">
+                                                    <option value="desc">Terbaru</option>
+                                                    <option value="asc">Terlama</option>
+                                        </select>
+                                        <button style="margin-right:10px;height:45px;" type="submit" class="col-md-2" id="searchwidget" value="">Cari</button>
                                     </form>                            
                                 </div>
                                 <h5 class="">Kasus yang dapat dipilih</h5>
