@@ -139,7 +139,7 @@ var submit = function (response){
             alert_error(data.error_message);
             return; 
         }
-        window.location = "<?php echo base_url(); ?>";
+        window.location = "<?php echo base_url(); ?>/daftar-info";
     })
     .fail(function() {
         if(tmp){

@@ -58,6 +58,12 @@ class Clients_nl extends All_Controller {
         return;
     }
 
+    public function register_info() {
+
+		$data['menu']="home";
+		$this->load->view('client/daftar_info',$data);
+    }
+
 
 
     public function ajax_register_advokat(){

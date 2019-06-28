@@ -111,7 +111,6 @@ $(function(){
         if(response.length == 0){
             $("#setuju-text").html("Please accept gcaptcha");
         }
-        console.log(response);
         $("#setuju-text").html("");
         submit(response);
     });
@@ -150,7 +149,7 @@ var submit = function (response){
             alert_error(data.error_message);
             return; 
         }
-        window.location = "<?php echo base_url(); ?>";
+        window.location = "<?php echo base_url(); ?>/daftar-info";
     })
     .fail(function() {
         if(tmp){
