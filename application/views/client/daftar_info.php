@@ -26,7 +26,7 @@
                                 <div class="col-md-12">
                                     
                                     <div style="margin-bottom:20px;">
-                                    <label>Kami sudah menerima permintaan pendaftaran Anda. Kami akan melakukan proses verifikasi. Anda dapat masuk kembali dengan <a class="blue" href="<?=base_url().$header?>/daftar_kasus">alamat email dan kata sandi yang sudah didaftarkan</a>. Jika belum bisa masuk, Anda berarti belum terverifikasi</label>
+                                    <label>Anda dapat masuk ke dalam dashboard dan mengecek kasus dengan email dan sandi yang telah didaftarkan sebelumnya</label>
                                     </div>
                                 </div>
                             </div>

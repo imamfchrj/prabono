@@ -149,7 +149,8 @@ var submit = function (response){
             alert_error(data.error_message);
             return; 
         }
-        window.location = "<?php echo base_url(); ?>/daftar-info";
+        alert ("Pendaftaran Berhasil");
+        window.location = "<?php echo base_url(); ?>";
     })
     .fail(function() {
         if(tmp){
