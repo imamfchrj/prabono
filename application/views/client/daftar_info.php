@@ -26,7 +26,7 @@
                                 <div class="col-md-12">
                                     
                                     <div style="margin-bottom:20px;">
-                                    <label>Anda dapat masuk ke dalam dashboard dan mengecek kasus dengan email dan sandi yang telah didaftarkan sebelumnya</label>
+                                    <label>Kasus Anda telah berhasil didaftarkan. Proses selanjutnya adalah menunggu advokat mengambil kasus Anda. Anda dapat melihat status kasus secara berkala di menu “Kasus” dengan masuk menggunakan email dan sandi yang telah Anda daftarkan.</label>
                                     </div>
                                 </div>
                             </div>
