@@ -2700,7 +2700,7 @@ fieldset[disabled] .checkbox label {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.25;
   border-radius: 3px;
 }
 select.input-sm {
@@ -2715,7 +2715,7 @@ select[multiple].input-sm {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.25;
   border-radius: 3px;
 }
 select.form-group-sm .form-control {
@@ -2731,7 +2731,7 @@ select[multiple].form-group-sm .form-control {
   min-height: 32px;
   padding: 5px 10px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.25;
 }
 .input-lg {
   height: 46px;
@@ -3354,14 +3354,14 @@ fieldset[disabled] .btn-link:focus {
 .btn-group-sm > .btn {
   padding: 5px 10px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.25;
   border-radius: 3px;
 }
 .btn-xs,
 .btn-group-xs > .btn {
   padding: 1px 5px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.25;
   border-radius: 3px;
 }
 .btn-block {
@@ -3766,7 +3766,7 @@ select[multiple].input-group-lg > .input-group-btn > .btn {
   height: 30px;
   padding: 5px 10px;
   font-size: 12px;
-  line-height: 1.5;
+  line-height: 1.25;
   border-radius: 3px;
 }
 select.input-group-sm > .form-control,
