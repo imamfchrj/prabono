@@ -2744,7 +2744,7 @@ website:   	http://www.themepunch.com
 .Travel-CallToAction {
     color: rgba(255, 255, 255, 1.00);
     font-size: 25px;
-    line-height: 25px;
+    line-height: 1.25;
     font-weight: 500;
     font-style: normal;
     font-family: Roboto;
@@ -2919,7 +2919,7 @@ website:   	http://www.themepunch.com
 .ContentZoom-DetailSubTitle {
     color: rgba(111, 124, 130, 1.00);
     font-size: 25px;
-    line-height: 25px;
+    line-height: 1.25;
     font-weight: 500;
     font-style: normal;
     font-family: Raleway;
@@ -3134,7 +3134,7 @@ website:   	http://www.themepunch.com
     .Concept-SubTitle {
         color: rgba(255, 255, 255, 0.65);
         font-size: 25px;
-        line-height: 25px;
+        line-height: 1.25;
         font-weight: 700;
         font-style: italic;
         font-family: ""Playfair Display"";
@@ -3226,7 +3226,7 @@ website:   	http://www.themepunch.com
     .Concept-SubTitle-Dark {
         color: rgba(0, 0, 0, 0.65);
         font-size: 25px;
-        line-height: 25px;
+        line-height: 1.25;
         font-weight: 700;
         font-style: italic;
         font-family: "Playfair Display";

@@ -313,7 +313,7 @@
 
 .title-section .sub-title {
     font-size: 20px;
-    line-height: 25px;
+    line-height: 1.25;
     font-weight: 300;
     color: #666666;
 }
@@ -353,6 +353,9 @@
 .title-section .title.color-white, .title-section .sub-title.color-white {
     color: #FFF; 
 }
+.color-white {
+    color: #fff !important;
+}
 
 .title-section .title .color-theme {
     color: #03a9f5;
@@ -371,7 +374,7 @@
 
 .title-section .sub-title.color-gray {
     font-size: 14px;
-    line-height: 25px;
+    line-height: 1.25;
     color: #888888;
     font-weight: 400;
 }
@@ -520,7 +523,7 @@
 
 .iconbox.style2 .box-content p,
 .quick-form p {
-    line-height: 25px;
+    line-height: 1.25;
     color: #888888;
     margin-bottom: 25px;
 }
@@ -753,7 +756,7 @@
 .imgbox .box-content p {
     font-size: 16px;
     font-weight: 300;
-    line-height: 25px;
+    line-height: 1.25;
     color: #888888;
 }
 
@@ -1050,7 +1053,7 @@
 .imgbox.style2.position-title .box-content p {
     font-size: 15px;
     font-weight: 500;
-    line-height: 25px;
+    line-height: 1.25;
     margin-bottom: 25px;
 }
 
@@ -1103,7 +1106,7 @@
 
 .imgbox.style2.left .box-content p {
     font-size: 14px;
-    line-height: 25px;
+    line-height: 1.25;
     margin-bottom: 15px;
 }
 

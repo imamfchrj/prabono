@@ -55,7 +55,7 @@
 	}
 
 	body {
-		line-height: 1;
+		line-height: 1.25;
 		-webkit-font-smoothing: antialiased;
 		-webkit-text-size-adjust: 100%;
 		   -ms-text-size-adjust: 100%;
@@ -376,7 +376,7 @@ h1, h2, h3, h4, h5, h6 { font-family: "Poppins", sans-serif; font-weight: 600; m
 h1 { font-size: 60px; line-height: 60px; }
 h2 { font-size: 45px; line-height: 45px; }
 h3 { font-size: 40px; line-height: 40px; }
-h4 { font-size: 25px; line-height: 25px; }
+h4 { font-size: 25px; line-height: 1.25; }
 h5 { font-size: 20px; line-height: 20px; }
 h6 { font-size: 18px; line-height: 18px; }
 
@@ -1332,7 +1332,7 @@ ul.box-text.text-right li {
 -------------------------------------------------------------- */
 article.post p {
 	margin-bottom: 26px;
-	line-height: 25px;
+	line-height: 1.25;
 	
 }
 
@@ -1540,7 +1540,7 @@ article.post ul.meta-post li a:hover {
 }
 
 .comments-area ol.comment-list article .comment-content p {
-    line-height: 25px;
+    line-height: 1.25;
     margin-bottom: 8px;
 }
 
@@ -1552,7 +1552,7 @@ article.post ul.meta-post li a:hover {
 
 .comment-respond .comment-reply-title {
     font-size: 25px;
-    line-height: 25px;
+    line-height: 1.25;
     color: #222;
     margin-bottom: 12px;
     text-transform: uppercase;
@@ -1957,7 +1957,7 @@ article.post ul.meta-post li a:hover {
 
 .page-company p {
 	font-weight: 400;
-	line-height: 25px;
+	line-height: 1.25;
 }
 
 .page-company .content-company {
@@ -2125,7 +2125,7 @@ article.post ul.meta-post li a:hover {
 }
 
 .contact-iconbox .iconbox .box-content p {
-	line-height: 25px;
+	line-height: 1.25;
 }
 
 .contact-form-maps .title-section {
