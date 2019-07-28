@@ -134,9 +134,14 @@ class Clients_nl extends All_Controller {
         $this->form_validation->set_rules('email', "Email", 'trim|required|xss_clean');
         $this->form_validation->set_rules('password', "Password", 'trim|required|xss_clean|min_length[8]|max_length[200]');
         $error=array();
-        if ($this->form_validation->run()) {	
-            $this->load->model('user/auth');
+        if ($this->form_validation->run()) {
+            $this->load->model(array('user/auth',
+                'client/kasus'));
             $user=$this->auth->get_data_user_by_email($this->form_validation->set_value('email'));
+            $cek_kasus=$this->kasus->get_kasus_by_user_id_kasus($user->id);
+            //echo $this->db->last_query();exit;
+            $isubmit_kasus=count($cek_kasus);
+            //echo $isubmit_kasus;exit;
             if($user){
                 if($user->password==hashpass($this->form_validation->set_value('password'))){
                     $set_session=array(
@@ -147,9 +152,10 @@ class Clients_nl extends All_Controller {
                         'foto'	=> $user->foto,
                         'login_config' => hashuser($user->email)
                     );
-					$this->session->set_userdata($set_session);
+                    $this->session->set_userdata($set_session);
                     echo json_encode(array(
-                        'is_error'=>false
+                        'is_error'=>false,
+                        'ada_kasus'=>$isubmit_kasus
                     ));
                     return;
                 }
@@ -157,7 +163,7 @@ class Clients_nl extends All_Controller {
             }else{
                 $error[]="Email atau Password salah";
             }
-			
+
         }
         if(validation_errors()){
             $eror[]=validation_errors();

@@ -138,7 +138,9 @@ class Kasus extends CI_Model
         $this->db->join($this->table_user_profiles,$this->table_user_profiles.".user_id=".$this->table.".user_id","left");
         $this->db->join($this->table_users,$this->table_users.".id=".$this->table.".user_id","left");
         $this->db->where($this->table.'.user_id', $user_id);
-        $this->db->where($this->table.'.id', $slug);
+        if($slug != 0){
+            $this->db->where($this->table.'.id', $slug);
+        }
         $this->db->where($this->table.'.is_submit', 1);
         $query=$this->db->get($this->table);
         if($query){
