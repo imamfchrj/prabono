@@ -52,7 +52,9 @@ class List_client_m extends CI_Model {
         $this->_select_table_gender();
         $this->db->where('a.gender is NOT NULL', NULL, FALSE);
         $this->db->group_by('a.gender');
+        $this->db->order_by('a.gender','ASC');
         $query=$this->db->get();
+//        echo $this->db->last_query();exit;
         if($query){
             return $query->result();
         }

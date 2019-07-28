@@ -37,8 +37,8 @@ class Admin extends Admin_Controller {
         $data['k_aktif'] =$this->status_probono_m->get_kasus($s_aktif);
         $data['k_open'] =$this->status_probono_m->get_kasus($s_open);
         $data['k_close'] =$this->status_probono_m->get_kasus($s_close);
-        $data['client_gender']=$this->get_gender($data["client_gender"]);
-        $data['advokat_gender']=$this->get_gender($data["advokat_gender"]);
+        //$data['client_gender']=$this->get_gender($data["client_gender"]);
+        //$data['advokat_gender']=$this->get_gender($data["advokat_gender"]);
 		$this->load->view('admin/main',$data);
     }
     

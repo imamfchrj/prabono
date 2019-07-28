@@ -27,7 +27,7 @@ class List_advokat_m extends CI_Model
     private function _select_table_gender()
     {
         $this->db->select(array(
-            '(case when a.gender=1 then "Laki-Laki"
+            'a.gender, (case when a.gender=1 then "Laki-Laki"
              when a.gender=2 then "Perempuan"
              else "Tidak ingin disebutkan"
              end) as advokat_gender, count(*) as no_of_gender'
@@ -63,7 +63,9 @@ class List_advokat_m extends CI_Model
         $this->db->where('a.gender is NOT NULL', NULL, FALSE);
         $this->db->where('a.is_verified', 1);
         $this->db->group_by('a.gender');
+        $this->db->order_by('a.gender','ASC');
         $query=$this->db->get();
+//        echo $this->db->last_query();exit;
         if($query){
             return $query->result();
         }

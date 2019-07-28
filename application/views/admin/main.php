@@ -64,15 +64,19 @@ $this->load->view('admin/layout/header');
         </div><!-- row -->
         <?php
         $data=array();
+        //        $gender=0;
+        //        $name = '';
         foreach ($client_gender as $key => $row) {
             $data[]=array(
                 'label' => $row->client_gender,
                 'value' => $row->no_of_gender
             );
+
         }
         $data=json_encode($data);
-        //var_dump($advokat_gender);
+        //        var_dump($data);
         $data_advokat=array();
+        //var_dump($advokat_gender);
         foreach ($advokat_gender as $key => $row) {
             $data_advokat[]=array(
                 'label' => $row->advokat_gender,
@@ -80,6 +84,7 @@ $this->load->view('admin/layout/header');
             );
         }
         $data_advokat=json_encode($data_advokat);
+        //var_dump($data_advokat);
         ?>
         <div class="row row-sm mg-t-20">
             <div class="col-6">
@@ -91,9 +96,9 @@ $this->load->view('admin/layout/header');
                                 <p class="mg-b-0">Jumlah Client aktif by Gender</p>
                             </div>
                             <div class="tx-13">
-                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-pria mg-r-10"></span> Laki-Laki</p>
-                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-wanita mg-r-10"></span> Perempuan</p>
-                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-noop mg-r-10"></span> Tidak ingin disebutkan</p>
+                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-pria mg-r-10"></span> Tidak Ingin Disebutkan</p>
+                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-wanita mg-r-10"></span> Laki-Laki</p>
+                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-noop mg-r-10"></span> Perempuan</p>
                             </div>
                         </div><!-- d-flex -->
                     </div>
@@ -111,9 +116,9 @@ $this->load->view('admin/layout/header');
                                 <p class="mg-b-0">Jumlah Advokat aktif by Gender</p>
                             </div>
                             <div class="tx-13">
-                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-pria mg-r-10"></span> Laki-Laki</p>
-                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-wanita mg-r-10"></span> Perempuan</p>
-                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-noop mg-r-10"></span> Tidak ingin disebutkan</p>
+                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-pria mg-r-10"></span> Tidak Ingin Disebutkan</p>
+                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-wanita mg-r-10"></span> Laki-Laki</p>
+                                <p class="mg-b-0"><span class="square-10 rounded-circle bg-noop mg-r-10"></span> Perempuan</p>
                             </div>
                         </div><!-- d-flex -->
                     </div>
@@ -125,23 +130,23 @@ $this->load->view('admin/layout/header');
         </div>
     </div><!-- br-pagebody -->
 
-<script>
-$(document).ready(function(){
-    var donut_chart= new Morris.Donut({
-    element: 'morrisDonut1',
-    data: <?php echo $data; ?>,
-    colors: ['#3D449C','#268FB2','#74DE00'],
-    resize: true
-    });
+    <script>
+        $(document).ready(function(){
+            var donut_chart= new Morris.Donut({
+                element: 'morrisDonut1',
+                data: <?php echo $data; ?>,
+                colors: ['#3D449C','#268FB2','#74DE00'],
+                resize: true
+            });
 
-    var donut_chart2= new Morris.Donut({
-        element: 'morrisDonut2',
-        data: <?php echo $data_advokat; ?>,
-        colors: ['#3D449C','#268FB2','#74DE00'],
-        resize: true
-    });
-});
-</script>
-<?php
-$this->load->view('admin/layout/footer');
-?>
+            var donut_chart2= new Morris.Donut({
+                element: 'morrisDonut2',
+                data: <?php echo $data_advokat; ?>,
+                colors: ['#3D449C','#268FB2','#74DE00'],
+                resize: true
+            });
+        });
+    </script>
+    <?php
+    $this->load->view('admin/layout/footer');
+    ?>
