@@ -868,6 +868,8 @@ class Admin_api extends Admin_Controller {
                 $status="Open";
                 if($list->status==2){
                     $status="Aktif";
+                }else if ($list->status==3){
+                    $status="Closed";
                 }
                 $result[$i]["status"]=$status;
                 $i++;

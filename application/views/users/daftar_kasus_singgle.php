@@ -73,7 +73,13 @@
                                         <?php }?>
                                         <?php if($kasus->firstname){ ?>
                                         <ul class="info-team">
-                                        <li><span>Nama Client:</span> <?php if(!$list->is_kusus){?><?=$list->firstname_client?> <?=$list->lastname_client?><?php }else{ echo $list->initial_name;}?></li>
+                                        <li><span>Nama Client:</span> <?php if (!$kasus->is_kusus) { ?>
+                                                                            <?= $kasus->firstname_client ?>
+                                                                            <?= $kasus->lastname_client ?>
+                                                                            <?php } else {
+                                                                                echo $kasus->initial_name;
+                                                                            } ?>
+                                        </li>
                                             <li><span>Telpon:</span> <?=$kasus->hp_client?></li>
                                             <li><span>Email:</span> <?=$kasus->email_client?></li>
                                         </ul>
